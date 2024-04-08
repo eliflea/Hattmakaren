@@ -4,10 +4,13 @@
  */
 package System;
 
+import java.awt.List;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextField;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
@@ -48,7 +51,7 @@ public class SkapaHatt extends javax.swing.JFrame {
         lblAngePris = new javax.swing.JLabel();
         lblValjTyp = new javax.swing.JLabel();
         lblAngeModell = new javax.swing.JLabel();
-        lblSpara = new javax.swing.JButton();
+        btnSpara = new javax.swing.JButton();
         txtAngeText = new javax.swing.JTextField();
         lblAngeText = new javax.swing.JLabel();
 
@@ -76,10 +79,10 @@ public class SkapaHatt extends javax.swing.JFrame {
 
         lblAngeModell.setText("Ange modell");
 
-        lblSpara.setText("Spara");
-        lblSpara.addActionListener(new java.awt.event.ActionListener() {
+        btnSpara.setText("Spara");
+        btnSpara.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lblSparaActionPerformed(evt);
+                btnSparaActionPerformed(evt);
             }
         });
 
@@ -121,7 +124,7 @@ public class SkapaHatt extends javax.swing.JFrame {
                 .addGap(71, 76, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblSpara)
+                .addComponent(btnSpara)
                 .addGap(91, 91, 91))
         );
         layout.setVerticalGroup(
@@ -158,14 +161,14 @@ public class SkapaHatt extends javax.swing.JFrame {
                     .addComponent(txtAngeStorlek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbValjTyp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblSpara)
+                .addComponent(btnSpara)
                 .addGap(29, 29, 29))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lblSparaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblSparaActionPerformed
+    private void btnSparaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSparaActionPerformed
 try {
     
     String produktnummer = txtAngeProduktnummer.getText();
@@ -177,6 +180,15 @@ String pris = txtAngePris.getText();
 String valjTyp = cbValjTyp.getSelectedItem().toString();
 String text = txtAngeText.getText();
 String string1 = "Lagerförd";
+
+boolean allaFaltIfyllda = 
+            Validering.harTextFaltetVarde(txtAngeProduktnummer) &&
+            Validering.harTextFaltetVarde(txtAngeNamn) &&
+            Validering.harTextFaltetVarde(txtAngeStorlek) &&
+            Validering.harTextFaltetVarde(txtAngeModell) &&
+            Validering.harTextFaltetVarde(txtAngePris) &&
+            Validering.harTextFaltetVarde(txtAngeText);
+       
 
 String skapaHattQuery = "insert into hatt (Produkt_ID, Namn, Storlek, Modell, Pris, Godkänd, Text) Values ('"+produktnummer+"', '"+namn+"', '"+storlek+"', '"+modell+"', '"+pris+"','"+1+"','"+text+"')";
 String skapaHattQuery2 = "insert into hatt (Produkt_ID, Namn, Storlek, Modell, Pris, Godkänd, Text) Values ('"+produktnummer+"', '"+namn+"', '"+storlek+"', '"+modell+"', '"+pris+"','"+0+"','"+text+"')";
@@ -190,8 +202,9 @@ catch (InfException e) {
         System.out.println(e);
     }
 
-    }//GEN-LAST:event_lblSparaActionPerformed
+    }//GEN-LAST:event_btnSparaActionPerformed
 
+    
     private void txtAngeProduktnummerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAngeProduktnummerActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAngeProduktnummerActionPerformed
@@ -202,6 +215,7 @@ catch (InfException e) {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSpara;
     private javax.swing.JComboBox<String> cbValjTyp;
     private javax.swing.JLabel lblAngeModell;
     private javax.swing.JLabel lblAngeNamn;
@@ -210,7 +224,6 @@ catch (InfException e) {
     private javax.swing.JLabel lblAngeStorlek;
     private javax.swing.JLabel lblAngeText;
     private javax.swing.JLabel lblSkapaHatt;
-    private javax.swing.JButton lblSpara;
     private javax.swing.JLabel lblValjTyp;
     private javax.swing.JTextField txtAngeModell;
     private javax.swing.JTextField txtAngeNamn;
