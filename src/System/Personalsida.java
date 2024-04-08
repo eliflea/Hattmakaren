@@ -28,33 +28,91 @@ public class Personalsida extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        orderHanterareBTN = new javax.swing.JButton();
+        kundHanterareBTN = new javax.swing.JButton();
+        hattHanterareBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("DETTA ÄR TEST");
+        jLabel1.setText("Hattmakarnas Personalsida");
+
+        orderHanterareBTN.setText("Order Hanterare");
+        orderHanterareBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orderHanterareBTNActionPerformed(evt);
+            }
+        });
+
+        kundHanterareBTN.setText("Kund Hanterare");
+        kundHanterareBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kundHanterareBTNActionPerformed(evt);
+            }
+        });
+
+        hattHanterareBTN.setText("Hatt Hanterare");
+        hattHanterareBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hattHanterareBTNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(133, 133, 133)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(117, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addGap(111, 111, 111))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(143, 143, 143)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hattHanterareBTN)
+                    .addComponent(kundHanterareBTN)
+                    .addComponent(orderHanterareBTN))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(114, 114, 114)
+                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addComponent(orderHanterareBTN)
+                .addGap(18, 18, 18)
+                .addComponent(kundHanterareBTN)
+                .addGap(26, 26, 26)
+                .addComponent(hattHanterareBTN)
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void orderHanterareBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderHanterareBTNActionPerformed
+        // TODO add your handling code here:
+        new OrderSida(idb).setVisible(true);
+        dispose();
+    }//GEN-LAST:event_orderHanterareBTNActionPerformed
+
+    private void hattHanterareBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hattHanterareBTNActionPerformed
+        // TODO add your handling code here:
+        new SkapaHatt(idb).setVisible(true);
+        dispose();
+    }//GEN-LAST:event_hattHanterareBTNActionPerformed
+
+    private void kundHanterareBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kundHanterareBTNActionPerformed
+        // TODO add your handling code here:
+        new SkapaKund(idb).setVisible(true);
+        dispose();
+    }//GEN-LAST:event_kundHanterareBTNActionPerformed
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton hattHanterareBTN;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton kundHanterareBTN;
+    private javax.swing.JButton orderHanterareBTN;
     // End of variables declaration//GEN-END:variables
 }

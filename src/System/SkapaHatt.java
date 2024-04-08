@@ -4,17 +4,21 @@
  */
 package System;
 
+import oru.inf.InfDB;
+
 /**
  *
  * @author tomas
  */
 public class SkapaHatt extends javax.swing.JFrame {
 
+    private InfDB idb;
     /**
      * Creates new form SkapaHatt
      */
-    public SkapaHatt() {
+    public SkapaHatt(InfDB idb) {
         initComponents();
+        this.idb = idb;
     }
 
     /**
@@ -26,7 +30,7 @@ public class SkapaHatt extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

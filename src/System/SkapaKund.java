@@ -4,17 +4,21 @@
  */
 package System;
 
+import oru.inf.InfDB;
+
 /**
  *
  * @author tomas
  */
 public class SkapaKund extends javax.swing.JFrame {
 
+    private InfDB idb;
     /**
      * Creates new form SkapaKund
      */
-    public SkapaKund() {
+    public SkapaKund(InfDB idb) {
         initComponents();
+        this.idb = idb;
     }
 
     /**

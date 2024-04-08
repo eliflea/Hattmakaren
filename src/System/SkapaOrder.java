@@ -4,17 +4,22 @@
  */
 package System;
 
+import oru.inf.InfDB;
+
 /**
  *
  * @author tomas
  */
 public class SkapaOrder extends javax.swing.JFrame {
+    
+    private InfDB idb;
 
     /**
      * Creates new form SkapaOrder
      */
-    public SkapaOrder() {
+    public SkapaOrder(InfDB idb) {
         initComponents();
+        this.idb = idb;
     }
 
     /**
