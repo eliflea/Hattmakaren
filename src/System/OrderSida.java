@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package System;
+
+import oru.inf.InfDB;
 
 /**
  *
@@ -10,11 +8,14 @@ package System;
  */
 public class OrderSida extends javax.swing.JFrame {
 
+    private InfDB idb;
+
     /**
      * Creates new form SkapaOrder
      */
-    public OrderSida() {
+    public OrderSida(InfDB idb) {
         initComponents();
+        this.idb = idb;
     }
 
     /**
@@ -285,10 +286,6 @@ public class OrderSida extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
