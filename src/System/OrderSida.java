@@ -4,17 +4,21 @@
  */
 package System;
 
+import oru.inf.InfDB;
+
 /**
  *
  * @author tomas
  */
 public class OrderSida extends javax.swing.JFrame {
 
+    private InfDB idb;
     /**
      * Creates new form OrderSida
      */
-    public OrderSida() {
+    public OrderSida(InfDB idb) {
         initComponents();
+        this.idb = idb;
     }
 
     /**
