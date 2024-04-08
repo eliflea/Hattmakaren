@@ -4,7 +4,12 @@
  */
 package System;
 
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import oru.inf.InfDB;
+import oru.inf.InfException;
 
 /**
  *
@@ -30,21 +35,166 @@ public class SkapaHatt extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtAngeProduktnummer = new javax.swing.JTextField();
+        lblSkapaHatt = new javax.swing.JLabel();
+        lblAngeProduktnummer = new javax.swing.JLabel();
+        txtAngeNamn = new javax.swing.JTextField();
+        lblAngeNamn = new javax.swing.JLabel();
+        txtAngeStorlek = new javax.swing.JTextField();
+        txtAngePris = new javax.swing.JTextField();
+        lblAngeStorlek = new javax.swing.JLabel();
+        txtAngeModell = new javax.swing.JTextField();
+        cbValjTyp = new javax.swing.JComboBox<>();
+        lblAngePris = new javax.swing.JLabel();
+        lblValjTyp = new javax.swing.JLabel();
+        lblAngeModell = new javax.swing.JLabel();
+        lblSpara = new javax.swing.JButton();
+        txtAngeText = new javax.swing.JTextField();
+        lblAngeText = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        txtAngeProduktnummer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAngeProduktnummerActionPerformed(evt);
+            }
+        });
+
+        lblSkapaHatt.setText("Skapa Hatt");
+
+        lblAngeProduktnummer.setText("Ange Produktnummer");
+
+        lblAngeNamn.setText("Ange Namn");
+
+        lblAngeStorlek.setText("Ange Storlek");
+
+        cbValjTyp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lagerförd", "Special" }));
+
+        lblAngePris.setText("Ange Pris");
+
+        lblValjTyp.setText("Välj Typ");
+
+        lblAngeModell.setText("Ange modell");
+
+        lblSpara.setText("Spara");
+        lblSpara.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lblSparaActionPerformed(evt);
+            }
+        });
+
+        lblAngeText.setText("Ange Text");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblSkapaHatt, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAngeProduktnummer)
+                            .addComponent(txtAngeProduktnummer, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAngeNamn)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txtAngeNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtAngeStorlek, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblAngeStorlek))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(101, 101, 101)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblAngePris)
+                                    .addComponent(txtAngePris, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(103, 103, 103)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtAngeModell, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbValjTyp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblAngeModell)
+                                    .addComponent(lblValjTyp)
+                                    .addComponent(txtAngeText, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblAngeText))))))
+                .addGap(71, 76, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblSpara)
+                .addGap(91, 91, 91))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(lblSkapaHatt)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAngeProduktnummer)
+                    .addComponent(lblAngePris))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtAngeProduktnummer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAngePris, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAngeNamn)
+                    .addComponent(lblAngeModell))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtAngeNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAngeModell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addComponent(lblAngeText)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtAngeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAngeStorlek)
+                    .addComponent(lblValjTyp))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtAngeStorlek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbValjTyp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblSpara)
+                .addGap(29, 29, 29))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lblSparaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblSparaActionPerformed
+try {
+    
+    String produktnummer = txtAngeProduktnummer.getText();
+
+String namn = txtAngeNamn.getText();
+String storlek = txtAngeStorlek.getText();
+String modell = txtAngeModell.getText();
+String pris = txtAngePris.getText();
+String valjTyp = cbValjTyp.getSelectedItem().toString();
+String text = txtAngeText.getText();
+String string1 = "Lagerförd";
+
+String skapaHattQuery = "insert into hatt (Produkt_ID, Namn, Storlek, Modell, Pris, Godkänd, Text) Values ('"+produktnummer+"', '"+namn+"', '"+storlek+"', '"+modell+"', '"+pris+"','"+1+"','"+text+"')";
+String skapaHattQuery2 = "insert into hatt (Produkt_ID, Namn, Storlek, Modell, Pris, Godkänd, Text) Values ('"+produktnummer+"', '"+namn+"', '"+storlek+"', '"+modell+"', '"+pris+"','"+0+"','"+text+"')";
+
+if (valjTyp.equals(string1)){idb.insert(skapaHattQuery);}
+else{idb.insert(skapaHattQuery2);}
+    
+    
+    } 
+catch (InfException e) {
+        System.out.println(e);
+    }
+
+    }//GEN-LAST:event_lblSparaActionPerformed
+
+    private void txtAngeProduktnummerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAngeProduktnummerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAngeProduktnummerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -52,5 +202,21 @@ public class SkapaHatt extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbValjTyp;
+    private javax.swing.JLabel lblAngeModell;
+    private javax.swing.JLabel lblAngeNamn;
+    private javax.swing.JLabel lblAngePris;
+    private javax.swing.JLabel lblAngeProduktnummer;
+    private javax.swing.JLabel lblAngeStorlek;
+    private javax.swing.JLabel lblAngeText;
+    private javax.swing.JLabel lblSkapaHatt;
+    private javax.swing.JButton lblSpara;
+    private javax.swing.JLabel lblValjTyp;
+    private javax.swing.JTextField txtAngeModell;
+    private javax.swing.JTextField txtAngeNamn;
+    private javax.swing.JTextField txtAngePris;
+    private javax.swing.JTextField txtAngeProduktnummer;
+    private javax.swing.JTextField txtAngeStorlek;
+    private javax.swing.JTextField txtAngeText;
     // End of variables declaration//GEN-END:variables
 }
