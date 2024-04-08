@@ -23,13 +23,151 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="lblFornamn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="txtFornamn" min="-2" pref="71" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="lblEfternamn" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblEpost" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lblGatuadress" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPostadress" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTelefon" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtEfternamn" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="txtEpost" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="txtGatuadress" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="txtPostadress" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="txtTelefon" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="91" max="32767" attributes="0"/>
+              <Component id="btnSkapaKund" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtFornamn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblFornamn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblEfternamn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtEfternamn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtEpost" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblEpost" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblGatuadress" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtGatuadress" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblPostadress" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtPostadress" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="btnSkapaKund" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblTelefon" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtTelefon" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fyll i samtliga f&#xe4;lt"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtFornamn">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFornamnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblFornamn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="F&#xf6;rnamn"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblEfternamn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Efternamn"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtEfternamn">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtEpost">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblEpost">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="E-post"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblGatuadress">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Gatuadress"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtGatuadress">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTelefon">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Telefon"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtPostadress">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblPostadress">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Postadress"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtTelefon">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTelefonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSkapaKund">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Skapa kund"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSkapaKundActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
 </Form>
