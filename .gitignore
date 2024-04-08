@@ -1,3 +1,13 @@
+<<<<<<< HEAD
 /nbproject/private/
 /build/
 /dist/
+=======
+/build/
+
+
+
+
+*.xml
+*.properties
+>>>>>>> 6a77fd4f5868af101b24da366d38c5b015508589
