@@ -41,9 +41,7 @@ public class SkapaOrder extends javax.swing.JFrame {
 
         btnValjHatt = new javax.swing.JButton();
         btnSparaOrder = new javax.swing.JButton();
-        txtOrderNR = new javax.swing.JTextField();
         lblRubrikOrder = new javax.swing.JLabel();
-        lblRubrikOrder1 = new javax.swing.JLabel();
         cbValjStatus = new javax.swing.JComboBox<>();
         lblRubrikKund = new javax.swing.JLabel();
         cbValjKund = new javax.swing.JComboBox<>();
@@ -74,11 +72,15 @@ public class SkapaOrder extends javax.swing.JFrame {
 
         lblRubrikOrder.setText("Orderns status");
 
-        lblRubrikOrder1.setText("Välj Order ID:");
-
-        cbValjStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Godkänd", "Inte godkänd", " " }));
+        cbValjStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Godkänd", "Inte godkänd" }));
 
         lblRubrikKund.setText("Kund");
+
+        cbValjKund.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbValjKundActionPerformed(evt);
+            }
+        });
 
         lblRubrikLaggTillIOrder.setText("Lägg till hatt i order");
 
@@ -92,7 +94,7 @@ public class SkapaOrder extends javax.swing.JFrame {
             }
         });
 
-        cbValjPrioritering.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Brådskande", "Inte brådskande", " " }));
+        cbValjPrioritering.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Brådskande", "Inte brådskande" }));
 
         lblRubrikPrioritering.setText("Orderns prioritering:");
 
@@ -127,15 +129,9 @@ public class SkapaOrder extends javax.swing.JFrame {
                                     .addComponent(txtKommentar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblRubrikOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtOrderNR, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblRubrikLaggTillIOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
@@ -154,11 +150,7 @@ public class SkapaOrder extends javax.swing.JFrame {
                         .addComponent(btnValjHatt))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtOrderNR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblRubrikOrder1))))
+                        .addComponent(jLabel2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblRubrikOrder)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -189,8 +181,11 @@ public class SkapaOrder extends javax.swing.JFrame {
 
     private void btnSparaOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSparaOrderActionPerformed
         // TODO add your handling code here:
+        boolean allaFaltIfyllda = 
+            Validering.harTextFaltetVarde(txtDatum) &&
+            Validering.kollaDatumFormat(txtDatum);
         
-        //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
+         //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
         String valdStatus = cbValjStatus.getSelectedItem().toString().toLowerCase();
         String valdKund = cbValjKund.getSelectedItem().toString();
         //Texten hämtas från textrutan och tilldelas till variabeln som deklareras
@@ -199,9 +194,26 @@ public class SkapaOrder extends javax.swing.JFrame {
         String valdPrioritering = cbValjPrioritering.getSelectedItem().toString().toLowerCase();
         
         try {
-        String fragakundID = "select Kund_ID from kund where Förnamn = '" + valdKund + "'";
-        String kundID = idb.fetchSingle(fragakundID);
-        String orderNR = txtOrderNR.getText();
+            
+       
+            
+             String [] namn = cbValjKund.getSelectedItem().toString().split(" ");
+           
+                String fornamn = namn[0];     // First part is the first name
+                 String efternamn = namn[1];   // Second part is the last name
+    
+    // Create SQL query to fetch the Kund_ID based on first name and last name
+    String fragakundID = "SELECT Kund_ID FROM kund WHERE Förnamn = '" + fornamn + "' AND Efternamn = '" + efternamn + "'";
+    
+    // Execute the SQL query to fetch the Kund_ID
+    String kundID = idb.fetchSingle(fragakundID);
+    
+   
+            
+         
+  
+        int orderId = Integer.parseInt(idb.fetchSingle("SELECT MAX(Order_ID) FROM Orders"))+1;
+        String orderIdString = Integer.toString(orderId);
          
         String fragaSkapaOrder = ""; 
         //SQL fråga för att skapa order 
@@ -209,19 +221,23 @@ public class SkapaOrder extends javax.swing.JFrame {
         if (valdPrioritering.equalsIgnoreCase("Brådskande")) {
             valdPrioritering = "1";
              fragaSkapaOrder = "Insert into orders (Order_ID, Status, Kund, Kommentar, Brådskande, Datum) "
-                                + "Values ('" + orderNR + "','" + valdStatus + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "')";
+                                + "Values ('" + orderIdString + "','" + valdStatus + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "')";
              idb.insert(fragaSkapaOrder); 
         }
         if (valdPrioritering.equalsIgnoreCase("Inte brådskande")) {
             valdPrioritering = "0";
              fragaSkapaOrder = "Insert into orders (Order_ID, Status, Kund, Kommentar, Brådskande, Datum) "
-                                + "Values ('" + orderNR + "','" + valdStatus + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "')";
+                                + "Values ('" + orderIdString + "','" + valdStatus + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "')";
              idb.insert(fragaSkapaOrder);
+             
+           
         }
+        JOptionPane.showMessageDialog(null, "Order är Skapad!");
         
         //felmeddelande
          } catch(InfException ex){
             JOptionPane.showMessageDialog(null, "Något gick fel");
+            System.out.println(ex);
             
         }
     }//GEN-LAST:event_btnSparaOrderActionPerformed
@@ -234,18 +250,23 @@ public class SkapaOrder extends javax.swing.JFrame {
     private void txtKommentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKommentarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtKommentarActionPerformed
+
+    private void cbValjKundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjKundActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbValjKundActionPerformed
          
    private void fyllBoxKund() {
        //Metod, fylla en combobox med kundnamn
         try {
              String fragaFyllBox = "Select Förnamn, Efternamn from kund order by Kund_ID";
-             ArrayList<HashMap<String, String>> allaKunder = idb.fetchRows(fragaFyllBox); 
+             ArrayList<HashMap<String, String>> allaKunder = idb.fetchRows(fragaFyllBox);
              for (HashMap<String, String> kund : allaKunder) {
             //Kundens efternamn och förnamn hämtas 
             String fornamn = kund.get("Förnamn");
             String efternamn = kund.get("Efternamn");
+           
             //förnamn och efternamn kombineras för att läggas i combobox
-            cbValjKund.addItem(fornamn + " " + efternamn);
+            cbValjKund.addItem(fornamn + " " + efternamn );
               }      
            } catch (InfException ettUndantag) {
              JOptionPane.showMessageDialog(null, "Något gick fel");
@@ -270,10 +291,8 @@ public class SkapaOrder extends javax.swing.JFrame {
     private javax.swing.JLabel lblRubrikKund;
     private javax.swing.JLabel lblRubrikLaggTillIOrder;
     private javax.swing.JLabel lblRubrikOrder;
-    private javax.swing.JLabel lblRubrikOrder1;
     private javax.swing.JLabel lblRubrikPrioritering;
     private javax.swing.JTextField txtDatum;
     private javax.swing.JTextField txtKommentar;
-    private javax.swing.JTextField txtOrderNR;
     // End of variables declaration//GEN-END:variables
 }

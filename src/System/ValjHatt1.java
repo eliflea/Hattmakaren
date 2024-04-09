@@ -45,14 +45,11 @@ public class ValjHatt1 extends javax.swing.JFrame {
 
         jLabel1.setText("Välj hatt");
 
-        cbValjHatt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1" }));
         cbValjHatt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbValjHattActionPerformed(evt);
             }
         });
-
-        cbOrder.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1" }));
 
         lblRubrikLaggTIllOrder.setText("Lägg till i order");
 
@@ -113,6 +110,8 @@ public class ValjHatt1 extends javax.swing.JFrame {
             String fragaSkapaHattIOrder = "Insert into hatt_i_order (Order_ID, Hatt_ID) "
             + "Values ('" + valdOrder + "','" + ProduktID + "')";
             idb.insert(fragaSkapaHattIOrder);
+            
+            JOptionPane.showMessageDialog(null, "Hatt är tillagd i en order!");
 
         } catch (InfException ettUndantag) {
             JOptionPane.showMessageDialog(null, "Något gick fel");
