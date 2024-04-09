@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package System;
+import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
@@ -31,9 +32,7 @@ public class SkapaHatt extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtAngeProduktnummer = new javax.swing.JTextField();
         lblSkapaHatt = new javax.swing.JLabel();
-        lblAngeProduktnummer = new javax.swing.JLabel();
         txtAngeNamn = new javax.swing.JTextField();
         lblAngeNamn = new javax.swing.JLabel();
         txtAngeStorlek = new javax.swing.JTextField();
@@ -50,15 +49,7 @@ public class SkapaHatt extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        txtAngeProduktnummer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAngeProduktnummerActionPerformed(evt);
-            }
-        });
-
         lblSkapaHatt.setText("Skapa Hatt");
-
-        lblAngeProduktnummer.setText("Ange Produktnummer");
 
         lblAngeNamn.setText("Ange Namn");
 
@@ -94,14 +85,12 @@ public class SkapaHatt extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblAngeProduktnummer)
-                                    .addComponent(txtAngeProduktnummer, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblAngeNamn)
                                     .addComponent(txtAngeNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(txtAngePris, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtAngeStorlek, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblAngeStorlek))
-                        .addGap(103, 103, 103)
+                        .addGap(148, 148, 148)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtAngeModell, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbValjTyp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -119,13 +108,9 @@ public class SkapaHatt extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addComponent(lblSkapaHatt)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAngeProduktnummer)
-                    .addComponent(lblAngeModell))
+                .addComponent(lblAngeModell)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAngeProduktnummer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAngeModell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtAngeModell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAngeNamn)
@@ -160,7 +145,8 @@ public class SkapaHatt extends javax.swing.JFrame {
 try {
 
 // Hämta värden från användargränssnittet   
-String produktnummer = txtAngeProduktnummer.getText();
+int produktID = Integer.parseInt(idb.fetchSingle("SELECT MAX(Produkt_ID) FROM hatt"))+1;
+            String produktIDString = Integer.toString(produktID);
 String namn = txtAngeNamn.getText();
 String storlek = txtAngeStorlek.getText();
 String modell = txtAngeModell.getText();
@@ -171,7 +157,6 @@ String string1 = "Lagerförd";
 
 // Kontrollera om alla fält är ifyllda
 boolean allaFaltIfyllda = 
-            Validering.harTextFaltetVarde(txtAngeProduktnummer) &&
             Validering.harTextFaltetVarde(txtAngeNamn) &&
             Validering.harTextFaltetVarde(txtAngeStorlek) &&
             Validering.harTextFaltetVarde(txtAngeModell) &&
@@ -179,12 +164,13 @@ boolean allaFaltIfyllda =
             Validering.harTextFaltetVarde(txtAngeText);
    
 // Skapa SQL-query för att lägga till en hatt i databasen, med olika värden beroende på vald typ
-String skapaHattQuery = "insert into hatt (Produkt_ID, Namn, Storlek, Modell, Pris, Godkänd, Text) Values ('"+produktnummer+"', '"+namn+"', '"+storlek+"', '"+modell+"', '"+pris+"','"+1+"','"+text+"')";
-String skapaHattQuery2 = "insert into hatt (Produkt_ID, Namn, Storlek, Modell, Pris, Godkänd, Text) Values ('"+produktnummer+"', '"+namn+"', '"+storlek+"', '"+modell+"', '"+pris+"','"+0+"','"+text+"')";
+String skapaHattQuery = "insert into hatt (Produkt_ID, Namn, Storlek, Modell, Pris, Godkänd, Text) Values ('"+produktIDString+"', '"+namn+"', '"+storlek+"', '"+modell+"', '"+pris+"','"+1+"','"+text+"')";
+String skapaHattQuery2 = "insert into hatt (Produkt_ID, Namn, Storlek, Modell, Pris, Godkänd, Text) Values ('"+produktIDString+"', '"+namn+"', '"+storlek+"', '"+modell+"', '"+pris+"','"+0+"','"+text+"')";
 
  // Om typen är "Lagerförd", lägg till en hatt i databasen med status godkänd (1), annars lägg till med status ej godkänd (0)
 if (valjTyp.equals(string1)){idb.insert(skapaHattQuery);}
 else{idb.insert(skapaHattQuery2);}
+JOptionPane.showMessageDialog(null, "Hatten har sparats");
    
     } 
 catch (InfException e) {
@@ -195,10 +181,6 @@ System.out.println(e);
     }//GEN-LAST:event_btnSparaActionPerformed
 
     
-    private void txtAngeProduktnummerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAngeProduktnummerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAngeProduktnummerActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -210,7 +192,6 @@ System.out.println(e);
     private javax.swing.JLabel lblAngeModell;
     private javax.swing.JLabel lblAngeNamn;
     private javax.swing.JLabel lblAngePris;
-    private javax.swing.JLabel lblAngeProduktnummer;
     private javax.swing.JLabel lblAngeStorlek;
     private javax.swing.JLabel lblAngeText;
     private javax.swing.JLabel lblSkapaHatt;
@@ -218,7 +199,6 @@ System.out.println(e);
     private javax.swing.JTextField txtAngeModell;
     private javax.swing.JTextField txtAngeNamn;
     private javax.swing.JTextField txtAngePris;
-    private javax.swing.JTextField txtAngeProduktnummer;
     private javax.swing.JTextField txtAngeStorlek;
     private javax.swing.JTextField txtAngeText;
     // End of variables declaration//GEN-END:variables
