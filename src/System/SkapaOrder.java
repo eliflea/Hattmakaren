@@ -229,7 +229,10 @@ public class SkapaOrder extends javax.swing.JFrame {
              fragaSkapaOrder = "Insert into orders (Order_ID, Status, Kund, Kommentar, Brådskande, Datum) "
                                 + "Values ('" + orderIdString + "','" + valdStatus + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "')";
              idb.insert(fragaSkapaOrder);
+             
+           
         }
+        JOptionPane.showMessageDialog(null, "Order är Skapad!");
         
         //felmeddelande
          } catch(InfException ex){
