@@ -29,45 +29,33 @@
                   <Component id="lblSkapaHatt" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblAngeProduktnummer" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtAngeProduktnummer" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                          <Component id="lblAngeNamn" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="txtAngeNamn" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
-                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                  <Component id="txtAngeStorlek" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Component id="lblAngeStorlek" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblAngeProduktnummer" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtAngeProduktnummer" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                                  <Component id="lblAngeNamn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtAngeNamn" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <Component id="txtAngePris" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="txtAngeStorlek" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="lblAngeStorlek" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblAngePris" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtAngePris" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtAngeModell" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Component id="cbValjTyp" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblAngeModell" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblValjTyp" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtAngeText" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Component id="lblAngeText" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="txtAngeModell" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="cbValjTyp" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblAngeModell" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblValjTyp" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtAngeText" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="lblAngeText" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSpara" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <Component id="lblAngePris" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="71" pref="76" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="btnSpara" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+              <EmptySpace min="71" pref="73" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -79,40 +67,43 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblAngeProduktnummer" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblAngePris" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtAngeProduktnummer" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtAngePris" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblAngeNamn" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblAngeModell" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtAngeNamn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtAngeModell" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAngeProduktnummer" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAngeModell" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-              <Component id="lblAngeText" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="txtAngeText" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblAngeStorlek" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblValjTyp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAngeNamn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAngeText" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtAngeStorlek" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cbValjTyp" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="txtAngeNamn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="lblAngeStorlek" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtAngeStorlek" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblAngePris" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtAngePris" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSpara" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="txtAngeText" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="lblValjTyp" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cbValjTyp" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="btnSpara" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <EmptySpace pref="102" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
