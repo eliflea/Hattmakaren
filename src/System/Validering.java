@@ -71,4 +71,25 @@ public static boolean kollaDecimalTal(JTextField rutaAttKolla){
     }
     return inmatningArDecimalTal;
 }
+
+public static boolean kollaDatumFormat(JTextField rutaAttKolla) {
+    
+    //kollar att falttexten är i rätt datumformat, och anger rätt format att mata in ifall det inte är det.
+    
+    boolean inmatningsFormat = true;
+    
+         String input = rutaAttKolla.getText();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        format.setLenient(false);
+        
+        try {
+            Date date = format.parse(input);
+            
+        } catch (ParseException e) {
+            JOptionPane.showMessageDialog(null, "Fel datum format, vänligen ange datumet som 'yyyy-MM-dd'");
+            inmatningsFormat = false;
+            rutaAttKolla.requestFocus();
+        }
+        return inmatningsFormat;
+    }
 }

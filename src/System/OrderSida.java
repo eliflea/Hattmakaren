@@ -60,10 +60,11 @@ public class OrderSida extends javax.swing.JFrame {
         lblForNamn = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         btnSkapa = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnVisaOrder = new javax.swing.JButton();
+        btnOrderStatus = new javax.swing.JButton();
         txtInsertOrder = new javax.swing.JTextField();
         lblSkrivIn = new javax.swing.JLabel();
+        btnSkapaOrder = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,40 +85,25 @@ public class OrderSida extends javax.swing.JFrame {
         pnlFraktSedel.setBackground(new java.awt.Color(255, 255, 255));
 
         lblTo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblTo.setForeground(new java.awt.Color(0, 0, 0));
         lblTo.setText("To:");
 
-        lblPhone.setForeground(new java.awt.Color(0, 0, 0));
         lblPhone.setText("Phone: ");
 
-        lblFrom.setForeground(new java.awt.Color(0, 0, 0));
         lblFrom.setText("Ottos hattmakeri");
 
-        lblAdress.setForeground(new java.awt.Color(0, 0, 0));
         lblAdress.setText("Hattmästargatan 99");
 
-        lblKundNamn.setForeground(new java.awt.Color(0, 0, 0));
-
-        lblPhoneTo.setForeground(new java.awt.Color(0, 0, 0));
         lblPhoneTo.setText("Phone: +46 73 8554121");
 
-        lblOrderNumber.setForeground(new java.awt.Color(0, 0, 0));
         lblOrderNumber.setText("Ordernumber:");
 
-        lblPayCustoms.setForeground(new java.awt.Color(0, 0, 0));
         lblPayCustoms.setText("Pay Customs:");
 
         lblLogoFrakt.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblLogoFrakt.setForeground(new java.awt.Color(0, 0, 0));
         lblLogoFrakt.setText("DOMESTIC SWEDEN                                                              ÖruNord");
 
         lblFromWho.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblFromWho.setForeground(new java.awt.Color(0, 0, 0));
         lblFromWho.setText("From:");
-
-        lblBarcode.setForeground(new java.awt.Color(0, 0, 0));
-
-        lblKundAdress.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout pnlFraktSedelLayout = new javax.swing.GroupLayout(pnlFraktSedel);
         pnlFraktSedel.setLayout(pnlFraktSedelLayout);
@@ -225,27 +211,36 @@ public class OrderSida extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(102, 102, 102));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Visa order");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnVisaOrder.setBackground(new java.awt.Color(102, 102, 102));
+        btnVisaOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnVisaOrder.setText("Visa order");
+        btnVisaOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnVisaOrderActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Status");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnOrderStatus.setBackground(new java.awt.Color(102, 102, 102));
+        btnOrderStatus.setForeground(new java.awt.Color(255, 255, 255));
+        btnOrderStatus.setText("Status");
+        btnOrderStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnOrderStatusActionPerformed(evt);
             }
         });
 
         lblSkrivIn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblSkrivIn.setForeground(new java.awt.Color(255, 255, 255));
         lblSkrivIn.setText("Skriv in ordernummer");
+
+        btnSkapaOrder.setBackground(new java.awt.Color(102, 102, 102));
+        btnSkapaOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnSkapaOrder.setText("Skapa");
+        btnSkapaOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSkapaOrderActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlBakgrundLayout = new javax.swing.GroupLayout(pnlBakgrund);
         pnlBakgrund.setLayout(pnlBakgrundLayout);
@@ -256,8 +251,8 @@ public class OrderSida extends javax.swing.JFrame {
                 .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSkapa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnVisaOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnOrderStatus, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlBakgrundLayout.createSequentialGroup()
                         .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlBakgrundLayout.createSequentialGroup()
@@ -268,7 +263,8 @@ public class OrderSida extends javax.swing.JFrame {
                                 .addComponent(lblOrder)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(txtInsertOrder)
-                    .addComponent(lblSkrivIn, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE))
+                    .addComponent(lblSkrivIn, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                    .addComponent(btnSkapaOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(26, 26, 26)
                 .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,10 +287,12 @@ public class OrderSida extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addComponent(lblOrder)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(btnVisaOrder)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
-                        .addGap(23, 23, 23)
+                        .addComponent(btnOrderStatus)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSkapaOrder)
+                        .addGap(27, 27, 27)
                         .addComponent(lblSkrivIn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtInsertOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -419,19 +417,26 @@ public class OrderSida extends javax.swing.JFrame {
         return sb.toString();
     }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnVisaOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisaOrderActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnVisaOrderActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnOrderStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderStatusActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnOrderStatusActionPerformed
+
+    private void btnSkapaOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkapaOrderActionPerformed
+        // TODO add your handling code here:
+        new SkapaOrder(idb).setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnSkapaOrderActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnOrderStatus;
     private javax.swing.JButton btnSkapa;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnSkapaOrder;
+    private javax.swing.JButton btnVisaOrder;
     private javax.swing.JButton jButton5;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JLabel lblAdress;
