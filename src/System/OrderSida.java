@@ -433,11 +433,13 @@ public class OrderSida extends javax.swing.JFrame {
         try {
             String status = idb.fetchSingle("Select Brådskande from Orders where Order_ID = " + txtInsertOrder.getText() +  "");
         
+           String status2 = idb.fetchSingle("Select Status from Orders where Order_ID = " + txtInsertOrder.getText() +  "");
+            
             if(status.equals(ett)){
-            JOptionPane.showMessageDialog(null, "Order är brådskande");
+            JOptionPane.showMessageDialog(null, "Order är brådskande. Status just nu: " + status2);
         }
         else{
-            JOptionPane.showMessageDialog(null, "Order är inte brådskande");
+            JOptionPane.showMessageDialog(null, "Order är inte brådskande. Status just nu: " + status2);
         }
         
         } catch (InfException ex) {
