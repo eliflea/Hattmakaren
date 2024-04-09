@@ -161,6 +161,8 @@ boolean allaFaltIfyllda =
             Validering.harTextFaltetVarde(txtAngeStorlek) &&
             Validering.harTextFaltetVarde(txtAngeModell) &&
             Validering.harTextFaltetVarde(txtAngePris) &&
+            Validering.kollaDecimalTal(txtAngePris)&&
+            Validering.kollaDecimalTal(txtAngeStorlek)&&
             Validering.harTextFaltetVarde(txtAngeText);
    
 // Skapa SQL-query för att lägga till en hatt i databasen, med olika värden beroende på vald typ
