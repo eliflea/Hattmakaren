@@ -7,7 +7,10 @@ import java.awt.Image;
 import java.awt.PrintJob;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import net.sourceforge.barbecue.Barcode;
 import net.sourceforge.barbecue.BarcodeFactory;
@@ -423,6 +426,26 @@ public class OrderSida extends javax.swing.JFrame {
 
     private void btnOrderStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderStatusActionPerformed
         // TODO add your handling code here:
+        String noll = "0";
+        String ett = "1";
+        
+        
+        try {
+            String status = idb.fetchSingle("Select Brådskande from Orders where Order_ID = " + txtInsertOrder.getText() +  "");
+        
+            if(status.equals(ett)){
+            JOptionPane.showMessageDialog(null, "Order är brådskande");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Order är inte brådskande");
+        }
+        
+        } catch (InfException ex) {
+            JOptionPane.showMessageDialog(null, "Något gick fel");
+        }
+        
+       
+        
     }//GEN-LAST:event_btnOrderStatusActionPerformed
 
     private void btnSkapaOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkapaOrderActionPerformed

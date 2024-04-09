@@ -72,7 +72,7 @@ public class SkapaOrder extends javax.swing.JFrame {
 
         lblRubrikOrder.setText("Orderns status");
 
-        cbValjStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Godkänd", "Inte godkänd", " " }));
+        cbValjStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Godkänd", "Inte godkänd" }));
 
         lblRubrikKund.setText("Kund");
 
@@ -94,7 +94,7 @@ public class SkapaOrder extends javax.swing.JFrame {
             }
         });
 
-        cbValjPrioritering.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Brådskande", "Inte brådskande", " " }));
+        cbValjPrioritering.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Brådskande", "Inte brådskande" }));
 
         lblRubrikPrioritering.setText("Orderns prioritering:");
 
