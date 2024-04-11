@@ -65,13 +65,13 @@
                           <Component id="lblNuvarandeAnvandare" min="-2" pref="175" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnTaBortUtrustning" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnGeAdmin" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnRadera" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnSkapaHatt" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnSkapaOrder" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnValjHatt" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnLoggaUt" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnAndraInformation" alignment="0" pref="176" max="32767" attributes="0"/>
-                          <Component id="btnRegistrera" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnAgentStartsida" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnPersonalsida" alignment="0" pref="176" max="32767" attributes="0"/>
+                          <Component id="btnOrdersida" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnStartsida" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnRadera1" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblTest" alignment="0" pref="176" max="32767" attributes="0"/>
                       </Group>
@@ -97,18 +97,18 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="btnAgentStartsida" min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="btnStartsida" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnRegistrera" min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="btnOrdersida" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnAndraInformation" min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="btnPersonalsida" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnTaBortUtrustning" min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="btnSkapaHatt" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnGeAdmin" min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="btnSkapaOrder" min="-2" pref="46" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnValjHatt" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btnRadera" min="-2" pref="46" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnRadera1" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnLoggaUt" min="-2" pref="46" max="-2" attributes="0"/>
@@ -127,7 +127,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Test"/>
+            <Property name="text" type="java.lang.String" value="Hattmakaren"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblTest1">
@@ -139,10 +139,10 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="test"/>
+            <Property name="text" type="java.lang.String" value="Personal"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnRegistrera">
+        <Component class="javax.swing.JButton" name="btnOrdersida">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="33" red="0" type="rgb"/>
@@ -153,16 +153,16 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Registrera"/>
+            <Property name="text" type="java.lang.String" value="Ordersida"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistreraActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOrdersidaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnAndraInformation">
+        <Component class="javax.swing.JButton" name="btnPersonalsida">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="33" red="0" type="rgb"/>
@@ -173,16 +173,16 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="&#xc4;ndra information"/>
+            <Property name="text" type="java.lang.String" value="Personalsida"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAndraInformationActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPersonalsidaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnTaBortUtrustning">
+        <Component class="javax.swing.JButton" name="btnSkapaHatt">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="33" red="0" type="rgb"/>
@@ -193,16 +193,16 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Ta bort "/>
+            <Property name="text" type="java.lang.String" value="Skapa hatt"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTaBortUtrustningActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSkapaHattActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnGeAdmin">
+        <Component class="javax.swing.JButton" name="btnSkapaOrder">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="33" red="0" type="rgb"/>
@@ -213,16 +213,16 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Ge status"/>
+            <Property name="text" type="java.lang.String" value="Skapa order"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGeAdminActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSkapaOrderActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnRadera">
+        <Component class="javax.swing.JButton" name="btnValjHatt">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="33" red="0" type="rgb"/>
@@ -233,13 +233,13 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Radera"/>
+            <Property name="text" type="java.lang.String" value="V&#xe4;lj hatt"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRaderaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnValjHattActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnLoggaUt">
@@ -262,7 +262,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLoggaUtActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnAgentStartsida">
+        <Component class="javax.swing.JButton" name="btnStartsida">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="33" red="0" type="rgb"/>
@@ -279,7 +279,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgentStartsidaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStartsidaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblNuvarandeAnvandare">
@@ -300,7 +300,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Radera"/>
+            <Property name="text" type="java.lang.String" value="Knapp"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -421,6 +421,31 @@
           </Layout>
         </Container>
         <Container class="javax.swing.JPanel" name="pnlSkapaOrder">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="99" red="33" type="rgb"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card4"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="787" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="780" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="pnlValjHatt">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="99" red="33" type="rgb"/>

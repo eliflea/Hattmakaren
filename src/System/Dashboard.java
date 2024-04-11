@@ -28,13 +28,13 @@ public class Dashboard extends javax.swing.JFrame {
         pnlSideBarVanster = new javax.swing.JPanel();
         lblTest = new javax.swing.JLabel();
         lblTest1 = new javax.swing.JLabel();
-        btnRegistrera = new javax.swing.JButton();
-        btnAndraInformation = new javax.swing.JButton();
-        btnTaBortUtrustning = new javax.swing.JButton();
-        btnGeAdmin = new javax.swing.JButton();
-        btnRadera = new javax.swing.JButton();
+        btnOrdersida = new javax.swing.JButton();
+        btnPersonalsida = new javax.swing.JButton();
+        btnSkapaHatt = new javax.swing.JButton();
+        btnSkapaOrder = new javax.swing.JButton();
+        btnValjHatt = new javax.swing.JButton();
         btnLoggaUt = new javax.swing.JButton();
-        btnAgentStartsida = new javax.swing.JButton();
+        btnStartsida = new javax.swing.JButton();
         lblNuvarandeAnvandare = new javax.swing.JLabel();
         btnRadera1 = new javax.swing.JButton();
         pnlMitten = new javax.swing.JPanel();
@@ -43,6 +43,7 @@ public class Dashboard extends javax.swing.JFrame {
         pnlSkapaHatt = new javax.swing.JPanel();
         pnlSkapaKund = new javax.swing.JPanel();
         pnlSkapaOrder = new javax.swing.JPanel();
+        pnlValjHatt = new javax.swing.JPanel();
         pnl1Valkommen = new javax.swing.JPanel();
         pnlSideBarHoger = new javax.swing.JPanel();
 
@@ -53,65 +54,65 @@ public class Dashboard extends javax.swing.JFrame {
         lblTest.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         lblTest.setForeground(new java.awt.Color(255, 255, 255));
         lblTest.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTest.setText("Test");
+        lblTest.setText("Hattmakaren");
 
         lblTest1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblTest1.setForeground(new java.awt.Color(255, 255, 255));
         lblTest1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTest1.setText("test");
+        lblTest1.setText("Personal");
 
-        btnRegistrera.setBackground(new java.awt.Color(0, 51, 153));
-        btnRegistrera.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnRegistrera.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrera.setText("Registrera");
-        btnRegistrera.setBorder(null);
-        btnRegistrera.addActionListener(new java.awt.event.ActionListener() {
+        btnOrdersida.setBackground(new java.awt.Color(0, 51, 153));
+        btnOrdersida.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnOrdersida.setForeground(new java.awt.Color(255, 255, 255));
+        btnOrdersida.setText("Ordersida");
+        btnOrdersida.setBorder(null);
+        btnOrdersida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistreraActionPerformed(evt);
+                btnOrdersidaActionPerformed(evt);
             }
         });
 
-        btnAndraInformation.setBackground(new java.awt.Color(0, 51, 153));
-        btnAndraInformation.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnAndraInformation.setForeground(new java.awt.Color(255, 255, 255));
-        btnAndraInformation.setText("Ändra information");
-        btnAndraInformation.setBorder(null);
-        btnAndraInformation.addActionListener(new java.awt.event.ActionListener() {
+        btnPersonalsida.setBackground(new java.awt.Color(0, 51, 153));
+        btnPersonalsida.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnPersonalsida.setForeground(new java.awt.Color(255, 255, 255));
+        btnPersonalsida.setText("Personalsida");
+        btnPersonalsida.setBorder(null);
+        btnPersonalsida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAndraInformationActionPerformed(evt);
+                btnPersonalsidaActionPerformed(evt);
             }
         });
 
-        btnTaBortUtrustning.setBackground(new java.awt.Color(0, 51, 153));
-        btnTaBortUtrustning.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnTaBortUtrustning.setForeground(new java.awt.Color(255, 255, 255));
-        btnTaBortUtrustning.setText("Ta bort ");
-        btnTaBortUtrustning.setBorder(null);
-        btnTaBortUtrustning.addActionListener(new java.awt.event.ActionListener() {
+        btnSkapaHatt.setBackground(new java.awt.Color(0, 51, 153));
+        btnSkapaHatt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnSkapaHatt.setForeground(new java.awt.Color(255, 255, 255));
+        btnSkapaHatt.setText("Skapa hatt");
+        btnSkapaHatt.setBorder(null);
+        btnSkapaHatt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTaBortUtrustningActionPerformed(evt);
+                btnSkapaHattActionPerformed(evt);
             }
         });
 
-        btnGeAdmin.setBackground(new java.awt.Color(0, 51, 153));
-        btnGeAdmin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnGeAdmin.setForeground(new java.awt.Color(255, 255, 255));
-        btnGeAdmin.setText("Ge status");
-        btnGeAdmin.setBorder(null);
-        btnGeAdmin.addActionListener(new java.awt.event.ActionListener() {
+        btnSkapaOrder.setBackground(new java.awt.Color(0, 51, 153));
+        btnSkapaOrder.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnSkapaOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnSkapaOrder.setText("Skapa order");
+        btnSkapaOrder.setBorder(null);
+        btnSkapaOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGeAdminActionPerformed(evt);
+                btnSkapaOrderActionPerformed(evt);
             }
         });
 
-        btnRadera.setBackground(new java.awt.Color(0, 51, 153));
-        btnRadera.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnRadera.setForeground(new java.awt.Color(255, 255, 255));
-        btnRadera.setText("Radera");
-        btnRadera.setBorder(null);
-        btnRadera.addActionListener(new java.awt.event.ActionListener() {
+        btnValjHatt.setBackground(new java.awt.Color(0, 51, 153));
+        btnValjHatt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnValjHatt.setForeground(new java.awt.Color(255, 255, 255));
+        btnValjHatt.setText("Välj hatt");
+        btnValjHatt.setBorder(null);
+        btnValjHatt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRaderaActionPerformed(evt);
+                btnValjHattActionPerformed(evt);
             }
         });
 
@@ -126,14 +127,14 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnAgentStartsida.setBackground(new java.awt.Color(0, 51, 153));
-        btnAgentStartsida.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnAgentStartsida.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgentStartsida.setText("Startsida");
-        btnAgentStartsida.setBorder(null);
-        btnAgentStartsida.addActionListener(new java.awt.event.ActionListener() {
+        btnStartsida.setBackground(new java.awt.Color(0, 51, 153));
+        btnStartsida.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnStartsida.setForeground(new java.awt.Color(255, 255, 255));
+        btnStartsida.setText("Startsida");
+        btnStartsida.setBorder(null);
+        btnStartsida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgentStartsidaActionPerformed(evt);
+                btnStartsidaActionPerformed(evt);
             }
         });
 
@@ -142,7 +143,7 @@ public class Dashboard extends javax.swing.JFrame {
         btnRadera1.setBackground(new java.awt.Color(0, 51, 153));
         btnRadera1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnRadera1.setForeground(new java.awt.Color(255, 255, 255));
-        btnRadera1.setText("Radera");
+        btnRadera1.setText("Knapp");
         btnRadera1.setBorder(null);
         btnRadera1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,13 +163,13 @@ public class Dashboard extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblNuvarandeAnvandare, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlSideBarVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnTaBortUtrustning, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnGeAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRadera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSkapaHatt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSkapaOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnValjHatt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnLoggaUt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAndraInformation, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                        .addComponent(btnRegistrera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAgentStartsida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnPersonalsida, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                        .addComponent(btnOrdersida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnStartsida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnRadera1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblTest, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -187,18 +188,18 @@ public class Dashboard extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblTest1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
-                .addComponent(btnAgentStartsida, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnStartsida, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnRegistrera, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnOrdersida, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAndraInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPersonalsida, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnTaBortUtrustning, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSkapaHatt, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGeAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSkapaOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnValjHatt, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnRadera, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRadera1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnLoggaUt, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -283,6 +284,21 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlMitten.add(pnlSkapaOrder, "card4");
 
+        pnlValjHatt.setBackground(new java.awt.Color(51, 153, 0));
+
+        javax.swing.GroupLayout pnlValjHattLayout = new javax.swing.GroupLayout(pnlValjHatt);
+        pnlValjHatt.setLayout(pnlValjHattLayout);
+        pnlValjHattLayout.setHorizontalGroup(
+            pnlValjHattLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 787, Short.MAX_VALUE)
+        );
+        pnlValjHattLayout.setVerticalGroup(
+            pnlValjHattLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 780, Short.MAX_VALUE)
+        );
+
+        pnlMitten.add(pnlValjHatt, "card4");
+
         pnl1Valkommen.setBackground(new java.awt.Color(51, 153, 0));
 
         javax.swing.GroupLayout pnl1ValkommenLayout = new javax.swing.GroupLayout(pnl1Valkommen);
@@ -348,41 +364,35 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRadera1ActionPerformed
 
-    private void btnRaderaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaderaActionPerformed
-        // Knappen tar en till sidan för att ta bort alien/agent
+    private void btnValjHattActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValjHattActionPerformed
         panelerGomda();
-        pnl1Valkommen.show();
-    }//GEN-LAST:event_btnRaderaActionPerformed
+        pnlValjHatt.show();
+    }//GEN-LAST:event_btnValjHattActionPerformed
 
-    private void btnAndraInformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraInformationActionPerformed
-        // Tar en till sidan för att ändra info om agent/alien
+    private void btnPersonalsidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonalsidaActionPerformed
         panelerGomda();
         pnlPersonalsida.show();
-    }//GEN-LAST:event_btnAndraInformationActionPerformed
+    }//GEN-LAST:event_btnPersonalsidaActionPerformed
 
-    private void btnTaBortUtrustningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaBortUtrustningActionPerformed
-        // Knapp i sidebar som tar en till funktion för att ta bort utrustning ur systemet
-        panelerGomda();
-        pnlOrdersida.show();
-    }//GEN-LAST:event_btnTaBortUtrustningActionPerformed
-
-    private void btnGeAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGeAdminActionPerformed
-        // Tar en till sidan för att ge agent adminsstatus
+    private void btnSkapaHattActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkapaHattActionPerformed
         panelerGomda();
         pnlSkapaHatt.show();
-    }//GEN-LAST:event_btnGeAdminActionPerformed
+    }//GEN-LAST:event_btnSkapaHattActionPerformed
 
-    private void btnRegistreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistreraActionPerformed
-        // Knappp i sidebar för att ta användaren till registrering av agenter/aliens
+    private void btnSkapaOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkapaOrderActionPerformed
+        panelerGomda();
+        pnlSkapaOrder.show();
+    }//GEN-LAST:event_btnSkapaOrderActionPerformed
+
+    private void btnOrdersidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdersidaActionPerformed
+        panelerGomda();
+        pnlOrdersida.show();
+    }//GEN-LAST:event_btnOrdersidaActionPerformed
+
+    private void btnStartsidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartsidaActionPerformed
         panelerGomda();
         pnl1Valkommen.show();
-    }//GEN-LAST:event_btnRegistreraActionPerformed
-
-    private void btnAgentStartsidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgentStartsidaActionPerformed
-        // Knappen som tar en till startsidan för admindashboard
-        panelerGomda();
-        pnl1Valkommen.show();
-    }//GEN-LAST:event_btnAgentStartsidaActionPerformed
+    }//GEN-LAST:event_btnStartsidaActionPerformed
 
     private void panelerGomda() {
         //Alla gömda paneler samlade i en metod för att förenkla koden
@@ -390,26 +400,18 @@ public class Dashboard extends javax.swing.JFrame {
         pnlSkapaHatt.hide();
         pnlPersonalsida.hide();
         pnlOrdersida.hide();
-    }
-    
-    public static void main(String[] args) {
-        // Create and display the form
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Dashboard().setVisible(true);
-            }
-        });
+        pnlValjHatt.hide();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgentStartsida;
-    private javax.swing.JButton btnAndraInformation;
-    private javax.swing.JButton btnGeAdmin;
     private javax.swing.JButton btnLoggaUt;
-    private javax.swing.JButton btnRadera;
+    private javax.swing.JButton btnOrdersida;
+    private javax.swing.JButton btnPersonalsida;
     private javax.swing.JButton btnRadera1;
-    private javax.swing.JButton btnRegistrera;
-    private javax.swing.JButton btnTaBortUtrustning;
+    private javax.swing.JButton btnSkapaHatt;
+    private javax.swing.JButton btnSkapaOrder;
+    private javax.swing.JButton btnStartsida;
+    private javax.swing.JButton btnValjHatt;
     private javax.swing.JLabel lblNuvarandeAnvandare;
     private javax.swing.JLabel lblTest;
     private javax.swing.JLabel lblTest1;
@@ -422,5 +424,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel pnlSkapaHatt;
     private javax.swing.JPanel pnlSkapaKund;
     private javax.swing.JPanel pnlSkapaOrder;
+    private javax.swing.JPanel pnlValjHatt;
     // End of variables declaration//GEN-END:variables
 }
