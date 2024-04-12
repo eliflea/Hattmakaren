@@ -24,6 +24,7 @@ public class InloggningsSida extends javax.swing.JFrame {
      */
     public InloggningsSida() throws InfException {
         initComponents();
+        //Dessa två första använda för att man ska kunna få upp felmedelande om man skriver in fel epost eller lösenord
         lblFelAnvNamn.setVisible(false);
         lblFelLosen.setVisible(false);
         idb = new InfDB("hattmakarna", "3306", "hattmakarna", "team5key");
@@ -174,7 +175,9 @@ public class InloggningsSida extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoggaInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoggaInActionPerformed
-         try {
+         
+        //Detta är en kod som använda för att loopa igenom två arraylist för att hitta om det är rätt eller fel lösenord/epost
+        try {
             // TODO add your handling code here:
             String anvNamn = txtAnvNamn.getText();
             char[] passwordChars = txtLosen.getPassword();
