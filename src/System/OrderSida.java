@@ -573,9 +573,9 @@ public class OrderSida extends javax.swing.JFrame {
         String noll = "0";
         String ett = "1";
         
-        
+        //visar status för order
         try {
-            String status = idb.fetchSingle("Select Brådskande from Orders where Order_ID = " + txtInsertOrder.getText() +  "");
+           String status = idb.fetchSingle("Select Brådskande from Orders where Order_ID = " + txtInsertOrder.getText() +  "");
         
            String status2 = idb.fetchSingle("Select Status from Orders where Order_ID = " + txtInsertOrder.getText() +  "");
             
@@ -587,7 +587,6 @@ public class OrderSida extends javax.swing.JFrame {
         }
         
         } catch (InfException ex) {
-            JOptionPane.showMessageDialog(null, "Något gick fel");
         }
         
        
@@ -631,18 +630,30 @@ public class OrderSida extends javax.swing.JFrame {
        String bredd = txtAngeBredd.getText();
        String fraktkostnad = txtAngeFraktkostnad.getText();
        String orderBox = cbOrder.getSelectedItem().toString().toLowerCase();
-        
-       
+        //ser till att text fälten har ifyllda värden och att dessa är heltal/decimaltal. För varje ruta
+       boolean allaFaltIfyllda = 
+            Validering.harTextFaltetVarde(txtAngeVikt) &&
+            Validering.harTextFaltetVarde(txtAngeLangd) &&
+            Validering.harTextFaltetVarde(txtAngeHojd) &&
+            Validering.harTextFaltetVarde(txtAngeBredd) &&
+            Validering.harTextFaltetVarde(txtAngeFraktkostnad) &&
+            Validering.kollaDecimalTal(txtAngeFraktkostnad)&&
+            Validering.kollaDecimalTal(txtAngeVikt)&&
+            Validering.kollaDecimalTal(txtAngeLangd)&&
+            Validering.kollaDecimalTal(txtAngeHojd)&&
+            Validering.kollaDecimalTal(txtAngeBredd);
+
+
+       //skapar paket ID
        String paketID = idb.fetchSingle("SELECT MAX(Paket_ID) FROM paket_info");
        int paketIDD = paketID != null ? Integer.parseInt(paketID) + 1 : 1;
        String paketIdString = Integer.toString(paketIDD);
        String valdOrder = cbOrder.getSelectedItem().toString().toLowerCase();
-       
+       //ber om att sätta in värden i tabellen
        String fragaPaketInfo = "Insert into paket_info (Paket_ID, Order_ID, vikt, langd, bredd, hojd, fraktkostnad) "
                         + "Values ('" + paketIdString + "','" + valdOrder + "','" + vikt + "','" + langd + "','" + bredd + "','" + hojd + "','" + fraktkostnad + "')";
                idb.insert(fragaPaketInfo); 
                } catch (InfException ettUndantag) {
-             JOptionPane.showMessageDialog(null, "Något gick fel");
              System.out.println("Error " + ettUndantag.getMessage()); 
     }//GEN-LAST:event_btnSparaPaketActionPerformed
     }
@@ -656,7 +667,6 @@ public class OrderSida extends javax.swing.JFrame {
                  cbOrder.addItem(hatt); 
              }
          } catch (InfException ettUndantag) {
-             JOptionPane.showMessageDialog(null, "Något gick fel");
              System.out.println("Error " + ettUndantag.getMessage()); 
          }
      }
