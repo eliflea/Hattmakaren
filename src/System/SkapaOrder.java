@@ -53,6 +53,8 @@ public class SkapaOrder extends javax.swing.JFrame {
         cbValjPrioritering = new javax.swing.JComboBox<>();
         lblRubrikPrioritering = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        cbStatus = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,11 +72,16 @@ public class SkapaOrder extends javax.swing.JFrame {
             }
         });
 
-        lblRubrikOrder.setText("Orderns status");
+        lblRubrikOrder.setText("Kundens godkännande:");
 
         cbValjStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Godkänd", "Inte godkänd" }));
+        cbValjStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbValjStatusActionPerformed(evt);
+            }
+        });
 
-        lblRubrikKund.setText("Kund");
+        lblRubrikKund.setText("Kund:");
 
         cbValjKund.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,7 +89,7 @@ public class SkapaOrder extends javax.swing.JFrame {
             }
         });
 
-        lblRubrikLaggTillIOrder.setText("Lägg till hatt i order");
+        lblRubrikLaggTillIOrder.setText("Lägg till hatt i en existerande order:");
 
         lblRubrikDatum.setText("Datum:");
 
@@ -100,80 +107,92 @@ public class SkapaOrder extends javax.swing.JFrame {
 
         jLabel2.setText("Skapa order");
 
+        cbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Redo", "Påbörjad", "Avslutad" }));
+        cbStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbStatusActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Ange status:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbValjPrioritering, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblRubrikPrioritering)
-                            .addComponent(lblRubrikKund)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblRubrikDatum, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtDatum, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(cbValjStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblRubrikOrder)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(cbValjKund, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnSparaOrder))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(lblRubrikDatum1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtKommentar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(btnSparaOrder))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
+                        .addGap(20, 20, 20)
+                        .addComponent(btnValjHatt))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblRubrikLaggTillIOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblRubrikLaggTillIOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(btnValjHatt)))
-                        .addGap(127, 127, 127))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblRubrikOrder)
+                                    .addComponent(lblRubrikPrioritering)
+                                    .addComponent(lblRubrikDatum, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblRubrikDatum1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblRubrikKund)
+                                    .addComponent(jLabel1))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbValjKund, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtKommentar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDatum, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbValjPrioritering, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbValjStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(lblRubrikLaggTillIOrder)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnValjHatt))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblRubrikOrder)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbValjStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(lblRubrikPrioritering)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbValjPrioritering, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel2)
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(cbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblRubrikOrder)
+                            .addComponent(cbValjStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblRubrikPrioritering))
+                    .addComponent(cbValjPrioritering, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRubrikDatum)
                     .addComponent(txtDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblRubrikDatum1)
-                    .addComponent(txtKommentar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addComponent(lblRubrikKund)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbValjKund, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSparaOrder))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(lblRubrikKund))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtKommentar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblRubrikDatum1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbValjKund, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(24, 24, 24)
+                .addComponent(btnSparaOrder)
+                .addGap(18, 18, 18)
+                .addComponent(lblRubrikLaggTillIOrder)
+                .addGap(18, 18, 18)
+                .addComponent(btnValjHatt)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
@@ -186,11 +205,12 @@ public class SkapaOrder extends javax.swing.JFrame {
             Validering.kollaDatumFormat(txtDatum);
         
          //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
-        String valdStatus = cbValjStatus.getSelectedItem().toString().toLowerCase();
+        String valdKundsGodkännande = cbValjStatus.getSelectedItem().toString().toLowerCase();
         String valdKund = cbValjKund.getSelectedItem().toString();
         //Texten hämtas från textrutan och tilldelas till variabeln som deklareras
         String kommentar = txtKommentar.getText(); 
-        String datum = txtDatum.getText(); 
+        String datum = txtDatum.getText();
+        String valdStatus = cbStatus.getSelectedItem().toString();
         String valdPrioritering = cbValjPrioritering.getSelectedItem().toString().toLowerCase();
         
         try {
@@ -207,9 +227,6 @@ public class SkapaOrder extends javax.swing.JFrame {
     
     // Execute the SQL query to fetch the Kund_ID
     String kundID = idb.fetchSingle(fragakundID);
-    
-   
-            
          
   
         int orderId = Integer.parseInt(idb.fetchSingle("SELECT MAX(Order_ID) FROM Orders"))+1;
@@ -220,23 +237,21 @@ public class SkapaOrder extends javax.swing.JFrame {
         //och villkor för att bestämma brådskande för order
         if (valdPrioritering.equalsIgnoreCase("Brådskande")) {
             valdPrioritering = "1";
-             fragaSkapaOrder = "Insert into orders (Order_ID, Status, Kund, Kommentar, Brådskande, Datum) "
-                                + "Values ('" + orderIdString + "','" + valdStatus + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "')";
+             fragaSkapaOrder = "Insert into orders (Order_ID, KundsGodkännande, Kund, Kommentar, Brådskande, Datum, Status) "
+                                + "Values ('" + orderIdString + "','" + valdKundsGodkännande + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "','" + valdStatus + "')";
              idb.insert(fragaSkapaOrder); 
         }
         if (valdPrioritering.equalsIgnoreCase("Inte brådskande")) {
             valdPrioritering = "0";
-             fragaSkapaOrder = "Insert into orders (Order_ID, Status, Kund, Kommentar, Brådskande, Datum) "
-                                + "Values ('" + orderIdString + "','" + valdStatus + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "')";
+             fragaSkapaOrder = "Insert into orders (Order_ID, KundsGodkännande, Kund, Kommentar, Brådskande, Datum, Status) "
+                                + "Values ('" + orderIdString + "','" + valdKundsGodkännande + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "','" + valdStatus + "')";
              idb.insert(fragaSkapaOrder);
              
            
         }
-        JOptionPane.showMessageDialog(null, "Order är Skapad!");
         
         //felmeddelande
          } catch(InfException ex){
-            JOptionPane.showMessageDialog(null, "Något gick fel");
             System.out.println(ex);
             
         }
@@ -254,6 +269,14 @@ public class SkapaOrder extends javax.swing.JFrame {
     private void cbValjKundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjKundActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbValjKundActionPerformed
+
+    private void cbValjStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbValjStatusActionPerformed
+
+    private void cbStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbStatusActionPerformed
          
    private void fyllBoxKund() {
        //Metod, fylla en combobox med kundnamn
@@ -269,7 +292,6 @@ public class SkapaOrder extends javax.swing.JFrame {
             cbValjKund.addItem(fornamn + " " + efternamn );
               }      
            } catch (InfException ettUndantag) {
-             JOptionPane.showMessageDialog(null, "Något gick fel");
              System.out.println("Error " + ettUndantag.getMessage()); 
            }
           }
@@ -282,9 +304,11 @@ public class SkapaOrder extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSparaOrder;
     private javax.swing.JButton btnValjHatt;
+    private javax.swing.JComboBox<String> cbStatus;
     private javax.swing.JComboBox<String> cbValjKund;
     private javax.swing.JComboBox<String> cbValjPrioritering;
     private javax.swing.JComboBox<String> cbValjStatus;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblRubrikDatum;
     private javax.swing.JLabel lblRubrikDatum1;
