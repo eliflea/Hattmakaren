@@ -1,18 +1,21 @@
 package System;
 
 import javax.swing.JFrame;
+import oru.inf.InfDB;
 
 /**
  *
  * @author leyla
  */
 public class Dashboard extends javax.swing.JFrame {
-
+    
+    private InfDB idb;
     /**
      * Creates new form test
      */
-    public Dashboard() {
+    public Dashboard(InfDB idb) {
         initComponents();
+        this.idb = idb;
         setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
@@ -40,6 +43,8 @@ public class Dashboard extends javax.swing.JFrame {
         pnlMitten = new javax.swing.JPanel();
         pnlOrdersida = new javax.swing.JPanel();
         pnlPersonalsida = new javax.swing.JPanel();
+        btnRedigeraKund = new javax.swing.JButton();
+        btnRedigeraKund1 = new javax.swing.JButton();
         pnlSkapaHatt = new javax.swing.JPanel();
         pnlSkapaKund = new javax.swing.JPanel();
         pnlSkapaOrder = new javax.swing.JPanel();
@@ -224,17 +229,37 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlMitten.add(pnlOrdersida, "card4");
 
-        pnlPersonalsida.setBackground(new java.awt.Color(255, 153, 0));
+        pnlPersonalsida.setBackground(new java.awt.Color(102, 102, 102));
+
+        btnRedigeraKund.setBackground(new java.awt.Color(0, 51, 102));
+        btnRedigeraKund.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnRedigeraKund.setForeground(new java.awt.Color(255, 255, 255));
+        btnRedigeraKund.setText("Redigera kundinformation");
+
+        btnRedigeraKund1.setBackground(new java.awt.Color(0, 51, 102));
+        btnRedigeraKund1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnRedigeraKund1.setForeground(new java.awt.Color(255, 255, 255));
+        btnRedigeraKund1.setText("Redigera kundinformation");
 
         javax.swing.GroupLayout pnlPersonalsidaLayout = new javax.swing.GroupLayout(pnlPersonalsida);
         pnlPersonalsida.setLayout(pnlPersonalsidaLayout);
         pnlPersonalsidaLayout.setHorizontalGroup(
             pnlPersonalsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 787, Short.MAX_VALUE)
+            .addGroup(pnlPersonalsidaLayout.createSequentialGroup()
+                .addGap(224, 224, 224)
+                .addGroup(pnlPersonalsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRedigeraKund, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRedigeraKund1, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
         pnlPersonalsidaLayout.setVerticalGroup(
             pnlPersonalsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 780, Short.MAX_VALUE)
+            .addGroup(pnlPersonalsidaLayout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addComponent(btnRedigeraKund, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(94, 94, 94)
+                .addComponent(btnRedigeraKund1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         pnlMitten.add(pnlPersonalsida, "card4");
@@ -299,7 +324,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlMitten.add(pnlValjHatt, "card4");
 
-        pnl1Valkommen.setBackground(new java.awt.Color(51, 153, 0));
+        pnl1Valkommen.setBackground(new java.awt.Color(102, 102, 102));
 
         javax.swing.GroupLayout pnl1ValkommenLayout = new javax.swing.GroupLayout(pnl1Valkommen);
         pnl1Valkommen.setLayout(pnl1ValkommenLayout);
@@ -408,6 +433,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnOrdersida;
     private javax.swing.JButton btnPersonalsida;
     private javax.swing.JButton btnRadera1;
+    private javax.swing.JButton btnRedigeraKund;
+    private javax.swing.JButton btnRedigeraKund1;
     private javax.swing.JButton btnSkapaHatt;
     private javax.swing.JButton btnSkapaOrder;
     private javax.swing.JButton btnStartsida;
