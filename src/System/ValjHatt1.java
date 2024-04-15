@@ -22,8 +22,9 @@ public class ValjHatt1 extends javax.swing.JFrame {
     public ValjHatt1(InfDB idb) {
         initComponents();
         this.idb = idb;
-        fyllBox(); 
+//        fyllBox(); 
         fyllBoxOrder();
+        fyllBoxHattar();
     }
 
     /**
@@ -36,18 +37,19 @@ public class ValjHatt1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        cbValjHatt = new javax.swing.JComboBox<>();
+        cbValjAllaHattar = new javax.swing.JComboBox<>();
         cbOrder = new javax.swing.JComboBox<>();
         lblRubrikLaggTIllOrder = new javax.swing.JLabel();
         btnOk = new javax.swing.JButton();
+        cbValjHatt1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Välj hatt");
 
-        cbValjHatt.addActionListener(new java.awt.event.ActionListener() {
+        cbValjAllaHattar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbValjHattActionPerformed(evt);
+                cbValjAllaHattarActionPerformed(evt);
             }
         });
 
@@ -60,6 +62,12 @@ public class ValjHatt1 extends javax.swing.JFrame {
             }
         });
 
+        cbValjHatt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbValjHatt1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -67,12 +75,15 @@ public class ValjHatt1 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbValjHatt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(171, 171, 171)
+                        .addComponent(cbValjHatt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnOk)
                     .addComponent(lblRubrikLaggTIllOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,12 +91,14 @@ public class ValjHatt1 extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cbValjHatt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cbValjHatt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
                 .addComponent(lblRubrikLaggTIllOrder)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(btnOk)
                 .addGap(44, 44, 44))
         );
@@ -93,9 +106,9 @@ public class ValjHatt1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cbValjHattActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjHattActionPerformed
+    private void cbValjAllaHattarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjAllaHattarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbValjHattActionPerformed
+    }//GEN-LAST:event_cbValjAllaHattarActionPerformed
 
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
 
@@ -104,7 +117,7 @@ public class ValjHatt1 extends javax.swing.JFrame {
             //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
             String valdOrder = cbOrder.getSelectedItem().toString().toLowerCase();
             //SQL-fråga för att få ProduktID från hatt
-            String fragaProduktID = "select Produkt_ID from hatt where Namn = '" + cbValjHatt.getSelectedItem().toString() + "'";
+            String fragaProduktID = "select Produkt_ID from hatt where Namn = '" + cbValjAllaHattar.getSelectedItem().toString() + "'";
             String ProduktID = idb.fetchSingle(fragaProduktID);
             
             String fragaSkapaHattIOrder = "Insert into hatt_i_order (Order_ID, Hatt_ID) "
@@ -120,27 +133,47 @@ public class ValjHatt1 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnOkActionPerformed
 
+    private void cbValjHatt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjHatt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbValjHatt1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-
-     private void fyllBox() {
-         //fyller combobox med godkända hattar
-         String ett = "1";
-         String fragaFyllBox = "Select Namn from hatt where Godkänd = '" + ett + "'" + "order by Produkt_ID";
+    
+    private void fyllBoxHattar() {
+         //fyller combobox med hattar
+         String fragaFyllBox = "Select Namn from hatt order by Produkt_ID";
          ArrayList<String> allaHattar;
          try {
              allaHattar = idb.fetchColumn(fragaFyllBox);
              //Varje hatt i listan av hattar itereras över
              for(String hatt : allaHattar) {
                  //Hattens namn läggs till i comboboxen
-                 cbValjHatt.addItem(hatt); 
+                 cbValjAllaHattar.addItem(hatt); 
              }
          } catch (InfException ettUndantag) {
-             JOptionPane.showMessageDialog(null, "Något gick fel");
              System.out.println("Error " + ettUndantag.getMessage()); 
          }
      }
+
+//         private void fyllBox() {
+//         //fyller combobox med godkända hattar
+//         String ett = "1";
+//         String fragaFyllBox = "Select Namn from hatt where Godkänd = '" + ett + "'" + "order by Produkt_ID";
+//         ArrayList<String> allaHattar;
+//         try {
+//             allaHattar = idb.fetchColumn(fragaFyllBox);
+//             //Varje hatt i listan av hattar itereras över
+//             for(String hatt : allaHattar) {
+//                 //Hattens namn läggs till i comboboxen
+//                 cbValjAllaHattar.addItem(hatt); 
+//             }
+//         } catch (InfException ettUndantag) {
+//             JOptionPane.showMessageDialog(null, "Något gick fel");
+//             System.out.println("Error " + ettUndantag.getMessage()); 
+//         }
+//     }
         private void fyllBoxOrder() {
          //fyll combobox med order
          String fragaFyllBox = "Select Order_ID from orders order by Order_ID";
@@ -159,7 +192,8 @@ public class ValjHatt1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnOk;
     private javax.swing.JComboBox<String> cbOrder;
-    private javax.swing.JComboBox<String> cbValjHatt;
+    private javax.swing.JComboBox<String> cbValjAllaHattar;
+    private javax.swing.JComboBox<String> cbValjHatt1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblRubrikLaggTIllOrder;
     // End of variables declaration//GEN-END:variables
