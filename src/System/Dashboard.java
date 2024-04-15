@@ -1,17 +1,29 @@
 package System;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import oru.inf.InfDB;
+import oru.inf.InfException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
  * @author leyla
  */
 public class Dashboard extends javax.swing.JFrame {
-
+    
+    private InfDB idb;
     /**
      * Creates new form test
      */
     public Dashboard() {
+        try {
+            idb = new InfDB("hattmakarna", "3306", "hattmakarna", "team5key");
+        } catch (InfException ex) {
+            Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
+        }
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
@@ -42,6 +54,8 @@ public class Dashboard extends javax.swing.JFrame {
         pnlPersonalsida = new javax.swing.JPanel();
         pnlSkapaHatt = new javax.swing.JPanel();
         pnlSkapaKund = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblMaterial = new javax.swing.JTable();
         pnlSkapaOrder = new javax.swing.JPanel();
         pnl1Valkommen = new javax.swing.JPanel();
         pnlSideBarHoger = new javax.swing.JPanel();
@@ -255,15 +269,57 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlSkapaKund.setBackground(new java.awt.Color(51, 153, 0));
 
+        tblMaterial.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Material-ID", "Namn", "Beskrivning"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblMaterial);
+
         javax.swing.GroupLayout pnlSkapaKundLayout = new javax.swing.GroupLayout(pnlSkapaKund);
         pnlSkapaKund.setLayout(pnlSkapaKundLayout);
         pnlSkapaKundLayout.setHorizontalGroup(
             pnlSkapaKundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 787, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 787, Short.MAX_VALUE)
         );
         pnlSkapaKundLayout.setVerticalGroup(
             pnlSkapaKundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 780, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
         );
 
         pnlMitten.add(pnlSkapaKund, "card4");
@@ -345,7 +401,62 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoggaUtActionPerformed
 
     private void btnRadera1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRadera1ActionPerformed
-        // TODO add your handling code here:
+            // TODO add your handling code here:
+            panelerGomda();
+            pnlSkapaKund.show();
+
+            
+
+            String sqlFraga = "SELECT Material_ID FROM Material";
+
+
+
+            String getMaterialInfo = "SELECT * FROM Material";
+
+
+
+            try {
+                ArrayList<HashMap<String, String>> materialInfo = idb.fetchRows(getMaterialInfo);
+
+                ArrayList<String> antalMaterial = idb.fetchColumn(sqlFraga);
+
+                int antalMaterialInt = antalMaterial.size();
+
+                int i = 0;
+                    while(i<antalMaterialInt)
+                    {
+                for(HashMap<String, String> enHashMap : materialInfo)
+                {
+
+                    String materialID = enHashMap.get("Material_ID");
+                    String namn = enHashMap.get("Namn");
+                    String beskrivning = enHashMap.get("Beskrivning");
+
+
+
+                    int j = 0;
+                        while(j<3)
+                        {
+                            tblMaterial.setValueAt(materialID, i, j);
+                            j++;
+                            tblMaterial.setValueAt(namn, i, j);
+                            j++;
+                            tblMaterial.setValueAt(beskrivning, i, j);
+                            j++;
+                        }
+                    i++;
+                    }    
+
+                }
+            } catch (InfException ex) {
+                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        
+           
+        
+        
+        
     }//GEN-LAST:event_btnRadera1ActionPerformed
 
     private void btnRaderaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaderaActionPerformed
@@ -410,6 +521,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnRadera1;
     private javax.swing.JButton btnRegistrera;
     private javax.swing.JButton btnTaBortUtrustning;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblNuvarandeAnvandare;
     private javax.swing.JLabel lblTest;
     private javax.swing.JLabel lblTest1;
@@ -422,5 +534,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel pnlSkapaHatt;
     private javax.swing.JPanel pnlSkapaKund;
     private javax.swing.JPanel pnlSkapaOrder;
+    private javax.swing.JTable tblMaterial;
     // End of variables declaration//GEN-END:variables
 }
