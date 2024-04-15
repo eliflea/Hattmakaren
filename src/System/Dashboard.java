@@ -2,8 +2,6 @@ package System;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -144,8 +142,6 @@ public class Dashboard extends javax.swing.JFrame {
         txtGatuadress = new javax.swing.JTextField();
         lblEpost = new javax.swing.JLabel();
         pnlVisaMaterial = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tblMaterial = new javax.swing.JTable();
         pnlSideBarHoger = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -312,6 +308,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlStartsida.setBackground(new java.awt.Color(51, 51, 51));
 
+        listPaborjadeOrdrar.setForeground(new java.awt.Color(0, 0, 0));
         listPaborjadeOrdrar.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -422,6 +419,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblSkapaHatt.setForeground(new java.awt.Color(255, 255, 255));
         lblSkapaHatt.setText("Skapa Hatt");
 
+        btnSpara.setForeground(new java.awt.Color(0, 0, 0));
         btnSpara.setText("Spara");
         btnSpara.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -446,6 +444,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblAngeStorlek.setForeground(new java.awt.Color(255, 255, 255));
         lblAngeStorlek.setText("Ange Storlek");
 
+        cbValjTyp.setForeground(new java.awt.Color(0, 0, 0));
         cbValjTyp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lagerförd", "Special" }));
 
         lblAngePris.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -535,6 +534,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlSkapaOrder.setBackground(new java.awt.Color(51, 51, 51));
 
+        cbValjPrioritering.setForeground(new java.awt.Color(0, 0, 0));
         cbValjPrioritering.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Brådskande", "Inte brådskande" }));
 
         btnSparaOrder.setForeground(new java.awt.Color(255, 255, 255));
@@ -554,11 +554,13 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Skapa order");
 
+        cbValjStatus.setForeground(new java.awt.Color(0, 0, 0));
         cbValjStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Godkänd", "Inte godkänd" }));
 
         lblRubrikKund.setForeground(new java.awt.Color(255, 255, 255));
         lblRubrikKund.setText("Kund");
 
+        cbValjKund.setForeground(new java.awt.Color(0, 0, 0));
         cbValjKund.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbValjKundActionPerformed(evt);
@@ -571,9 +573,12 @@ public class Dashboard extends javax.swing.JFrame {
         lblRubrikDatum.setForeground(new java.awt.Color(255, 255, 255));
         lblRubrikDatum.setText("Datum:");
 
+        txtDatum.setForeground(new java.awt.Color(0, 0, 0));
+
         lblRubrikDatum1.setForeground(new java.awt.Color(255, 255, 255));
         lblRubrikDatum1.setText("Kommentar:");
 
+        txtKommentar1.setForeground(new java.awt.Color(0, 0, 0));
         txtKommentar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtKommentar1ActionPerformed(evt);
@@ -690,12 +695,14 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Välj hatt");
 
+        cbValjHatt.setForeground(new java.awt.Color(0, 0, 0));
         cbValjHatt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbValjHattActionPerformed(evt);
             }
         });
 
+        cbOrder.setForeground(new java.awt.Color(0, 0, 0));
         cbOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbOrderActionPerformed(evt);
@@ -1104,57 +1111,15 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlMitten.add(pnlKund, "card4");
 
-        tblMaterial.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Material-ID", "Namn", "Beskrivning"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(tblMaterial);
-
         javax.swing.GroupLayout pnlVisaMaterialLayout = new javax.swing.GroupLayout(pnlVisaMaterial);
         pnlVisaMaterial.setLayout(pnlVisaMaterialLayout);
         pnlVisaMaterialLayout.setHorizontalGroup(
             pnlVisaMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 787, Short.MAX_VALUE)
+            .addGap(0, 787, Short.MAX_VALUE)
         );
         pnlVisaMaterialLayout.setVerticalGroup(
             pnlVisaMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
+            .addGap(0, 780, Short.MAX_VALUE)
         );
 
         pnlMitten.add(pnlVisaMaterial, "card9");
@@ -1178,7 +1143,7 @@ public class Dashboard extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlSideBarVanster, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1366, 1366, 1366)
+                .addGap(18, 18, 18)
                 .addComponent(pnlMitten, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pnlSideBarHoger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1206,56 +1171,9 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoggaUtActionPerformed
 
     private void btnVisaMaterialinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisaMaterialinfoActionPerformed
-                    // TODO add your handling code here:
-            panelerGomda();
-            pnlVisaMaterial.show();
-
-            
-
-            String sqlFraga = "SELECT Material_ID FROM Material";
-
-
-
-            String getMaterialInfo = "SELECT * FROM Material";
-
-
-
-            try {
-                ArrayList<HashMap<String, String>> materialInfo = idb.fetchRows(getMaterialInfo);
-
-                ArrayList<String> antalMaterial = idb.fetchColumn(sqlFraga);
-
-                int antalMaterialInt = antalMaterial.size();
-
-                int i = 0;
-                    while(i<antalMaterialInt)
-                    {
-                for(HashMap<String, String> enHashMap : materialInfo)
-                {
-
-                    String materialID = enHashMap.get("Material_ID");
-                    String namn = enHashMap.get("Namn");
-                    String beskrivning = enHashMap.get("Beskrivning");
-
-
-
-                    int j = 0;
-                        while(j<3)
-                        {
-                            tblMaterial.setValueAt(materialID, i, j);
-                            j++;
-                            tblMaterial.setValueAt(namn, i, j);
-                            j++;
-                            tblMaterial.setValueAt(beskrivning, i, j);
-                            j++;
-                        }
-                    i++;
-                    }    
-
-                }
-            } catch (InfException ex) {
-                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        panelerGomda();
+        pnlVisaMaterial.show();
+        
     }//GEN-LAST:event_btnVisaMaterialinfoActionPerformed
 
     private void btnValjHattActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValjHattActionPerformed
@@ -1652,7 +1570,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblAndraKundMeddelande;
     private javax.swing.JLabel lblAngeEpost;
@@ -1711,7 +1628,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel pnlTaBortKund;
     private javax.swing.JPanel pnlValjHatt;
     private javax.swing.JPanel pnlVisaMaterial;
-    private javax.swing.JTable tblMaterial;
     private javax.swing.JTextField txtAngeModell;
     private javax.swing.JTextField txtAngeNamn;
     private javax.swing.JTextField txtAngePris;
