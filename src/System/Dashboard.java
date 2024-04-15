@@ -1,5 +1,7 @@
 package System;
 
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.DefaultListModel;
@@ -142,6 +144,8 @@ public class Dashboard extends javax.swing.JFrame {
         txtGatuadress = new javax.swing.JTextField();
         lblEpost = new javax.swing.JLabel();
         pnlVisaMaterial = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblMaterial = new javax.swing.JTable();
         pnlSideBarHoger = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1111,15 +1115,57 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlMitten.add(pnlKund, "card4");
 
+        tblMaterial.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Material-ID", "Namn", "Beskrivning"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tblMaterial);
+
         javax.swing.GroupLayout pnlVisaMaterialLayout = new javax.swing.GroupLayout(pnlVisaMaterial);
         pnlVisaMaterial.setLayout(pnlVisaMaterialLayout);
         pnlVisaMaterialLayout.setHorizontalGroup(
             pnlVisaMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 787, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 787, Short.MAX_VALUE)
         );
         pnlVisaMaterialLayout.setVerticalGroup(
             pnlVisaMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 780, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
         );
 
         pnlMitten.add(pnlVisaMaterial, "card9");
@@ -1173,7 +1219,42 @@ public class Dashboard extends javax.swing.JFrame {
     private void btnVisaMaterialinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisaMaterialinfoActionPerformed
         panelerGomda();
         pnlVisaMaterial.show();
-        
+        String sqlFraga = "SELECT Material_ID FROM Material";
+
+        String getMaterialInfo = "SELECT * FROM Material";
+
+        try {
+            ArrayList<HashMap<String, String>> materialInfo = idb.fetchRows(getMaterialInfo);
+
+            ArrayList<String> antalMaterial = idb.fetchColumn(sqlFraga);
+
+            int antalMaterialInt = antalMaterial.size();
+
+            int i = 0;
+            while (i < antalMaterialInt) {
+                for (HashMap<String, String> enHashMap : materialInfo) {
+
+                    String materialID = enHashMap.get("Material_ID");
+                    String namn = enHashMap.get("Namn");
+                    String beskrivning = enHashMap.get("Beskrivning");
+
+                    int j = 0;
+                    while (j < 3) {
+                        tblMaterial.setValueAt(materialID, i, j);
+                        j++;
+                        tblMaterial.setValueAt(namn, i, j);
+                        j++;
+                        tblMaterial.setValueAt(beskrivning, i, j);
+                        j++;
+                    }
+                    i++;
+                }
+
+            }
+        } catch (InfException ex) {
+            ex.printStackTrace();
+        }
+
     }//GEN-LAST:event_btnVisaMaterialinfoActionPerformed
 
     private void btnValjHattActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValjHattActionPerformed
@@ -1570,6 +1651,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblAndraKundMeddelande;
     private javax.swing.JLabel lblAngeEpost;
@@ -1628,6 +1710,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel pnlTaBortKund;
     private javax.swing.JPanel pnlValjHatt;
     private javax.swing.JPanel pnlVisaMaterial;
+    private javax.swing.JTable tblMaterial;
     private javax.swing.JTextField txtAngeModell;
     private javax.swing.JTextField txtAngeNamn;
     private javax.swing.JTextField txtAngePris;
