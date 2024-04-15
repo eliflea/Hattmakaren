@@ -84,9 +84,9 @@ public class InloggningsSida extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
-        txtAnvNamn.setBackground(new java.awt.Color(0, 102, 102));
+        txtAnvNamn.setBackground(new java.awt.Color(153, 153, 153));
         txtAnvNamn.setForeground(new java.awt.Color(255, 255, 255));
         txtAnvNamn.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
 
@@ -94,7 +94,7 @@ public class InloggningsSida extends javax.swing.JFrame {
 
         lblLosen.setText("Lösenord:");
 
-        txtLosen.setBackground(new java.awt.Color(0, 102, 102));
+        txtLosen.setBackground(new java.awt.Color(153, 153, 153));
         txtLosen.setForeground(new java.awt.Color(255, 255, 255));
         txtLosen.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
 
@@ -102,10 +102,9 @@ public class InloggningsSida extends javax.swing.JFrame {
 
         lblFelAnvNamn.setText("Epost-adressen existerar inte");
 
-        btnLoggaIn.setBackground(new java.awt.Color(0, 51, 153));
+        btnLoggaIn.setBackground(new java.awt.Color(51, 51, 51));
         btnLoggaIn.setForeground(new java.awt.Color(255, 255, 255));
         btnLoggaIn.setText("Logga in");
-        btnLoggaIn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 204, 255), null, new java.awt.Color(153, 204, 255)));
         btnLoggaIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoggaInActionPerformed(evt);
@@ -178,6 +177,8 @@ public class InloggningsSida extends javax.swing.JFrame {
          
         //Detta är en kod som använda för att loopa igenom två arraylist för att hitta om det är rätt eller fel lösenord/epost
         try {
+            
+            if(Validering.harTextFaltetVarde(txtAnvNamn) &&  Validering.harTextFaltetVarde(txtLosen)){
             // TODO add your handling code here:
             String anvNamn = txtAnvNamn.getText();
             char[] passwordChars = txtLosen.getPassword();
@@ -214,7 +215,7 @@ public class InloggningsSida extends javax.swing.JFrame {
             
             
             }
-           
+        }
             
             
             
