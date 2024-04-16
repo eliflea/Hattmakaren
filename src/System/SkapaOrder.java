@@ -201,7 +201,7 @@ public class SkapaOrder extends javax.swing.JFrame {
     private void btnSparaOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSparaOrderActionPerformed
         // TODO add your handling code here:
         boolean allaFaltIfyllda = 
-            Validering.harTextFaltetVarde(txtDatum) &&
+       //     Validering.harTextFaltetVarde(txtDatum) &&
             Validering.kollaDatumFormat(txtDatum);
         
          //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
