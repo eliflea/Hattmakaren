@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package System;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
@@ -21,6 +22,7 @@ public class SkapaHatt extends javax.swing.JFrame {
     public SkapaHatt(InfDB idb) {
         initComponents();
         this.idb = idb;
+        fyllBoxMaterial();
     }
 
     /**
@@ -46,6 +48,8 @@ public class SkapaHatt extends javax.swing.JFrame {
         btnSpara = new javax.swing.JButton();
         txtAngeText = new javax.swing.JTextField();
         lblAngeText = new javax.swing.JLabel();
+        cbValjMaterial = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -72,25 +76,33 @@ public class SkapaHatt extends javax.swing.JFrame {
 
         lblAngeText.setText("Ange Text");
 
+        cbValjMaterial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbValjMaterialActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Välj material");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblSkapaHatt, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblSkapaHatt)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblAngeNamn)
-                                    .addComponent(txtAngeNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(txtAngePris, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtAngeStorlek, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblAngeStorlek))
-                        .addGap(148, 148, 148)
+                            .addComponent(lblAngeStorlek)
+                            .addComponent(lblAngeNamn)
+                            .addComponent(txtAngeNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAngePris)
+                            .addComponent(jLabel1)
+                            .addComponent(cbValjMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(150, 150, 150)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtAngeModell, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbValjTyp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -98,9 +110,8 @@ public class SkapaHatt extends javax.swing.JFrame {
                             .addComponent(lblValjTyp)
                             .addComponent(txtAngeText, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblAngeText)
-                            .addComponent(btnSpara)))
-                    .addComponent(lblAngePris, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(71, 73, Short.MAX_VALUE))
+                            .addComponent(btnSpara))))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,34 +119,41 @@ public class SkapaHatt extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addComponent(lblSkapaHatt)
                 .addGap(18, 18, 18)
-                .addComponent(lblAngeModell)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAngeModell)
+                    .addComponent(lblAngeNamn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtAngeModell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtAngeModell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAngeNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAngeNamn)
-                    .addComponent(lblAngeText))
+                    .addComponent(lblAngeText)
+                    .addComponent(lblAngeStorlek))
                 .addGap(1, 1, 1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtAngeNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addComponent(lblAngeStorlek)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtAngeStorlek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(lblAngePris)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtAngePris, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSpara)))
+                        .addComponent(txtAngePris, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnSpara)
+                                    .addComponent(cbValjMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel1))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtAngeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(lblValjTyp)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cbValjTyp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         pack();
@@ -182,7 +200,23 @@ System.out.println(e);
 
     }//GEN-LAST:event_btnSparaActionPerformed
 
-    
+    private void cbValjMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjMaterialActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_cbValjMaterialActionPerformed
+
+    private void fyllBoxMaterial() {
+       //Metod, fylla en combobox med material
+        try {
+             String fragaFyllBox = "Select namn from material order by Material_ID";
+             ArrayList<String> allaMaterial = idb.fetchColumn(fragaFyllBox);
+             for (String material : allaMaterial) {         
+            cbValjMaterial.addItem(material);
+              }      
+           } catch (InfException ettUndantag) {
+             System.out.println("Error " + ettUndantag.getMessage()); 
+           }
+          }
     /**
      * @param args the command line arguments
      */
@@ -190,7 +224,9 @@ System.out.println(e);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSpara;
+    private javax.swing.JComboBox<String> cbValjMaterial;
     private javax.swing.JComboBox<String> cbValjTyp;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAngeModell;
     private javax.swing.JLabel lblAngeNamn;
     private javax.swing.JLabel lblAngePris;
