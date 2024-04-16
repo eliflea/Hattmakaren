@@ -40,6 +40,10 @@ public class Dashboard extends javax.swing.JFrame {
         fyllBoxOrder1();
         fyllBoxOrder2(); 
         fyllBoxKund();
+        fyllBoxOrder3();
+        fyllBoxHattar();
+        listHatt();
+        listHattSpecial();
     }
 
     /**
@@ -145,20 +149,24 @@ public class Dashboard extends javax.swing.JFrame {
         cbValjStatus = new javax.swing.JComboBox<>();
         lblRubrikKund = new javax.swing.JLabel();
         cbValjKund = new javax.swing.JComboBox<>();
-        lblRubrikLaggTillIOrder = new javax.swing.JLabel();
         lblRubrikDatum = new javax.swing.JLabel();
         txtDatum = new javax.swing.JTextField();
         lblRubrikDatum1 = new javax.swing.JLabel();
         txtKommentar1 = new javax.swing.JTextField();
-        btnValjHatt1 = new javax.swing.JButton();
         lblSkapaOrderMeddelande = new javax.swing.JLabel();
         pnlValjHatt = new javax.swing.JPanel();
-        lblRubrikLaggTIllOrder = new javax.swing.JLabel();
-        btnOk = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        cbValjHatt = new javax.swing.JComboBox<>();
-        cbOrder = new javax.swing.JComboBox<>();
         lblValjHattMeddelande = new javax.swing.JLabel();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        label1 = new java.awt.Label();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        list1 = new javax.swing.JList<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        list2 = new javax.swing.JList<>();
+        btnOk = new javax.swing.JButton();
+        lblRubrikLaggTIllOrder = new javax.swing.JLabel();
+        cbOrder = new javax.swing.JComboBox<>();
+        cbValjAllaHattar = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
         pnlKund = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         pnlSkapaKund = new javax.swing.JPanel();
@@ -1043,9 +1051,6 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        lblRubrikLaggTillIOrder.setForeground(new java.awt.Color(255, 255, 255));
-        lblRubrikLaggTillIOrder.setText("Lägg till hatt i order");
-
         lblRubrikDatum.setForeground(new java.awt.Color(255, 255, 255));
         lblRubrikDatum.setText("Datum:");
 
@@ -1061,14 +1066,6 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnValjHatt1.setForeground(new java.awt.Color(255, 255, 255));
-        btnValjHatt1.setText("Välj hatt");
-        btnValjHatt1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnValjHatt1ActionPerformed(evt);
-            }
-        });
-
         lblSkapaOrderMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout pnlSkapaOrderLayout = new javax.swing.GroupLayout(pnlSkapaOrder);
@@ -1079,7 +1076,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(60, 60, 60)
                 .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblSkapaOrderMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(pnlSkapaOrderLayout.createSequentialGroup()
                             .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(cbValjPrioritering, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1101,27 +1098,15 @@ public class Dashboard extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtKommentar1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(pnlSkapaOrderLayout.createSequentialGroup()
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblRubrikLaggTillIOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(pnlSkapaOrderLayout.createSequentialGroup()
-                                    .addGap(22, 22, 22)
-                                    .addComponent(btnValjHatt1))))))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlSkapaOrderLayout.setVerticalGroup(
             pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSkapaOrderLayout.createSequentialGroup()
                 .addGap(166, 166, 166)
-                .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlSkapaOrderLayout.createSequentialGroup()
-                        .addComponent(lblRubrikLaggTillIOrder)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnValjHatt1))
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addGap(41, 41, 41)
                 .addComponent(lblRubrikOrder)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbValjStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1152,10 +1137,19 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlValjHatt.setBackground(new java.awt.Color(51, 51, 51));
 
-        lblRubrikLaggTIllOrder.setForeground(new java.awt.Color(255, 255, 255));
-        lblRubrikLaggTIllOrder.setText("Lägg till i order");
+        lblValjHattMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblValjHattMeddelande.setForeground(new java.awt.Color(255, 255, 255));
 
-        btnOk.setForeground(new java.awt.Color(255, 255, 255));
+        jTabbedPane2.addTab("Visa hattar:", label1);
+
+        jScrollPane3.setViewportView(list1);
+
+        jTabbedPane2.addTab("Lagerförda", jScrollPane3);
+
+        jScrollPane4.setViewportView(list2);
+
+        jTabbedPane2.addTab("Special", jScrollPane4);
+
         btnOk.setText("Ok");
         btnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1163,25 +1157,17 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Välj hatt");
+        lblRubrikLaggTIllOrder.setForeground(new java.awt.Color(0, 0, 0));
+        lblRubrikLaggTIllOrder.setText("Lägg till i order");
 
-        cbValjHatt.setForeground(new java.awt.Color(0, 0, 0));
-        cbValjHatt.addActionListener(new java.awt.event.ActionListener() {
+        cbValjAllaHattar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbValjHattActionPerformed(evt);
+                cbValjAllaHattarActionPerformed(evt);
             }
         });
 
-        cbOrder.setForeground(new java.awt.Color(0, 0, 0));
-        cbOrder.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbOrderActionPerformed(evt);
-            }
-        });
-
-        lblValjHattMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblValjHattMeddelande.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Välj hatt");
 
         javax.swing.GroupLayout pnlValjHattLayout = new javax.swing.GroupLayout(pnlValjHatt);
         pnlValjHatt.setLayout(pnlValjHattLayout);
@@ -1190,36 +1176,45 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(pnlValjHattLayout.createSequentialGroup()
                 .addGroup(pnlValjHattLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlValjHattLayout.createSequentialGroup()
-                        .addGap(272, 272, 272)
-                        .addGroup(pnlValjHattLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblRubrikLaggTIllOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addGroup(pnlValjHattLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlValjHattLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(cbOrder, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblRubrikLaggTIllOrder, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))
+                            .addGroup(pnlValjHattLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))
                             .addGroup(pnlValjHattLayout.createSequentialGroup()
-                                .addGap(114, 114, 114)
-                                .addComponent(btnOk))
-                            .addComponent(cbOrder, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbValjHatt, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGap(26, 26, 26)
+                                .addComponent(btnOk, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(pnlValjHattLayout.createSequentialGroup()
-                        .addGap(226, 226, 226)
+                        .addGap(16, 16, 16)
                         .addComponent(lblValjHattMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addGap(19, 19, 19)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
+                .addGap(87, 87, 87))
         );
         pnlValjHattLayout.setVerticalGroup(
             pnlValjHattLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlValjHattLayout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cbValjHatt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(lblRubrikLaggTIllOrder)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnOk)
-                .addGap(35, 35, 35)
-                .addComponent(lblValjHattMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(308, Short.MAX_VALUE))
+                .addGroup(pnlValjHattLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlValjHattLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(lblRubrikLaggTIllOrder)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(btnOk)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblValjHattMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlValjHattLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(455, Short.MAX_VALUE))
         );
 
         pnlMitten.add(pnlValjHatt, "card4");
@@ -1934,70 +1929,6 @@ public class Dashboard extends javax.swing.JFrame {
         taBortKund();
     }//GEN-LAST:event_btnTaBortKundActionPerformed
 
-    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
-        // TODO add your handling code here:'
-        try {
-            //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
-            String valdOrder = cbOrder.getSelectedItem().toString().toLowerCase();
-            String valdHatt = cbValjHatt.getSelectedItem().toString();
-            if (valdOrder != null && valdHatt != null) {
-                String valdOrderStr = valdOrder.toString().toLowerCase();
-                //SQL-fråga för att få ProduktID från hatt
-                String fragaProduktID = "select Produkt_ID from hatt where Namn = '" + valdHatt + "'";
-                String ProduktID = idb.fetchSingle(fragaProduktID);
-
-                String fragaSkapaHattIOrder = "Insert into hatt_i_order (Order_ID, Hatt_ID) "
-                        + "Values ('" + valdOrderStr + "','" + ProduktID + "')";
-                idb.insert(fragaSkapaHattIOrder);
-
-                lblValjHattMeddelande.setText("Hatt är tillagd i en order!");
-            } else {
-                lblValjHattMeddelande.setText("Vänligen välj både en order och en hatt.");
-            }
-        } catch (InfException ettUndantag) {
-            lblValjHattMeddelande.setText("Något gick fel");
-        }
-    }//GEN-LAST:event_btnOkActionPerformed
-
-
-    private void cbValjHattActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjHattActionPerformed
-        //fyller combobox med godkända hattar
-        String ett = "1";
-        String fragaFyllBox = "Select Namn from hatt where Godkänd = '" + ett + "'" + "order by Produkt_ID";
-        ArrayList<String> allaHattar;
-        try {
-            allaHattar = idb.fetchColumn(fragaFyllBox);
-            //Varje hatt i listan av hattar itereras över
-            for (String hatt : allaHattar) {
-                //Hattens namn läggs till i comboboxen
-                cbValjHatt.addItem(hatt);
-            }
-        } catch (InfException ettUndantag) {
-            lblValjHattMeddelande.setText("Något gick fel");
-            System.out.println("Error " + ettUndantag.getMessage());
-        }
-    }//GEN-LAST:event_cbValjHattActionPerformed
-
-    private void cbOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbOrderActionPerformed
-        //fyll combobox med order
-        String fragaFyllBox = "Select Order_ID from orders order by Order_ID";
-        ArrayList<String> allaOrder;
-        try {
-            allaOrder = idb.fetchColumn(fragaFyllBox);
-            for (String hatt : allaOrder) {
-                cbOrder.addItem(hatt);
-            }
-        } catch (InfException ettUndantag) {
-            lblValjHattMeddelande.setText("Något gick fel");
-            System.out.println("Error " + ettUndantag.getMessage());
-        }
-    }//GEN-LAST:event_cbOrderActionPerformed
-
-    private void btnValjHatt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValjHatt1ActionPerformed
-        // TODO add your handling code here:
-        panelerGomda();
-        pnlValjHatt.show();
-    }//GEN-LAST:event_btnValjHatt1ActionPerformed
 
     private void txtKommentar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKommentar1ActionPerformed
         // TODO add your handling code here:
@@ -2341,6 +2272,90 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbOrder3ActionPerformed
 
+    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
+
+        // TODO add your handling code here:
+        try {
+            //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
+            String valdOrder = cbOrder.getSelectedItem().toString().toLowerCase();
+            //SQL-fråga för att få ProduktID från hatt
+            String fragaProduktID = "select Produkt_ID from hatt where Namn = '" + cbValjAllaHattar.getSelectedItem().toString() + "'";
+            String ProduktID = idb.fetchSingle(fragaProduktID);
+
+            String fragaSkapaHattIOrder = "Insert into hatt_i_order (Order_ID, Hatt_ID) "
+            + "Values ('" + valdOrder + "','" + ProduktID + "')";
+            idb.insert(fragaSkapaHattIOrder);
+
+            JOptionPane.showMessageDialog(null, "Hatt är tillagd i en order!");
+
+        } catch (InfException ettUndantag) {
+            JOptionPane.showMessageDialog(null, "Något gick fel");
+            System.out.println("Error " + ettUndantag.getMessage());
+        }
+    }//GEN-LAST:event_btnOkActionPerformed
+
+    private void fyllBoxHattar() {
+         //fyller combobox med hattar
+         String fragaFyllBox = "Select Namn from hatt order by Produkt_ID";
+         ArrayList<String> allaHattar;
+         try {
+             allaHattar = idb.fetchColumn(fragaFyllBox);
+             //Varje hatt i listan av hattar itereras över
+             for(String hatt : allaHattar) {
+                 //Hattens namn läggs till i comboboxen
+                 cbValjAllaHattar.addItem(hatt); 
+             }
+         } catch (InfException ettUndantag) {
+             System.out.println("Error " + ettUndantag.getMessage()); 
+         }
+     }
+    
+    private void fyllBoxOrder3() {
+         //fyll combobox med order
+         String fragaFyllBox = "Select Order_ID from orders order by Order_ID";
+         ArrayList<String> allaOrder;
+         try {
+             allaOrder = idb.fetchColumn(fragaFyllBox);
+             for(String hatt : allaOrder) {
+                 cbOrder.addItem(hatt); 
+             }
+         } catch (InfException ettUndantag) {
+             System.out.println("Error " + ettUndantag.getMessage()); 
+         }
+        } 
+        private void listHatt(){
+          try {
+                String fragaHatt = "Select Namn from hatt where Godkänd = 1";
+               ArrayList<String> listHatt = idb.fetchColumn(fragaHatt);
+                DefaultListModel<String> modelListHatt = new DefaultListModel<>();
+                for (String hattNamn : listHatt) {
+                 modelListHatt.addElement(hattNamn);
+                 list1.setModel(modelListHatt);
+                
+          }
+         } catch (Exception ettUndantag) {
+                   
+                  }
+        }
+          private void listHattSpecial(){
+          try {
+              
+                String fragaHatt = "Select Namn from hatt where Godkänd = 0";
+               ArrayList<String> listHatt = idb.fetchColumn(fragaHatt);
+                DefaultListModel<String> modelListHatt = new DefaultListModel<>();
+                for (String hattNamn : listHatt) {
+                 modelListHatt.addElement(hattNamn);
+                 list2.setModel(modelListHatt);
+                
+          }
+         } catch (Exception ettUndantag) {
+                   
+                  }}
+    
+    private void cbValjAllaHattarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjAllaHattarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbValjAllaHattarActionPerformed
+
     private boolean taBortKund() {
         if (Validering.harTextFaltetVarde(txtTaBortEpost, lblTaBortMeddelande)) {
             try {
@@ -2434,7 +2449,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnStartsida;
     private javax.swing.JButton btnTaBortKund;
     private javax.swing.JButton btnValjHatt;
-    private javax.swing.JButton btnValjHatt1;
     private javax.swing.JButton btnValjOrder;
     private javax.swing.JButton btnVisaMaterialinfo;
     private javax.swing.JComboBox<String> cbOrder;
@@ -2442,7 +2456,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbOrder2;
     private javax.swing.JComboBox<String> cbOrder3;
     private javax.swing.JComboBox<String> cbStatus;
-    private javax.swing.JComboBox<String> cbValjHatt;
+    private javax.swing.JComboBox<String> cbValjAllaHattar;
     private javax.swing.JComboBox<String> cbValjKund;
     private javax.swing.JComboBox<String> cbValjPrioritering;
     private javax.swing.JComboBox<String> cbValjStatus;
@@ -2452,12 +2466,16 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private java.awt.Label label1;
     private javax.swing.JLabel lblAdress1;
     private javax.swing.JLabel lblAndraKundMeddelande;
     private javax.swing.JLabel lblAngeEpost;
@@ -2504,7 +2522,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lblRubrikLaggTIllOrder;
     private javax.swing.JLabel lblRubrikLaggTIllOrder1;
     private javax.swing.JLabel lblRubrikLaggTIllOrder2;
-    private javax.swing.JLabel lblRubrikLaggTillIOrder;
     private javax.swing.JLabel lblRubrikOrder;
     private javax.swing.JLabel lblRubrikOrder1;
     private javax.swing.JLabel lblRubrikPrioritering;
@@ -2526,6 +2543,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lblValjHattMeddelande;
     private javax.swing.JLabel lblValjTyp;
     private javax.swing.JLabel lblVikt;
+    private javax.swing.JList<String> list1;
+    private javax.swing.JList<String> list2;
     private javax.swing.JList<String> listPaborjadeOrdrar;
     private javax.swing.JPanel pnlFraktSedel1;
     private javax.swing.JPanel pnlHattar;
