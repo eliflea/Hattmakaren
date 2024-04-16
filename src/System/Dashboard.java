@@ -1940,7 +1940,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void btnSparaOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSparaOrderActionPerformed
         // TODO add your handling code here:
         if(Validering.harTextFaltetVarde(txtDatum, lblSkapaOrderMeddelande)
-                && Validering.kollaDatumFormat(txtDatum) &&
+                && Validering.kollaDatumFormat(txtDatum, lblSkapaOrderMeddelande) &&
                 Validering.harTextFaltetVarde(txtKommentar, lblSkapaOrderMeddelande));
 
         //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng

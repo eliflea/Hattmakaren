@@ -73,7 +73,7 @@ public static boolean kollaDecimalTal(JTextField rutaAttKolla){
     return inmatningArDecimalTal;
 }
 
-public static boolean kollaDatumFormat(JTextField rutaAttKolla) {
+public static boolean kollaDatumFormat(JTextField rutaAttKolla, JLabel meddelande) {
     
     //kollar att falttexten är i rätt datumformat, och anger rätt format att mata in ifall det inte är det.
     
@@ -87,7 +87,7 @@ public static boolean kollaDatumFormat(JTextField rutaAttKolla) {
             Date date = format.parse(input);
             
         } catch (ParseException e) {
-            JOptionPane.showMessageDialog(null, "Fel datum format, vänligen ange datumet som 'yyyy-MM-dd'");
+            meddelande.setText("Fel datum format, vänligen ange datumet som 'yyyy-MM-dd'");
             inmatningsFormat = false;
             rutaAttKolla.requestFocus();
         }
