@@ -217,14 +217,18 @@ public class PlaneringsYta extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             String komboId = orderLista.getSelectedValue();
+            
+            if(komboId.startsWith("Order")){
+            }
 
         // Extrahera numeriskt kombo-ID genom att ta bort alla icke-numeriska tecken
-       String intKomboId = komboId.replaceAll("[^0-9]", "");
+            else{String intKomboId = komboId.replaceAll("[^0-9]", "");
        
             
             int hattId = parseInt(idb.fetchSingle("Select Hatt_ID from hatt_i_order Where Kombo_ID = " + intKomboId));
             
-            new HattInformation(hattId).setVisible(true);
+            new HattInformation(hattId).setVisible(true);}
+            
         } catch (InfException ex) {
             Logger.getLogger(PlaneringsYta.class.getName()).log(Level.SEVERE, null, ex);
         }
