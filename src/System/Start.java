@@ -21,6 +21,6 @@ public class Start {
             Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        new Testandet(idb).setVisible(true);
+        new PlaneringsYta(idb).setVisible(true);
     }
 }
