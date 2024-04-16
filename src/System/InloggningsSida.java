@@ -1,12 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package System;
 
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
@@ -16,18 +10,18 @@ import oru.inf.InfException;
  * @author sarah
  */
 public class InloggningsSida extends javax.swing.JFrame {
-    
+
     private InfDB idb;
 
     /**
      * Creates new form InloggningsSida
      */
-    public InloggningsSida() throws InfException {
+    public InloggningsSida(InfDB idb) {
         initComponents();
+        this.idb = idb;
         //Dessa två första använda för att man ska kunna få upp felmedelande om man skriver in fel epost eller lösenord
         lblFelAnvNamn.setVisible(false);
         lblFelLosen.setVisible(false);
-        idb = new InfDB("hattmakarna", "3306", "hattmakarna", "team5key");
     }
 
     /**
@@ -50,6 +44,7 @@ public class InloggningsSida extends javax.swing.JFrame {
         lblFelLosen = new javax.swing.JLabel();
         lblFelAnvNamn = new javax.swing.JLabel();
         btnLoggaIn = new javax.swing.JButton();
+        lblMeddelande = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,8 +53,6 @@ public class InloggningsSida extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Välkommen");
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\sofia\\Downloads\\nedladdning.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -111,13 +104,20 @@ public class InloggningsSida extends javax.swing.JFrame {
             }
         });
 
+        lblMeddelande.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnLoggaIn)
+                .addGap(150, 150, 150))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lblLosen)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -131,10 +131,6 @@ public class InloggningsSida extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblFelAnvNamn)))
                 .addContainerGap(68, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnLoggaIn)
-                .addGap(150, 150, 150))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,7 +147,9 @@ public class InloggningsSida extends javax.swing.JFrame {
                     .addComponent(lblFelLosen))
                 .addGap(63, 63, 63)
                 .addComponent(btnLoggaIn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(88, 88, 88))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -174,94 +172,55 @@ public class InloggningsSida extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoggaInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoggaInActionPerformed
-         
         //Detta är en kod som använda för att loopa igenom två arraylist för att hitta om det är rätt eller fel lösenord/epost
         try {
-            
-            if(Validering.harTextFaltetVarde(txtAnvNamn) &&  Validering.harTextFaltetVarde(txtLosen)){
-            // TODO add your handling code here:
-            String anvNamn = txtAnvNamn.getText();
-            char[] passwordChars = txtLosen.getPassword();
-            String losen = new String(passwordChars);
-            
-            ArrayList<String> epostLista = idb.fetchColumn("Select Epost from Personal");
-            ArrayList<String> losenLista = idb.fetchColumn("Select Lösenord from Personal");
-           
-            boolean hittadEpost = false;
-            for(int i=0; i<epostLista.size() && hittadEpost==false; i++)
-            {
-                String epost = epostLista.get(i).toLowerCase();
-                if (epost.equals(anvNamn)){
-                hittadEpost=true;
-                lblFelAnvNamn.setVisible(false);
+            if (Validering.harTextFaltetVarde(txtAnvNamn, lblMeddelande) && Validering.harTextFaltetVarde(txtLosen, lblMeddelande)) {
+                // TODO add your handling code here:
+                String anvNamn = txtAnvNamn.getText().toLowerCase();
+                char[] passwordChars = txtLosen.getPassword();
+                String losen = new String(passwordChars);
+
+                ArrayList<String> epostLista = idb.fetchColumn("Select Epost from Personal");
+                ArrayList<String> losenLista = idb.fetchColumn("Select Lösenord from Personal");
+
+                boolean hittadEpost = false;
+                for (int i = 0; i < epostLista.size() && hittadEpost == false; i++) {
+                    String epost = epostLista.get(i).toLowerCase();
+                    if (epost.equals(anvNamn)) {
+                        hittadEpost = true;
+                        lblFelAnvNamn.setVisible(false);
+                    }
+                }
+                if (hittadEpost == false) {
+                    lblFelAnvNamn.setVisible(true);
+                } else {
+                    boolean hittatLosen = false;
+
+                    for (int i = 0; i < losenLista.size() && hittatLosen == false; i++) {
+                        String losenFranLista = losenLista.get(i);
+
+                        if (losenFranLista.equals(losen)) {
+                            hittatLosen = true;
+                            lblFelLosen.setVisible(false);
+                        }
+                    }
+                    if (hittatLosen == false) {
+                        lblFelLosen.setVisible(true);
+                    }
+
+                    if (hittatLosen == true && hittadEpost == true) {
+                        Dashboard dashboard = new Dashboard(idb);
+                        dashboard.show();
+                        dispose();
+                    }
                 }
             }
-            
-            if (hittadEpost==false){
-                lblFelAnvNamn.setVisible(true);
-            }else{
-                boolean hittatLosen = false;
-           
-                for(int i =0; i<losenLista.size() && hittatLosen==false; i++){
-                String losenFranLista = losenLista.get(i);
-            
-            if(losenFranLista.equals(losen)){
-            hittatLosen=true;
-            lblFelLosen.setVisible(false);
-            }}
-            if(hittatLosen==false){
-            lblFelLosen.setVisible(true);
-            }
-            
-            
-            }
-        }
-            
-            
-            
+
         } catch (InfException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
     }//GEN-LAST:event_btnLoggaInActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InloggningsSida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InloggningsSida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InloggningsSida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InloggningsSida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    new InloggningsSida().setVisible(true);
-                } catch (InfException ex) {
-                    Logger.getLogger(InloggningsSida.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLoggaIn;
@@ -273,6 +232,7 @@ public class InloggningsSida extends javax.swing.JFrame {
     private javax.swing.JLabel lblFelAnvNamn;
     private javax.swing.JLabel lblFelLosen;
     private javax.swing.JLabel lblLosen;
+    private javax.swing.JLabel lblMeddelande;
     private javax.swing.JTextField txtAnvNamn;
     private javax.swing.JPasswordField txtLosen;
     // End of variables declaration//GEN-END:variables

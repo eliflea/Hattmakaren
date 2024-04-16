@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import oru.inf.InfDB;
@@ -22,14 +23,14 @@ import oru.inf.InfException;
 public class Validering {
     
     
-public static boolean harTextFaltetVarde(JTextField rutaAttKolla){
+public static boolean harTextFaltetVarde(JTextField rutaAttKolla, JLabel meddelande){
     
     //kollar att det angivna faltet inte är tomt
     
     boolean faltHarVarde = true;
     
     if(rutaAttKolla.getText().isEmpty()){
-        JOptionPane.showMessageDialog(null, "Inmatningsrutan är tom!");
+        meddelande.setText("Fyll i alla rutor!");
         faltHarVarde = false;
         rutaAttKolla.requestFocus();
     }

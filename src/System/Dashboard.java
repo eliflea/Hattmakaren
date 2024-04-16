@@ -1211,9 +1211,9 @@ public class Dashboard extends javax.swing.JFrame {
     
     private void btnLoggaUtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoggaUtActionPerformed
         // Loggar ut användaren och skickar till startsidan
-       /* Inloggning inloggning = new Inloggning(idb);
-        inloggning.show();
-        dispose();*/
+        InloggningsSida enInloggning = new InloggningsSida(idb);
+        enInloggning.show();
+        dispose();
     }//GEN-LAST:event_btnLoggaUtActionPerformed
 
     private void btnVisaMaterialinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisaMaterialinfoActionPerformed
