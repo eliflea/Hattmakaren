@@ -1156,7 +1156,12 @@ public class Dashboard extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        tblMaterial.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         jScrollPane2.setViewportView(tblMaterial);
+        if (tblMaterial.getColumnModel().getColumnCount() > 0) {
+            tblMaterial.getColumnModel().getColumn(2).setMinWidth(1000);
+            tblMaterial.getColumnModel().getColumn(2).setMaxWidth(1200);
+        }
 
         javax.swing.GroupLayout pnlVisaMaterialLayout = new javax.swing.GroupLayout(pnlVisaMaterial);
         pnlVisaMaterial.setLayout(pnlVisaMaterialLayout);
