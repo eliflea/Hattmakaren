@@ -28,6 +28,8 @@ public class ValjHatt1 extends javax.swing.JFrame {
 //        fyllBox(); 
         fyllBoxOrder();
         fyllBoxHattar();
+        listHatt();
+        listHattSpecial();
     }
 
     /**
@@ -50,9 +52,6 @@ public class ValjHatt1 extends javax.swing.JFrame {
         list1 = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         list2 = new javax.swing.JList<>();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        listLager = new javax.swing.JList<>();
-        lblLagerförd = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,10 +82,6 @@ public class ValjHatt1 extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Special", jScrollPane2);
 
-        jScrollPane3.setViewportView(listLager);
-
-        lblLagerförd.setText("Lagerförda");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,37 +94,27 @@ public class ValjHatt1 extends javax.swing.JFrame {
                     .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblLagerförd))
-                .addGap(32, 32, 32)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168, Short.MAX_VALUE)
+                .addComponent(jTabbedPane2))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lblLagerförd)
+                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(lblRubrikLaggTIllOrder)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(20, 20, 20)
-                            .addComponent(jLabel1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(26, 26, 26)
-                            .addComponent(lblRubrikLaggTIllOrder)
-                            .addGap(18, 18, 18)
-                            .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(btnOk))))
+                        .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnOk)))
                 .addContainerGap(223, Short.MAX_VALUE))
         );
 
@@ -218,13 +203,27 @@ public class ValjHatt1 extends javax.swing.JFrame {
               String lagerford = "1";
               
             //   = '" + fornamn + "' AND Efternamn = '" + efternamn + "'";
-                String fragaHatt = "Select Namn from hatt where Godkänd = " + lagerford + "";
-               ArrayList<HashMap<String, String>> listHatt = idb.fetchRows(fragaHatt);
+                String fragaHatt = "Select Namn from hatt where Godkänd = 1";
+               ArrayList<String> listHatt = idb.fetchColumn(fragaHatt);
                 DefaultListModel<String> modelListHatt = new DefaultListModel<>();
-                for (HashMap<String, String> hatt : listHatt) {
-                 String namn = hatt.get("Namn");
-                 modelListHatt.addElement(namn);
-                 listLager.setModel(modelListHatt);
+                for (String hattNamn : listHatt) {
+                 modelListHatt.addElement(hattNamn);
+                 list1.setModel(modelListHatt);
+                
+          }
+         } catch (Exception ettUndantag) {
+                   
+                  }
+        }
+          private void listHattSpecial(){
+          try {
+              
+                String fragaHatt = "Select Namn from hatt where Godkänd = 0";
+               ArrayList<String> listHatt = idb.fetchColumn(fragaHatt);
+                DefaultListModel<String> modelListHatt = new DefaultListModel<>();
+                for (String hattNamn : listHatt) {
+                 modelListHatt.addElement(hattNamn);
+                 list2.setModel(modelListHatt);
                 
           }
          } catch (Exception ettUndantag) {
@@ -241,13 +240,10 @@ public class ValjHatt1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane2;
     private java.awt.Label label1;
-    private javax.swing.JLabel lblLagerförd;
     private javax.swing.JLabel lblRubrikLaggTIllOrder;
     private javax.swing.JList<String> list1;
     private javax.swing.JList<String> list2;
-    private javax.swing.JList<String> listLager;
     // End of variables declaration//GEN-END:variables
 }
