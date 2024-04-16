@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package System;
+import static java.lang.Boolean.TRUE;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JList; 
@@ -52,6 +53,8 @@ public class ValjHatt1 extends javax.swing.JFrame {
         list1 = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         list2 = new javax.swing.JList<>();
+        cbValjMaterial = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,6 +85,14 @@ public class ValjHatt1 extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Special", jScrollPane2);
 
+        cbValjMaterial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbValjMaterialActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Välj material");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,10 +103,16 @@ public class ValjHatt1 extends javax.swing.JFrame {
                     .addComponent(btnOk)
                     .addComponent(lblRubrikLaggTIllOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168, Short.MAX_VALUE)
-                .addComponent(jTabbedPane2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(cbValjMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,9 +123,13 @@ public class ValjHatt1 extends javax.swing.JFrame {
                         .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(jLabel1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbValjMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(26, 26, 26)
                         .addComponent(lblRubrikLaggTIllOrder)
                         .addGap(18, 18, 18)
@@ -123,6 +144,8 @@ public class ValjHatt1 extends javax.swing.JFrame {
 
     private void cbValjAllaHattarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjAllaHattarActionPerformed
         // TODO add your handling code here:
+        cbValjMaterial.removeAllItems();
+        fyllBoxMaterial();
     }//GEN-LAST:event_cbValjAllaHattarActionPerformed
 
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
@@ -147,6 +170,10 @@ public class ValjHatt1 extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnOkActionPerformed
+
+    private void cbValjMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjMaterialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbValjMaterialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,6 +225,21 @@ public class ValjHatt1 extends javax.swing.JFrame {
              System.out.println("Error " + ettUndantag.getMessage()); 
          }
         } 
+
+private void fyllBoxMaterial() {
+         //fyll combobox med order
+         String fragaFyllBox = "Select Namn from Material Where Material_ID IN (Select Material_ID from material_i_Hatt where Hatt_ID = (Select produkt_ID from Hatt where Namn = '" + cbValjAllaHattar.getSelectedItem() + "'))";
+         ArrayList<String> allaMaterialIHatt;
+         try {
+             allaMaterialIHatt = idb.fetchColumn(fragaFyllBox);
+             for(String material : allaMaterialIHatt) {
+                 cbValjMaterial.addItem(material); 
+             }
+         } catch (InfException ettUndantag) {
+             System.out.println("Error " + ettUndantag.getMessage()); 
+         }
+        } 
+        
         private void listHatt(){
           try {
                 String fragaHatt = "Select Namn from hatt where Godkänd = 1";
@@ -234,7 +276,9 @@ public class ValjHatt1 extends javax.swing.JFrame {
     private javax.swing.JButton btnOk;
     private javax.swing.JComboBox<String> cbOrder;
     private javax.swing.JComboBox<String> cbValjAllaHattar;
+    private javax.swing.JComboBox<String> cbValjMaterial;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane2;
