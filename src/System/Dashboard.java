@@ -302,14 +302,19 @@ public class Dashboard extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
+        tblMaterial.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         jScrollPane1.setViewportView(tblMaterial);
+        if (tblMaterial.getColumnModel().getColumnCount() > 0) {
+            tblMaterial.getColumnModel().getColumn(2).setMinWidth(1000);
+            tblMaterial.getColumnModel().getColumn(2).setMaxWidth(1200);
+        }
 
         javax.swing.GroupLayout pnlSkapaKundLayout = new javax.swing.GroupLayout(pnlSkapaKund);
         pnlSkapaKund.setLayout(pnlSkapaKundLayout);
