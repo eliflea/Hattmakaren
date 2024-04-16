@@ -2246,11 +2246,11 @@ public class Dashboard extends javax.swing.JFrame {
             Validering.harTextFaltetVarde(txtAngeHojd, lblOrderSidaMeddelande) &&
             Validering.harTextFaltetVarde(txtAngeBredd, lblOrderSidaMeddelande) &&
             Validering.harTextFaltetVarde(txtAngeFraktkostnad, lblOrderSidaMeddelande) &&
-            Validering.kollaDecimalTal(txtAngeFraktkostnad)&&
-            Validering.kollaDecimalTal(txtAngeVikt)&&
-            Validering.kollaDecimalTal(txtAngeLangd)&&
-            Validering.kollaDecimalTal(txtAngeHojd)&&
-            Validering.kollaDecimalTal(txtAngeBredd);
+            Validering.kollaDecimalTal(txtAngeFraktkostnad, lblOrderSidaMeddelande)&&
+            Validering.kollaDecimalTal(txtAngeVikt, lblOrderSidaMeddelande)&&
+            Validering.kollaDecimalTal(txtAngeLangd, lblOrderSidaMeddelande)&&
+            Validering.kollaDecimalTal(txtAngeHojd, lblOrderSidaMeddelande)&&
+            Validering.kollaDecimalTal(txtAngeBredd, lblOrderSidaMeddelande);
 
             //skapar paket ID
             String paketID = idb.fetchSingle("SELECT MAX(Paket_ID) FROM paket_info");
