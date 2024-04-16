@@ -25,6 +25,7 @@ public class Dashboard extends javax.swing.JFrame {
         this.idb = idb;
         fyllOrderLista();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        fyllBoxKund();
     }
 
     /**
@@ -1406,76 +1407,6 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSparaActionPerformed
 
-    private void btnSparaOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSparaOrderActionPerformed
-        // TODO add your handling code here:
-        boolean allaFaltIfyllda =
-        Validering.harTextFaltetVarde(txtDatum, lblSkapaOrderMeddelande) &&
-        Validering.kollaDatumFormat(txtDatum);
-
-        //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
-        String valdStatus = cbValjStatus.getSelectedItem().toString().toLowerCase();
-        String valdKund = cbValjKund.getSelectedItem().toString();
-        //Texten hämtas från textrutan och tilldelas till variabeln som deklareras
-        String kommentar = txtKommentar.getText();
-        String datum = txtDatum.getText();
-        String valdPrioritering = cbValjPrioritering.getSelectedItem().toString().toLowerCase();
-
-        try {
-
-            String [] namn = cbValjKund.getSelectedItem().toString().split(" ");
-
-            String fornamn = namn[0];     // First part is the first name
-            String efternamn = namn[1];   // Second part is the last name
-
-            // Create SQL query to fetch the Kund_ID based on first name and last name
-            String fragakundID = "SELECT Kund_ID FROM kund WHERE Förnamn = '" + fornamn + "' AND Efternamn = '" + efternamn + "'";
-
-            // Execute the SQL query to fetch the Kund_ID
-            String kundID = idb.fetchSingle(fragakundID);
-
-            int orderId = Integer.parseInt(idb.fetchSingle("SELECT MAX(Order_ID) FROM Orders"))+1;
-            String orderIdString = Integer.toString(orderId);
-
-            String fragaSkapaOrder = "";
-            //SQL fråga för att skapa order
-            //och villkor för att bestämma brådskande för order
-            if (valdPrioritering.equalsIgnoreCase("Brådskande")) {
-                valdPrioritering = "1";
-                fragaSkapaOrder = "Insert into orders (Order_ID, Status, Kund, Kommentar, Brådskande, Datum) "
-                + "Values ('" + orderIdString + "','" + valdStatus + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "')";
-                idb.insert(fragaSkapaOrder);
-            }
-            if (valdPrioritering.equalsIgnoreCase("Inte brådskande")) {
-                valdPrioritering = "0";
-                fragaSkapaOrder = "Insert into orders (Order_ID, Status, Kund, Kommentar, Brådskande, Datum) "
-                + "Values ('" + orderIdString + "','" + valdStatus + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "')";
-                idb.insert(fragaSkapaOrder);
-
-            }
-            JOptionPane.showMessageDialog(null, "Order är Skapad!");
-
-            //felmeddelande
-        } catch(InfException ex){
-            JOptionPane.showMessageDialog(null, "Något gick fel");
-            System.out.println(ex);
-
-        }
-    }//GEN-LAST:event_btnSparaOrderActionPerformed
-
-    private void cbValjKundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjKundActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbValjKundActionPerformed
-
-    private void txtKommentar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKommentar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtKommentar1ActionPerformed
-
-    private void btnValjHatt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValjHatt1ActionPerformed
-        // TODO add your handling code here:
-        panelerGomda();
-        pnlValjHatt.show();
-    }//GEN-LAST:event_btnValjHatt1ActionPerformed
-
     private void btnValjOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValjOrderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnValjOrderActionPerformed
@@ -1548,6 +1479,94 @@ public class Dashboard extends javax.swing.JFrame {
              System.out.println("Error " + ettUndantag.getMessage()); 
          }
     }//GEN-LAST:event_cbOrderActionPerformed
+
+    private void btnValjHatt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValjHatt1ActionPerformed
+        // TODO add your handling code here:
+        panelerGomda();
+        pnlValjHatt.show();
+    }//GEN-LAST:event_btnValjHatt1ActionPerformed
+
+    private void txtKommentar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKommentar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtKommentar1ActionPerformed
+
+    private void btnSparaOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSparaOrderActionPerformed
+        // TODO add your handling code here:
+        boolean allaFaltIfyllda =
+        Validering.harTextFaltetVarde(txtDatum, lblSkapaOrderMeddelande) &&
+        Validering.kollaDatumFormat(txtDatum);
+
+        //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
+        String valdStatus = cbValjStatus.getSelectedItem().toString().toLowerCase();
+        String valdKund = cbValjKund.getSelectedItem().toString();
+        //Texten hämtas från textrutan och tilldelas till variabeln som deklareras
+        String kommentar = txtKommentar.getText();
+        String datum = txtDatum.getText();
+        String valdPrioritering = cbValjPrioritering.getSelectedItem().toString().toLowerCase();
+
+        try {
+
+            String [] namn = cbValjKund.getSelectedItem().toString().split(" ");
+
+            String fornamn = namn[0];     // First part is the first name
+            String efternamn = namn[1];   // Second part is the last name
+
+            // Create SQL query to fetch the Kund_ID based on first name and last name
+            String fragakundID = "SELECT Kund_ID FROM kund WHERE Förnamn = '" + fornamn + "' AND Efternamn = '" + efternamn + "'";
+
+            // Execute the SQL query to fetch the Kund_ID
+            String kundID = idb.fetchSingle(fragakundID);
+
+            int orderId = Integer.parseInt(idb.fetchSingle("SELECT MAX(Order_ID) FROM Orders"))+1;
+            String orderIdString = Integer.toString(orderId);
+
+            String fragaSkapaOrder = "";
+            //SQL fråga för att skapa order
+            //och villkor för att bestämma brådskande för order
+            if (valdPrioritering.equalsIgnoreCase("Brådskande")) {
+                valdPrioritering = "1";
+                fragaSkapaOrder = "Insert into orders (Order_ID, Status, Kund, Kommentar, Brådskande, Datum) "
+                + "Values ('" + orderIdString + "','" + valdStatus + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "')";
+                idb.insert(fragaSkapaOrder);
+            }
+            if (valdPrioritering.equalsIgnoreCase("Inte brådskande")) {
+                valdPrioritering = "0";
+                fragaSkapaOrder = "Insert into orders (Order_ID, Status, Kund, Kommentar, Brådskande, Datum) "
+                + "Values ('" + orderIdString + "','" + valdStatus + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "')";
+                idb.insert(fragaSkapaOrder);
+
+            }
+            JOptionPane.showMessageDialog(null, "Order är Skapad!");
+
+            //felmeddelande
+        } catch(InfException ex){
+            JOptionPane.showMessageDialog(null, "Något gick fel");
+            System.out.println(ex);
+
+        }
+    }//GEN-LAST:event_btnSparaOrderActionPerformed
+
+    private void fyllBoxKund() {
+       //Metod, fylla en combobox med kundnamn
+        try {
+             String fragaFyllBox = "Select Förnamn, Efternamn from kund order by Kund_ID";
+             ArrayList<HashMap<String, String>> allaKunder = idb.fetchRows(fragaFyllBox);
+             for (HashMap<String, String> kund : allaKunder) {
+            //Kundens efternamn och förnamn hämtas 
+            String fornamn = kund.get("Förnamn");
+            String efternamn = kund.get("Efternamn");
+           
+            //förnamn och efternamn kombineras för att läggas i combobox
+            cbValjKund.addItem(fornamn + " " + efternamn );
+              }      
+           } catch (InfException ettUndantag) {
+             System.out.println("Error " + ettUndantag.getMessage()); 
+           }
+          }
+    
+    private void cbValjKundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjKundActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbValjKundActionPerformed
 
     private boolean taBortKund() {
         if (Validering.harTextFaltetVarde(txtTaBortEpost, lblTaBortMeddelande)) {
