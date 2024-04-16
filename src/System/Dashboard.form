@@ -444,61 +444,58 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblSkrivIn" min="-2" pref="134" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="cbStatus" min="-2" pref="133" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                              <Component id="txtAngeVikt" min="-2" pref="80" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblRubtikTotalSumma" min="-2" pref="71" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              <Component id="txtTotalSumma" min="-2" pref="71" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnOrderTotalsumma" min="-2" pref="180" max="-2" attributes="0"/>
+                              <EmptySpace pref="51" max="32767" attributes="0"/>
+                              <Component id="lblOrderSidaMeddelande" min="-2" pref="316" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblSkrivIn" min="-2" pref="134" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="cbStatus" min="-2" pref="133" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+                                      <Component id="txtAngeVikt" min="-2" pref="80" max="-2" attributes="0"/>
+                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="lblRubrikOrder1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="cbOrder2" min="-2" pref="85" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="lblRubrikLaggTIllOrder1" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="lblRubtikTotalSumma" min="-2" pref="71" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                      <Component id="txtTotalSumma" min="-2" pref="71" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="btnOrderTotalsumma" min="-2" pref="180" max="-2" attributes="0"/>
-                                  </Group>
                                   <Component id="btnOrderStatus1" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
                                       <Component id="cbOrder1" min="-2" pref="85" max="-2" attributes="0"/>
                                   </Group>
-                              </Group>
-                              <EmptySpace pref="51" max="32767" attributes="0"/>
-                              <Component id="lblOrderSidaMeddelande" min="-2" pref="316" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnOrderStatus" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnSkapa" alignment="0" pref="143" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="btnOrderStatus" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="btnSkapa" alignment="0" pref="143" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="txtInsertOrder" min="-2" pref="115" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txtInsertOrder" min="-2" pref="115" max="-2" attributes="0"/>
+                              <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -553,9 +550,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                      <EmptySpace min="10" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -566,30 +561,29 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                      <Component id="txtAngeVikt" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="189" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="lblSkrivIn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="txtAngeVikt" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="185" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="lblSkrivIn" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="txtInsertOrder" min="-2" pref="35" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="txtInsertOrder" min="-2" pref="35" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnSkapa" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnOrderStatus" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cbStatus" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="lblOrderSidaMeddelande" min="-2" pref="43" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
+                              <Component id="btnSkapa" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnOrderStatus" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblRubrikLaggTIllOrder1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="cbOrder1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -601,13 +595,20 @@
                                   <Component id="lblRubrikOrder1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="cbOrder2" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtTotalSumma" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblRubtikTotalSumma" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnOrderTotalsumma" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                              <Component id="txtTotalSumma" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblRubtikTotalSumma" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnOrderTotalsumma" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lblOrderSidaMeddelande" alignment="1" min="-2" pref="43" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                   </Group>
@@ -621,36 +622,31 @@
                               <Component id="lblOrdersida" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblVikt" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblAngeLangd" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="txtAngeLangd" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblHojd" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtAngeHojd" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblHojd1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtAngeBredd" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblHojd2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtAngeFraktkostnad" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblRubrikLaggTIllOrder2" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
-                                      <Component id="cbOrder3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                  <Component id="btnSparaPaket" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jPanel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblVikt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblAngeLangd" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="txtAngeLangd" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="128" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblHojd" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtAngeHojd" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblHojd1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtAngeBredd" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblHojd2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtAngeFraktkostnad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblRubrikLaggTIllOrder2" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
+                              <Component id="cbOrder3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <Component id="btnSparaPaket" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="498" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -738,11 +734,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="pnlFraktSedel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="pnlFraktSedel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">

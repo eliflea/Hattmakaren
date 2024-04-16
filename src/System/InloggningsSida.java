@@ -54,17 +54,21 @@ public class InloggningsSida extends javax.swing.JFrame {
         txtAnvNamn.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
 
         lblAnvNamn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblAnvNamn.setForeground(new java.awt.Color(255, 255, 255));
         lblAnvNamn.setText("Användarnamn :");
 
         lblLosen.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblLosen.setForeground(new java.awt.Color(255, 255, 255));
         lblLosen.setText("Lösenord:");
 
         txtLosen.setBackground(new java.awt.Color(153, 153, 153));
         txtLosen.setForeground(new java.awt.Color(255, 255, 255));
         txtLosen.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
 
+        lblFelLosen.setForeground(new java.awt.Color(255, 255, 255));
         lblFelLosen.setText("Fel lösenord");
 
+        lblFelAnvNamn.setForeground(new java.awt.Color(255, 255, 255));
         lblFelAnvNamn.setText("Epost-adressen existerar inte");
 
         btnLoggaIn.setBackground(new java.awt.Color(51, 51, 51));
@@ -107,7 +111,6 @@ public class InloggningsSida extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
@@ -116,17 +119,19 @@ public class InloggningsSida extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(299, 299, 299)
                         .addComponent(lblFelLosen)
-                        .addGap(87, 132, Short.MAX_VALUE))
+                        .addGap(87, 138, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(lblAnvNamn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(38, 38, 38)
                                 .addComponent(lblLosen)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblAnvNamn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblFelAnvNamn))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()

@@ -45,7 +45,6 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
@@ -55,19 +54,21 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="299" max="-2" attributes="0"/>
                           <Component id="lblFelLosen" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="87" pref="132" max="32767" attributes="0"/>
+                          <EmptySpace min="87" pref="138" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="lblAnvNamn" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="txtAnvNamn" min="-2" pref="165" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                   <Component id="lblLosen" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="txtLosen" min="-2" pref="165" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lblAnvNamn" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="txtAnvNamn" min="-2" pref="165" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -140,6 +141,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Anv&#xe4;ndarnamn :"/>
           </Properties>
         </Component>
@@ -147,6 +151,9 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="L&#xf6;senord:"/>
           </Properties>
@@ -168,11 +175,17 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblFelLosen">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Fel l&#xf6;senord"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblFelAnvNamn">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Epost-adressen existerar inte"/>
           </Properties>
         </Component>
