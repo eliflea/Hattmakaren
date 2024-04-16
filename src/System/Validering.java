@@ -55,7 +55,7 @@ public static boolean kollaHeltal(JTextField rutaAttKolla){
     return inmatningArHeltal;
 }
 
-public static boolean kollaDecimalTal(JTextField rutaAttKolla){
+public static boolean kollaDecimalTal(JTextField rutaAttKolla, JLabel meddelande){
     
     //kollar att falttexten är decimaltal
     
@@ -66,7 +66,7 @@ public static boolean kollaDecimalTal(JTextField rutaAttKolla){
     }
     
     } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(null, "Vänligen ange ett giltigt decimaltal!");
+        meddelande.setText("Vänligen ange ett giltigt decimaltal!");
         inmatningArDecimalTal = false;
         rutaAttKolla.requestFocus();
     }

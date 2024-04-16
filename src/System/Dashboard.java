@@ -1830,12 +1830,10 @@ public class Dashboard extends javax.swing.JFrame {
                 String fraga = "INSERT INTO kund VALUES (" + kundIdString + ", '" + fornamn + "', '" + efternamn + "', '" + telefon + "', '" + epost + "', '" + gatuadress + "', '" + postnummer + "', '" + ort + "')";
 
                 idb.insert(fraga);
-                JOptionPane.showMessageDialog(null, "Kunden har sparats");
                 dispose();
             }
 
         } catch (InfException ex) {
-            JOptionPane.showMessageDialog(null, ex);
         }
 
     }//GEN-LAST:event_btnSparaKundActionPerformed
@@ -1924,7 +1922,6 @@ public class Dashboard extends javax.swing.JFrame {
             } else {
                 idb.insert(skapaHattQuery2);
             }
-            JOptionPane.showMessageDialog(null, "Hatten har sparats");
 
         } catch (InfException e) {
             // Hantera undantag vid felaktig interaktion med databasen
@@ -2159,10 +2156,8 @@ public class Dashboard extends javax.swing.JFrame {
             String status2 = idb.fetchSingle("Select Status from Orders where Order_ID = " + txtInsertOrder.getText() +  "");
 
             if(status.equals(ett)){
-                JOptionPane.showMessageDialog(null, "Order är brådskande. Status just nu: " + status2);
             }
             else{
-                JOptionPane.showMessageDialog(null, "Order är inte brådskande. Status just nu: " + status2);
             }
 
         } catch (Exception ex) {
@@ -2259,11 +2254,11 @@ public class Dashboard extends javax.swing.JFrame {
             Validering.harTextFaltetVarde(txtAngeHojd, lblOrderSidaMeddelande) &&
             Validering.harTextFaltetVarde(txtAngeBredd, lblOrderSidaMeddelande) &&
             Validering.harTextFaltetVarde(txtAngeFraktkostnad, lblOrderSidaMeddelande) &&
-            Validering.kollaDecimalTal(txtAngeFraktkostnad)&&
-            Validering.kollaDecimalTal(txtAngeVikt)&&
-            Validering.kollaDecimalTal(txtAngeLangd)&&
-            Validering.kollaDecimalTal(txtAngeHojd)&&
-            Validering.kollaDecimalTal(txtAngeBredd);
+            Validering.kollaDecimalTal(txtAngeFraktkostnad, lblOrderSidaMeddelande)&&
+            Validering.kollaDecimalTal(txtAngeVikt, lblOrderSidaMeddelande)&&
+            Validering.kollaDecimalTal(txtAngeLangd, lblOrderSidaMeddelande)&&
+            Validering.kollaDecimalTal(txtAngeHojd, lblOrderSidaMeddelande)&&
+            Validering.kollaDecimalTal(txtAngeBredd, lblOrderSidaMeddelande);
 
             //skapar paket ID
             String paketID = idb.fetchSingle("SELECT MAX(Paket_ID) FROM paket_info");
@@ -2306,6 +2301,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         } catch (InfException ettUndantag) {
             lblValjHattMeddelande.setText("Något gick fel!");
+        } catch (InfException ettUndantag) {
             System.out.println("Error " + ettUndantag.getMessage());
         }
     }//GEN-LAST:event_btnOkActionPerformed
@@ -2452,7 +2448,6 @@ private void fyllBoxMaterial() {
             }
 
         } catch (InfException fel) {
-            JOptionPane.showMessageDialog(null, fel);
         }}
         
     private void panelerGomda() {
