@@ -5,9 +5,12 @@
 package System;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JList; 
 import oru.inf.InfDB;
 import oru.inf.InfException;
 import java.util.ArrayList; 
+import java.util.HashMap;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 /**
  *
@@ -41,7 +44,15 @@ public class ValjHatt1 extends javax.swing.JFrame {
         cbOrder = new javax.swing.JComboBox<>();
         lblRubrikLaggTIllOrder = new javax.swing.JLabel();
         btnOk = new javax.swing.JButton();
-        cbValjHatt1 = new javax.swing.JComboBox<>();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        label1 = new java.awt.Label();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        list1 = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        list2 = new javax.swing.JList<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        listLager = new javax.swing.JList<>();
+        lblLagerförd = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,45 +73,64 @@ public class ValjHatt1 extends javax.swing.JFrame {
             }
         });
 
-        cbValjHatt1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbValjHatt1ActionPerformed(evt);
-            }
-        });
+        jTabbedPane2.addTab("Visa hattar:", label1);
+
+        jScrollPane1.setViewportView(list1);
+
+        jTabbedPane2.addTab("Lagerförda", jScrollPane1);
+
+        jScrollPane2.setViewportView(list2);
+
+        jTabbedPane2.addTab("Special", jScrollPane2);
+
+        jScrollPane3.setViewportView(listLager);
+
+        lblLagerförd.setText("Lagerförda");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(171, 171, 171)
-                        .addComponent(cbValjHatt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnOk)
                     .addComponent(lblRubrikLaggTIllOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLagerförd))
+                .addGap(32, 32, 32)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbValjHatt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addComponent(lblRubrikLaggTIllOrder)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
-                .addComponent(btnOk)
-                .addGap(44, 44, 44))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblLagerförd)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(jLabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(26, 26, 26)
+                            .addComponent(lblRubrikLaggTIllOrder)
+                            .addGap(18, 18, 18)
+                            .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(btnOk))))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
 
         pack();
@@ -132,10 +162,6 @@ public class ValjHatt1 extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnOkActionPerformed
-
-    private void cbValjHatt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjHatt1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbValjHatt1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,17 +210,44 @@ public class ValjHatt1 extends javax.swing.JFrame {
                  cbOrder.addItem(hatt); 
              }
          } catch (InfException ettUndantag) {
-             JOptionPane.showMessageDialog(null, "Något gick fel");
              System.out.println("Error " + ettUndantag.getMessage()); 
          }
-   }
+        } 
+        private void listHatt(){
+          try {
+              String lagerford = "1";
+              
+            //   = '" + fornamn + "' AND Efternamn = '" + efternamn + "'";
+                String fragaHatt = "Select Namn from hatt where Godkänd = " + lagerford + "";
+               ArrayList<HashMap<String, String>> listHatt = idb.fetchRows(fragaHatt);
+                DefaultListModel<String> modelListHatt = new DefaultListModel<>();
+                for (HashMap<String, String> hatt : listHatt) {
+                 String namn = hatt.get("Namn");
+                 modelListHatt.addElement(namn);
+                 listLager.setModel(modelListHatt);
+                
+          }
+         } catch (Exception ettUndantag) {
+                   
+                  }
+        
+}
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnOk;
     private javax.swing.JComboBox<String> cbOrder;
     private javax.swing.JComboBox<String> cbValjAllaHattar;
-    private javax.swing.JComboBox<String> cbValjHatt1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private java.awt.Label label1;
+    private javax.swing.JLabel lblLagerförd;
     private javax.swing.JLabel lblRubrikLaggTIllOrder;
+    private javax.swing.JList<String> list1;
+    private javax.swing.JList<String> list2;
+    private javax.swing.JList<String> listLager;
     // End of variables declaration//GEN-END:variables
 }
