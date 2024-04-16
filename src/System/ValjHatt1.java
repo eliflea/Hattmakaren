@@ -200,9 +200,6 @@ public class ValjHatt1 extends javax.swing.JFrame {
         } 
         private void listHatt(){
           try {
-              String lagerford = "1";
-              
-            //   = '" + fornamn + "' AND Efternamn = '" + efternamn + "'";
                 String fragaHatt = "Select Namn from hatt where Godkänd = 1";
                ArrayList<String> listHatt = idb.fetchColumn(fragaHatt);
                 DefaultListModel<String> modelListHatt = new DefaultListModel<>();
