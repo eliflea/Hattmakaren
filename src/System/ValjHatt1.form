@@ -29,11 +29,20 @@
                   <Component id="btnOk" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="lblRubrikLaggTIllOrder" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
                   <Component id="cbOrder" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="cbValjAllaHattar" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel1" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cbValjAllaHattar" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbValjMaterial" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace pref="168" max="32767" attributes="0"/>
-              <Component id="jTabbedPane2" max="32767" attributes="0"/>
+              <EmptySpace pref="117" max="32767" attributes="0"/>
+              <Component id="jTabbedPane2" pref="231" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -47,9 +56,15 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="cbValjAllaHattar" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cbValjAllaHattar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbValjMaterial" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="lblRubrikLaggTIllOrder" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -172,5 +187,23 @@
         </Container>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JComboBox" name="cbValjMaterial">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbValjMaterialActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="V&#xe4;lj material"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>
