@@ -219,7 +219,9 @@ public class InloggningsSida extends javax.swing.JFrame {
                     }
 
                     if (hittatLosen == true && hittadEpost == true) {
-                        Dashboard dashboard = new Dashboard(idb);
+                        String personalId = idb.fetchSingle("Select Personal_ID from personal where epost = '" + txtAnvNamn.getText() + "'");
+                        
+                        Dashboard dashboard = new Dashboard(idb, personalId);
                         dashboard.show();
                         dispose();
                     }
