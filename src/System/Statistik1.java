@@ -66,6 +66,11 @@ public class Statistik1 extends javax.swing.JFrame {
         });
 
         btnAr.setText("Visa statistik för valt år");
+        btnAr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArActionPerformed(evt);
+            }
+        });
 
         btnKvartal.setText("Visa statistik för valt kvartal");
         btnKvartal.addActionListener(new java.awt.event.ActionListener() {
@@ -143,14 +148,14 @@ public class Statistik1 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtStatistikActionPerformed
     public void fyllAr()
 {
-    String hamtaAr = "SELECT YEAR(Datum) AS År FROM hattmakarna.orders ORDER BY Datum DESC";
+    String hamtaAr = "SELECT DISTINCT YEAR(Datum) AS År FROM hattmakarna.orders ORDER BY År DESC";
     int i = 0;
         try {
             ArrayList<String> allaAr = idb.fetchColumn(hamtaAr);
             
             for(String ar : allaAr)
             {
-                String aret =ar.substring(0, 4);
+                String aret = ar.substring(0, 4);
                 cbAr.insertItemAt(aret, i);
                 i++;
             }
@@ -168,6 +173,22 @@ public class Statistik1 extends javax.swing.JFrame {
     private void btnManadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnManadActionPerformed
+
+    private void btnArActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArActionPerformed
+        // TODO add your handling code here:
+        String valtAr = cbAr.getSelectedItem().toString();
+        
+        String sqlHamtaArsforsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-12-31' && Datum>='" + valtAr + "-01-01'";
+        
+        try {
+            String totalForsaljningsSumma = idb.fetchSingle(sqlHamtaArsforsaljning);
+            txtStatistik.setText("Total försäljning år " + valtAr + ": " + totalForsaljningsSumma + " SEK");
+        } catch (InfException ex) {
+            Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }//GEN-LAST:event_btnArActionPerformed
 
     /**
      * @param args the command line arguments
