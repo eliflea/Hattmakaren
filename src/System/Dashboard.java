@@ -2583,9 +2583,12 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void listHatt() {
         try {
+            //SQL-fråga, hämtar namn på godkända hattar
             String fragaHatt = "Select Namn from hatt where Godkänd = 1";
             ArrayList<String> listHatt = idb.fetchColumn(fragaHatt);
+            //Ny DefaultListModel skapas för att ha hattarnas namn
             DefaultListModel<String> modelListHatt = new DefaultListModel<>();
+            //Varje hatt-namn loopas genom i listan och läggs till i modellen
             for (String hattNamn : listHatt) {
                 modelListHatt.addElement(hattNamn);
                 list1.setModel(modelListHatt);
