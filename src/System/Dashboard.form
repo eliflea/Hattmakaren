@@ -429,7 +429,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnValjOrder">
               <Properties>
-                <Property name="text" type="java.lang.String" value="V&#xe4;lj"/>
+                <Property name="text" type="java.lang.String" value="Forts&#xe4;tt "/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnValjOrderActionPerformed"/>
@@ -1231,12 +1231,6 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblSkapaOrderMeddelande" min="-2" pref="513" max="-2" attributes="0"/>
                           <Component id="lblRubrikKund" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblRubrikDatum" min="-2" pref="75" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtDatum" min="-2" pref="140" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="cbValjStatus" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblRubrikOrder" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -1251,14 +1245,33 @@
                                       <Component id="txtKommentar1" min="-2" pref="162" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              <Component id="btnSparaOrder2" min="-2" pref="75" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="lblFel" min="-2" pref="137" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel2" min="-2" pref="161" max="-2" attributes="0"/>
                           <Component id="cbValjPrioritering" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblRubrikPrioritering" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="cbValjStatus" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="lblOrdernummer" min="-2" pref="37" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lblRubrikDatum" min="-2" pref="75" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtDatum" min="-2" pref="140" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                       <EmptySpace min="214" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel7" min="-2" pref="97" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1267,10 +1280,15 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Component id="lblRubrikOrder" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="cbValjStatus" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cbValjStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblOrdernummer" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="lblRubrikPrioritering" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -1292,6 +1310,7 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="cbValjKund" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnSparaOrder" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnSparaOrder2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="lblFel" min="-2" pref="27" max="-2" attributes="0"/>
                       </Group>
@@ -1422,6 +1441,26 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblFel">
+            </Component>
+            <Component class="javax.swing.JButton" name="btnSparaOrder2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Spara"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSparaOrder2ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblOrdernummer">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel7">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Orderid:"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

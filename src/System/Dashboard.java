@@ -150,6 +150,9 @@ public class Dashboard extends javax.swing.JFrame {
         txtKommentar1 = new javax.swing.JTextField();
         lblSkapaOrderMeddelande = new javax.swing.JLabel();
         lblFel = new javax.swing.JLabel();
+        btnSparaOrder2 = new javax.swing.JButton();
+        lblOrdernummer = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         pnlValjHatt = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         label1 = new java.awt.Label();
@@ -428,7 +431,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblPaborjadOrder.setForeground(new java.awt.Color(255, 255, 255));
         lblPaborjadOrder.setText("Påbörjade ordrar");
 
-        btnValjOrder.setText("Välj");
+        btnValjOrder.setText("Fortsätt ");
         btnValjOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnValjOrderActionPerformed(evt);
@@ -948,6 +951,17 @@ public class Dashboard extends javax.swing.JFrame {
         lblSkapaOrderMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblSkapaOrderMeddelande.setForeground(new java.awt.Color(255, 255, 255));
 
+        btnSparaOrder2.setText("Spara");
+        btnSparaOrder2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSparaOrder2ActionPerformed(evt);
+            }
+        });
+
+        lblOrdernummer.setForeground(new java.awt.Color(204, 204, 204));
+
+        jLabel7.setText("Orderid:");
+
         javax.swing.GroupLayout pnlSkapaOrderLayout = new javax.swing.GroupLayout(pnlSkapaOrder);
         pnlSkapaOrder.setLayout(pnlSkapaOrderLayout);
         pnlSkapaOrderLayout.setHorizontalGroup(
@@ -957,11 +971,6 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblSkapaOrderMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblRubrikKund)
-                    .addGroup(pnlSkapaOrderLayout.createSequentialGroup()
-                        .addComponent(lblRubrikDatum, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDatum, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(cbValjStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblRubrikOrder)
                     .addGroup(pnlSkapaOrderLayout.createSequentialGroup()
                         .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -973,11 +982,26 @@ public class Dashboard extends javax.swing.JFrame {
                                 .addComponent(lblRubrikDatum1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtKommentar1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(75, 75, 75)
+                        .addGap(39, 39, 39)
+                        .addComponent(btnSparaOrder2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblFel, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbValjPrioritering, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblRubrikPrioritering))
+                    .addComponent(lblRubrikPrioritering)
+                    .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlSkapaOrderLayout.createSequentialGroup()
+                            .addComponent(cbValjStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblOrdernummer, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlSkapaOrderLayout.createSequentialGroup()
+                            .addComponent(lblRubrikDatum, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtDatum, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSkapaOrderLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlSkapaOrderLayout.setVerticalGroup(
@@ -985,10 +1009,14 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(pnlSkapaOrderLayout.createSequentialGroup()
                 .addGap(166, 166, 166)
                 .addComponent(jLabel2)
-                .addGap(41, 41, 41)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addGap(7, 7, 7)
                 .addComponent(lblRubrikOrder)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbValjStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbValjStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblOrdernummer))
                 .addGap(26, 26, 26)
                 .addComponent(lblRubrikPrioritering)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1007,7 +1035,8 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(cbValjKund, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSparaOrder))
+                        .addComponent(btnSparaOrder)
+                        .addComponent(btnSparaOrder2))
                     .addComponent(lblFel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(lblSkapaOrderMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1987,9 +2016,115 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSparaActionPerformed
 
     private void btnValjOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValjOrderActionPerformed
-        // TODO add your handling code here:
+
+        try {
+            int valdOrderIndex = listPaborjadeOrdrar.getSelectedIndex()+1; //Hämtar ut index för den valde Alien. Och äkar det med 1. 
+            String valdOrderIdString = idb.fetchSingle("SELECT Order_id FROM (SELECT order_id, ROW_NUMBER() OVER (ORDER BY order_id) as rownum FROM orders WHERE Totalsumma IS NULL \n" +
+"        OR Brådskande IS NULL \n" +
+"        OR Status IS NULL \n" +
+"        OR Datum IS NULL \n" +
+"        OR fraktsedel IS NULL) AS numbered_rows WHERE rownum = " + valdOrderIndex);
+            int orderId = Integer.parseInt(valdOrderIdString);
+            panelerGomda();
+            pnlSkapaOrder.show();
+            lblOrdernummer.setText(valdOrderIdString);
+            fyllDatum(orderId);
+            fyllKommentar(orderId);
+            fyllKund(orderId);
+            fyllBradskande(orderId);
+            btnSparaOrder.hide();
+            fyllOrderLista();
+
+            
+        } catch (InfException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        
     }//GEN-LAST:event_btnValjOrderActionPerformed
 
+    
+    private void fyllDatum(int orderId)
+    {
+    
+        try {
+            String valtDatum = idb.fetchSingle("Select datum from orders where order_id = " + orderId);
+            if (valtDatum==null){
+            txtDatum.setText("yyyy-mm-dd");
+            }else{
+            txtDatum.setText(valtDatum);
+            }
+        } catch (InfException ex) {
+            Logger.getLogger(SkapaOrder.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+     private void fyllKommentar(int orderId)
+    {
+    
+        try {
+            String valdKommentar = idb.fetchSingle("Select kommentar from orders where order_id = " + orderId);
+            if (valdKommentar==null){
+            txtKommentar1.setText("Ingen kommentar");
+            }else{
+            txtKommentar1.setText(valdKommentar);
+            }
+        } catch (InfException ex) {
+            Logger.getLogger(SkapaOrder.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+     private void fyllKund(int orderId)
+     {
+     
+        try {
+            String fornamn = idb.fetchSingle("Select Förnamn from kund where Kund_ID = (Select kund from orders where order_id = " + orderId + ")");
+            String efternamn = idb.fetchSingle("Select Efternamn from kund where Kund_ID = (Select kund from orders where order_id = " + orderId + ")");
+            
+            cbValjKund.setSelectedItem(fornamn + " " + efternamn);
+            
+        } catch (InfException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     }
+     
+     private void fyllBradskande(int orderId)
+     {
+     
+        try {
+            String bradskande = idb.fetchSingle("Select Brådskande from orders where order_id = " + orderId);
+            if (bradskande.equals(0)){
+            cbValjPrioritering.setSelectedIndex(0);
+            }else{
+            cbValjPrioritering.setSelectedIndex(1);
+            }
+            
+        } catch (InfException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     }
+     
+          private void fyllGodkannande(int orderId)
+     {
+     
+        try {
+            String godkand = idb.fetchSingle("Select KundsGodkännande from orders where order_id = " + orderId);
+            if (godkand.equals(0)){
+            cbValjPrioritering.setSelectedIndex(0);
+            }else{
+            cbValjPrioritering.setSelectedIndex(1);
+            }
+            
+        } catch (InfException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     }
+     
+     
+     
+    
+    
     private void txtAngeStorlekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAngeStorlekActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAngeStorlekActionPerformed
@@ -2450,6 +2585,21 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSparaPaketActionPerformed
 
+    private void btnSparaOrder2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSparaOrder2ActionPerformed
+
+        try {
+            int bradskande = 0;
+            if (cbValjPrioritering.getSelectedItem().equals("Brådskande")){
+                bradskande = 1;
+            }
+            idb.update("Update orders set Datum ='"+ txtDatum.getText() +"', brådskande = " + bradskande+ ", kommentar = '"+ txtKommentar.getText() +"', status = '"+ cbValjStatus.getSelectedItem() +"' where order_id = " + lblOrdernummer.getText());
+            fyllOrderLista();
+        } catch (InfException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_btnSparaOrder2ActionPerformed
+
     private ArrayList<String> getPersonalIdLista() {
 
         ArrayList<String> personalIds = new ArrayList<>();
@@ -2625,7 +2775,7 @@ public class Dashboard extends javax.swing.JFrame {
             DefaultListModel<String> listModel = new DefaultListModel<>();
             listPaborjadeOrdrar.setModel(listModel);
 
-            ArrayList<HashMap<String, String>> paborjadList = idb.fetchRows("Select * from orders where Totalsumma is null or Brådskande is null or Status is null or Datum is null or fraktsedel is null or kommentar is null");
+            ArrayList<HashMap<String, String>> paborjadList = idb.fetchRows("Select * from orders where Totalsumma is null or Brådskande is null or Status is null or Datum is null or fraktsedel is null order by order_id");
             for (HashMap<String, String> orderRad : paborjadList) {
                 StringBuilder radTextBuilder = new StringBuilder(); // StringBuilder for efficient string concatenation
                 ArrayList<String> columnsForRow = new ArrayList<>(orderRad.keySet()); // List of column names for the current row
@@ -2676,6 +2826,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnSpara;
     private javax.swing.JButton btnSparaKund;
     private javax.swing.JButton btnSparaOrder;
+    private javax.swing.JButton btnSparaOrder2;
     private javax.swing.JButton btnSparaPaket;
     private javax.swing.JButton btnStartsida;
     private javax.swing.JButton btnTaBortKund;
@@ -2701,6 +2852,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
@@ -2743,6 +2895,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lblNuvarandeAnvandare;
     private javax.swing.JLabel lblOrderNumber1;
     private javax.swing.JLabel lblOrderSidaMeddelande;
+    private javax.swing.JLabel lblOrdernummer;
     private javax.swing.JLabel lblOrdersida;
     private javax.swing.JLabel lblOrt;
     private javax.swing.JLabel lblOrt1;
