@@ -30,15 +30,18 @@ public class Dashboard extends javax.swing.JFrame {
     private InfDB idb;
     private ArrayList<String> orders;
     private ArrayList<String> personalId;
+    
+    private String persId;
 
     /**
      * Creates new form test
      */
-    public Dashboard(InfDB idb) {
+    public Dashboard(InfDB idb, String personalId) {
         this.idb = idb;
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         orders = getOrderLista();
-        personalId = getPersonalIdLista();
+        persId = personalId;
+        this.personalId = getPersonalIdLista();
         initComponents();
         fyllOrderLista();
         fyllBoxOrder();
@@ -232,10 +235,9 @@ public class Dashboard extends javax.swing.JFrame {
         personalTillHatt = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         orderLista = new javax.swing.JList<>();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        personalIdLista = new javax.swing.JList<>();
         taBortpersonalFranHatt = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        lblError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -415,7 +417,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlStartsida.setBackground(new java.awt.Color(51, 51, 51));
 
-        listPaborjadeOrdrar.setForeground(new java.awt.Color(0, 0, 0));
         listPaborjadeOrdrar.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -788,7 +789,6 @@ public class Dashboard extends javax.swing.JFrame {
         lblSkapaHatt.setForeground(new java.awt.Color(255, 255, 255));
         lblSkapaHatt.setText("Skapa Hatt");
 
-        btnSpara.setForeground(new java.awt.Color(0, 0, 0));
         btnSpara.setText("Spara");
         btnSpara.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -813,7 +813,6 @@ public class Dashboard extends javax.swing.JFrame {
         lblAngeStorlek.setForeground(new java.awt.Color(255, 255, 255));
         lblAngeStorlek.setText("Ange Storlek");
 
-        cbValjTyp.setForeground(new java.awt.Color(0, 0, 0));
         cbValjTyp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lagerförd", "Special" }));
 
         lblAngePris.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -903,7 +902,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlSkapaOrder.setBackground(new java.awt.Color(51, 51, 51));
 
-        cbValjPrioritering.setForeground(new java.awt.Color(0, 0, 0));
         cbValjPrioritering.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Brådskande", "Inte brådskande" }));
 
         btnSparaOrder.setForeground(new java.awt.Color(255, 255, 255));
@@ -924,13 +922,11 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Skapa order");
 
-        cbValjStatus.setForeground(new java.awt.Color(0, 0, 0));
         cbValjStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Godkänd", "Inte godkänd" }));
 
         lblRubrikKund.setForeground(new java.awt.Color(255, 255, 255));
         lblRubrikKund.setText("Kund");
 
-        cbValjKund.setForeground(new java.awt.Color(0, 0, 0));
         cbValjKund.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbValjKundActionPerformed(evt);
@@ -940,12 +936,9 @@ public class Dashboard extends javax.swing.JFrame {
         lblRubrikDatum.setForeground(new java.awt.Color(255, 255, 255));
         lblRubrikDatum.setText("Datum:");
 
-        txtDatum.setForeground(new java.awt.Color(0, 0, 0));
-
         lblRubrikDatum1.setForeground(new java.awt.Color(255, 255, 255));
         lblRubrikDatum1.setText("Kommentar:");
 
-        txtKommentar1.setForeground(new java.awt.Color(0, 0, 0));
         txtKommentar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtKommentar1ActionPerformed(evt);
@@ -1124,17 +1117,11 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlSkapaKund.setBackground(new java.awt.Color(51, 51, 51));
 
-        txtPostnummer1.setForeground(new java.awt.Color(0, 0, 0));
-
         lblEfternamn1.setForeground(new java.awt.Color(255, 255, 255));
         lblEfternamn1.setText("Efternamn");
 
-        txtOrt1.setForeground(new java.awt.Color(0, 0, 0));
-
         lblEpost1.setForeground(new java.awt.Color(255, 255, 255));
         lblEpost1.setText("Epost");
-
-        txtTelefon1.setForeground(new java.awt.Color(0, 0, 0));
 
         lblGatuadress1.setForeground(new java.awt.Color(255, 255, 255));
         lblGatuadress1.setText("Gatuadress");
@@ -1156,18 +1143,12 @@ public class Dashboard extends javax.swing.JFrame {
         lblTelefon1.setForeground(new java.awt.Color(255, 255, 255));
         lblTelefon1.setText("Telefon");
 
-        txtFornamn1.setForeground(new java.awt.Color(0, 0, 0));
         txtFornamn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFornamn1ActionPerformed(evt);
             }
         });
 
-        txtEfternamn1.setForeground(new java.awt.Color(0, 0, 0));
-
-        txtEpost1.setForeground(new java.awt.Color(0, 0, 0));
-
-        txtGatuadress1.setForeground(new java.awt.Color(0, 0, 0));
         txtGatuadress1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtGatuadress1ActionPerformed(evt);
@@ -1683,13 +1664,6 @@ public class Dashboard extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(orderLista);
 
-        personalIdLista.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = personalId.toArray(new String[personalId.size()]);
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane4.setViewportView(personalIdLista);
-
         taBortpersonalFranHatt.setText("Ta Bort Mig från Hatt");
         taBortpersonalFranHatt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1704,6 +1678,9 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        lblError.setForeground(new java.awt.Color(255, 51, 51));
+        lblError.setText("                                              ");
+
         javax.swing.GroupLayout pnlSideBarHogerLayout = new javax.swing.GroupLayout(pnlSideBarHoger);
         pnlSideBarHoger.setLayout(pnlSideBarHogerLayout);
         pnlSideBarHogerLayout.setHorizontalGroup(
@@ -1711,35 +1688,32 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSideBarHogerLayout.createSequentialGroup()
+                .addGap(66, 66, 66)
                 .addGroup(pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(personalTillHatt)
-                            .addComponent(taBortpersonalFranHatt, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSideBarHogerLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(29, 29, 29))))
+                    .addComponent(personalTillHatt)
+                    .addComponent(taBortpersonalFranHatt, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(29, 29, 29))
+            .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
+                .addComponent(lblError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         pnlSideBarHogerLayout.setVerticalGroup(
             pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84)
+                .addGroup(pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
                     .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
                         .addComponent(personalTillHatt)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(taBortpersonalFranHatt)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addComponent(taBortpersonalFranHatt)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(lblError, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2336,8 +2310,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_cbValjMaterialActionPerformed
 
     private void personalTillHattActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personalTillHattActionPerformed
-        String komboId = orderLista.getSelectedValue();
-        String personalId = personalIdLista.getSelectedValue();
+         String komboId = orderLista.getSelectedValue();
 
         // Extrahera numeriskt kombo-ID genom att ta bort alla icke-numeriska tecken
         String intKomboId = komboId.replaceAll("[^0-9]", "");
@@ -2346,14 +2319,15 @@ public class Dashboard extends javax.swing.JFrame {
             // Kontrollera om hatten är "ej tagen" innan personal tilldelas
             if (komboId.contains("ej tagen")) {
 
-                String uppdateraPersonal = "UPDATE hatt_i_order SET personal_ID = " + personalId + " WHERE kombo_ID = " + intKomboId + ";";
-                String uppdateraStatus = "Update hatt_i_order Set Status = 'Påbörjad'";
+                String uppdateraPersonal = "UPDATE hatt_i_order SET personal_ID = " + persId + " WHERE kombo_ID = " + intKomboId + ";";
+                String uppdateraStatus = "Update hatt_i_order Set Status = 'Påbörjad' Where Kombo_ID = " + intKomboId;
 
                 idb.update(uppdateraPersonal);
                 idb.update(uppdateraStatus);
 
                 System.out.println("Gått genom");
-
+                lblError.setVisible(false);
+                
                 // Uppdatera gränssnittet med den uppdaterade orderns lista
                 orders = getOrderLista();
                 DefaultListModel<String> orderListModel = new DefaultListModel<>();
@@ -2372,22 +2346,20 @@ public class Dashboard extends javax.swing.JFrame {
             System.out.println(ex);
             System.out.println(intKomboId);
         }
-
     }//GEN-LAST:event_personalTillHattActionPerformed
 
     private void taBortpersonalFranHattActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taBortpersonalFranHattActionPerformed
 
-        String valdPersonalId = personalIdLista.getSelectedValue();
         String intKomboId = orderLista.getSelectedValue().replaceAll("[^0-9]", "");
 
         String taBortPersonalQuery = "Update hatt_i_order Set Personal_ID = NULL Where Kombo_ID = " + intKomboId + ";";
-        String uppdateraStatus = "Update hatt_i_order Set Status = 'Påbörjad'";
+        String uppdateraStatus = "Update hatt_i_order Set Status = 'Ej Påbörjad' Where Kombo_ID = " + intKomboId;;
 
         try {
 
             String valdHatt = idb.fetchSingle("Select personal_ID from hatt_i_order where Kombo_ID = " + intKomboId);
 
-            if (valdPersonalId.equals(valdHatt)) {
+            if (persId.equals(valdHatt)) {
                 idb.update(taBortPersonalQuery);
                 idb.update(uppdateraStatus);
 
@@ -2402,12 +2374,15 @@ public class Dashboard extends javax.swing.JFrame {
                 orderLista.setModel(orderListModel);
 
                 System.out.println("Gått genom");
+                lblError.setVisible(false);
+                
             } else {
-                System.out.println("Du kan inte ta bort en annan personal");
+                lblError.setText("Du kan inte ta bort en annan personal");
             }
         } catch (InfException e) {
             System.out.println(e);
         }
+
 
     }//GEN-LAST:event_taBortpersonalFranHattActionPerformed
 
@@ -2491,7 +2466,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private ArrayList<String> getOrderLista() {
 
-        ArrayList<String> ordersLista = new ArrayList<>();
+         ArrayList<String> ordersLista = new ArrayList<>();
         try {
             // Hämta rader från 'hatt_i_order' och bearbeta dem för att skapa en lista med orderdetaljer
             ArrayList<HashMap<String, String>> raderILista = idb.fetchRows("Select * from hatt_i_order order by order_id");
@@ -2507,7 +2482,9 @@ public class Dashboard extends javax.swing.JFrame {
                 String hattNamn = idb.fetchSingle("Select modell from hatt where produkt_id = " + enRad.get("Hatt_ID"));
 
                 String personalNamn = idb.fetchSingle("Select förnamn from personal where personal_id = " + enRad.get("Personal_ID"));
-
+                
+                String status = idb.fetchSingle("Select Status from hatt_i_order where kombo_ID = " + enRad.get("Kombo_ID"));
+                
                 if (personalNamn == null) {
                     personalNamn = "ej tagen";
                 }
@@ -2518,7 +2495,7 @@ public class Dashboard extends javax.swing.JFrame {
                     i = orderInt;
                 }
 
-                ordersLista.add("(" + kombo_ID + ")                         " + hattNamn + "       -       " + personalNamn);
+                ordersLista.add("(" + kombo_ID + ")                         " + hattNamn + "       -       " + personalNamn + "      -       " + status);
 
             }
 
@@ -2729,7 +2706,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
@@ -2749,6 +2725,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lblEfternamn1;
     private javax.swing.JLabel lblEpost;
     private javax.swing.JLabel lblEpost1;
+    private javax.swing.JLabel lblError;
     private javax.swing.JLabel lblFel;
     private javax.swing.JLabel lblForNamn1;
     private javax.swing.JLabel lblFornamn;
@@ -2808,7 +2785,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JList<String> list2;
     private javax.swing.JList<String> listPaborjadeOrdrar;
     private javax.swing.JList<String> orderLista;
-    private javax.swing.JList<String> personalIdLista;
     private javax.swing.JButton personalTillHatt;
     private javax.swing.JPanel pnlFraktSedel1;
     private javax.swing.JPanel pnlHattar;
