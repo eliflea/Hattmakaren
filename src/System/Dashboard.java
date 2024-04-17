@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.PrintJob;
 import java.awt.Toolkit;
+import javax.swing.*;
 import java.awt.image.BufferedImage;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
@@ -34,10 +35,12 @@ public class Dashboard extends javax.swing.JFrame {
      * Creates new form test
      */
     public Dashboard(InfDB idb) {
-        initComponents();
         this.idb = idb;
-        fyllOrderLista();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        orders = getOrderLista();
+        personalId = getPersonalIdLista();
+        initComponents();
+        fyllOrderLista();
         fyllBoxOrder();
         fyllBoxOrder1();
         fyllBoxOrder2();
@@ -46,8 +49,7 @@ public class Dashboard extends javax.swing.JFrame {
         fyllBoxHattar();
         listHatt();
         listHattSpecial();
-        orders = getOrderLista();
-        personalId = getPersonalIdLista();
+
     }
 
     /**
