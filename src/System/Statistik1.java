@@ -21,9 +21,10 @@ public class Statistik1 extends javax.swing.JFrame {
     /**
      * Creates new form Statistik1
      */
-    public Statistik1() {
+    public Statistik1(InfDB idb) {
         initComponents();
         this.idb = idb;
+        fyllAr();
     }
 
     /**
@@ -149,7 +150,8 @@ public class Statistik1 extends javax.swing.JFrame {
             
             for(String ar : allaAr)
             {
-                cbAr.insertItemAt(ar, i);
+                String aret =ar.substring(0, 4);
+                cbAr.insertItemAt(aret, i);
                 i++;
             }
             
