@@ -6,8 +6,11 @@ import java.awt.Image;
 import java.awt.PrintJob;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
+import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -24,6 +27,8 @@ import oru.inf.InfException;
 public class Dashboard extends javax.swing.JFrame {
 
     private InfDB idb;
+    private ArrayList<String> orders;
+    private ArrayList<String> personalId;
 
     /**
      * Creates new form test
@@ -35,12 +40,14 @@ public class Dashboard extends javax.swing.JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         fyllBoxOrder();
         fyllBoxOrder1();
-        fyllBoxOrder2(); 
+        fyllBoxOrder2();
         fyllBoxKund();
         fyllBoxOrder3();
         fyllBoxHattar();
         listHatt();
         listHattSpecial();
+        orders = getOrderLista();
+        personalId = getPersonalIdLista();
     }
 
     /**
@@ -217,6 +224,13 @@ public class Dashboard extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblMaterial = new javax.swing.JTable();
         pnlSideBarHoger = new javax.swing.JPanel();
+        personalTillHatt = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        orderLista = new javax.swing.JList<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        personalIdLista = new javax.swing.JList<>();
+        taBortpersonalFranHatt = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1646,15 +1660,78 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlSideBarHoger.setBackground(new java.awt.Color(51, 51, 51));
 
+        personalTillHatt.setText("Lägg till Personal till Hatt");
+        personalTillHatt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                personalTillHattActionPerformed(evt);
+            }
+        });
+
+        orderLista.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = orders.toArray(new String[orders.size()]);
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane3.setViewportView(orderLista);
+
+        personalIdLista.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = personalId.toArray(new String[personalId.size()]);
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane4.setViewportView(personalIdLista);
+
+        taBortpersonalFranHatt.setText("Ta Bort Mig från Hatt");
+        taBortpersonalFranHatt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                taBortpersonalFranHattActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Hatt Sida");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlSideBarHogerLayout = new javax.swing.GroupLayout(pnlSideBarHoger);
         pnlSideBarHoger.setLayout(pnlSideBarHogerLayout);
         pnlSideBarHogerLayout.setHorizontalGroup(
             pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 406, Short.MAX_VALUE)
+            .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(personalTillHatt)
+                            .addComponent(taBortpersonalFranHatt, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSideBarHogerLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addGap(29, 29, 29))))
         );
         pnlSideBarHogerLayout.setVerticalGroup(
             pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
+                        .addComponent(personalTillHatt)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(taBortpersonalFranHatt)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(440, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1946,9 +2023,9 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnSparaOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSparaOrderActionPerformed
         // TODO add your handling code here:
-        if(Validering.harTextFaltetVarde(txtDatum, lblSkapaOrderMeddelande)
-                && Validering.kollaDatumFormat(txtDatum, lblSkapaOrderMeddelande) &&
-                Validering.harTextFaltetVarde(txtKommentar, lblSkapaOrderMeddelande));
+        if (Validering.harTextFaltetVarde(txtDatum, lblSkapaOrderMeddelande)
+                && Validering.kollaDatumFormat(txtDatum, lblSkapaOrderMeddelande)
+                && Validering.harTextFaltetVarde(txtKommentar, lblSkapaOrderMeddelande));
 
         //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
         String valdStatus = cbValjStatus.getSelectedItem().toString().toLowerCase();
@@ -2009,14 +2086,14 @@ public class Dashboard extends javax.swing.JFrame {
                 String fornamn = kund.get("Förnamn");
                 String efternamn = kund.get("Efternamn");
 
-            //förnamn och efternamn kombineras för att läggas i combobox
-            cbValjKund.addItem(fornamn + " " + efternamn );
-              }      
-           } catch (InfException ettUndantag) {
-             System.out.println("Error " + ettUndantag.getMessage()); 
-           }
-          }
-    
+                //förnamn och efternamn kombineras för att läggas i combobox
+                cbValjKund.addItem(fornamn + " " + efternamn);
+            }
+        } catch (InfException ettUndantag) {
+            System.out.println("Error " + ettUndantag.getMessage());
+        }
+    }
+
     private void cbValjKundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjKundActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbValjKundActionPerformed
@@ -2045,10 +2122,10 @@ public class Dashboard extends javax.swing.JFrame {
         double procentAvgift = 0.20;
 
         try {
-            String query = "SELECT Hatt.Pris " +
-            "FROM Hatt " +
-            "JOIN hatt_i_order ON Hatt.Produkt_ID = hatt_i_order.Hatt_ID " +
-            "WHERE hatt_i_order.Order_ID = '" + order2 + "'";
+            String query = "SELECT Hatt.Pris "
+                    + "FROM Hatt "
+                    + "JOIN hatt_i_order ON Hatt.Produkt_ID = hatt_i_order.Hatt_ID "
+                    + "WHERE hatt_i_order.Order_ID = '" + order2 + "'";
 
             ArrayList<HashMap<String, String>> allaPriser = idb.fetchRows(query);
             String fragaPrioritering = "Select Brådskande from orders where Order_ID = '" + order2 + "';";
@@ -2083,9 +2160,8 @@ public class Dashboard extends javax.swing.JFrame {
                 System.out.println("Totalsumma för ordern är: " + avrundat);
                 txtTotalSumma.setText(avrundat);
 
-            }
-            else {
-                totalMoms =  total * (1 + momsBelopp);
+            } else {
+                totalMoms = total * (1 + momsBelopp);
                 momsOchAvgift = total + totalMoms;
                 double totalSumma = totaltMedMoms;
                 String avrundat = String.format("%.2f", totalSumma);
@@ -2093,14 +2169,14 @@ public class Dashboard extends javax.swing.JFrame {
                 txtTotalSumma.setText(avrundat);
             }
 
-            momsOchAvgift =  totalMoms * totalAvgift;
+            momsOchAvgift = totalMoms * totalAvgift;
 
         } catch (Exception ettUndantag) {
             System.out.println("Error " + ettUndantag.getMessage());
         }
 
     }//GEN-LAST:event_btnOrderTotalsummaActionPerformed
-    
+
     private void randomFraktsedelnummer() {
         // Visar fraktsedeln med random fraktsedelsnummer
         try {
@@ -2118,14 +2194,14 @@ public class Dashboard extends javax.swing.JFrame {
             fel.printStackTrace();
         }
     }
-    
+
     public static BufferedImage barcodeBild(String barcodeNummer) throws Exception {
         //Skapar bild för fraktsedelsbarcode
         Barcode barcode = BarcodeFactory.createEAN13(barcodeNummer);
         barcode.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 10));
 
         return BarcodeImageHandler.getImage(barcode);
-    } 
+    }
 
     private String randomBarcode() {
         //Random barcode 12-siffrig för fraktsedel 
@@ -2136,7 +2212,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
         return sb.toString();
     }
-    
+
     private void txtAngeLangdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAngeLangdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAngeLangdActionPerformed
@@ -2148,13 +2224,12 @@ public class Dashboard extends javax.swing.JFrame {
 
         //visar status för order
         try {
-            String status = idb.fetchSingle("Select Brådskande from Orders where Order_ID = " + txtInsertOrder.getText() +  "");
+            String status = idb.fetchSingle("Select Brådskande from Orders where Order_ID = " + txtInsertOrder.getText() + "");
 
-            String status2 = idb.fetchSingle("Select Status from Orders where Order_ID = " + txtInsertOrder.getText() +  "");
+            String status2 = idb.fetchSingle("Select Status from Orders where Order_ID = " + txtInsertOrder.getText() + "");
 
-            if(status.equals(ett)){
-            }
-            else{
+            if (status.equals(ett)) {
+            } else {
             }
 
         } catch (Exception ex) {
@@ -2191,7 +2266,7 @@ public class Dashboard extends javax.swing.JFrame {
             for (String ettNamn : efternamnLista) {
                 lblKundNamn1.setText(ettNamn);
             }
-            String adressFraga = "SELECT Adress FROM Kund WHERE Kund_ID in(SELECT Kund from orders where Order_ID='"+ orderID+"')";
+            String adressFraga = "SELECT Adress FROM Kund WHERE Kund_ID in(SELECT Kund from orders where Order_ID='" + orderID + "')";
             ArrayList<String> adressLista = idb.fetchColumn(adressFraga);
             for (String enAdress : adressLista) {
                 lblKundAdress1.setText(enAdress);
@@ -2204,8 +2279,8 @@ public class Dashboard extends javax.swing.JFrame {
             /*String ordernummer = "SELECT Order_ID FROM order WHERE Order_ID='" + orderID + "'";
             ArrayList<String> orderLista = idb.fetchColumn(ordernummer);
             for (String enOrdernr : orderLista) {*/
-                lblOrderNumber1.setText("Ordernumber: " + orderID);
-                //}
+            lblOrderNumber1.setText("Ordernumber: " + orderID);
+            //}
             String payCustoms = "SELECT Varukod_tull FROM fraktsedel WHERE Frakt_ID IN (SELECT Fraktsedel FROM orders WHERE Order_ID=" + orderID + ")";
             ArrayList<String> payCustomsLista = idb.fetchColumn(payCustoms);
             for (String enPay : payCustomsLista) {
@@ -2225,10 +2300,10 @@ public class Dashboard extends javax.swing.JFrame {
     private void btnOrderStatus1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderStatus1ActionPerformed
         String valdStatus = cbStatus.getSelectedItem().toString();
         String order1 = cbOrder3.getSelectedItem().toString().toLowerCase();
-        try{
-            String fragaUppdateraStatus = "Update Orders set Status='" + valdStatus + "' where Order_ID ='" + order1 +"'";
+        try {
+            String fragaUppdateraStatus = "Update Orders set Status='" + valdStatus + "' where Order_ID ='" + order1 + "'";
             idb.update(fragaUppdateraStatus);
-        }       catch (Exception ettUndantag) {
+        } catch (Exception ettUndantag) {
             System.out.println("Error: " + ettUndantag.getMessage());
         }
         // TODO add your handling code here:
@@ -2239,23 +2314,23 @@ public class Dashboard extends javax.swing.JFrame {
         try {
 
             String vikt = txtAngeVikt.getText();
-            String  langd = txtAngeLangd.getText();
+            String langd = txtAngeLangd.getText();
             String hojd = txtAngeHojd.getText();
             String bredd = txtAngeBredd.getText();
             String fraktkostnad = txtAngeFraktkostnad.getText();
             String orderBox = cbOrder3.getSelectedItem().toString().toLowerCase();
             //ser till att text fälten har ifyllda värden och att dessa är heltal/decimaltal. För varje ruta
-            boolean allaFaltIfyllda =
-            Validering.harTextFaltetVarde(txtAngeVikt, lblOrderSidaMeddelande) &&
-            Validering.harTextFaltetVarde(txtAngeLangd, lblOrderSidaMeddelande) &&
-            Validering.harTextFaltetVarde(txtAngeHojd, lblOrderSidaMeddelande) &&
-            Validering.harTextFaltetVarde(txtAngeBredd, lblOrderSidaMeddelande) &&
-            Validering.harTextFaltetVarde(txtAngeFraktkostnad, lblOrderSidaMeddelande) &&
-            Validering.kollaDecimalTal(txtAngeFraktkostnad, lblOrderSidaMeddelande)&&
-            Validering.kollaDecimalTal(txtAngeVikt, lblOrderSidaMeddelande)&&
-            Validering.kollaDecimalTal(txtAngeLangd, lblOrderSidaMeddelande)&&
-            Validering.kollaDecimalTal(txtAngeHojd, lblOrderSidaMeddelande)&&
-            Validering.kollaDecimalTal(txtAngeBredd, lblOrderSidaMeddelande);
+            boolean allaFaltIfyllda
+                    = Validering.harTextFaltetVarde(txtAngeVikt, lblOrderSidaMeddelande)
+                    && Validering.harTextFaltetVarde(txtAngeLangd, lblOrderSidaMeddelande)
+                    && Validering.harTextFaltetVarde(txtAngeHojd, lblOrderSidaMeddelande)
+                    && Validering.harTextFaltetVarde(txtAngeBredd, lblOrderSidaMeddelande)
+                    && Validering.harTextFaltetVarde(txtAngeFraktkostnad, lblOrderSidaMeddelande)
+                    && Validering.kollaDecimalTal(txtAngeFraktkostnad, lblOrderSidaMeddelande)
+                    && Validering.kollaDecimalTal(txtAngeVikt, lblOrderSidaMeddelande)
+                    && Validering.kollaDecimalTal(txtAngeLangd, lblOrderSidaMeddelande)
+                    && Validering.kollaDecimalTal(txtAngeHojd, lblOrderSidaMeddelande)
+                    && Validering.kollaDecimalTal(txtAngeBredd, lblOrderSidaMeddelande);
 
             //skapar paket ID
             String paketID = idb.fetchSingle("SELECT MAX(Paket_ID) FROM paket_info");
@@ -2264,7 +2339,7 @@ public class Dashboard extends javax.swing.JFrame {
             String valdOrder = cbOrder3.getSelectedItem().toString().toLowerCase();
             //ber om att sätta in värden i tabellen
             String fragaPaketInfo = "Insert into paket_info (Paket_ID, Order_ID, vikt, langd, bredd, hojd, fraktkostnad) "
-            + "Values ('" + paketIdString + "','" + valdOrder + "','" + vikt + "','" + langd + "','" + bredd + "','" + hojd + "','" + fraktkostnad + "')";
+                    + "Values ('" + paketIdString + "','" + valdOrder + "','" + vikt + "','" + langd + "','" + bredd + "','" + hojd + "','" + fraktkostnad + "')";
             idb.insert(fragaPaketInfo);
         } catch (InfException ettUndantag) {
             System.out.println("Error " + ettUndantag.getMessage());
@@ -2312,81 +2387,232 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbValjMaterialActionPerformed
 
-    private void fyllBoxHattar() {
-         //fyller combobox med hattar
-         String fragaFyllBox = "Select Namn from hatt order by Produkt_ID";
-         ArrayList<String> allaHattar;
-         try {
-             allaHattar = idb.fetchColumn(fragaFyllBox);
-             //Varje hatt i listan av hattar itereras över
-             for(String hatt : allaHattar) {
-                 //Hattens namn läggs till i comboboxen
-                 cbValjAllaHattar.addItem(hatt); 
-             }
-         } catch (InfException ettUndantag) {
-             System.out.println("Error " + ettUndantag.getMessage()); 
-         }
-     }
-    
-    private void fyllBoxOrder3() {
-         //fyll combobox med order
-         String fragaFyllBox = "Select Order_ID from orders order by Order_ID";
-         ArrayList<String> allaOrder;
-         try {
-             allaOrder = idb.fetchColumn(fragaFyllBox);
-             for(String hatt : allaOrder) {
-                 cbOrder.addItem(hatt); 
-             }
-         } catch (InfException ettUndantag) {
-             System.out.println("Error " + ettUndantag.getMessage()); 
-         }
-        } 
+    private void personalTillHattActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personalTillHattActionPerformed
+        String komboId = orderLista.getSelectedValue();
+        String personalId = personalIdLista.getSelectedValue();
 
-private void fyllBoxMaterial() {
-         //fyll combobox med order
-         String fragaFyllBox = "Select Namn from Material Where Material_ID IN (Select Material_ID from material_i_Hatt where Hatt_ID = (Select produkt_ID from Hatt where Namn = '" + cbValjAllaHattar.getSelectedItem() + "'))";
-         ArrayList<String> allaMaterialIHatt;
-         try {
-             allaMaterialIHatt = idb.fetchColumn(fragaFyllBox);
-             for(String material : allaMaterialIHatt) {
-                 cbValjMaterial.addItem(material); 
-             }
-         } catch (InfException ettUndantag) {
-             System.out.println("Error " + ettUndantag.getMessage()); 
-         }
-        } 
-        
-        private void listHatt(){
-          try {
-                String fragaHatt = "Select Namn from hatt where Godkänd = 1";
-               ArrayList<String> listHatt = idb.fetchColumn(fragaHatt);
-                DefaultListModel<String> modelListHatt = new DefaultListModel<>();
-                for (String hattNamn : listHatt) {
-                 modelListHatt.addElement(hattNamn);
-                 list1.setModel(modelListHatt);
-                
-          }
-         } catch (Exception ettUndantag) {
-                   
-                  }
+        // Extrahera numeriskt kombo-ID genom att ta bort alla icke-numeriska tecken
+        String intKomboId = komboId.replaceAll("[^0-9]", "");
+
+        try {
+            // Kontrollera om hatten är "ej tagen" innan personal tilldelas
+            if (komboId.contains("ej tagen")) {
+
+                String uppdateraPersonal = "UPDATE hatt_i_order SET personal_ID = " + personalId + " WHERE kombo_ID = " + intKomboId + ";";
+                String uppdateraStatus = "Update hatt_i_order Set Status = 'Påbörjad'";
+
+                idb.update(uppdateraPersonal);
+                idb.update(uppdateraStatus);
+
+                System.out.println("Gått genom");
+
+                // Uppdatera gränssnittet med den uppdaterade orderns lista
+                orders = getOrderLista();
+                DefaultListModel<String> orderListModel = new DefaultListModel<>();
+                for (String order : orders) {
+                    orderListModel.addElement(order);
+                }
+
+                // Uppdatera JList med den nya listmodellen
+                orderLista.setModel(orderListModel);
+            } else {
+                System.out.println("Hatten har redan en angiven personal");
+            }
+
+        } catch (InfException ex) {
+
+            System.out.println(ex);
+            System.out.println(intKomboId);
         }
-          private void listHattSpecial(){
-          try {
-              
-                String fragaHatt = "Select Namn from hatt where Godkänd = 0";
-               ArrayList<String> listHatt = idb.fetchColumn(fragaHatt);
-                DefaultListModel<String> modelListHatt = new DefaultListModel<>();
-                for (String hattNamn : listHatt) {
-                 modelListHatt.addElement(hattNamn);
-                 list2.setModel(modelListHatt);
-                
-          }
-         } catch (Exception ettUndantag) {
-                   
-                  }
-        
-}
-    
+
+    }//GEN-LAST:event_personalTillHattActionPerformed
+
+    private void taBortpersonalFranHattActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taBortpersonalFranHattActionPerformed
+
+        String valdPersonalId = personalIdLista.getSelectedValue();
+        String intKomboId = orderLista.getSelectedValue().replaceAll("[^0-9]", "");
+
+        String taBortPersonalQuery = "Update hatt_i_order Set Personal_ID = NULL Where Kombo_ID = " + intKomboId + ";";
+        String uppdateraStatus = "Update hatt_i_order Set Status = 'Påbörjad'";
+
+        try {
+
+            String valdHatt = idb.fetchSingle("Select personal_ID from hatt_i_order where Kombo_ID = " + intKomboId);
+
+            if (valdPersonalId.equals(valdHatt)) {
+                idb.update(taBortPersonalQuery);
+                idb.update(uppdateraStatus);
+
+                orders = getOrderLista();
+
+                DefaultListModel<String> orderListModel = new DefaultListModel<>();
+                for (String order : orders) {
+                    orderListModel.addElement(order);
+                }
+
+                // Set the updated model to the orderLista JList
+                orderLista.setModel(orderListModel);
+
+                System.out.println("Gått genom");
+            } else {
+                System.out.println("Du kan inte ta bort en annan personal");
+            }
+        } catch (InfException e) {
+            System.out.println(e);
+        }
+
+    }//GEN-LAST:event_taBortpersonalFranHattActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            // TODO add your handling code here:
+            String komboId = orderLista.getSelectedValue();
+
+            if (komboId.startsWith("Order")) {
+            } // Extrahera numeriskt kombo-ID genom att ta bort alla icke-numeriska tecken
+            else {
+                String intKomboId = komboId.replaceAll("[^0-9]", "");
+
+                int hattId = parseInt(idb.fetchSingle("Select Hatt_ID from hatt_i_order Where Kombo_ID = " + intKomboId));
+
+                new HattInformation(hattId).setVisible(true);
+            }
+
+        } catch (InfException ex) {
+            Logger.getLogger(PlaneringsYta.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private ArrayList<String> getPersonalIdLista() {
+
+        ArrayList<String> personalIds = new ArrayList<>();
+
+        try {
+            personalIds = idb.fetchColumn("Select personal_ID from personal");
+        } catch (InfException e) {
+            System.out.println(e);
+        }
+
+        return personalIds;
+
+    }
+
+    private ArrayList<String> getOrderLista() {
+
+        ArrayList<String> ordersLista = new ArrayList<>();
+        try {
+            // Hämta rader från 'hatt_i_order' och bearbeta dem för att skapa en lista med orderdetaljer
+            ArrayList<HashMap<String, String>> raderILista = idb.fetchRows("Select * from hatt_i_order order by order_id");
+            int i = 0;
+
+            //loopar genom ArrayListan "raderILista"
+            for (HashMap<String, String> enRad : raderILista) {
+                String orderId = enRad.get("Order_ID");
+                int orderInt = Integer.parseInt(orderId);
+
+                String kombo_ID = enRad.get("Kombo_ID");
+
+                String hattNamn = idb.fetchSingle("Select modell from hatt where produkt_id = " + enRad.get("Hatt_ID"));
+
+                String personalNamn = idb.fetchSingle("Select förnamn from personal where personal_id = " + enRad.get("Personal_ID"));
+
+                if (personalNamn == null) {
+                    personalNamn = "ej tagen";
+                }
+
+                //kollar att orderID:t inte redan tillagd som en item till listan 
+                if (orderInt > i) {
+                    ordersLista.add("Order: " + orderId);
+                    i = orderInt;
+                }
+
+                ordersLista.add("(" + kombo_ID + ")                         " + hattNamn + "       -       " + personalNamn);
+
+            }
+
+        } catch (InfException ex) {
+            Logger.getLogger(PlaneringsYta.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return ordersLista;
+    }
+
+    private void fyllBoxHattar() {
+        //fyller combobox med hattar
+        String fragaFyllBox = "Select Namn from hatt order by Produkt_ID";
+        ArrayList<String> allaHattar;
+        try {
+            allaHattar = idb.fetchColumn(fragaFyllBox);
+            //Varje hatt i listan av hattar itereras över
+            for (String hatt : allaHattar) {
+                //Hattens namn läggs till i comboboxen
+                cbValjAllaHattar.addItem(hatt);
+            }
+        } catch (InfException ettUndantag) {
+            System.out.println("Error " + ettUndantag.getMessage());
+        }
+    }
+
+    private void fyllBoxOrder3() {
+        //fyll combobox med order
+        String fragaFyllBox = "Select Order_ID from orders order by Order_ID";
+        ArrayList<String> allaOrder;
+        try {
+            allaOrder = idb.fetchColumn(fragaFyllBox);
+            for (String hatt : allaOrder) {
+                cbOrder.addItem(hatt);
+            }
+        } catch (InfException ettUndantag) {
+            System.out.println("Error " + ettUndantag.getMessage());
+        }
+    }
+
+    private void fyllBoxMaterial() {
+        //fyll combobox med order
+        String fragaFyllBox = "Select Namn from Material Where Material_ID IN (Select Material_ID from material_i_Hatt where Hatt_ID = (Select produkt_ID from Hatt where Namn = '" + cbValjAllaHattar.getSelectedItem() + "'))";
+        ArrayList<String> allaMaterialIHatt;
+        try {
+            allaMaterialIHatt = idb.fetchColumn(fragaFyllBox);
+            for (String material : allaMaterialIHatt) {
+                cbValjMaterial.addItem(material);
+            }
+        } catch (InfException ettUndantag) {
+            System.out.println("Error " + ettUndantag.getMessage());
+        }
+    }
+
+    private void listHatt() {
+        try {
+            String fragaHatt = "Select Namn from hatt where Godkänd = 1";
+            ArrayList<String> listHatt = idb.fetchColumn(fragaHatt);
+            DefaultListModel<String> modelListHatt = new DefaultListModel<>();
+            for (String hattNamn : listHatt) {
+                modelListHatt.addElement(hattNamn);
+                list1.setModel(modelListHatt);
+
+            }
+        } catch (Exception ettUndantag) {
+
+        }
+    }
+
+    private void listHattSpecial() {
+        try {
+
+            String fragaHatt = "Select Namn from hatt where Godkänd = 0";
+            ArrayList<String> listHatt = idb.fetchColumn(fragaHatt);
+            DefaultListModel<String> modelListHatt = new DefaultListModel<>();
+            for (String hattNamn : listHatt) {
+                modelListHatt.addElement(hattNamn);
+                list2.setModel(modelListHatt);
+
+            }
+        } catch (Exception ettUndantag) {
+
+        }
+
+    }
+
     private boolean taBortKund() {
         if (Validering.harTextFaltetVarde(txtTaBortEpost, lblTaBortMeddelande)) {
             try {
@@ -2415,13 +2641,13 @@ private void fyllBoxMaterial() {
 
             } catch (InfException fel) {
                 lblTaBortMeddelande.setText("Ett fel uppstod!");
-                                    fel.printStackTrace();
+                fel.printStackTrace();
 
             }
         }
         return false;
     }
-    
+
     private void fyllOrderLista() {
         try {
             DefaultListModel<String> listModel = new DefaultListModel<>();
@@ -2444,8 +2670,9 @@ private void fyllBoxMaterial() {
             }
 
         } catch (InfException fel) {
-        }}
-        
+        }
+    }
+
     private void panelerGomda() {
         //Alla gömda paneler samlade i en metod för att förenkla koden
         pnlKund.hide();
@@ -2492,6 +2719,7 @@ private void fyllBoxMaterial() {
     private javax.swing.JComboBox<String> cbValjPrioritering;
     private javax.swing.JComboBox<String> cbValjStatus;
     private javax.swing.JComboBox<String> cbValjTyp;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -2503,6 +2731,8 @@ private void fyllBoxMaterial() {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
@@ -2579,6 +2809,9 @@ private void fyllBoxMaterial() {
     private javax.swing.JList<String> list1;
     private javax.swing.JList<String> list2;
     private javax.swing.JList<String> listPaborjadeOrdrar;
+    private javax.swing.JList<String> orderLista;
+    private javax.swing.JList<String> personalIdLista;
+    private javax.swing.JButton personalTillHatt;
     private javax.swing.JPanel pnlFraktSedel1;
     private javax.swing.JPanel pnlHattar;
     private javax.swing.JPanel pnlKund;
@@ -2594,6 +2827,7 @@ private void fyllBoxMaterial() {
     private javax.swing.JPanel pnlTaBortKund;
     private javax.swing.JPanel pnlValjHatt;
     private javax.swing.JPanel pnlVisaMaterial;
+    private javax.swing.JButton taBortpersonalFranHatt;
     private javax.swing.JTable tblMaterial;
     private javax.swing.JTextField txtAngeBredd;
     private javax.swing.JTextField txtAngeFraktkostnad;
