@@ -4,18 +4,47 @@
  */
 package System;
 
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import oru.inf.InfDB;
+import oru.inf.InfException;
+
 /**
  *
  * @author Immanuel
  */
 public class Statistik extends javax.swing.JPanel {
+    
+    private static InfDB idb;
+
 
     /**
      * Creates new form Statistik
      */
     public Statistik() {
         initComponents();
+        this.idb = idb;
     }
+    
+public void fyllAr()
+{
+    String hamtaAr = "SELECT YEAR(Datum) AS År FROM hattmakarna.orders ORDER BY Datum DESC";
+    int i = 0;
+        try {
+            ArrayList<String> allaAr = idb.fetchColumn(hamtaAr);
+            
+            for(String ar : allaAr)
+            {
+                cbAr.insertItemAt(ar, i);
+                i++;
+            }
+            
+            
+        } catch (InfException ex) {
+            Logger.getLogger(Statistik.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
