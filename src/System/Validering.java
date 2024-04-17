@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import oru.inf.InfDB;
@@ -22,14 +23,14 @@ import oru.inf.InfException;
 public class Validering {
     
     
-public static boolean harTextFaltetVarde(JTextField rutaAttKolla){
+public static boolean harTextFaltetVarde(JTextField rutaAttKolla, JLabel meddelande){
     
     //kollar att det angivna faltet inte är tomt
     
     boolean faltHarVarde = true;
     
     if(rutaAttKolla.getText().isEmpty()){
-        JOptionPane.showMessageDialog(null, "Inmatningsrutan är tom!");
+        meddelande.setText("Fyll i alla rutor!");
         faltHarVarde = false;
         rutaAttKolla.requestFocus();
     }
@@ -54,7 +55,7 @@ public static boolean kollaHeltal(JTextField rutaAttKolla){
     return inmatningArHeltal;
 }
 
-public static boolean kollaDecimalTal(JTextField rutaAttKolla){
+public static boolean kollaDecimalTal(JTextField rutaAttKolla, JLabel meddelande){
     
     //kollar att falttexten är decimaltal
     
@@ -65,10 +66,31 @@ public static boolean kollaDecimalTal(JTextField rutaAttKolla){
     }
     
     } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(null, "Vänligen ange ett giltigt decimaltal!");
+        meddelande.setText("Vänligen ange ett giltigt decimaltal!");
         inmatningArDecimalTal = false;
         rutaAttKolla.requestFocus();
     }
     return inmatningArDecimalTal;
 }
+
+public static boolean kollaDatumFormat(JTextField rutaAttKolla, JLabel meddelande) {
+    
+    //kollar att falttexten är i rätt datumformat, och anger rätt format att mata in ifall det inte är det.
+    
+    boolean inmatningsFormat = true;
+    
+         String input = rutaAttKolla.getText();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        format.setLenient(false);
+        
+        try {
+            Date date = format.parse(input);
+            
+        } catch (ParseException e) {
+            meddelande.setText("Fel datum format, vänligen ange datumet som 'yyyy-MM-dd'");
+            inmatningsFormat = false;
+            rutaAttKolla.requestFocus();
+        }
+        return inmatningsFormat;
+    }
 }

@@ -1,9 +1,9 @@
-/*
+/*0
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package System;
-
+//imports som används, graphics, toolkit & printjob används för att kunna omvandla till pdf
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.logging.Level;
@@ -76,6 +76,7 @@ private JLabel getMaterialLabel(int index) {
 
     public void hamtaInfoOmHatt ()
     {
+        //Denna kod använder här en HashMap för att få information om hatten 
         try {
             String hattString = Integer.toString(hattId);
             HashMap<String, String> hattensRad = idb.fetchRow("select * from hatt where Produkt_ID = "+ hattString);
@@ -119,7 +120,11 @@ private JLabel getMaterialLabel(int index) {
         lblN4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(51, 51, 51));
+        setResizable(false);
 
+        btnSkrivUtMaterial.setBackground(new java.awt.Color(0, 0, 255));
+        btnSkrivUtMaterial.setForeground(new java.awt.Color(255, 255, 255));
         btnSkrivUtMaterial.setText("Skriv ut material");
         btnSkrivUtMaterial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,11 +134,14 @@ private JLabel getMaterialLabel(int index) {
 
         txtInfoRuta.setColumns(20);
         txtInfoRuta.setRows(5);
+        txtInfoRuta.setBorder(null);
+        txtInfoRuta.setSelectionColor(new java.awt.Color(0, 0, 204));
         jScrollPane1.setViewportView(txtInfoRuta);
 
         jTabbedPane1.addTab("Hatt", jScrollPane1);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -199,13 +207,11 @@ private JLabel getMaterialLabel(int index) {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(75, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnSkrivUtMaterial)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(273, 273, 273)
-                .addComponent(btnSkrivUtMaterial)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,7 +228,7 @@ private JLabel getMaterialLabel(int index) {
 
     private void btnSkrivUtMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkrivUtMaterialActionPerformed
 
-                                            
+     //Denna koden använder sig av importerena för att kunna omvandla till pdf                                       
     PnlMaterial pnlMaterial = new PnlMaterial(1);
     Toolkit toolkit = Toolkit.getDefaultToolkit();
     PrintJob printJob = toolkit.getPrintJob(this, "Utskrift", null);
@@ -268,6 +274,9 @@ private JLabel getMaterialLabel(int index) {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(HattInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

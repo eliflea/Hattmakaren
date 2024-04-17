@@ -23,13 +23,176 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblSkapaHatt" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtAngePris" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="txtAngeStorlek" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="lblAngeStorlek" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblAngeNamn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtAngeNamn" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="lblAngePris" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbValjMaterial" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtAngeModell" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="cbValjTyp" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblAngeModell" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblValjTyp" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtAngeText" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="lblAngeText" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSpara" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="73" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="lblSkapaHatt" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblAngeModell" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAngeNamn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtAngeModell" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAngeNamn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblAngeText" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAngeStorlek" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="txtAngeStorlek" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="lblAngePris" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtAngePris" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="btnSpara" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbValjMaterial" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="txtAngeText" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="lblValjTyp" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cbValjTyp" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="107" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lblSkapaHatt">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Skapa Hatt"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtAngeNamn">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAngeNamn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ange Namn"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtAngeStorlek">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtAngePris">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAngeStorlek">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ange Storlek"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtAngeModell">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbValjTyp">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="2">
+            <StringItem index="0" value="Lagerf&#xf6;rd"/>
+            <StringItem index="1" value="Special"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAngePris">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ange Pris"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblValjTyp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="V&#xe4;lj Typ"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAngeModell">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ange modell"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSpara">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Spara"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSparaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtAngeText">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAngeText">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ange Text"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbValjMaterial">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbValjMaterialActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="V&#xe4;lj material"/>
+      </Properties>
+    </Component>
+  </SubComponents>
 </Form>

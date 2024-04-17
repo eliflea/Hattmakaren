@@ -34,7 +34,9 @@ public class PnlMaterial extends javax.swing.JPanel {
     }
 
     private void fyllMaterialLista()
-    {
+    { 
+        //Denna kod fyller materiallistan och använder en HashMap i en arraylist för att få informationen 
+        
         try {
             ArrayList<HashMap<String, String>> rader = idb.fetchRows("Select Material_ID, namn from material where Material_ID in (Select Material_ID from material_i_hatt where Hatt_ID = 1)");
             StringBuilder strBuilder = new StringBuilder();
@@ -62,6 +64,10 @@ public class PnlMaterial extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtInfo = new javax.swing.JTextArea();
 
+        setBackground(new java.awt.Color(51, 51, 51));
+
+        lblRubrik.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblRubrik.setForeground(new java.awt.Color(255, 255, 255));
         lblRubrik.setText("Materiallista");
 
         txtInfo.setColumns(20);
@@ -73,20 +79,22 @@ public class PnlMaterial extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblRubrik))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addGap(14, 14, 14)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblRubrik, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(224, 224, 224))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(lblRubrik)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(201, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+                .addComponent(lblRubrik, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(100, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

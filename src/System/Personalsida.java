@@ -31,6 +31,7 @@ public class Personalsida extends javax.swing.JFrame {
         orderHanterareBTN = new javax.swing.JButton();
         kundHanterareBTN = new javax.swing.JButton();
         hattHanterareBTN = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +59,13 @@ public class Personalsida extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -67,11 +75,16 @@ public class Personalsida extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(111, 111, 111))
             .addGroup(layout.createSequentialGroup()
-                .addGap(143, 143, 143)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(hattHanterareBTN)
-                    .addComponent(kundHanterareBTN)
-                    .addComponent(orderHanterareBTN))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(hattHanterareBTN)
+                            .addComponent(kundHanterareBTN)
+                            .addComponent(orderHanterareBTN)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -85,7 +98,9 @@ public class Personalsida extends javax.swing.JFrame {
                 .addComponent(kundHanterareBTN)
                 .addGap(26, 26, 26)
                 .addComponent(hattHanterareBTN)
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         pack();
@@ -108,9 +123,15 @@ public class Personalsida extends javax.swing.JFrame {
         new SkapaKund(idb).setVisible(true);
         dispose();
     }//GEN-LAST:event_kundHanterareBTNActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new Dashboard(idb).setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton hattHanterareBTN;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton kundHanterareBTN;
     private javax.swing.JButton orderHanterareBTN;

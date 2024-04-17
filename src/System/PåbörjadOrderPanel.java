@@ -88,27 +88,25 @@ public class PåbörjadOrderPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnValjOrderActionPerformed
 
-    private void fyllOrderLista() throws InfException
-    {
+    private void fyllOrderLista() throws InfException {
         DefaultListModel<String> listModel = new DefaultListModel<>();
         listPaborjadeOrdrar.setModel(listModel);
-        
-        
-        ArrayList<HashMap<String,String>> paborjadList= idb.fetchRows("Select * from orders where Totalsumma is null or Brådskande is null or Status is null or Datum is null or fraktsedel is null or kommentar is null");
-        for(HashMap<String, String> orderRad : paborjadList){
-            String radText="";
-        for(String kolumn : orderRad.keySet()){
-            String varde=orderRad.get(kolumn);
-            if(varde==null){
-            varde= "ej angivet";
-            }
-        radText = radText + kolumn + ": " + varde + " | ";
-        listModel.addElement(radText);
+
+        ArrayList<HashMap<String, String>> paborjadList = idb.fetchRows("Select * from orders where Totalsumma is null or Brådskande is null or Status is null or Datum is null or fraktsedel is null or kommentar is null");
+        for (HashMap<String, String> orderRad : paborjadList) {
+    StringBuilder radTextBuilder = new StringBuilder(); // StringBuilder for efficient string concatenation
+    ArrayList<String> columnsForRow = new ArrayList<>(orderRad.keySet()); // List of column names for the current row
+    for (String kolumn : columnsForRow) {
+        String varde = orderRad.get(kolumn);
+        if (varde == null) {
+            varde = "ej angivet";
         }
-            
-        }
-        
+        String columnValuePair = kolumn + ": " + varde + " | "; // Build string for each key-value pair
+        radTextBuilder.append(columnValuePair); // Append to StringBuilder
     }
+    String radText = radTextBuilder.toString().trim(); // Trim extra spaces and add to list model
+    listModel.addElement(radText);
+}}
     
     
 

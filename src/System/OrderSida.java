@@ -1,10 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package System;
 
+
+
+
+
+
+
+import java.awt.Font;
+import java.util.ArrayList;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.PrintJob;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import oru.inf.InfDB;
+import net.sourceforge.barbecue.Barcode;
+import net.sourceforge.barbecue.BarcodeFactory;
+import net.sourceforge.barbecue.BarcodeImageHandler;
+import oru.inf.InfException;
 
 /**
  *
@@ -13,12 +31,17 @@ import oru.inf.InfDB;
 public class OrderSida extends javax.swing.JFrame {
 
     private InfDB idb;
+
     /**
-     * Creates new form OrderSida
+     * Creates new form SkapaOrder
      */
     public OrderSida(InfDB idb) {
         initComponents();
         this.idb = idb;
+        fyllBoxOrder();
+        fyllBoxOrder1();
+        fyllBoxOrder2(); 
+       
     }
 
     /**
@@ -30,27 +53,886 @@ public class OrderSida extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlBakgrund = new javax.swing.JPanel();
+        lblOrdersida = new javax.swing.JLabel();
+        lblFraktRubrik = new javax.swing.JLabel();
+        lblOrder = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        pnlFraktSedel = new javax.swing.JPanel();
+        lblTo = new javax.swing.JLabel();
+        lblPhone = new javax.swing.JLabel();
+        lblFrom = new javax.swing.JLabel();
+        lblAdress = new javax.swing.JLabel();
+        lblKundNamn = new javax.swing.JLabel();
+        lblPhoneTo = new javax.swing.JLabel();
+        lblOrderNumber = new javax.swing.JLabel();
+        lblPayCustoms = new javax.swing.JLabel();
+        lblLogoFrakt = new javax.swing.JLabel();
+        lblFromWho = new javax.swing.JLabel();
+        lblBarcode = new javax.swing.JLabel();
+        lblKundAdress = new javax.swing.JLabel();
+        lblForNamn = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        btnSkapa = new javax.swing.JButton();
+        btnVisaOrder = new javax.swing.JButton();
+        btnOrderStatus = new javax.swing.JButton();
+        txtInsertOrder = new javax.swing.JTextField();
+        lblSkrivIn = new javax.swing.JLabel();
+        btnSkapaOrder = new javax.swing.JButton();
+        txtAngeLangd = new javax.swing.JTextField();
+        lblVikt = new javax.swing.JLabel();
+        lblAngeLangd = new javax.swing.JLabel();
+        txtAngeVikt = new javax.swing.JTextField();
+        lblHojd = new javax.swing.JLabel();
+        txtAngeBredd = new javax.swing.JTextField();
+        txtAngeHojd = new javax.swing.JTextField();
+        lblHojd1 = new javax.swing.JLabel();
+        txtAngeFraktkostnad = new javax.swing.JTextField();
+        lblHojd2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        btnSparaPaket = new javax.swing.JButton();
+        lblRubrikLaggTIllOrder = new javax.swing.JLabel();
+        cbOrder = new javax.swing.JComboBox<>();
+        btnOrderStatus1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        cbStatus = new javax.swing.JComboBox<>();
+        cbOrder1 = new javax.swing.JComboBox<>();
+        lblRubrikLaggTIllOrder1 = new javax.swing.JLabel();
+        cbOrder2 = new javax.swing.JComboBox<>();
+        lblRubrikOrder = new javax.swing.JLabel();
+        btnOrderTotalsumma = new javax.swing.JButton();
+        txtTotalSumma = new javax.swing.JTextField();
+        lblRubtikTotalSumma = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        pnlBakgrund.setBackground(new java.awt.Color(51, 51, 51));
+        pnlBakgrund.setMaximumSize(new java.awt.Dimension(32767, 900000));
+
+        lblOrdersida.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblOrdersida.setForeground(new java.awt.Color(255, 255, 255));
+        lblOrdersida.setText("Ordersida");
+
+        lblFraktRubrik.setForeground(new java.awt.Color(255, 255, 255));
+        lblFraktRubrik.setText("Fraktsedel");
+
+        lblOrder.setForeground(new java.awt.Color(255, 255, 255));
+        lblOrder.setText("Order");
+
+        jPanel8.setBackground(new java.awt.Color(0, 0, 0));
+
+        pnlFraktSedel.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblTo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTo.setText("To:");
+
+        lblPhone.setText("Phone: ");
+
+        lblFrom.setText("Ottos hattmakeri");
+
+        lblAdress.setText("Hattmästargatan 99");
+
+        lblPhoneTo.setText("Phone: +46 73 8554121");
+
+        lblOrderNumber.setText("Ordernumber:");
+
+        lblPayCustoms.setText("Pay Customs:");
+
+        lblLogoFrakt.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblLogoFrakt.setText("DOMESTIC SWEDEN                                                              ÖruNord");
+
+        lblFromWho.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblFromWho.setText("From:");
+
+        javax.swing.GroupLayout pnlFraktSedelLayout = new javax.swing.GroupLayout(pnlFraktSedel);
+        pnlFraktSedel.setLayout(pnlFraktSedelLayout);
+        pnlFraktSedelLayout.setHorizontalGroup(
+            pnlFraktSedelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFraktSedelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblBarcode, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
+            .addGroup(pnlFraktSedelLayout.createSequentialGroup()
+                .addGroup(pnlFraktSedelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlFraktSedelLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(lblFromWho, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlFraktSedelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblTo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlFraktSedelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPhoneTo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(62, 62, 62))
+            .addGroup(pnlFraktSedelLayout.createSequentialGroup()
+                .addGroup(pnlFraktSedelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlFraktSedelLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(pnlFraktSedelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblLogoFrakt, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlFraktSedelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlFraktSedelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblKundNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPayCustoms, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblOrderNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblKundAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblForNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        pnlFraktSedelLayout.setVerticalGroup(
+            pnlFraktSedelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlFraktSedelLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(lblLogoFrakt)
+                .addGap(50, 50, 50)
+                .addGroup(pnlFraktSedelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFromWho)
+                    .addComponent(lblPhoneTo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblFrom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblAdress)
+                .addGap(51, 51, 51)
+                .addGroup(pnlFraktSedelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTo)
+                    .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblForNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(lblKundNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblKundAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblOrderNumber)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblPayCustoms)
+                .addGap(60, 60, 60)
+                .addComponent(lblBarcode, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
+        );
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(pnlFraktSedel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(89, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlFraktSedel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
+        jButton5.setBackground(new java.awt.Color(102, 102, 102));
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Visa fraktsedel");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        btnSkapa.setBackground(new java.awt.Color(102, 102, 102));
+        btnSkapa.setForeground(new java.awt.Color(255, 255, 255));
+        btnSkapa.setText("Skapa fraktsedel");
+        btnSkapa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSkapaActionPerformed(evt);
+            }
+        });
+
+        btnVisaOrder.setBackground(new java.awt.Color(102, 102, 102));
+        btnVisaOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnVisaOrder.setText("Visa order");
+        btnVisaOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVisaOrderActionPerformed(evt);
+            }
+        });
+
+        btnOrderStatus.setBackground(new java.awt.Color(102, 102, 102));
+        btnOrderStatus.setForeground(new java.awt.Color(255, 255, 255));
+        btnOrderStatus.setText("Se status");
+        btnOrderStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrderStatusActionPerformed(evt);
+            }
+        });
+
+        lblSkrivIn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblSkrivIn.setForeground(new java.awt.Color(255, 255, 255));
+        lblSkrivIn.setText("Skriv in ordernummer");
+
+        btnSkapaOrder.setBackground(new java.awt.Color(102, 102, 102));
+        btnSkapaOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnSkapaOrder.setText("Skapa order");
+        btnSkapaOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSkapaOrderActionPerformed(evt);
+            }
+        });
+
+        txtAngeLangd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAngeLangdActionPerformed(evt);
+            }
+        });
+
+        lblVikt.setForeground(new java.awt.Color(255, 255, 255));
+        lblVikt.setText("Ange vikt:");
+
+        lblAngeLangd.setForeground(new java.awt.Color(255, 255, 255));
+        lblAngeLangd.setText("Ange längd:");
+
+        txtAngeVikt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAngeViktActionPerformed(evt);
+            }
+        });
+
+        lblHojd.setForeground(new java.awt.Color(255, 255, 255));
+        lblHojd.setText("Ange höjd:");
+
+        txtAngeBredd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAngeBreddActionPerformed(evt);
+            }
+        });
+
+        txtAngeHojd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAngeHojdActionPerformed(evt);
+            }
+        });
+
+        lblHojd1.setForeground(new java.awt.Color(255, 255, 255));
+        lblHojd1.setText("Ange bredd:");
+
+        txtAngeFraktkostnad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAngeFraktkostnadActionPerformed(evt);
+            }
+        });
+
+        lblHojd2.setForeground(new java.awt.Color(255, 255, 255));
+        lblHojd2.setText("Ange fraktkostnad:");
+
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Mata in paketinformation:");
+
+        btnSparaPaket.setBackground(new java.awt.Color(102, 102, 102));
+        btnSparaPaket.setForeground(new java.awt.Color(255, 255, 255));
+        btnSparaPaket.setText("Spara paketinformation");
+        btnSparaPaket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSparaPaketActionPerformed(evt);
+            }
+        });
+
+        lblRubrikLaggTIllOrder.setForeground(new java.awt.Color(255, 255, 255));
+        lblRubrikLaggTIllOrder.setText("Lägg till i order:");
+
+        btnOrderStatus1.setBackground(new java.awt.Color(102, 102, 102));
+        btnOrderStatus1.setForeground(new java.awt.Color(255, 255, 255));
+        btnOrderStatus1.setText("Ändra status");
+        btnOrderStatus1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrderStatus1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Välj status att ändra ordern till:");
+
+        cbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Redo", "Påbörjad", "Avslutad" }));
+
+        lblRubrikLaggTIllOrder1.setForeground(new java.awt.Color(255, 255, 255));
+        lblRubrikLaggTIllOrder1.setText("Lägg till i order");
+
+        lblRubrikOrder.setForeground(new java.awt.Color(255, 255, 255));
+        lblRubrikOrder.setText("Välj order att skapa totalsumma för:");
+
+        btnOrderTotalsumma.setBackground(new java.awt.Color(102, 102, 102));
+        btnOrderTotalsumma.setForeground(new java.awt.Color(255, 255, 255));
+        btnOrderTotalsumma.setText("Skapa orders totalsumma");
+        btnOrderTotalsumma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrderTotalsummaActionPerformed(evt);
+            }
+        });
+
+        lblRubtikTotalSumma.setForeground(new java.awt.Color(255, 255, 255));
+        lblRubtikTotalSumma.setText("Totalsumma");
+
+        javax.swing.GroupLayout pnlBakgrundLayout = new javax.swing.GroupLayout(pnlBakgrund);
+        pnlBakgrund.setLayout(pnlBakgrundLayout);
+        pnlBakgrundLayout.setHorizontalGroup(
+            pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                        .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                                        .addGap(5, 5, 5)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                                        .addComponent(lblVikt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtAngeVikt, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblAngeLangd, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtAngeLangd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addComponent(lblFraktRubrik))
+                            .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                                        .addComponent(lblHojd, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtAngeHojd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblHojd1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtAngeBredd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                                        .addComponent(lblHojd2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtAngeFraktkostnad, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(lblRubrikLaggTIllOrder)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                                                .addComponent(lblRubrikLaggTIllOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(cbOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                                                .addComponent(jLabel2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(cbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 286, Short.MAX_VALUE)
+                        .addComponent(lblOrdersida, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(213, 213, 213))
+                    .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                        .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                                .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblSkrivIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnVisaOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btnSparaPaket, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btnSkapa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btnOrderStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                                                .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(txtInsertOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(lblOrder))
+                                                .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addComponent(btnOrderStatus1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnSkapaOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnOrderTotalsumma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBakgrundLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblRubrikOrder)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbOrder2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblRubtikTotalSumma, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                                    .addComponent(txtTotalSumma))
+                                .addGap(34, 34, 34)))
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(147, 147, 147))
+        );
+        pnlBakgrundLayout.setVerticalGroup(
+            pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(lblOrdersida)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblFraktRubrik)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblVikt)
+                            .addComponent(txtAngeVikt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAngeLangd, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAngeLangd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblHojd)
+                            .addComponent(txtAngeHojd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblHojd1)
+                            .addComponent(txtAngeBredd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblHojd2)
+                            .addComponent(txtAngeFraktkostnad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblRubrikLaggTIllOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSparaPaket)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSkapa)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblOrder)
+                        .addGap(9, 9, 9)
+                        .addComponent(btnVisaOrder)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnOrderStatus)
+                        .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(cbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblRubrikLaggTIllOrder1)
+                                    .addComponent(cbOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(pnlBakgrundLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel3)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnOrderStatus1)
+                        .addGap(15, 15, 15)
+                        .addGroup(pnlBakgrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblRubrikOrder)
+                            .addComponent(cbOrder2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTotalSumma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(4, 4, 4)
+                        .addComponent(lblRubtikTotalSumma)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnOrderTotalsumma)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSkapaOrder)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblSkrivIn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtInsertOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(320, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlBakgrund, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlBakgrund, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(252, 252, 252))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btnOrderStatus1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderStatus1ActionPerformed
+        String valdStatus = cbStatus.getSelectedItem().toString();
+        String order1 = cbOrder1.getSelectedItem().toString().toLowerCase();
+        try{
+            String fragaUppdateraStatus = "Update Orders set Status='" + valdStatus + "' where Order_ID ='" + order1 +"'";
+            idb.update(fragaUppdateraStatus);
+        }       catch (Exception ettUndantag) {
+            System.out.println("Error: " + ettUndantag.getMessage());           
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOrderStatus1ActionPerformed
+
+    private void btnSparaPaketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSparaPaketActionPerformed
+        // TODO add your handling code here:
+        try {
+
+            String vikt = txtAngeVikt.getText();
+            String  langd = txtAngeLangd.getText();
+            String hojd = txtAngeHojd.getText();
+            String bredd = txtAngeBredd.getText();
+            String fraktkostnad = txtAngeFraktkostnad.getText();
+            String orderBox = cbOrder.getSelectedItem().toString().toLowerCase();
+            //ser till att text fälten har ifyllda värden och att dessa är heltal/decimaltal. För varje ruta
+            boolean allaFaltIfyllda =
+            Validering.harTextFaltetVarde(txtAngeVikt) &&
+            Validering.harTextFaltetVarde(txtAngeLangd) &&
+            Validering.harTextFaltetVarde(txtAngeHojd) &&
+            Validering.harTextFaltetVarde(txtAngeBredd) &&
+            Validering.harTextFaltetVarde(txtAngeFraktkostnad) &&
+            Validering.kollaDecimalTal(txtAngeFraktkostnad)&&
+            Validering.kollaDecimalTal(txtAngeVikt)&&
+            Validering.kollaDecimalTal(txtAngeLangd)&&
+            Validering.kollaDecimalTal(txtAngeHojd)&&
+            Validering.kollaDecimalTal(txtAngeBredd);
+
+            //skapar paket ID
+            String paketID = idb.fetchSingle("SELECT MAX(Paket_ID) FROM paket_info");
+            int paketIDD = paketID != null ? Integer.parseInt(paketID) + 1 : 1;
+            String paketIdString = Integer.toString(paketIDD);
+            String valdOrder = cbOrder.getSelectedItem().toString().toLowerCase();
+            //ber om att sätta in värden i tabellen
+            String fragaPaketInfo = "Insert into paket_info (Paket_ID, Order_ID, vikt, langd, bredd, hojd, fraktkostnad) "
+            + "Values ('" + paketIdString + "','" + valdOrder + "','" + vikt + "','" + langd + "','" + bredd + "','" + hojd + "','" + fraktkostnad + "')";
+            idb.insert(fragaPaketInfo);
+        } catch (InfException ettUndantag) {
+            System.out.println("Error " + ettUndantag.getMessage());
+        }
+    }//GEN-LAST:event_btnSparaPaketActionPerformed
+         private void fyllBoxOrder() {
+         //fyll combobox med order
+         String fragaFyllBox = "Select Order_ID from orders order by Order_ID";
+         ArrayList<String> allaOrder;
+         try {
+             allaOrder = idb.fetchColumn(fragaFyllBox);
+             for(String hatt : allaOrder) {
+                 cbOrder.addItem(hatt); 
+           } 
+         } catch (Exception ettUndantag) {
+             System.out.println("Error " + ettUndantag.getMessage()); 
+}
+     }
+        private void fyllBoxOrder1() {
+         //fyll combobox med order
+         String fragaFyllBox = "Select Order_ID from orders order by Order_ID";
+         ArrayList<String> allaOrder;
+         try {
+             allaOrder = idb.fetchColumn(fragaFyllBox);
+             for(String hatt : allaOrder) {
+                 cbOrder1.addItem(hatt); 
+           } 
+         } catch (Exception ettUndantag) {
+             System.out.println("Error " + ettUndantag.getMessage()); 
+}
+     }
+        
+    private void fyllBoxOrder2() {
+         //fyll combobox med order
+         String fragaFyllBox = "Select Order_ID from orders order by Order_ID";
+         ArrayList<String> allaOrder;
+         try {
+             allaOrder = idb.fetchColumn(fragaFyllBox);
+             for(String hatt : allaOrder) {
+                 cbOrder2.addItem(hatt); 
+           } 
+         } catch (Exception ettUndantag) {
+             System.out.println("Error " + ettUndantag.getMessage()); 
+}
+     }
+    private void txtAngeFraktkostnadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAngeFraktkostnadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAngeFraktkostnadActionPerformed
+
+    private void txtAngeHojdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAngeHojdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAngeHojdActionPerformed
+
+    private void txtAngeBreddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAngeBreddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAngeBreddActionPerformed
+
+    private void txtAngeViktActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAngeViktActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAngeViktActionPerformed
+
+    private void txtAngeLangdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAngeLangdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAngeLangdActionPerformed
+
+    private void btnSkapaOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkapaOrderActionPerformed
+        // TODO add your handling code here:
+        new SkapaOrder(idb).setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnSkapaOrderActionPerformed
+
+    private void btnOrderStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderStatusActionPerformed
+        // TODO add your handling code here:
+        String noll = "0";
+        String ett = "1";
+
+        //visar status för order
+        try {
+            String status = idb.fetchSingle("Select Brådskande from Orders where Order_ID = " + txtInsertOrder.getText() +  "");
+
+            String status2 = idb.fetchSingle("Select Status from Orders where Order_ID = " + txtInsertOrder.getText() +  "");
+
+            if(status.equals(ett)){
+                JOptionPane.showMessageDialog(null, "Order är brådskande. Status just nu: " + status2);
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Order är inte brådskande. Status just nu: " + status2);
+            }
+
+        } catch (Exception ex) {
+        }
+    }//GEN-LAST:event_btnOrderStatusActionPerformed
+
+    private void btnVisaOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisaOrderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVisaOrderActionPerformed
+
+    private void btnSkapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkapaActionPerformed
+        // Skapar fraktsedelsutskrift
+        try {
+            Toolkit toolkit = pnlFraktSedel.getToolkit();
+            PrintJob printVal = toolkit.getPrintJob(this, null, null);
+            Graphics grafik = printVal.getGraphics();
+            pnlFraktSedel.print(grafik);
+            grafik.dispose();
+            printVal.end();
+        } catch (Exception fel) {
+            fel.printStackTrace();
+        }
+    }//GEN-LAST:event_btnSkapaActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // Visar fraktsedeln med random fraktsedelsnummer
+        randomFraktsedelnummer();
+        String orderID = txtInsertOrder.getText();
+
+        try {
+            String forFraga = "SELECT Förnamn FROM kund WHERE Kund_ID in(SELECT Kund from orders where Order_ID='" + orderID + "')";
+            ArrayList<String> namnLista = idb.fetchColumn(forFraga);
+            for (String namn : namnLista) {
+                lblForNamn.setText(namn);
+            }
+            String efterFraga = "SELECT Efternamn FROM kund WHERE Kund_ID in(SELECT Kund from orders where Order_ID='" + orderID + "')";
+            ArrayList<String> efternamnLista = idb.fetchColumn(efterFraga);
+            for (String ettNamn : efternamnLista) {
+                lblKundNamn.setText(ettNamn);
+            }
+            String adressFraga = "SELECT Adress FROM Kund WHERE Kund_ID in(SELECT Kund from orders where Order_ID='"+ orderID+"')";
+            ArrayList<String> adressLista = idb.fetchColumn(adressFraga);
+            for (String enAdress : adressLista) {
+                lblKundAdress.setText(enAdress);
+            }
+            String telefonFraga = "SELECT Telefon FROM Kund WHERE Kund_ID in(SELECT Kund FROM orders WHERE Order_ID='" + orderID + "')";
+            ArrayList<String> telefonLista = idb.fetchColumn(telefonFraga);
+            for (String enTelefon : telefonLista) {
+                lblPhone.setText("Phone: " + enTelefon);
+            }
+            /*String ordernummer = "SELECT Order_ID FROM order WHERE Order_ID='" + orderID + "'";
+            ArrayList<String> orderLista = idb.fetchColumn(ordernummer);
+            for (String enOrdernr : orderLista) {*/
+                lblOrderNumber.setText("Ordernumber: " + orderID);
+                //}
+            String payCustoms = "SELECT Varukod_tull FROM fraktsedel WHERE Frakt_ID IN (SELECT Fraktsedel FROM orders WHERE Order_ID=" + orderID + ")";
+            ArrayList<String> payCustomsLista = idb.fetchColumn(payCustoms);
+            for (String enPay : payCustomsLista) {
+                lblPayCustoms.setText("Paycustoms: " + enPay);
+            }
+            /* String contents = "SELECT Namn from hatt where Produkt_ID in(SELECT Hatt_ID from hatt_i_order WHERE ORDER_ID=" + orderID +")";
+            String contents = "SELECT Hatt_ID FROM hatt_i_order WHERE Order_ID='" + orderID +"'";
+            ArrayList<String> contentLista = idb.fetchColumn(contents);
+            for (String enContent : contentLista) {
+                lblContents.setText(enContent);
+            } */
+        } catch (InfException fel) {
+            fel.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void btnOrderTotalsummaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderTotalsummaActionPerformed
+        // TODO add your handling code here:
+              String order2 = cbOrder2.getSelectedItem().toString().toLowerCase();
+               double momsOchAvgift;
+                double total = 0.0;
+              double totalAvgift = 0; 
+                double totalMoms = 0;
+               boolean braskande = false; 
+               double momsBelopp = 0.25;
+               double procentAvgift = 0.20;
+       
+                 
+          try {
+                String query = "SELECT Hatt.Pris " +
+                               "FROM Hatt " +
+                               "JOIN hatt_i_order ON Hatt.Produkt_ID = hatt_i_order.Hatt_ID " +
+                               "WHERE hatt_i_order.Order_ID = '" + order2 + "'";
+
+                    
+
+                     ArrayList<HashMap<String, String>> allaPriser = idb.fetchRows(query);
+                     String fragaPrioritering = "Select Brådskande from orders where Order_ID = '" + order2 + "';";
+                     ArrayList<HashMap<String, String>> braskandeResultat = idb.fetchRows(fragaPrioritering);
+                     
+                       if (braskandeResultat.size() > 0) {
+                       String braskandeStatus = braskandeResultat.get(0).get("Brådskande");
+                       
+                       if (braskandeStatus.equals("1")) {
+                           braskande = true;
+                       }
+                   }
+                    
+                     for (HashMap<String, String> pris : allaPriser) {
+                        double hatPrice = Double.parseDouble(pris.get("Pris"));
+                            // Addera priset till totalsumman
+                                 total += hatPrice;
+                     
+                             
+                
+                     }
+                           totalMoms = total * momsBelopp;
+                           
+                       double moms = 0.25 * total;
+                       double totaltMedMoms = total + moms;
+
+                        double bradskandeAvgift = 0.20 * totaltMedMoms;
+                        double totaltMedMomsOchBradskande = totaltMedMoms + bradskandeAvgift;
+                       if (braskande) {
+                             totalAvgift = total * procentAvgift;
+                            momsOchAvgift = total + totalMoms + totalAvgift;
+                            double totalSumma = totaltMedMomsOchBradskande;
+                            String avrundat = String.format("%.2f", totalSumma);
+                            System.out.println("Totalsumma för ordern är: " + avrundat);
+                            txtTotalSumma.setText(avrundat); 
+                         
+            }
+                       else {
+                           totalMoms =  total * (1 + momsBelopp); 
+                           momsOchAvgift = total + totalMoms;
+                           double totalSumma = totaltMedMoms;
+                            String avrundat = String.format("%.2f", totalSumma);
+                           System.out.println("Totalsumma för ordern är: " + avrundat);
+                           txtTotalSumma.setText(avrundat); 
+                       }
+                  
+                         momsOchAvgift =  totalMoms * totalAvgift;
+
+               
+         } catch (Exception ettUndantag) {
+             System.out.println("Error " + ettUndantag.getMessage()); 
+           }
+          
+             
+          
+
+    }//GEN-LAST:event_btnOrderTotalsummaActionPerformed
     
+    private void randomFraktsedelnummer() {
+        // Visar fraktsedeln med random fraktsedelsnummer
+        try {
+            String fraktNummer = randomBarcode();
+            BufferedImage barcodeImage = barcodeBild(fraktNummer);
+
+            //Gör barcode-storleken anpassad till fraktsedeln
+            ImageIcon icon = new ImageIcon(barcodeImage);
+            Image litenBarcode = icon.getImage();
+            Image storreBarcode = litenBarcode.getScaledInstance(350, 150, java.awt.Image.SCALE_SMOOTH);
+            icon = new ImageIcon(storreBarcode);
+            lblBarcode.setIcon(icon);
+
+        } catch (Exception fel) {
+            fel.printStackTrace();
+        }
+    }
+    
+    public static BufferedImage barcodeBild(String barcodeNummer) throws Exception {
+        //Skapar bild för fraktsedelsbarcode
+        Barcode barcode = BarcodeFactory.createEAN13(barcodeNummer);
+        barcode.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 10));
+
+        return BarcodeImageHandler.getImage(barcode);
+    } 
+
+    private String randomBarcode() {
+        //Random barcode 12-siffrig för fraktsedel 
+        StringBuilder sb = new StringBuilder();
+        java.util.Random random = new java.util.Random();
+        for (int i = 0; i < 12; i++) {
+            sb.append(random.nextInt(10));
+        }
+        return sb.toString();
+    }
+
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnOrderStatus;
+    private javax.swing.JButton btnOrderStatus1;
+    private javax.swing.JButton btnOrderTotalsumma;
+    private javax.swing.JButton btnSkapa;
+    private javax.swing.JButton btnSkapaOrder;
+    private javax.swing.JButton btnSparaPaket;
+    private javax.swing.JButton btnVisaOrder;
+    private javax.swing.JComboBox<String> cbOrder;
+    private javax.swing.JComboBox<String> cbOrder1;
+    private javax.swing.JComboBox<String> cbOrder2;
+    private javax.swing.JComboBox<String> cbStatus;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JLabel lblAdress;
+    private javax.swing.JLabel lblAngeLangd;
+    private javax.swing.JLabel lblBarcode;
+    private javax.swing.JLabel lblForNamn;
+    private javax.swing.JLabel lblFraktRubrik;
+    private javax.swing.JLabel lblFrom;
+    private javax.swing.JLabel lblFromWho;
+    private javax.swing.JLabel lblHojd;
+    private javax.swing.JLabel lblHojd1;
+    private javax.swing.JLabel lblHojd2;
+    private javax.swing.JLabel lblKundAdress;
+    private javax.swing.JLabel lblKundNamn;
+    private javax.swing.JLabel lblLogoFrakt;
+    private javax.swing.JLabel lblOrder;
+    private javax.swing.JLabel lblOrderNumber;
+    private javax.swing.JLabel lblOrdersida;
+    private javax.swing.JLabel lblPayCustoms;
+    private javax.swing.JLabel lblPhone;
+    private javax.swing.JLabel lblPhoneTo;
+    private javax.swing.JLabel lblRubrikLaggTIllOrder;
+    private javax.swing.JLabel lblRubrikLaggTIllOrder1;
+    private javax.swing.JLabel lblRubrikOrder;
+    private javax.swing.JLabel lblRubtikTotalSumma;
+    private javax.swing.JLabel lblSkrivIn;
+    private javax.swing.JLabel lblTo;
+    private javax.swing.JLabel lblVikt;
+    private javax.swing.JPanel pnlBakgrund;
+    private javax.swing.JPanel pnlFraktSedel;
+    private javax.swing.JTextField txtAngeBredd;
+    private javax.swing.JTextField txtAngeFraktkostnad;
+    private javax.swing.JTextField txtAngeHojd;
+    private javax.swing.JTextField txtAngeLangd;
+    private javax.swing.JTextField txtAngeVikt;
+    private javax.swing.JTextField txtInsertOrder;
+    private javax.swing.JTextField txtTotalSumma;
     // End of variables declaration//GEN-END:variables
-}
+} 
