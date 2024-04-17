@@ -673,10 +673,9 @@ public class Dashboard extends javax.swing.JFrame {
                                     .addComponent(lblRubrikOrder1)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(cbOrder2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlOrdersidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnOrderStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnSkapa, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnOrderStatus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnSkapa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(pnlOrdersidaLayout.createSequentialGroup()
                                     .addGap(6, 6, 6)
                                     .addGroup(pnlOrdersidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1125,17 +1124,17 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlSkapaKund.setBackground(new java.awt.Color(51, 51, 51));
 
-        txtPostnummer1.setForeground(new java.awt.Color(255, 255, 255));
+        txtPostnummer1.setForeground(new java.awt.Color(0, 0, 0));
 
         lblEfternamn1.setForeground(new java.awt.Color(255, 255, 255));
         lblEfternamn1.setText("Efternamn");
 
-        txtOrt1.setForeground(new java.awt.Color(255, 255, 255));
+        txtOrt1.setForeground(new java.awt.Color(0, 0, 0));
 
         lblEpost1.setForeground(new java.awt.Color(255, 255, 255));
         lblEpost1.setText("Epost");
 
-        txtTelefon1.setForeground(new java.awt.Color(255, 255, 255));
+        txtTelefon1.setForeground(new java.awt.Color(0, 0, 0));
 
         lblGatuadress1.setForeground(new java.awt.Color(255, 255, 255));
         lblGatuadress1.setText("Gatuadress");
@@ -1157,18 +1156,18 @@ public class Dashboard extends javax.swing.JFrame {
         lblTelefon1.setForeground(new java.awt.Color(255, 255, 255));
         lblTelefon1.setText("Telefon");
 
-        txtFornamn1.setForeground(new java.awt.Color(255, 255, 255));
+        txtFornamn1.setForeground(new java.awt.Color(0, 0, 0));
         txtFornamn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFornamn1ActionPerformed(evt);
             }
         });
 
-        txtEfternamn1.setForeground(new java.awt.Color(255, 255, 255));
+        txtEfternamn1.setForeground(new java.awt.Color(0, 0, 0));
 
-        txtEpost1.setForeground(new java.awt.Color(255, 255, 255));
+        txtEpost1.setForeground(new java.awt.Color(0, 0, 0));
 
-        txtGatuadress1.setForeground(new java.awt.Color(255, 255, 255));
+        txtGatuadress1.setForeground(new java.awt.Color(0, 0, 0));
         txtGatuadress1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtGatuadress1ActionPerformed(evt);
@@ -1473,7 +1472,7 @@ public class Dashboard extends javax.swing.JFrame {
         pnlKundLayout.setVerticalGroup(
             pnlKundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlKundLayout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
 
@@ -1610,9 +1609,8 @@ public class Dashboard extends javax.swing.JFrame {
                                         .addGap(20, 20, 20)
                                         .addGroup(pnlPaketinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addComponent(txtAngeVikt)
-                                            .addGroup(pnlPaketinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(txtAngeBredd, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(txtAngeFraktkostnad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(txtAngeBredd)
+                                            .addComponent(txtAngeFraktkostnad, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(txtAngeHojd)
                                             .addComponent(txtAngeLangd, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGroup(pnlPaketinfoLayout.createSequentialGroup()
