@@ -1158,7 +1158,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblFornamn1.setForeground(new java.awt.Color(255, 255, 255));
         lblFornamn1.setText("Förnamn");
 
-        lblSkapaKundMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblSkapaKundMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblSkapaKundMeddelande.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout pnlSkapaKundLayout = new javax.swing.GroupLayout(pnlSkapaKund);
