@@ -115,7 +115,7 @@
                   <Component id="btnPaketinformation" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="btnLoggaUt" min="-2" pref="46" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -485,7 +485,6 @@
                                       </Group>
                                       <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
                                       <Component id="btnOrderStatus" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="btnSkapa" alignment="0" min="-2" pref="143" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
@@ -510,6 +509,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
+                                      <Component id="btnSkapa" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               </Group>
@@ -520,14 +520,14 @@
                           </Group>
                       </Group>
                       <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="49" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace pref="95" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
                   </Group>
@@ -619,7 +619,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="pnlFraktSedel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="14" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -679,7 +679,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="23" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1113,7 +1113,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Skapa Hatt"/>
+                <Property name="text" type="java.lang.String" value="Skapa hatt"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnSpara">
@@ -2561,9 +2561,9 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="personalTillHatt" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="taBortpersonalFranHatt" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="personalTillHatt" max="32767" attributes="0"/>
+                      <Component id="taBortpersonalFranHatt" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
@@ -2599,7 +2599,7 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="personalTillHatt">
           <Properties>
-            <Property name="text" type="java.lang.String" value="L&#xe4;gg till Personal till Hatt"/>
+            <Property name="text" type="java.lang.String" value="L&#xe4;gg till personal till hatt"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="personalTillHattActionPerformed"/>
@@ -2626,7 +2626,7 @@
         </Container>
         <Component class="javax.swing.JButton" name="taBortpersonalFranHatt">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ta Bort Mig fr&#xe5;n Hatt"/>
+            <Property name="text" type="java.lang.String" value="Ta bort mig fr&#xe5;n hatt"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="taBortpersonalFranHattActionPerformed"/>
@@ -2634,7 +2634,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Hatt Sida"/>
+            <Property name="text" type="java.lang.String" value="Hattsida"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>

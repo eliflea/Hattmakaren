@@ -409,7 +409,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(btnPaketinformation, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnLoggaUt, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addGap(40, 40, 40))
         );
 
         pnlMitten.setBackground(new java.awt.Color(255, 255, 255));
@@ -547,7 +547,7 @@ public class Dashboard extends javax.swing.JFrame {
                             .addComponent(lblOrderNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblKundAdress1, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblForNamn1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlFraktSedel1Layout.setVerticalGroup(
             pnlFraktSedel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -592,7 +592,7 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnlFraktSedel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lblRubrikOrder1.setForeground(new java.awt.Color(255, 255, 255));
@@ -676,7 +676,6 @@ public class Dashboard extends javax.swing.JFrame {
                                     .addComponent(cbOrder2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnOrderStatus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnSkapa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(pnlOrdersidaLayout.createSequentialGroup()
                                     .addGap(6, 6, 6)
                                     .addGroup(pnlOrdersidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -694,18 +693,19 @@ public class Dashboard extends javax.swing.JFrame {
                                         .addGroup(pnlOrdersidaLayout.createSequentialGroup()
                                             .addComponent(lblRubrikLaggTIllOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(cbOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(cbOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(btnSkapa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGap(12, 12, 12)))
                     .addGroup(pnlOrdersidaLayout.createSequentialGroup()
                         .addComponent(btnOrderTotalsumma)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 32, Short.MAX_VALUE))
+                .addGap(0, 49, Short.MAX_VALUE))
         );
         pnlOrdersidaLayout.setVerticalGroup(
             pnlOrdersidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlOrdersidaLayout.createSequentialGroup()
-                .addContainerGap(95, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(141, 141, 141))
             .addGroup(pnlOrdersidaLayout.createSequentialGroup()
@@ -787,7 +787,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         lblSkapaHatt.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lblSkapaHatt.setForeground(new java.awt.Color(255, 255, 255));
-        lblSkapaHatt.setText("Skapa Hatt");
+        lblSkapaHatt.setText("Skapa hatt");
 
         btnSpara.setText("Spara");
         btnSpara.addActionListener(new java.awt.event.ActionListener() {
@@ -1650,7 +1650,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlSideBarHoger.setBackground(new java.awt.Color(51, 51, 51));
 
-        personalTillHatt.setText("Lägg till Personal till Hatt");
+        personalTillHatt.setText("Lägg till personal till hatt");
         personalTillHatt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personalTillHattActionPerformed(evt);
@@ -1664,14 +1664,14 @@ public class Dashboard extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(orderLista);
 
-        taBortpersonalFranHatt.setText("Ta Bort Mig från Hatt");
+        taBortpersonalFranHatt.setText("Ta bort mig från hatt");
         taBortpersonalFranHatt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 taBortpersonalFranHattActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Hatt Sida");
+        jButton1.setText("Hattsida");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -1690,9 +1690,9 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSideBarHogerLayout.createSequentialGroup()
                 .addGap(66, 66, 66)
-                .addGroup(pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(personalTillHatt)
-                    .addComponent(taBortpersonalFranHatt, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(personalTillHatt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(taBortpersonalFranHatt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(29, 29, 29))
@@ -1866,6 +1866,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnSparaKundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSparaKundActionPerformed
         // TODO add your handling code here:
+        lblSkapaKundMeddelande.setText("");
         try {
             if (Validering.harTextFaltetVarde(txtFornamn1, lblSkapaKundMeddelande)
                     && Validering.harTextFaltetVarde(txtEfternamn1, lblSkapaKundMeddelande)
@@ -1887,7 +1888,7 @@ public class Dashboard extends javax.swing.JFrame {
                 String fraga = "INSERT INTO kund VALUES (" + kundIdString + ", '" + fornamn + "', '" + efternamn + "', '" + telefon + "', '" + epost + "', '" + gatuadress + "', '" + postnummer + "', '" + ort + "')";
 
                 idb.insert(fraga);
-                dispose();
+                lblSkapaKundMeddelande.setText("Kund har skapats!");
             }
 
         } catch (InfException ex) {
@@ -2326,7 +2327,6 @@ public class Dashboard extends javax.swing.JFrame {
                 idb.update(uppdateraStatus);
 
                 System.out.println("Gått genom");
-                lblError.setVisible(false);
                 
                 // Uppdatera gränssnittet med den uppdaterade orderns lista
                 orders = getOrderLista();
@@ -2338,7 +2338,7 @@ public class Dashboard extends javax.swing.JFrame {
                 // Uppdatera JList med den nya listmodellen
                 orderLista.setModel(orderListModel);
             } else {
-                System.out.println("Hatten har redan en angiven personal");
+                lblError.setText("Hatten har redan en angiven personal");
             }
 
         } catch (InfException ex) {
@@ -2374,7 +2374,6 @@ public class Dashboard extends javax.swing.JFrame {
                 orderLista.setModel(orderListModel);
 
                 System.out.println("Gått genom");
-                lblError.setVisible(false);
                 
             } else {
                 lblError.setText("Du kan inte ta bort en annan personal");
