@@ -115,7 +115,7 @@
                   <Component id="btnPaketinformation" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="btnLoggaUt" min="-2" pref="46" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -429,7 +429,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnValjOrder">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Forts&#xe4;tt "/>
+                <Property name="text" type="java.lang.String" value="V&#xe4;lj"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnValjOrderActionPerformed"/>
@@ -485,7 +485,6 @@
                                       </Group>
                                       <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
                                       <Component id="btnOrderStatus" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="btnSkapa" alignment="0" min="-2" pref="143" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
@@ -510,6 +509,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
+                                      <Component id="btnSkapa" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               </Group>
@@ -520,14 +520,14 @@
                           </Group>
                       </Group>
                       <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="49" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace pref="95" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
                   </Group>
@@ -619,7 +619,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="pnlFraktSedel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="14" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -679,7 +679,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="23" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1113,7 +1113,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Skapa Hatt"/>
+                <Property name="text" type="java.lang.String" value="Skapa hatt"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnSpara">
@@ -1231,6 +1231,12 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblSkapaOrderMeddelande" min="-2" pref="513" max="-2" attributes="0"/>
                           <Component id="lblRubrikKund" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblRubrikDatum" min="-2" pref="75" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtDatum" min="-2" pref="140" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="cbValjStatus" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblRubrikOrder" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -1245,33 +1251,14 @@
                                       <Component id="txtKommentar1" min="-2" pref="162" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                              <Component id="btnSparaOrder2" min="-2" pref="75" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                               <Component id="lblFel" min="-2" pref="137" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel2" min="-2" pref="161" max="-2" attributes="0"/>
                           <Component id="cbValjPrioritering" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblRubrikPrioritering" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="cbValjStatus" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="lblOrdernummer" min="-2" pref="37" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lblRubrikDatum" min="-2" pref="75" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtDatum" min="-2" pref="140" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
                       </Group>
                       <EmptySpace min="214" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel7" min="-2" pref="97" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1280,15 +1267,10 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="lblRubrikOrder" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cbValjStatus" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblOrdernummer" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="cbValjStatus" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="lblRubrikPrioritering" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -1310,7 +1292,6 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="cbValjKund" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnSparaOrder" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnSparaOrder2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="lblFel" min="-2" pref="27" max="-2" attributes="0"/>
                       </Group>
@@ -1441,26 +1422,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblFel">
-            </Component>
-            <Component class="javax.swing.JButton" name="btnSparaOrder2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Spara"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSparaOrder2ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblOrdernummer">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel7">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Orderid:"/>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -1930,7 +1891,7 @@
                     <Component class="javax.swing.JLabel" name="lblSkapaKundMeddelande">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="14" style="1"/>
+                          <Font name="Segoe UI" size="18" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2600,9 +2561,9 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="personalTillHatt" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="taBortpersonalFranHatt" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="personalTillHatt" max="32767" attributes="0"/>
+                      <Component id="taBortpersonalFranHatt" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
@@ -2638,7 +2599,7 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="personalTillHatt">
           <Properties>
-            <Property name="text" type="java.lang.String" value="L&#xe4;gg till Personal till Hatt"/>
+            <Property name="text" type="java.lang.String" value="L&#xe4;gg till personal till hatt"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="personalTillHattActionPerformed"/>
@@ -2665,7 +2626,7 @@
         </Container>
         <Component class="javax.swing.JButton" name="taBortpersonalFranHatt">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ta Bort Mig fr&#xe5;n Hatt"/>
+            <Property name="text" type="java.lang.String" value="Ta bort mig fr&#xe5;n hatt"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="taBortpersonalFranHattActionPerformed"/>
@@ -2673,7 +2634,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Hatt Sida"/>
+            <Property name="text" type="java.lang.String" value="Hattsida"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
