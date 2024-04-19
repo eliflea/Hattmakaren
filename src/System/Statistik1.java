@@ -51,6 +51,8 @@ public class Statistik1 extends javax.swing.JFrame {
 
         jLabel1.setText("Välj år");
 
+        cbAr.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2024" }));
+
         jLabel2.setText("Välj månad");
 
         cbManad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "Novermber", "December" }));
@@ -156,7 +158,13 @@ public class Statistik1 extends javax.swing.JFrame {
             for(String ar : allaAr)
             {
                 String aret = ar.substring(0, 4);
+                if(aret.equals("2024"))
+                {
+                    
+                }
+                else{
                 cbAr.insertItemAt(aret, i);
+                }
                 i++;
             }
             
@@ -168,6 +176,52 @@ public class Statistik1 extends javax.swing.JFrame {
 
     private void btnKvartalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKvartalActionPerformed
         // TODO add your handling code here:
+        
+        String valtAr = cbAr.getSelectedItem().toString();
+        
+        String valtKvartal = cbKvartal.getSelectedItem().toString().trim();
+        
+        String sqlHamtaKvartalsForsaljning = "";
+        
+        if(cbKvartal.getSelectedItem().toString().equals("Q1"))
+        {
+             sqlHamtaKvartalsForsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-03-31' && Datum>='" + valtAr + "-01-01'";
+
+        }
+        
+        if(cbKvartal.getSelectedItem().toString().equals("Q2"))
+        {
+             sqlHamtaKvartalsForsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-06-30' && Datum>='" + valtAr + "-04-01'";
+
+        }
+        
+        if(cbKvartal.getSelectedItem().toString().equals("Q3"))
+        {
+             sqlHamtaKvartalsForsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-09-30' && Datum>='" + valtAr + "-07-01'";
+
+        }
+        
+        if(cbKvartal.getSelectedItem().toString().equals("Q4"))
+        {
+             sqlHamtaKvartalsForsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-12-31' && Datum>='" + valtAr + "-10-01'";
+
+        }
+        
+        
+        try {
+            String totalForsaljningsSumma = idb.fetchSingle(sqlHamtaKvartalsForsaljning);
+            if(totalForsaljningsSumma == null)
+                {
+                    txtStatistik.setText("Total försäljning år " + valtAr + ", " + valtKvartal + ": 0 SEK");
+                }
+            else{
+                    txtStatistik.setText("Total försäljning år " + valtAr + ", " + valtKvartal + ": " + totalForsaljningsSumma + " SEK");
+
+            }
+        } catch (InfException ex) {
+            Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_btnKvartalActionPerformed
 
     private void btnManadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManadActionPerformed
