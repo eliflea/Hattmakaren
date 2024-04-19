@@ -16,7 +16,6 @@ import oru.inf.InfDB;
  */
 public class Statistik1 extends javax.swing.JFrame {
     private static InfDB idb; 
-    private int manadsNummer;
 
     /**
      * Creates new form Statistik1
@@ -34,123 +33,7 @@ public class Statistik1 extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     
-    private String forvandlaManadsnamnTillDatumSlut (String manadsNamn)
-    {
-        String manadIDatumFormat = "";
-        switch(manadsNummer){
-            case 1:
-                manadsNamn = "Januari";
-                 manadIDatumFormat = "01-31";
-                return manadIDatumFormat;
-            case 2:
-                manadsNamn = "Februari";
-                 manadIDatumFormat = "02-28";
-                return manadIDatumFormat;
-            case 3:
-                manadsNamn = "Mars";
-                 manadIDatumFormat = "03-31";
-                return manadIDatumFormat;
-            case 4:
-                manadsNamn = "April";
-                 manadIDatumFormat = "04-30";
-                return manadIDatumFormat;
-            case 5:
-                manadsNamn = "Maj";
-                 manadIDatumFormat = "05-31";
-                return manadIDatumFormat;
-            case 6:
-                manadsNamn = "Juni";
-                 manadIDatumFormat = "06-30";
-                return manadIDatumFormat;
-            case 7:
-                manadsNamn = "Juli";
-                 manadIDatumFormat = "07-31";
-                return manadIDatumFormat;
-            case 8:
-                manadsNamn = "Augusti";
-                 manadIDatumFormat = "08-31";
-                return manadIDatumFormat;
-            case 9:
-                manadsNamn = "September";
-                 manadIDatumFormat = "09-30";
-                return manadIDatumFormat;
-            case 10:
-                manadsNamn = "Oktober";
-                 manadIDatumFormat = "10-31";
-                return manadIDatumFormat;
-            case 11:
-                manadsNamn = "November";
-                 manadIDatumFormat = "11-31";
-                return manadIDatumFormat;
-            case 12:
-                manadsNamn = "December";
-                 manadIDatumFormat = "12-31";
-                return manadIDatumFormat;
-            default:
-                manadsNamn = "Ogiltig månad";
-                break;
-        } 
-        return "";
-    }
-    
-    private String forvandlaManadsnamnTillDatumStart (String manadsNamn)
-    {
-        String manadIDatumFormat = "";
-        switch(manadsNummer){
-            case 1:
-                manadsNamn = "Januari";
-                 manadIDatumFormat = "01";
-                return manadIDatumFormat;
-            case 2:
-                manadsNamn = "Februari";
-                 manadIDatumFormat = "02";
-                return manadIDatumFormat;
-            case 3:
-                manadsNamn = "Mars";
-                 manadIDatumFormat = "03";
-                return manadIDatumFormat;
-            case 4:
-                manadsNamn = "April";
-                 manadIDatumFormat = "04";
-                return manadIDatumFormat;
-            case 5:
-                manadsNamn = "Maj";
-                 manadIDatumFormat = "05";
-                return manadIDatumFormat;
-            case 6:
-                manadsNamn = "Juni";
-                 manadIDatumFormat = "06";
-                return manadIDatumFormat;
-            case 7:
-                manadsNamn = "Juli";
-                 manadIDatumFormat = "07";
-                return manadIDatumFormat;
-            case 8:
-                manadsNamn = "Augusti";
-                 manadIDatumFormat = "08";
-                return manadIDatumFormat;
-            case 9:
-                manadsNamn = "September";
-                 manadIDatumFormat = "09";
-                return manadIDatumFormat;
-            case 10:
-                manadsNamn = "Oktober";
-                 manadIDatumFormat = "10";
-                return manadIDatumFormat;
-            case 11:
-                manadsNamn = "November";
-                 manadIDatumFormat = "11";
-                return manadIDatumFormat;
-            case 12:
-                manadsNamn = "December";
-                 manadIDatumFormat = "12";
-                return manadIDatumFormat;
-            default:
-                manadsNamn = "Ogiltig månad";
-                break;
-        } 
-        return "";
-    }
+
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -349,11 +232,80 @@ public class Statistik1 extends javax.swing.JFrame {
         String valtAr = cbAr.getSelectedItem().toString();
         
         String valdManad = cbManad.getSelectedItem().toString();
-        String manadIDatumFormatStart = forvandlaManadsnamnTillDatumStart(valdManad);
-        String manadIDatumFormatSlut = forvandlaManadsnamnTillDatumSlut(valdManad);
+        String manadIDatumFormatStart = "";
+        String manadIDatumFormatSlut = "";
+        
+        if(valdManad.equals("Januari"))
+        {
+            manadIDatumFormatStart = "01";
+            manadIDatumFormatSlut = "01-31";
+        }
+        
+        if(valdManad.equals("Februari"))
+        {
+            manadIDatumFormatStart = "02";
+            manadIDatumFormatSlut = "02-28";
+        }
+        
+        if(valdManad.equals("Mars"))
+        {
+            manadIDatumFormatStart = "03";
+            manadIDatumFormatSlut = "03-31";
+        }
+        
+        if(valdManad.equals("April"))
+        {
+            manadIDatumFormatStart = "04";
+            manadIDatumFormatSlut = "04-30";
+        }
+        
+        if(valdManad.equals("Maj"))
+        {
+            manadIDatumFormatStart = "05";
+            manadIDatumFormatSlut = "05-31";
+        }
+        if(valdManad.equals("Juni"))
+        {
+            manadIDatumFormatStart = "06";
+            manadIDatumFormatSlut = "06-30";
+        }
+        if(valdManad.equals("Juli"))
+        {
+            manadIDatumFormatStart = "07";
+            manadIDatumFormatSlut = "07-31";
+        }
+        if(valdManad.equals("Augusti"))
+        {
+            manadIDatumFormatStart = "08";
+            manadIDatumFormatSlut = "08-31";
+        }
+        
+        if(valdManad.equals("September"))
+        {
+            manadIDatumFormatStart = "09";
+            manadIDatumFormatSlut = "09-30";
+        }
+        
+        if(valdManad.equals("Oktober"))
+        {
+            manadIDatumFormatStart = "10";
+            manadIDatumFormatSlut = "10-31";
+        }
+        
+        if(valdManad.equals("November"))
+        {
+            manadIDatumFormatStart = "11";
+            manadIDatumFormatSlut = "11-30";
+        }
+        
+        if(valdManad.equals("December"))
+        {
+            manadIDatumFormatStart = "12";
+            manadIDatumFormatSlut = "12-31";
+        }
         
         
-        String sqlHamtaManadsforsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-" + manadIDatumFormatStart + "-01' && Datum>='" + valtAr + "-" + manadIDatumFormatSlut + "'";
+        String sqlHamtaManadsforsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum>= '" + valtAr + "-" + manadIDatumFormatStart + "-01' && Datum<='" + valtAr + "-" + manadIDatumFormatSlut + "'";
         
         try {
             String totalForsaljningsSumma = idb.fetchSingle(sqlHamtaManadsforsaljning);
