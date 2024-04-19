@@ -309,10 +309,20 @@ public class Statistik1 extends javax.swing.JFrame {
         
         try {
             String totalForsaljningsSumma = idb.fetchSingle(sqlHamtaManadsforsaljning);
-            txtStatistik.setText("Total försäljning år " + valtAr + ": " + totalForsaljningsSumma + " SEK");
+            if(totalForsaljningsSumma == null)
+            {  
+                txtStatistik.setText("Total försäljning år " + valtAr + ", " + valdManad + ": 0 SEK");
+            }
+            else{
+                 txtStatistik.setText("Total försäljning år " + valtAr + ", " + valdManad + ": " + totalForsaljningsSumma + " SEK");
+            }
         } catch (InfException ex) {
             Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+
+        
+        
     }//GEN-LAST:event_btnManadActionPerformed
 
     private void btnArActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArActionPerformed
