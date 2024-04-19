@@ -698,20 +698,18 @@ public class Dashboard extends javax.swing.JFrame {
                                                 .addComponent(lblRubrikLaggTIllOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(cbOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGroup(pnlOrdersidaLayout.createSequentialGroup()
-                                            .addComponent(lblOrdersida, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(20, 20, 20)))))
+                                        .addComponent(lblOrdersida, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGap(12, 12, 12)))
                     .addGroup(pnlOrdersidaLayout.createSequentialGroup()
                         .addComponent(btnOrderTotalsumma)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
+                .addGap(0, 33, Short.MAX_VALUE))
         );
         pnlOrdersidaLayout.setVerticalGroup(
             pnlOrdersidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlOrdersidaLayout.createSequentialGroup()
-                .addContainerGap(111, Short.MAX_VALUE)
+                .addContainerGap(95, Short.MAX_VALUE)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(141, 141, 141))
             .addGroup(pnlOrdersidaLayout.createSequentialGroup()
@@ -848,9 +846,8 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(pnlHattarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlHattarLayout.createSequentialGroup()
                         .addGroup(pnlHattarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(pnlHattarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(lblAngeModell, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblAngeNamn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
+                            .addComponent(lblAngeModell, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblAngeNamn, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
                             .addComponent(cbAngeModell, 0, 182, Short.MAX_VALUE)
                             .addComponent(txtAngeNamn))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -908,7 +905,7 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(btnSpara))
                 .addGap(72, 72, 72)
                 .addComponent(lblSkapaHattMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(274, Short.MAX_VALUE))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
 
         pnlMitten.add(pnlHattar, "card4");
@@ -1050,6 +1047,12 @@ public class Dashboard extends javax.swing.JFrame {
 
         lblRubrikLaggTIllOrder.setForeground(new java.awt.Color(255, 255, 255));
         lblRubrikLaggTIllOrder.setText("Lägg till i order");
+
+        cbOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbOrderActionPerformed(evt);
+            }
+        });
 
         cbValjAllaHattar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2531,6 +2534,10 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbValjMaterial2ActionPerformed
 
+    private void cbOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbOrderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbOrderActionPerformed
+
     private ArrayList<String> getPersonalIdLista() {
 
         ArrayList<String> personalIds = new ArrayList<>();
@@ -2605,7 +2612,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void fyllBoxOrder3() {
         //fyll combobox med order
-        String fragaFyllBox = "Select Order_ID from orders order by Order_ID";
+        String fragaFyllBox = "Select Order_ID from orders WHERE Status != 'Avslutad' order by Order_ID";
         ArrayList<String> allaOrder;
         try {
             allaOrder = idb.fetchColumn(fragaFyllBox);
@@ -2619,8 +2626,8 @@ public class Dashboard extends javax.swing.JFrame {
     
     private void fyllBoxOrder4() {
         //fyll combobox med order
-        String Status = "Påbörjad";
-String fragaFyllBox = "SELECT Order_ID FROM orders WHERE Status = '" + Status + "' ORDER BY Datum";
+        String Status = "Avslutad";
+String fragaFyllBox = "SELECT Order_ID FROM orders WHERE Status !='"+ Status + "' ORDER BY Datum desc ";
 
 //      String Status = "Påbörjad";
 //     String fragaFyllBox = "Select Order_ID from orders where Status = '" + Status + "' + order by Datum";
