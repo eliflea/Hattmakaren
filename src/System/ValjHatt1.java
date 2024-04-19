@@ -55,6 +55,8 @@ public class ValjHatt1 extends javax.swing.JFrame {
         list2 = new javax.swing.JList<>();
         cbValjMaterial = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
+        txtAngeStorlek = new javax.swing.JTextField();
+        lblAngeStorlek = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,6 +95,15 @@ public class ValjHatt1 extends javax.swing.JFrame {
 
         jLabel2.setText("Välj material");
 
+        txtAngeStorlek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAngeStorlekActionPerformed(evt);
+            }
+        });
+
+        lblAngeStorlek.setForeground(new java.awt.Color(204, 204, 204));
+        lblAngeStorlek.setText("Ange Storlek");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -101,8 +112,6 @@ public class ValjHatt1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnOk)
-                    .addComponent(lblRubrikLaggTIllOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -110,9 +119,17 @@ public class ValjHatt1 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(cbValjMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
+                            .addComponent(cbValjMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRubrikLaggTIllOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAngeStorlek, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                            .addComponent(txtAngeStorlek))))
+                .addGap(18, 18, 18)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,9 +148,15 @@ public class ValjHatt1 extends javax.swing.JFrame {
                             .addComponent(cbValjAllaHattar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbValjMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(26, 26, 26)
-                        .addComponent(lblRubrikLaggTIllOrder)
-                        .addGap(18, 18, 18)
-                        .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblRubrikLaggTIllOrder)
+                                .addGap(18, 18, 18)
+                                .addComponent(cbOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblAngeStorlek)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtAngeStorlek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(btnOk)))
                 .addContainerGap(223, Short.MAX_VALUE))
@@ -174,6 +197,10 @@ public class ValjHatt1 extends javax.swing.JFrame {
     private void cbValjMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjMaterialActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbValjMaterialActionPerformed
+
+    private void txtAngeStorlekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAngeStorlekActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAngeStorlekActionPerformed
 
     /**
      * @param args the command line arguments
@@ -283,8 +310,10 @@ private void fyllBoxMaterial() {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane2;
     private java.awt.Label label1;
+    private javax.swing.JLabel lblAngeStorlek;
     private javax.swing.JLabel lblRubrikLaggTIllOrder;
     private javax.swing.JList<String> list1;
     private javax.swing.JList<String> list2;
+    private javax.swing.JTextField txtAngeStorlek;
     // End of variables declaration//GEN-END:variables
 }

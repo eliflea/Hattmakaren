@@ -27,8 +27,6 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnOk" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblRubrikLaggTIllOrder" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
-                  <Component id="cbOrder" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="cbValjAllaHattar" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -40,9 +38,20 @@
                           <Component id="cbValjMaterial" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblRubrikLaggTIllOrder" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
+                          <Component id="cbOrder" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblAngeStorlek" pref="86" max="32767" attributes="0"/>
+                          <Component id="txtAngeStorlek" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace pref="117" max="32767" attributes="0"/>
-              <Component id="jTabbedPane2" pref="231" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Component id="jTabbedPane2" pref="316" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -66,9 +75,18 @@
                           <Component id="cbValjMaterial" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="lblRubrikLaggTIllOrder" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="cbOrder" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="lblRubrikLaggTIllOrder" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="cbOrder" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="lblAngeStorlek" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtAngeStorlek" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnOk" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -203,6 +221,19 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="text" type="java.lang.String" value="V&#xe4;lj material"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtAngeStorlek">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAngeStorlekActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAngeStorlek">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ange Storlek"/>
       </Properties>
     </Component>
   </SubComponents>
