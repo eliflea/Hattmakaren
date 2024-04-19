@@ -2408,7 +2408,7 @@ public class Dashboard extends javax.swing.JFrame {
                 idb.update(uppdateraPersonal);
                 idb.update(uppdateraStatus);
 
-                System.out.println("Gått genom");
+                lblError.setText("");
                 
                 // Uppdatera gränssnittet med den uppdaterade orderns lista
                 orders = getOrderLista();
@@ -2420,7 +2420,7 @@ public class Dashboard extends javax.swing.JFrame {
                 // Uppdatera JList med den nya listmodellen
                 orderLista.setModel(orderListModel);
             } else {
-                lblError.setText("Hatten har redan en angiven personal");
+                 lblError.setText("Hatten har redan en angiven personal");
             }
 
         } catch (InfException ex) {
@@ -2455,7 +2455,7 @@ public class Dashboard extends javax.swing.JFrame {
                 // Set the updated model to the orderLista JList
                 orderLista.setModel(orderListModel);
 
-                System.out.println("Gått genom");
+                lblError.setText("");
                 
             } else {
                 lblError.setText("Du kan inte ta bort en annan personal");
