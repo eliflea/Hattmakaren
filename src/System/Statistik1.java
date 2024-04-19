@@ -162,7 +162,7 @@ public class Statistik1 extends javax.swing.JFrame {
             
             
          } catch (InfException ex) {
-            Logger.getLogger(Statistik.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
         }
 }
 
