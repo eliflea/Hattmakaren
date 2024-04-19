@@ -1666,18 +1666,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jTabbedPane1" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jTabbedPane1" alignment="0" pref="787" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jTabbedPane1" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jTabbedPane1" alignment="0" pref="800" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -1704,7 +1698,7 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="199" max="32767" attributes="0"/>
+                              <EmptySpace pref="205" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="lblSkapaKundMeddelande" min="-2" pref="337" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1795,7 +1789,7 @@
                               <Component id="btnSparaKund" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="lblSkapaKundMeddelande" min="-2" pref="37" max="-2" attributes="0"/>
-                              <EmptySpace pref="215" max="32767" attributes="0"/>
+                              <EmptySpace pref="221" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1912,46 +1906,42 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="lblTaBortMeddelande" min="-2" pref="337" max="-2" attributes="0"/>
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Component id="lblTaBortEpost" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="txtTaBortEpost" min="-2" pref="347" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="cbKundEpost" min="-2" pref="383" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="lblTaBortKund" min="-2" pref="316" max="-2" attributes="0"/>
                                       <Component id="lblTaBortAngeEpost" alignment="0" min="-2" pref="442" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lblTaBortMeddelande" min="-2" pref="337" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="btnTaBortKund" min="-2" pref="170" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="btnTaBortKund" alignment="1" min="-2" pref="170" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="204" max="32767" attributes="0"/>
+                              <EmptySpace pref="294" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                              <Component id="lblTaBortKund" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="lblTaBortKund" min="-2" pref="71" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                               <Component id="lblTaBortAngeEpost" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblTaBortEpost" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtTaBortEpost" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="cbKundEpost" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btnTaBortKund" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="btnTaBortKund" min="-2" pref="55" max="-2" attributes="0"/>
-                                  <Component id="lblTaBortMeddelande" min="-2" pref="47" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="475" max="32767" attributes="0"/>
+                              <Component id="lblTaBortMeddelande" min="-2" pref="47" max="-2" attributes="0"/>
+                              <EmptySpace pref="461" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1970,10 +1960,8 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="18" style="0"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Skriv in e-post f&#xf6;r kund som ska tas bort"/>
+                        <Property name="text" type="java.lang.String" value="V&#xe4;lj kund som ska tas bort"/>
                       </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="txtTaBortEpost">
                     </Component>
                     <Component class="javax.swing.JButton" name="btnTaBortKund">
                       <Properties>
@@ -2006,6 +1994,11 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Ta bort kund"/>
                       </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cbKundEpost">
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -2081,7 +2074,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="lblAndraKundMeddelande" min="-2" pref="238" max="-2" attributes="0"/>
-                                      <EmptySpace pref="77" max="32767" attributes="0"/>
+                                      <EmptySpace pref="83" max="32767" attributes="0"/>
                                       <Component id="btnRedigeraKund1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2139,7 +2132,7 @@
                                   <Component id="btnRedigeraKund1" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblAndraKundMeddelande" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="233" max="32767" attributes="0"/>
+                              <EmptySpace pref="239" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
