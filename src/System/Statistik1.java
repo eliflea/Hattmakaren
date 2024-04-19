@@ -331,9 +331,31 @@ public class Statistik1 extends javax.swing.JFrame {
         
         String sqlHamtaArsforsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-12-31' && Datum>='" + valtAr + "-01-01'";
         
+        String sqlHamtaAr = "SELECT Order_ID FROM Orders WHERE Datum<= '" + valtAr + "-12-31' && Datum>='" + valtAr + "-01-01'";
+        
+        
         try {
             String totalForsaljningsSumma = idb.fetchSingle(sqlHamtaArsforsaljning);
-            txtStatistik.setText("Total försäljning år " + valtAr + ": " + totalForsaljningsSumma + " SEK");
+            
+            ArrayList<String> orderIDAttHamtaMaterialIDMed = idb.fetchColumn(sqlHamtaAr);
+            ArrayList<String> relevantaMaterialID = new ArrayList<String>();
+            ArrayList<String> materialNamn = new ArrayList<String>();
+            for(String orderID : orderIDAttHamtaMaterialIDMed)
+                {
+                    String sqlHamtaMaterialID = "SELECT Material_ID FROM hatt_i_order WHERE Order_ID = " + orderID;
+                    String ettMaterialID = idb.fetchSingle(sqlHamtaMaterialID);
+                    relevantaMaterialID.add(ettMaterialID);
+                }
+            for(String materialID : relevantaMaterialID)
+            {
+                String sqlHamtaMaterialNamn = "SELECT Namn FROM Material WHERE Material_ID = " + materialID;
+                String ettMaterialNamn = idb.fetchSingle(sqlHamtaMaterialNamn);
+                materialNamn.add(ettMaterialNamn);
+            }
+            
+            
+            
+            txtStatistik.setText("Total försäljning år " + valtAr + ": " + totalForsaljningsSumma + " SEK \n" + materialNamn);
         } catch (InfException ex) {
             Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
         }
