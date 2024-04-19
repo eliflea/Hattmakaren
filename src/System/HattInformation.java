@@ -119,7 +119,7 @@ private JLabel getMaterialLabel(int index) {
         lblN3 = new javax.swing.JLabel();
         lblN4 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
         setResizable(false);
 
