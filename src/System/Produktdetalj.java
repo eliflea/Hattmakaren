@@ -4,6 +4,9 @@
  */
 package System;
 
+import java.util.ArrayList;
+import oru.inf.InfException;
+
 /**
  *
  * @author leyla
@@ -26,19 +29,172 @@ public class Produktdetalj extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlProduktdetaljer = new javax.swing.JPanel();
+        lblAndraProduktdetalj = new javax.swing.JLabel();
+        txtProduktdetaljPris = new javax.swing.JTextField();
+        txtProduktdetaljNamn = new javax.swing.JTextField();
+        txtProduktdetaljModell = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        lblProduktdetaljModell = new javax.swing.JLabel();
+        lblProduktdetaljPris = new javax.swing.JLabel();
+        lblProduktdetaljGodkand = new javax.swing.JLabel();
+        cbProduktDetaljGodkand = new javax.swing.JComboBox<>();
+        btnAndraProduktdetalj = new javax.swing.JButton();
+        lblAndraProduktdetaljMeddelande = new javax.swing.JLabel();
+        cbProduktdetaljHatt = new javax.swing.JComboBox<>();
+        lblProduktdetaljHatt = new javax.swing.JLabel();
+
+        pnlProduktdetaljer.setBackground(new java.awt.Color(255, 255, 255));
+        pnlProduktdetaljer.setForeground(new java.awt.Color(255, 255, 255));
+        pnlProduktdetaljer.setLayout(null);
+
+        lblAndraProduktdetalj.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblAndraProduktdetalj.setForeground(new java.awt.Color(0, 0, 0));
+        lblAndraProduktdetalj.setText("Ändra produktdetaljer");
+        pnlProduktdetaljer.add(lblAndraProduktdetalj);
+        lblAndraProduktdetalj.setBounds(70, 40, 478, 53);
+
+        txtProduktdetaljPris.setForeground(new java.awt.Color(0, 0, 0));
+        pnlProduktdetaljer.add(txtProduktdetaljPris);
+        txtProduktdetaljPris.setBounds(400, 380, 250, 40);
+
+        txtProduktdetaljNamn.setForeground(new java.awt.Color(0, 0, 0));
+        pnlProduktdetaljer.add(txtProduktdetaljNamn);
+        txtProduktdetaljNamn.setBounds(70, 270, 250, 40);
+
+        txtProduktdetaljModell.setForeground(new java.awt.Color(0, 0, 0));
+        pnlProduktdetaljer.add(txtProduktdetaljModell);
+        txtProduktdetaljModell.setBounds(70, 380, 250, 40);
+
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Namn");
+        pnlProduktdetaljer.add(jLabel9);
+        jLabel9.setBounds(70, 250, 250, 16);
+
+        lblProduktdetaljModell.setForeground(new java.awt.Color(0, 0, 0));
+        lblProduktdetaljModell.setText("Modell");
+        pnlProduktdetaljer.add(lblProduktdetaljModell);
+        lblProduktdetaljModell.setBounds(70, 360, 90, 16);
+
+        lblProduktdetaljPris.setForeground(new java.awt.Color(0, 0, 0));
+        lblProduktdetaljPris.setText("Pris");
+        pnlProduktdetaljer.add(lblProduktdetaljPris);
+        lblProduktdetaljPris.setBounds(400, 360, 160, 16);
+
+        lblProduktdetaljGodkand.setForeground(new java.awt.Color(0, 0, 0));
+        lblProduktdetaljGodkand.setText("Hattstatus");
+        pnlProduktdetaljer.add(lblProduktdetaljGodkand);
+        lblProduktdetaljGodkand.setBounds(400, 250, 200, 16);
+
+        cbProduktDetaljGodkand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Godkänd", "Inte godkänd" }));
+        pnlProduktdetaljer.add(cbProduktDetaljGodkand);
+        cbProduktDetaljGodkand.setBounds(400, 270, 250, 40);
+
+        btnAndraProduktdetalj.setBackground(new java.awt.Color(0, 102, 0));
+        btnAndraProduktdetalj.setForeground(new java.awt.Color(255, 255, 255));
+        btnAndraProduktdetalj.setText("Ändra");
+        btnAndraProduktdetalj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAndraProduktdetaljActionPerformed(evt);
+            }
+        });
+        pnlProduktdetaljer.add(btnAndraProduktdetalj);
+        btnAndraProduktdetalj.setBounds(400, 460, 250, 40);
+
+        lblAndraProduktdetaljMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblAndraProduktdetaljMeddelande.setForeground(new java.awt.Color(0, 0, 0));
+        pnlProduktdetaljer.add(lblAndraProduktdetaljMeddelande);
+        lblAndraProduktdetaljMeddelande.setBounds(70, 530, 530, 50);
+
+        cbProduktdetaljHatt.setForeground(new java.awt.Color(0, 0, 0));
+        pnlProduktdetaljer.add(cbProduktdetaljHatt);
+        cbProduktdetaljHatt.setBounds(70, 180, 250, 40);
+
+        lblProduktdetaljHatt.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblProduktdetaljHatt.setForeground(new java.awt.Color(0, 0, 0));
+        lblProduktdetaljHatt.setText("Välj hatt att ändra produktdetaljer i");
+        pnlProduktdetaljer.add(lblProduktdetaljHatt);
+        lblProduktdetaljHatt.setBounds(70, 140, 380, 30);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 787, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(pnlProduktdetaljer, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(pnlProduktdetaljer, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAndraProduktdetaljActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraProduktdetaljActionPerformed
+        // ÄNDRAR PRODUKTDETALJ I HATT
+        lblAndraProduktdetaljMeddelande.setText("");
+        if (Validering.harTextFaltetVarde(txtProduktdetaljNamn, lblAndraProduktdetaljMeddelande)
+            && Validering.harTextFaltetVarde(txtProduktdetaljPris, lblAndraProduktdetaljMeddelande)
+            && Validering.harTextFaltetVarde(txtProduktdetaljModell, lblAndraProduktdetaljMeddelande))
+        {
+            if(Validering.arDouble(txtProduktdetaljPris, lblAndraProduktdetaljMeddelande)) {
+                try {
+                    int godkand = 0;
+                    Object selectedGodkand = cbProduktDetaljGodkand.getSelectedItem();
+                    if(selectedGodkand.equals("Godkänd")) {
+                        godkand = 1;
+                    }
+                    String hatt = (String) cbProduktdetaljHatt.getSelectedItem();
+
+                    idb.update("UPDATE hatt SET Namn='" + txtProduktdetaljNamn.getText() + "', "
+                        + "Pris='" + txtProduktdetaljPris.getText() + "', "
+                        + "Modell='" + txtProduktdetaljModell.getText() + "', "
+                        + "Godkänd='" + godkand + "' "
+                        + "WHERE Namn='" + hatt + "';");
+                    lblAndraProduktdetaljMeddelande.setText(txtProduktdetaljNamn.getText() + " har ändrats.");
+
+                } catch (InfException fel) {
+                    lblAndraProduktdetaljMeddelande.setText("Ett fel uppstod!");
+                    fel.printStackTrace();
+                }}
+            }
+    }//GEN-LAST:event_btnAndraProduktdetaljActionPerformed
+
+     private void fyllHatt() {
+        String fraga = "SELECT Namn FROM hatt";
+        try {
+            ArrayList<String> hatt = idb.fetchColumn(fraga);
+            for (String enHatt : hatt) {
+                cbProduktdetaljHatt.addItem(enHatt);
+            }
+        } catch (InfException fel) {
+            fel.printStackTrace();
+        }
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAndraProduktdetalj;
+    private javax.swing.JComboBox<String> cbProduktDetaljGodkand;
+    private javax.swing.JComboBox<String> cbProduktdetaljHatt;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lblAndraProduktdetalj;
+    private javax.swing.JLabel lblAndraProduktdetaljMeddelande;
+    private javax.swing.JLabel lblProduktdetaljGodkand;
+    private javax.swing.JLabel lblProduktdetaljHatt;
+    private javax.swing.JLabel lblProduktdetaljModell;
+    private javax.swing.JLabel lblProduktdetaljPris;
+    private javax.swing.JPanel pnlProduktdetaljer;
+    private javax.swing.JTextField txtProduktdetaljModell;
+    private javax.swing.JTextField txtProduktdetaljNamn;
+    private javax.swing.JTextField txtProduktdetaljPris;
     // End of variables declaration//GEN-END:variables
 }
