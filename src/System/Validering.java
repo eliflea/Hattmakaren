@@ -85,7 +85,7 @@ public static boolean kollaDatumFormat(JTextField rutaAttKolla, JLabel meddeland
         
         try {
             Date date = format.parse(input);
-            
+
         } catch (ParseException e) {
             meddelande.setText("Fel datum format, vänligen ange datumet som 'yyyy-MM-dd'");
             inmatningsFormat = false;
@@ -93,4 +93,15 @@ public static boolean kollaDatumFormat(JTextField rutaAttKolla, JLabel meddeland
         }
         return inmatningsFormat;
     }
+
+    public static boolean arDouble(JTextField rutaAttKolla, JLabel meddelande) {
+        try {
+            Double.parseDouble(rutaAttKolla.getText());
+            return true;
+        } catch (NumberFormatException fel) {
+            meddelande.setText("Input är ej double!");
+            return false;
+        }
+    }
+
 }
