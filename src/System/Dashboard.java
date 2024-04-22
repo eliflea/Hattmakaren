@@ -2314,12 +2314,13 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         String noll = "0";
         String ett = "1";
-
+        String orderID = (String) cbOrderValj3.getSelectedItem();
+        
         //visar status för order
         try {
-            String status = idb.fetchSingle("Select Brådskande from Orders where Order_ID = " + txtInsertOrder.getText() + "");
+            String status = idb.fetchSingle("Select Brådskande from Orders where Order_ID = " + orderID + "");
 
-            String status2 = idb.fetchSingle("Select Status from Orders where Order_ID = " + txtInsertOrder.getText() + "");
+            String status2 = idb.fetchSingle("Select Status from Orders where Order_ID = " + orderID + "");
 
             if (status.equals(ett)) {
             } else {
@@ -2346,7 +2347,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // Visar fraktsedeln med random fraktsedelsnummer
         randomFraktsedelnummer();
-        String orderID = txtInsertOrder.getText();
+        String orderID = (String) cbOrderValj3.getSelectedItem();
 
         try {
             String forFraga = "SELECT Förnamn FROM kund WHERE Kund_ID in(SELECT Kund from orders where Order_ID='" + orderID + "')";
