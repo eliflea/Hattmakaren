@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import oru.inf.InfException;
 import oru.inf.InfDB;
+import java.util.Collections;
 
 /**
  *
@@ -353,9 +354,19 @@ public class Statistik1 extends javax.swing.JFrame {
                 materialNamn.add(ettMaterialNamn);
             }
             
+            String sqlHamtaAlltMaterial = "SELECT Namn FROM material";
+            ArrayList<String> alltMaterial = idb.fetchColumn(sqlHamtaAlltMaterial);
+            
+            ArrayList<String> materialSomSkaSkrivasUt = new ArrayList<String>();
+            
+            for(String ettMaterial : alltMaterial)
+            {
+            int antalMaterial = Collections.frequency(materialNamn, ettMaterial);
+            materialSomSkaSkrivasUt.add(antalMaterial + " enheter av " + ettMaterial + "\n");
+            }
             
             
-            txtStatistik.setText("Total försäljning år " + valtAr + ": " + totalForsaljningsSumma + " SEK \n" + materialNamn);
+            txtStatistik.setText("Total försäljning år " + valtAr + ": " + totalForsaljningsSumma + " SEK \n" + materialSomSkaSkrivasUt);
         } catch (InfException ex) {
             Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
         }
