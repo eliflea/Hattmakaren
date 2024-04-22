@@ -45,10 +45,11 @@ public class Statistik1 extends javax.swing.JFrame {
         cbManad = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         cbKvartal = new javax.swing.JComboBox<>();
-        txtStatistik = new javax.swing.JTextField();
         btnAr = new javax.swing.JButton();
         btnKvartal = new javax.swing.JButton();
         btnManad = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtStatistik = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,12 +64,6 @@ public class Statistik1 extends javax.swing.JFrame {
         jLabel3.setText("Välj kvartal");
 
         cbKvartal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Q1", "Q2", "Q3", "Q4" }));
-
-        txtStatistik.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtStatistikActionPerformed(evt);
-            }
-        });
 
         btnAr.setText("Visa statistik för valt år");
         btnAr.addActionListener(new java.awt.event.ActionListener() {
@@ -91,6 +86,10 @@ public class Statistik1 extends javax.swing.JFrame {
             }
         });
 
+        txtStatistik.setColumns(20);
+        txtStatistik.setRows(5);
+        jScrollPane1.setViewportView(txtStatistik);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,14 +110,12 @@ public class Statistik1 extends javax.swing.JFrame {
                     .addComponent(btnManad))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel3)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(cbKvartal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtStatistik, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,17 +137,14 @@ public class Statistik1 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnKvartal)
                         .addGap(18, 18, 18)
-                        .addComponent(btnManad))
-                    .addComponent(txtStatistik, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                        .addComponent(btnManad)
+                        .addGap(0, 42, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtStatistikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStatistikActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtStatistikActionPerformed
     public void fyllAr()
 {
     String hamtaAr = "SELECT DISTINCT YEAR(Datum) AS År FROM hattmakarna.orders ORDER BY År DESC";
@@ -362,7 +356,14 @@ public class Statistik1 extends javax.swing.JFrame {
             for(String ettMaterial : alltMaterial)
             {
             int antalMaterial = Collections.frequency(materialNamn, ettMaterial);
+            if(antalMaterial == 1)
+            {
+                materialSomSkaSkrivasUt.add(antalMaterial + " enhet av " + ettMaterial + "\n");
+            }
+            else
+            {
             materialSomSkaSkrivasUt.add(antalMaterial + " enheter av " + ettMaterial + "\n");
+            }
             }
             
             
@@ -386,6 +387,7 @@ public class Statistik1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField txtStatistik;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtStatistik;
     // End of variables declaration//GEN-END:variables
 }
