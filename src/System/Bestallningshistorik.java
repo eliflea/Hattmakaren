@@ -23,18 +23,19 @@ public class Bestallningshistorik extends javax.swing.JFrame {
         initComponents();
         this.idb=idb;
         fyllRullLista();
+        fyllTextrutaMedBestallningshistorik();
     }
     
     public void fyllRullLista()
     {
-        String sqlHamtaPersonalEpost = "SELECT Epost FROM personal";
+        String sqlHamtaPersonalEpost = "SELECT Epost FROM kund";
         ArrayList<String> allPersonalEpost = new ArrayList<String>();
         try {
             allPersonalEpost = idb.fetchColumn(sqlHamtaPersonalEpost);
             
             for(String enEpost : allPersonalEpost)
             {
-                cbValjPersonalEpost.addItem(enEpost);
+                cbValjKundEpost.addItem(enEpost);
             }
             
         } catch (InfException ex) {
@@ -44,6 +45,24 @@ public class Bestallningshistorik extends javax.swing.JFrame {
     
     public void fyllTextrutaMedBestallningshistorik()
     {
+        String valdEpost = cbValjKundEpost.getSelectedItem().toString().trim();
+        
+        String sqlHamtaKundID = "SELECT Kund_ID FROM Kund WHERE Epost = '" + valdEpost + "'";
+        String kundID = "";
+        try {
+            kundID = idb.fetchSingle(sqlHamtaKundID);
+        } catch (InfException ex) {
+            Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String sqlHamtaRelevantaOrdrar = "SELECT Order_ID FROM orders WHERE Kund = '" + kundID + "'";
+        ArrayList<String> allaOrderID = new ArrayList<String>();
+        try {
+            allaOrderID = idb.fetchColumn(sqlHamtaRelevantaOrdrar);
+        } catch (InfException ex) {
+            Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        jtxtBestallningsHistorik.setText(allaOrderID + "\n");
         
     }
     
@@ -61,12 +80,18 @@ public class Bestallningshistorik extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        cbValjPersonalEpost = new javax.swing.JComboBox<>();
+        cbValjKundEpost = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtxtBestallningsHistorik = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(773, 741));
+
+        cbValjKundEpost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbValjKundEpostActionPerformed(evt);
+            }
+        });
 
         jtxtBestallningsHistorik.setEditable(false);
         jtxtBestallningsHistorik.setColumns(20);
@@ -79,7 +104,7 @@ public class Bestallningshistorik extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(cbValjPersonalEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbValjKundEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
                 .addContainerGap())
@@ -88,7 +113,7 @@ public class Bestallningshistorik extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(cbValjPersonalEpost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbValjKundEpost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(429, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -110,10 +135,15 @@ public class Bestallningshistorik extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cbValjKundEpostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjKundEpostActionPerformed
+        // TODO add your handling code here:
+        fyllTextrutaMedBestallningshistorik();
+    }//GEN-LAST:event_cbValjKundEpostActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> cbValjPersonalEpost;
+    private javax.swing.JComboBox<String> cbValjKundEpost;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jtxtBestallningsHistorik;
