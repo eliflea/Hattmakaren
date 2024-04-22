@@ -21,6 +21,6 @@ public class Start {
             Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        new Statistik1(idb).setVisible(true);
+        new InloggningsSida(idb).setVisible(true);
     }
 }
