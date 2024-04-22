@@ -29,6 +29,8 @@ public class SkapaOrder extends javax.swing.JFrame {
         fyllBoxKund();
         
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
