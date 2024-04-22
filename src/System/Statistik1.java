@@ -242,12 +242,12 @@ public class Statistik1 extends javax.swing.JFrame {
             int antalMaterial = Collections.frequency(materialNamn, ettMaterial);
             if(antalMaterial == 1)
             {
-                materialSomSkaSkrivasUt.add(antalMaterial + " enhet av " + ettMaterial + "\n");
+                materialSomSkaSkrivasUt.add(antalMaterial + " hatt av " + ettMaterial + "\n");
             }
             
             else
             {
-            materialSomSkaSkrivasUt.add(antalMaterial + " enheter av " + ettMaterial + "\n");
+            materialSomSkaSkrivasUt.add(antalMaterial + " hattar av " + ettMaterial + "\n");
             }
             
             String totalForsaljningsSumma = idb.fetchSingle(sqlHamtaKvartalsForsaljning);
@@ -380,11 +380,11 @@ public class Statistik1 extends javax.swing.JFrame {
             int antalMaterial = Collections.frequency(materialNamn, ettMaterial);
             if(antalMaterial == 1)
             {
-                materialSomSkaSkrivasUt.add(antalMaterial + " enhet av " + ettMaterial + "\n");
+                materialSomSkaSkrivasUt.add(antalMaterial + " hatt av " + ettMaterial + "\n");
             }
             else
             {
-            materialSomSkaSkrivasUt.add(antalMaterial + " enheter av " + ettMaterial + "\n");
+            materialSomSkaSkrivasUt.add(antalMaterial + " hattar av " + ettMaterial + "\n");
             }
             
             if(totalForsaljningsSumma == null)
@@ -443,16 +443,16 @@ public class Statistik1 extends javax.swing.JFrame {
             int antalMaterial = Collections.frequency(materialNamn, ettMaterial);
             if(antalMaterial == 1)
             {
-                materialSomSkaSkrivasUt.add(antalMaterial + " enhet av " + ettMaterial + "\n");
+                materialSomSkaSkrivasUt.add(antalMaterial + " hatt av " + ettMaterial + "\n");
             }
             else
             {
-            materialSomSkaSkrivasUt.add(antalMaterial + " enheter av " + ettMaterial + "\n");
+            materialSomSkaSkrivasUt.add(antalMaterial + " hattar av " + ettMaterial + "\n");
             }
             }
             
             
-            txtStatistik.setText("Total försäljning år " + valtAr + ": " + totalForsaljningsSumma + " SEK \n \n" + materialSomSkaSkrivasUt);
+            txtStatistik.setText("Total försäljning år " + valtAr + ": " + totalForsaljningsSumma + " SEK \n \n " + materialSomSkaSkrivasUt );
         } catch (InfException ex) {
             Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
         }
