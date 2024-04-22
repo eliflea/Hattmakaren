@@ -45,6 +45,7 @@ public class Dashboard extends javax.swing.JFrame {
         initComponents();
         fyllOrderLista();
         fyllEpost();
+        fyllHatt();
         AutoCompleteDecorator.decorate(cbKundEpost);
         AutoCompleteDecorator.decorate(cbAndraFyllEpost);
         fyllBoxOrder();
@@ -82,6 +83,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblNuvarandeAnvandare = new javax.swing.JLabel();
         btnVisaMaterialinfo = new javax.swing.JButton();
         btnPaketinformation = new javax.swing.JButton();
+        btnProduktdetaljer = new javax.swing.JButton();
         pnlMitten = new javax.swing.JPanel();
         pnlStartsida = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -238,6 +240,20 @@ public class Dashboard extends javax.swing.JFrame {
         lblHojd = new javax.swing.JLabel();
         lblVisaPaketInformationRubrik = new javax.swing.JLabel();
         lblPaketInfoMeddelande = new javax.swing.JLabel();
+        pnlProduktdetaljer = new javax.swing.JPanel();
+        lblAndraProduktdetalj = new javax.swing.JLabel();
+        txtProduktdetaljPris = new javax.swing.JTextField();
+        txtProduktdetaljNamn = new javax.swing.JTextField();
+        txtProduktdetaljModell = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        lblProduktdetaljModell = new javax.swing.JLabel();
+        lblProduktdetaljPris = new javax.swing.JLabel();
+        lblProduktdetaljGodkand = new javax.swing.JLabel();
+        cbProduktDetaljGodkand = new javax.swing.JComboBox<>();
+        btnAndraProduktdetalj = new javax.swing.JButton();
+        lblAndraProduktdetaljMeddelande = new javax.swing.JLabel();
+        cbProduktdetaljHatt = new javax.swing.JComboBox<>();
+        lblProduktdetaljHatt = new javax.swing.JLabel();
         pnlSideBarHoger = new javax.swing.JPanel();
         personalTillHatt = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -361,6 +377,17 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        btnProduktdetaljer.setBackground(new java.awt.Color(102, 102, 102));
+        btnProduktdetaljer.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnProduktdetaljer.setForeground(new java.awt.Color(255, 255, 255));
+        btnProduktdetaljer.setText("Produktdetaljer");
+        btnProduktdetaljer.setBorder(null);
+        btnProduktdetaljer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProduktdetaljerActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlSideBarVansterLayout = new javax.swing.GroupLayout(pnlSideBarVanster);
         pnlSideBarVanster.setLayout(pnlSideBarVansterLayout);
         pnlSideBarVansterLayout.setHorizontalGroup(
@@ -382,7 +409,8 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(btnStartsida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnVisaMaterialinfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblTest, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                        .addComponent(btnPaketinformation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnPaketinformation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnProduktdetaljer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlSideBarVansterLayout.setVerticalGroup(
@@ -414,6 +442,8 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(btnOrdersida, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnPaketinformation, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnProduktdetaljer, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnLoggaUt, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40))
@@ -1690,6 +1720,80 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlMitten.add(pnlPaketinfo, "card10");
 
+        pnlProduktdetaljer.setBackground(new java.awt.Color(255, 255, 255));
+        pnlProduktdetaljer.setForeground(new java.awt.Color(255, 255, 255));
+        pnlProduktdetaljer.setLayout(null);
+
+        lblAndraProduktdetalj.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblAndraProduktdetalj.setForeground(new java.awt.Color(0, 0, 0));
+        lblAndraProduktdetalj.setText("Ändra produktdetaljer");
+        pnlProduktdetaljer.add(lblAndraProduktdetalj);
+        lblAndraProduktdetalj.setBounds(70, 40, 478, 53);
+
+        txtProduktdetaljPris.setForeground(new java.awt.Color(0, 0, 0));
+        pnlProduktdetaljer.add(txtProduktdetaljPris);
+        txtProduktdetaljPris.setBounds(400, 380, 250, 40);
+
+        txtProduktdetaljNamn.setForeground(new java.awt.Color(0, 0, 0));
+        pnlProduktdetaljer.add(txtProduktdetaljNamn);
+        txtProduktdetaljNamn.setBounds(70, 270, 250, 40);
+
+        txtProduktdetaljModell.setForeground(new java.awt.Color(0, 0, 0));
+        pnlProduktdetaljer.add(txtProduktdetaljModell);
+        txtProduktdetaljModell.setBounds(70, 380, 250, 40);
+
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Namn");
+        pnlProduktdetaljer.add(jLabel9);
+        jLabel9.setBounds(70, 250, 250, 16);
+
+        lblProduktdetaljModell.setForeground(new java.awt.Color(0, 0, 0));
+        lblProduktdetaljModell.setText("Modell");
+        pnlProduktdetaljer.add(lblProduktdetaljModell);
+        lblProduktdetaljModell.setBounds(70, 360, 90, 16);
+
+        lblProduktdetaljPris.setForeground(new java.awt.Color(0, 0, 0));
+        lblProduktdetaljPris.setText("Pris");
+        pnlProduktdetaljer.add(lblProduktdetaljPris);
+        lblProduktdetaljPris.setBounds(400, 360, 160, 16);
+
+        lblProduktdetaljGodkand.setForeground(new java.awt.Color(0, 0, 0));
+        lblProduktdetaljGodkand.setText("Hattstatus");
+        pnlProduktdetaljer.add(lblProduktdetaljGodkand);
+        lblProduktdetaljGodkand.setBounds(400, 250, 200, 16);
+
+        cbProduktDetaljGodkand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Godkänd", "Inte godkänd" }));
+        pnlProduktdetaljer.add(cbProduktDetaljGodkand);
+        cbProduktDetaljGodkand.setBounds(400, 270, 250, 40);
+
+        btnAndraProduktdetalj.setBackground(new java.awt.Color(0, 102, 0));
+        btnAndraProduktdetalj.setForeground(new java.awt.Color(255, 255, 255));
+        btnAndraProduktdetalj.setText("Ändra");
+        btnAndraProduktdetalj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAndraProduktdetaljActionPerformed(evt);
+            }
+        });
+        pnlProduktdetaljer.add(btnAndraProduktdetalj);
+        btnAndraProduktdetalj.setBounds(400, 460, 250, 40);
+
+        lblAndraProduktdetaljMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblAndraProduktdetaljMeddelande.setForeground(new java.awt.Color(0, 0, 0));
+        pnlProduktdetaljer.add(lblAndraProduktdetaljMeddelande);
+        lblAndraProduktdetaljMeddelande.setBounds(70, 530, 530, 50);
+
+        cbProduktdetaljHatt.setForeground(new java.awt.Color(0, 0, 0));
+        pnlProduktdetaljer.add(cbProduktdetaljHatt);
+        cbProduktdetaljHatt.setBounds(70, 180, 250, 40);
+
+        lblProduktdetaljHatt.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblProduktdetaljHatt.setForeground(new java.awt.Color(0, 0, 0));
+        lblProduktdetaljHatt.setText("Välj hatt att ändra produktdetaljer i");
+        pnlProduktdetaljer.add(lblProduktdetaljHatt);
+        lblProduktdetaljHatt.setBounds(70, 140, 380, 30);
+
+        pnlMitten.add(pnlProduktdetaljer, "card11");
+
         pnlSideBarHoger.setBackground(new java.awt.Color(51, 51, 51));
 
         personalTillHatt.setText("Lägg till personal till hatt");
@@ -2606,6 +2710,54 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSparaPaketActionPerformed
 
+    private void btnProduktdetaljerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProduktdetaljerActionPerformed
+        // TODO add your handling code here:
+        panelerGomda();
+        pnlProduktdetaljer.show();
+    }//GEN-LAST:event_btnProduktdetaljerActionPerformed
+
+    private void btnAndraProduktdetaljActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraProduktdetaljActionPerformed
+        // ÄNDRAR PRODUKTDETALJ I HATT
+        lblAndraProduktdetaljMeddelande.setText("");
+        if (Validering.harTextFaltetVarde(txtProduktdetaljNamn, lblAndraProduktdetaljMeddelande)
+            && Validering.harTextFaltetVarde(txtProduktdetaljPris, lblAndraProduktdetaljMeddelande)
+            && Validering.harTextFaltetVarde(txtProduktdetaljModell, lblAndraProduktdetaljMeddelande))
+        {
+            if(Validering.arDouble(txtProduktdetaljPris, lblAndraProduktdetaljMeddelande)) {
+                try {
+                    int godkand = 0;
+                    Object selectedGodkand = cbProduktDetaljGodkand.getSelectedItem();
+                    if(selectedGodkand.equals("Godkänd")) {
+                        godkand = 1;
+                    }
+                    String hatt = (String) cbProduktdetaljHatt.getSelectedItem();
+
+                    idb.update("UPDATE hatt SET Namn='" + txtProduktdetaljNamn.getText() + "', "
+                        + "Pris='" + txtProduktdetaljPris.getText() + "', "
+                        + "Modell='" + txtProduktdetaljModell.getText() + "', "
+                        + "Godkänd='" + godkand + "' "
+                        + "WHERE Namn='" + hatt + "';");
+                    lblAndraProduktdetaljMeddelande.setText(txtProduktdetaljNamn.getText() + " har ändrats.");
+
+                } catch (InfException fel) {
+                    lblAndraProduktdetaljMeddelande.setText("Ett fel uppstod!");
+                    fel.printStackTrace();
+                }}
+            }
+    }//GEN-LAST:event_btnAndraProduktdetaljActionPerformed
+
+    private void fyllHatt() {
+        String fraga = "SELECT Namn FROM hatt";
+        try {
+            ArrayList<String> hatt = idb.fetchColumn(fraga);
+            for (String enHatt : hatt) {
+                cbProduktdetaljHatt.addItem(enHatt);
+            }
+        } catch (InfException fel) {
+            fel.printStackTrace();
+        }
+    }
+    
     private ArrayList<String> getPersonalIdLista() {
 
         ArrayList<String> personalIds = new ArrayList<>();
@@ -2779,9 +2931,11 @@ public class Dashboard extends javax.swing.JFrame {
         pnlSkapaOrder.hide();
         pnlVisaMaterial.hide();
         pnlPaketinfo.hide();
+        pnlProduktdetaljer.hide();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAndraProduktdetalj;
     private javax.swing.JButton btnHattar;
     private javax.swing.JButton btnKund;
     private javax.swing.JButton btnLoggaUt;
@@ -2791,6 +2945,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnOrderTotalsumma;
     private javax.swing.JButton btnOrdersida;
     private javax.swing.JButton btnPaketinformation;
+    private javax.swing.JButton btnProduktdetaljer;
     private javax.swing.JButton btnRedigeraKund;
     private javax.swing.JButton btnRedigeraKund1;
     private javax.swing.JButton btnSkapa;
@@ -2811,6 +2966,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbOrder3;
     private javax.swing.JComboBox<String> cbOrder4;
     private javax.swing.JComboBox<String> cbOrderValj3;
+    private javax.swing.JComboBox<String> cbProduktDetaljGodkand;
+    private javax.swing.JComboBox<String> cbProduktdetaljHatt;
     private javax.swing.JComboBox<String> cbStatus;
     private javax.swing.JComboBox<String> cbValjAllaHattar;
     private javax.swing.JComboBox<String> cbValjKund;
@@ -2829,6 +2986,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -2840,6 +2998,8 @@ public class Dashboard extends javax.swing.JFrame {
     private java.awt.Label label1;
     private javax.swing.JLabel lblAdress1;
     private javax.swing.JLabel lblAndraKundMeddelande;
+    private javax.swing.JLabel lblAndraProduktdetalj;
+    private javax.swing.JLabel lblAndraProduktdetaljMeddelande;
     private javax.swing.JLabel lblAngeEpost;
     private javax.swing.JLabel lblAngeLangd;
     private javax.swing.JLabel lblAngeModell;
@@ -2878,6 +3038,10 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lblPhoneTo1;
     private javax.swing.JLabel lblPostnummer;
     private javax.swing.JLabel lblPostnummer1;
+    private javax.swing.JLabel lblProduktdetaljGodkand;
+    private javax.swing.JLabel lblProduktdetaljHatt;
+    private javax.swing.JLabel lblProduktdetaljModell;
+    private javax.swing.JLabel lblProduktdetaljPris;
     private javax.swing.JLabel lblRubrikDatum;
     private javax.swing.JLabel lblRubrikDatum1;
     private javax.swing.JLabel lblRubrikKund;
@@ -2921,6 +3085,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel pnlOrdersida;
     private javax.swing.JPanel pnlPaketinfo;
     private javax.swing.JPanel pnlPersonalsida;
+    private javax.swing.JPanel pnlProduktdetaljer;
     private javax.swing.JPanel pnlRedigeraKund;
     private javax.swing.JPanel pnlSideBarHoger;
     private javax.swing.JPanel pnlSideBarVanster;
@@ -2955,6 +3120,9 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JTextField txtOrt1;
     private javax.swing.JTextField txtPostnummer;
     private javax.swing.JTextField txtPostnummer1;
+    private javax.swing.JTextField txtProduktdetaljModell;
+    private javax.swing.JTextField txtProduktdetaljNamn;
+    private javax.swing.JTextField txtProduktdetaljPris;
     private javax.swing.JTextField txtTelefon;
     private javax.swing.JTextField txtTelefon1;
     private javax.swing.JTextField txtTotalSumma;

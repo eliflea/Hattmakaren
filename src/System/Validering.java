@@ -93,4 +93,14 @@ public static boolean kollaDatumFormat(JTextField rutaAttKolla, JLabel meddeland
         }
         return inmatningsFormat;
     }
+
+    public static boolean arDouble(JTextField rutaAttKolla, JLabel meddelande) {
+        try {
+            Double.parseDouble(rutaAttKolla.getText());
+            return true;
+        } catch (NumberFormatException fel) {
+            meddelande.setText("Input är ej double!");
+            return false;
+        }
+    }
 }
