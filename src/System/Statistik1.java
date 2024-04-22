@@ -86,6 +86,7 @@ public class Statistik1 extends javax.swing.JFrame {
             }
         });
 
+        txtStatistik.setEditable(false);
         txtStatistik.setColumns(20);
         txtStatistik.setRows(5);
         jScrollPane1.setViewportView(txtStatistik);
@@ -111,10 +112,9 @@ public class Statistik1 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(cbKvartal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(cbKvartal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -126,21 +126,20 @@ public class Statistik1 extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cbAr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbManad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbKvartal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(100, 100, 100)
-                        .addComponent(btnAr)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnKvartal)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnManad)
-                        .addGap(0, 42, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbAr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbManad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbKvartal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(100, 100, 100)
+                .addComponent(btnAr)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnKvartal)
+                .addGap(18, 18, 18)
+                .addComponent(btnManad)
+                .addContainerGap(48, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1))
         );
 
         pack();
@@ -180,42 +179,89 @@ public class Statistik1 extends javax.swing.JFrame {
         
         String sqlHamtaKvartalsForsaljning = "";
         
+        String sqlHamtaKvartal = "";
+        
         if(cbKvartal.getSelectedItem().toString().equals("Q1"))
         {
              sqlHamtaKvartalsForsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-03-31' && Datum>='" + valtAr + "-01-01'";
+                
+             sqlHamtaKvartal = "SELECT Order_ID FROM Orders WHERE Datum<= '" + valtAr + "-03-31' && Datum>='" + valtAr + "-01-01'";
+
 
         }
         
         if(cbKvartal.getSelectedItem().toString().equals("Q2"))
         {
              sqlHamtaKvartalsForsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-06-30' && Datum>='" + valtAr + "-04-01'";
+             sqlHamtaKvartal = "SELECT Order_ID FROM Orders WHERE Datum<= '" + valtAr + "-06-30' && Datum>='" + valtAr + "-04-01'";
 
         }
         
         if(cbKvartal.getSelectedItem().toString().equals("Q3"))
         {
              sqlHamtaKvartalsForsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-09-30' && Datum>='" + valtAr + "-07-01'";
+             sqlHamtaKvartal = "SELECT Order_ID FROM Orders WHERE Datum<= '" + valtAr + "-09-30' && Datum>='" + valtAr + "-07-01'";
 
         }
         
         if(cbKvartal.getSelectedItem().toString().equals("Q4"))
         {
              sqlHamtaKvartalsForsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-12-31' && Datum>='" + valtAr + "-10-01'";
+             sqlHamtaKvartal = "SELECT Order_ID FROM Orders WHERE Datum<= '" + valtAr + "-12-31' && Datum>='" + valtAr + "-10-01'";
 
         }
         
         
         try {
+            
+            
+            
+            ArrayList<String> orderIDAttHamtaMaterialIDMed = idb.fetchColumn(sqlHamtaKvartal);
+            ArrayList<String> relevantaMaterialID = new ArrayList<String>();
+            ArrayList<String> materialNamn = new ArrayList<String>();
+            for(String orderID : orderIDAttHamtaMaterialIDMed)
+                {
+                    String sqlHamtaMaterialID = "SELECT Material_ID FROM hatt_i_order WHERE Order_ID = " + orderID;
+                    String ettMaterialID = idb.fetchSingle(sqlHamtaMaterialID);
+                    relevantaMaterialID.add(ettMaterialID);
+                }
+            for(String materialID : relevantaMaterialID)
+            {
+                String sqlHamtaMaterialNamn = "SELECT Namn FROM Material WHERE Material_ID = " + materialID;
+                String ettMaterialNamn = idb.fetchSingle(sqlHamtaMaterialNamn);
+                materialNamn.add(ettMaterialNamn);
+            }
+            
+            String sqlHamtaAlltMaterial = "SELECT Namn FROM material";
+            ArrayList<String> alltMaterial = idb.fetchColumn(sqlHamtaAlltMaterial);
+            
+            ArrayList<String> materialSomSkaSkrivasUt = new ArrayList<String>();
+            
+            for(String ettMaterial : alltMaterial)
+            {
+            int antalMaterial = Collections.frequency(materialNamn, ettMaterial);
+            if(antalMaterial == 1)
+            {
+                materialSomSkaSkrivasUt.add(antalMaterial + " enhet av " + ettMaterial + "\n");
+            }
+            
+            else
+            {
+            materialSomSkaSkrivasUt.add(antalMaterial + " enheter av " + ettMaterial + "\n");
+            }
+            
             String totalForsaljningsSumma = idb.fetchSingle(sqlHamtaKvartalsForsaljning);
             if(totalForsaljningsSumma == null)
                 {
-                    txtStatistik.setText("Total försäljning år " + valtAr + ", " + valtKvartal + ": 0 SEK");
+                    txtStatistik.setText("Total försäljning år " + valtAr + ", " + valtKvartal + ": 0 SEK \n \n" + materialSomSkaSkrivasUt);
                 }
             else{
-                    txtStatistik.setText("Total försäljning år " + valtAr + ", " + valtKvartal + ": " + totalForsaljningsSumma + " SEK");
+                    txtStatistik.setText("Total försäljning år " + valtAr + ", " + valtKvartal + ": " + totalForsaljningsSumma + " SEK \n \n" + materialSomSkaSkrivasUt);
 
             }
-        } catch (InfException ex) {
+        }
+        }
+        catch (InfException ex) {
             Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
         }
         
@@ -299,19 +345,58 @@ public class Statistik1 extends javax.swing.JFrame {
             manadIDatumFormatSlut = "12-31";
         }
         
+        ArrayList<String> materialSomSkaSkrivasUt = new ArrayList<String>();
+
         
         String sqlHamtaManadsforsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum>= '" + valtAr + "-" + manadIDatumFormatStart + "-01' && Datum<='" + valtAr + "-" + manadIDatumFormatSlut + "'";
         
+        String sqlHamtaManad = "SELECT Order_ID FROM orders WHERE DATUM>= '" + valtAr + "-" + manadIDatumFormatStart + "-01' && Datum<='" + valtAr + "-" + manadIDatumFormatSlut + "'";
+        
         try {
             String totalForsaljningsSumma = idb.fetchSingle(sqlHamtaManadsforsaljning);
+            
+            ArrayList<String> orderIDAttHamtaMaterialIDMed = idb.fetchColumn(sqlHamtaManad);
+            ArrayList<String> relevantaMaterialID = new ArrayList<String>();
+            ArrayList<String> materialNamn = new ArrayList<String>();
+            for(String orderID : orderIDAttHamtaMaterialIDMed)
+                {
+                    String sqlHamtaMaterialID = "SELECT Material_ID FROM hatt_i_order WHERE Order_ID = " + orderID;
+                    String ettMaterialID = idb.fetchSingle(sqlHamtaMaterialID);
+                    relevantaMaterialID.add(ettMaterialID);
+                }
+            for(String materialID : relevantaMaterialID)
+            {
+                String sqlHamtaMaterialNamn = "SELECT Namn FROM Material WHERE Material_ID = " + materialID;
+                String ettMaterialNamn = idb.fetchSingle(sqlHamtaMaterialNamn);
+                materialNamn.add(ettMaterialNamn);
+            }
+            
+            String sqlHamtaAlltMaterial = "SELECT Namn FROM material";
+            ArrayList<String> alltMaterial = idb.fetchColumn(sqlHamtaAlltMaterial);
+            
+            
+            for(String ettMaterial : alltMaterial)
+            {
+            int antalMaterial = Collections.frequency(materialNamn, ettMaterial);
+            if(antalMaterial == 1)
+            {
+                materialSomSkaSkrivasUt.add(antalMaterial + " enhet av " + ettMaterial + "\n");
+            }
+            else
+            {
+            materialSomSkaSkrivasUt.add(antalMaterial + " enheter av " + ettMaterial + "\n");
+            }
+            
             if(totalForsaljningsSumma == null)
             {  
-                txtStatistik.setText("Total försäljning år " + valtAr + ", " + valdManad + ": 0 SEK");
+                txtStatistik.setText("Total försäljning år " + valtAr + ", " + valdManad + ": 0 SEK \n \n" + materialSomSkaSkrivasUt);
             }
             else{
-                 txtStatistik.setText("Total försäljning år " + valtAr + ", " + valdManad + ": " + totalForsaljningsSumma + " SEK");
+                 txtStatistik.setText("Total försäljning år " + valtAr + ", " + valdManad + ": " + totalForsaljningsSumma + " SEK \n \n" + materialSomSkaSkrivasUt);
             }
-        } catch (InfException ex) {
+        }
+        }
+        catch (InfException ex) {
             Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
         }
         
@@ -367,7 +452,7 @@ public class Statistik1 extends javax.swing.JFrame {
             }
             
             
-            txtStatistik.setText("Total försäljning år " + valtAr + ": " + totalForsaljningsSumma + " SEK \n" + materialSomSkaSkrivasUt);
+            txtStatistik.setText("Total försäljning år " + valtAr + ": " + totalForsaljningsSumma + " SEK \n \n" + materialSomSkaSkrivasUt);
         } catch (InfException ex) {
             Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
         }
