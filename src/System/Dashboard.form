@@ -56,9 +56,10 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="btnSkapaOrder" min="-2" pref="176" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="lblTest1" min="-2" pref="176" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -73,7 +74,6 @@
                           <Component id="btnStartsida" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnVisaMaterialinfo" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblTest" alignment="0" pref="176" max="32767" attributes="0"/>
-                          <Component id="btnSkapaOrder" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnPaketinformation" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -102,9 +102,9 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnKund" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnHattar" min="-2" pref="46" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnSkapaOrder" min="-2" pref="46" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnHattar" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnValjHatt" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -496,8 +496,8 @@
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="lblSkrivIn" min="-2" pref="134" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="txtInsertOrder" min="-2" pref="115" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="cbOrderValj3" min="-2" pref="133" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Component id="lblOrdersida" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
                                                   <Component id="btnOrderStatus1" alignment="1" min="-2" pref="161" max="-2" attributes="0"/>
@@ -505,7 +505,8 @@
                                               <Group type="102" alignment="1" attributes="0">
                                                   <Component id="lblRubrikLaggTIllOrder1" min="-2" pref="96" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="cbOrder1" min="-2" pref="133" max="-2" attributes="0"/>
+                                                  <Component id="cbOrder4" min="-2" pref="133" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -534,12 +535,12 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       <Component id="lblOrdersida" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblSkrivIn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtInsertOrder" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="cbOrderValj3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnSkapa" min="-2" max="-2" attributes="0"/>
@@ -553,7 +554,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblRubrikLaggTIllOrder1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="cbOrder1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbOrder4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="btnOrderStatus1" min="-2" max="-2" attributes="0"/>
@@ -802,7 +803,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Skriv in ordernummer:"/>
+                <Property name="text" type="java.lang.String" value="V&#xe4;lj ordernummer:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="cbOrder2">
@@ -826,8 +827,6 @@
                 <Property name="text" type="java.lang.String" value="Ordersida"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtInsertOrder">
-            </Component>
             <Component class="javax.swing.JLabel" name="lblRubrikLaggTIllOrder1">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -850,7 +849,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOrderStatusActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="cbOrder1">
+            <Component class="javax.swing.JComboBox" name="cbOrderValj3">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
@@ -934,6 +933,16 @@
                 </Property>
               </Properties>
             </Component>
+            <Component class="javax.swing.JComboBox" name="cbOrder4">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="pnlPersonalsida">
@@ -1006,6 +1015,10 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="btnSpara" min="-2" pref="101" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="lblSkapaHattMeddelande" min="-2" pref="362" max="-2" attributes="0"/>
                           </Group>
@@ -1013,31 +1026,19 @@
                               <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lblSkapaHatt" min="-2" pref="321" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="btnSpara" min="-2" pref="101" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lblAngePris" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="lblAngeStorlek" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="lblAngeNamn" min="-2" pref="152" max="-2" attributes="0"/>
-                                              <Component id="txtAngeNamn" min="-2" pref="194" max="-2" attributes="0"/>
-                                              <Component id="txtAngeStorlek" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtAngePris" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lblValjTyp" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="lblAngeModell" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtAngeText" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="cbValjTyp" alignment="0" max="32767" attributes="0"/>
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="lblAngeText" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
-                                                      <Component id="txtAngeModell" min="-2" pref="187" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblAngeNamn" min="-2" pref="152" max="-2" attributes="0"/>
+                                          <Component id="txtAngeNamn" alignment="1" min="-2" pref="194" max="-2" attributes="0"/>
+                                          <Component id="lblAngeModell" alignment="0" pref="196" max="32767" attributes="0"/>
+                                          <Component id="cbValjModell" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblValjTyp" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="cbValjTyp1" alignment="0" pref="195" max="32767" attributes="0"/>
+                                          <Component id="lblAngePris" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtAngePris" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -1052,41 +1053,38 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
                       <Component id="lblSkapaHatt" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblAngeModell" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblAngeNamn" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtAngeModell" max="32767" attributes="0"/>
-                          <Component id="txtAngeNamn" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblAngeStorlek" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtAngeStorlek" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtAngeText" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                      <Component id="lblAngeModell" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="cbValjModell" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="lblValjTyp" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbValjTyp1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblAngePris" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblValjTyp" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtAngePris" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbValjTyp" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lblAngeNamn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="txtAngeNamn" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="lblAngeText" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblAngePris" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtAngePris" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="27" max="32767" attributes="0"/>
+                      <EmptySpace pref="46" max="32767" attributes="0"/>
                       <Component id="btnSpara" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="lblSkapaHattMeddelande" min="-2" pref="46" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="203" max="-2" attributes="0"/>
                   </Group>
@@ -1126,8 +1124,6 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtAngeNamn">
             </Component>
-            <Component class="javax.swing.JTextField" name="txtAngeText">
-            </Component>
             <Component class="javax.swing.JLabel" name="lblAngeNamn">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1139,41 +1135,12 @@
                 <Property name="text" type="java.lang.String" value="Ange Namn"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblAngeText">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Ange Text"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtAngeStorlek">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAngeStorlekActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JTextField" name="txtAngePris">
             </Component>
-            <Component class="javax.swing.JLabel" name="lblAngeStorlek">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Ange Storlek"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtAngeModell">
-            </Component>
-            <Component class="javax.swing.JComboBox" name="cbValjTyp">
+            <Component class="javax.swing.JComboBox" name="cbValjModell">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="Lagerf&#xf6;rd"/>
-                    <StringItem index="1" value="Special"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -1208,6 +1175,19 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbValjTyp1">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="2">
+                    <StringItem index="0" value="Lagerf&#xf6;rd"/>
+                    <StringItem index="1" value="Special"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -1445,18 +1425,37 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnOk" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblRubrikLaggTIllOrder" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
-                                  <Component id="cbOrder" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="lblRubrikLaggTIllOrder" min="-2" pref="151" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="lblStorlek" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="cbValjAllaHattar" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel8" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
+                                          <Component id="cbOrder" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
+                                          <Component id="btnOk" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cbValjMaterial" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="cbValjMaterial" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="txtAngeTxt" min="-2" pref="71" max="-2" attributes="0"/>
+                                                  <Component id="txtAngeStorlek" min="-2" pref="71" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                                      <Component id="lblStorlek1" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
@@ -1489,12 +1488,23 @@
                                   <Component id="cbValjMaterial" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="lblRubrikLaggTIllOrder" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblRubrikLaggTIllOrder" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblStorlek" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="cbOrder" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnOk" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cbOrder" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtAngeStorlek" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="lblStorlek1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtAngeTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnOk" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="lblValjHattMeddelande" min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1647,6 +1657,26 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtAngeStorlek">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblStorlek">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Ange storlek"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtAngeTxt">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblStorlek1">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Ange text"/>
               </Properties>
             </Component>
           </SubComponents>
