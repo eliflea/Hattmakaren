@@ -2323,7 +2323,7 @@ public class Dashboard extends javax.swing.JFrame {
             
             lblVisaOrder.setText(orderId);
             
-            lblKundNamn.setText(namn);
+            lblKundNamn2.setText(namn);
             
             } catch (InfException ex) {
                 Logger.getLogger(PågåendeOrder.class.getName()).log(Level.SEVERE, null, ex);
@@ -2335,7 +2335,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void fyllKostnad(String orderId)
     {
         
-        txtSammanstallning.setText(sammanStallning(orderId));
+        txtSammanstallning.setText(sammanStallning(lblVisaOrder.getText()));
     }
     
     private void fyllLista(String orderId){
@@ -2345,7 +2345,7 @@ public class Dashboard extends javax.swing.JFrame {
                 DefaultListModel<String> listModel = new DefaultListModel<>();
                  listHattarIOrder.setModel(listModel);
                
-                ArrayList<HashMap<String, String>> listaHattar = idb.fetchRows("SELECT  kombo_id, modell, pris FROM hatt_i_order JOIN hatt ON hatt_i_order.hatt_id = hatt.produkt_id WHERE Order_ID = " +orderId+ " order by kombo_id");
+                ArrayList<HashMap<String, String>> listaHattar = idb.fetchRows("SELECT  kombo_id, modell, pris FROM hatt_i_order JOIN hatt ON hatt_i_order.hatt_id = hatt.produkt_id WHERE Order_ID = " +lblVisaOrder.getText()+ " order by kombo_id");
                 for (HashMap<String, String> enHatt : listaHattar){
                 String rad = "Modell: " + enHatt.get("Modell") + "      " + "Pris: " +enHatt.get("Pris");
                 listModel.addElement(rad);
@@ -2361,7 +2361,7 @@ public class Dashboard extends javax.swing.JFrame {
       
             try {
                 double hattSumma = 0;
-                ArrayList<String> listaHattPriser = idb.fetchColumn("select hatt.pris from hatt join hatt_i_order hio on hatt.Produkt_ID = hio.Hatt_ID join orders on hio.Order_ID = orders.Order_ID where hio.Order_ID = 3");
+                ArrayList<String> listaHattPriser = idb.fetchColumn("select hatt.pris from hatt join hatt_i_order hio on hatt.Produkt_ID = hio.Hatt_ID join orders on hio.Order_ID = orders.Order_ID where hio.Order_ID = "+lblVisaOrder.getText());
                 for(String enHatt : listaHattPriser){
                 double pris = Double.parseDouble(enHatt);
                 hattSumma = hattSumma + pris;            
@@ -2436,8 +2436,8 @@ public class Dashboard extends javax.swing.JFrame {
         lblSparat.hide();
         pnlPlaneringsYta.hide();
         pnlPagaendeOrdern.show();
+        fyllInfo(radDelar[1]);
             fyllLista(radDelar[1]);
-            fyllInfo(radDelar[1]);
             fyllKostnad(radDelar[1]);
             
         
@@ -3049,12 +3049,10 @@ public class Dashboard extends javax.swing.JFrame {
         
         
         
-        
-        
     }//GEN-LAST:event_btnSparaOrder2ActionPerformed
 
     private void btnKostnadsFröslagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKostnadsFröslagActionPerformed
-        txtSammanstallning.setText("Hej " + lblKundNamn.getText() + "! \n" + "Vi återkommer gällande din order. Vi har tagit fram ett kostnadsförslag enligt nedan \n" +sammanStallning(orderId)+ "\n Återkom via mail eller telefon för att bekräfta ordern. \n Med vänliga hälsningar, Ottos Hattmakeri");
+        txtSammanstallning.setText("Hej " + lblKundNamn2.getText() + "! \n" + "Vi återkommer gällande din order. Vi har tagit fram ett kostnadsförslag enligt nedan \n" +sammanStallning(lblVisaOrder.getText())+ "\n Återkom via mail eller telefon för att bekräfta ordern. \n Med vänliga hälsningar, Ottos Hattmakeri");
 
     }//GEN-LAST:event_btnKostnadsFröslagActionPerformed
 
@@ -3064,8 +3062,8 @@ public class Dashboard extends javax.swing.JFrame {
             int indexValdHatt = listHattarIOrder.getSelectedIndex()+1;
             String komboId = idb.fetchSingle("SELECT kombo_id FROM (SELECT kombo_id, ROW_NUMBER() OVER (ORDER BY kombo_id) as rownum FROM hatt_i_order where Order_ID = " +orderId+ " ) AS numbered_rows WHERE rownum = " +indexValdHatt );
             idb.delete("delete from hatt_i_order where Kombo_ID = "+komboId);
-            fyllLista(orderId);
-            txtSammanstallning.setText(sammanStallning(orderId));
+            fyllLista(lblVisaOrder.getText());
+            txtSammanstallning.setText(lblVisaOrder.getText());
         } catch (InfException ex) {
             Logger.getLogger(PågåendeOrder.class.getName()).log(Level.SEVERE, null, ex);
         }
