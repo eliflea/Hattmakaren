@@ -55,7 +55,7 @@ public class Bestallningshistorik extends javax.swing.JFrame {
         } catch (InfException ex) {
             Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String sqlHamtaRelevantaOrdrar = "SELECT * FROM orders WHERE Kund = '" + kundID + "'";
+        String sqlHamtaRelevantaOrdrar = "SELECT * FROM orders WHERE Kund = '" + kundID + "' ORDER BY Datum DESC";
         ArrayList<HashMap<String, String>> allaOrderID = new ArrayList<HashMap<String, String>>();
         try {
             allaOrderID = idb.fetchRows(sqlHamtaRelevantaOrdrar);
@@ -63,13 +63,18 @@ public class Bestallningshistorik extends javax.swing.JFrame {
             Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        ArrayList<HashMap<String, String>> allaOrdrar = new ArrayList<HashMap<String, String>>();
+        HashMap<String,String> mellanRum = new HashMap<String,String>();
+        mellanRum.put("", "\n \n");
         
         for(HashMap<String,String> order : allaOrderID)
         {
-            jtxtBestallningsHistorik.setText(order + "\n");
+            allaOrdrar.add(order);
+            allaOrdrar.add(mellanRum);
+            
         }
         
-        
+        jtxtBestallningsHistorik.setText(allaOrdrar + "\n");
         
     }
     
@@ -92,7 +97,6 @@ public class Bestallningshistorik extends javax.swing.JFrame {
         jtxtBestallningsHistorik = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(773, 741));
 
         cbValjKundEpost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
