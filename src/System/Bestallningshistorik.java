@@ -63,18 +63,104 @@ public class Bestallningshistorik extends javax.swing.JFrame {
             Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        ArrayList<HashMap<String, String>> allaOrdrar = new ArrayList<HashMap<String, String>>();
-        HashMap<String,String> mellanRum = new HashMap<String,String>();
-        mellanRum.put("", "\n \n");
+        String ettPar = "";
+        
+        ArrayList<String> ettParVarden = new ArrayList<String>();
         
         for(HashMap<String,String> order : allaOrderID)
         {
-            allaOrdrar.add(order);
-            allaOrdrar.add(mellanRum);
+            for(String nyckel : order.keySet())
+            {
+                if(nyckel.equals("Totalsumma") && order.get(nyckel) == null)
+                {
+                    ettPar = nyckel + " = 0";
+                }
+                else if(nyckel.equals("Kund"))
+                {
+                    String sqlHamtaFornamn = "SELECT Förnamn FROM Kund WHERE Kund_ID = " + order.get(nyckel);
+                    String sqlHamtaEfternamn = "SELECT Efternamn FROM Kund WHERE Kund_ID = " + order.get(nyckel);
+                    
+                    String fornamn = "";
+                    String efternamn = "";
+                    
+                    try {
+                        fornamn = idb.fetchSingle(sqlHamtaFornamn);
+                        efternamn = idb.fetchSingle(sqlHamtaEfternamn);
+
+                    } catch (InfException ex) {
+                        Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
+                    ettPar = "Kund = " + fornamn + " " + efternamn;
+                }
+                else if(nyckel.equals("Order_ID"))
+                {
+                    ettPar = "Ordernummer = " + order.get(nyckel);
+                }
+                else if(nyckel.equals("Fraktsedel") && order.get(nyckel) == null)
+                {
+                    ettPar = nyckel + " = 0 st";
+                }
+                else if (nyckel.equals("Kommentar") && order.get(nyckel).equals(""))
+                {
+                    ettPar = nyckel + " = Ingen kommentar.";
+                }
+                else if(nyckel.equals("Fraktsedel") && order.get(nyckel) != null)
+                {
+                    ettPar = nyckel + " = " + order.get(nyckel) + " st";
+
+                }
+                else if(nyckel.equals("Brådskande") && Integer.parseInt(order.get(nyckel)) == 0)
+                {
+                    ettPar = nyckel + " = Nej";
+                }
+                else if(nyckel.equals("Brådskande") && Integer.parseInt(order.get(nyckel)) == 1)
+                {
+                    ettPar = nyckel + " = Ja";
+                }
+                else
+                {
+                ettPar = nyckel + " = " + order.get(nyckel);
+                }
+                
+                ettParVarden.add(ettPar + "\n");
+            }
             
+            String sqlHamtaHattar = "SELECT Hatt_ID FROm hatt_i_order WHERE Order_ID = " + order.get("Order_ID");
+            ArrayList<String> allaHattarIOrder = new ArrayList<String>();
+            try {
+                allaHattarIOrder = idb.fetchColumn(sqlHamtaHattar);
+            } catch (InfException ex) {
+                Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            ArrayList<String> allaHattNamn = new ArrayList<String>();
+            
+            for(String hatt : allaHattarIOrder)
+            {
+                String sqlHamtaHattNamn = "SELECT Namn FROM Hatt WHERE Produkt_ID = " + hatt;
+                String ettHattNamn = "";
+                try {
+                    ettHattNamn = idb.fetchSingle(sqlHamtaHattNamn);
+                } catch (InfException ex) {
+                    Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                allaHattNamn.add(ettHattNamn);
+                        
+            }
+            
+            ettParVarden.add("Hattar i order: ");
+            for(String hattNamn : allaHattNamn)
+            {
+                ettParVarden.add(hattNamn);
+            }
+                    
+            ettParVarden.add("\n");
+                        ettParVarden.add("\n");
+
         }
         
-        jtxtBestallningsHistorik.setText(allaOrdrar + "\n");
+        jtxtBestallningsHistorik.setText(ettParVarden + "\n");
         
     }
     
