@@ -4,6 +4,7 @@
  */
 package System;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import oru.inf.InfDB;
@@ -54,15 +55,21 @@ public class Bestallningshistorik extends javax.swing.JFrame {
         } catch (InfException ex) {
             Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String sqlHamtaRelevantaOrdrar = "SELECT Order_ID FROM orders WHERE Kund = '" + kundID + "'";
-        ArrayList<String> allaOrderID = new ArrayList<String>();
+        String sqlHamtaRelevantaOrdrar = "SELECT * FROM orders WHERE Kund = '" + kundID + "'";
+        ArrayList<HashMap<String, String>> allaOrderID = new ArrayList<HashMap<String, String>>();
         try {
-            allaOrderID = idb.fetchColumn(sqlHamtaRelevantaOrdrar);
+            allaOrderID = idb.fetchRows(sqlHamtaRelevantaOrdrar);
         } catch (InfException ex) {
             Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        jtxtBestallningsHistorik.setText(allaOrderID + "\n");
+        
+        for(HashMap<String,String> order : allaOrderID)
+        {
+            jtxtBestallningsHistorik.setText(order + "\n");
+        }
+        
+        
         
     }
     
