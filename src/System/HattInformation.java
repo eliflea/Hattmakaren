@@ -249,6 +249,101 @@ private JLabel getMaterialLabel(int index) {
 
     }//GEN-LAST:event_btnSkrivUtMaterialActionPerformed
 
+<<<<<<< Updated upstream
+=======
+    private void btnLaggTillBildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillBildActionPerformed
+        try {
+            
+            JFileChooser chooser = new JFileChooser();
+            chooser.showOpenDialog(null);
+            File bild = chooser.getSelectedFile();
+            String sokVag = bild.getAbsolutePath();
+            
+            try {
+               BufferedImage bufferedImage = ImageIO.read(bild);
+                String bildSokVag = sokVag.replace("\\", "\\\\");
+                
+                if(bufferedImage!=null){
+               
+                if(lblImage.getIcon()==null){
+               idb.insert("Insert into Bilder(Bild, Hatt_ID) Values('"+bildSokVag+"', "+ hattId+");");
+            getBild();}
+            else{
+                idb.delete("Delete from Bilder Where hatt_ID =" + hattId);
+                idb.insert("Insert into Bilder(Bild, Hatt_ID) Values('"+bildSokVag+"', "+ hattId+");");
+            getBild();
+           }}
+                
+            } catch (IOException ex) {
+                Logger.getLogger(HattInformation.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        } catch (InfException ex) {
+            Logger.getLogger(HattInformation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_btnLaggTillBildActionPerformed
+
+    private void btnTaBortBildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaBortBildActionPerformed
+        // TODO add your handling code here:
+        try {
+            
+            idb.delete("Delete from Bilder Where hatt_ID =" + hattId);
+            getBild();
+        } catch (InfException ex) {
+            Logger.getLogger(HattInformation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnTaBortBildActionPerformed
+
+    private void btnLaggTillRitningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillRitningActionPerformed
+        try {
+            
+            JFileChooser chooser = new JFileChooser();
+            chooser.showOpenDialog(null);
+            File ritning = chooser.getSelectedFile();
+            String sokVag = ritning.getAbsolutePath();
+            
+            String ritningSokVag = sokVag.replace("\\", "\\\\");
+            
+             try {
+               BufferedImage bufferedImage = ImageIO.read(ritning);
+                
+                if(bufferedImage!=null){
+               
+                if(lblImage.getIcon()==null){
+               idb.insert("Insert into Ritningar(ritning, Hatt_ID) Values('"+ritningSokVag+"', "+ hattId+");");
+            getRitning();}
+            else{
+                idb.delete("Delete from Ritningar Where hatt_ID =" + hattId);
+                idb.insert("Insert into Ritningar(ritning, Hatt_ID) Values('"+ritningSokVag+"', "+ hattId+");");
+            getRitning();
+           }
+            }
+                
+            } catch (IOException ex) {
+                Logger.getLogger(HattInformation.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            
+           
+            
+        } catch (InfException ex) {
+            Logger.getLogger(HattInformation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_btnLaggTillRitningActionPerformed
+
+    private void btnTaBortRitningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaBortRitningActionPerformed
+        try {
+            
+            idb.delete("Delete from Ritningar Where hatt_ID =" + hattId);
+            getRitning();
+        } catch (InfException ex) {
+            Logger.getLogger(HattInformation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnTaBortRitningActionPerformed
+
+>>>>>>> Stashed changes
     /**
      * @param args the command line arguments
      */
