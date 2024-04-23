@@ -43,6 +43,7 @@ public class Dashboard extends javax.swing.JFrame {
         persId = personalId;
         this.personalId = getPersonalIdLista();
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(200, 200, 200));
         fyllOrderLista();
         fyllEpost();
         fyllHatt();
@@ -263,21 +264,22 @@ public class Dashboard extends javax.swing.JFrame {
         lblError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 153, 153));
 
-        pnlSideBarVanster.setBackground(new java.awt.Color(51, 51, 51));
+        pnlSideBarVanster.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblTest.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        lblTest.setForeground(new java.awt.Color(255, 255, 255));
+        lblTest.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 20)); // NOI18N
+        lblTest.setForeground(new java.awt.Color(153, 153, 153));
         lblTest.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTest.setText("Hattmakeriet");
 
-        lblTest1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblTest1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTest1.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 18)); // NOI18N
+        lblTest1.setForeground(new java.awt.Color(153, 153, 153));
         lblTest1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTest1.setText("Personal");
 
-        btnOrdersida.setBackground(new java.awt.Color(102, 102, 102));
-        btnOrdersida.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnOrdersida.setBackground(new java.awt.Color(153, 153, 153));
+        btnOrdersida.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         btnOrdersida.setForeground(new java.awt.Color(255, 255, 255));
         btnOrdersida.setText("Ordersida");
         btnOrdersida.setBorder(null);
@@ -287,8 +289,8 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnKund.setBackground(new java.awt.Color(102, 102, 102));
-        btnKund.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnKund.setBackground(new java.awt.Color(153, 153, 153));
+        btnKund.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         btnKund.setForeground(new java.awt.Color(255, 255, 255));
         btnKund.setText("Kund");
         btnKund.setBorder(null);
@@ -298,8 +300,8 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnHattar.setBackground(new java.awt.Color(102, 102, 102));
-        btnHattar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnHattar.setBackground(new java.awt.Color(153, 153, 153));
+        btnHattar.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         btnHattar.setForeground(new java.awt.Color(255, 255, 255));
         btnHattar.setText("Skapa hatt");
         btnHattar.setBorder(null);
@@ -309,8 +311,8 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnSkapaOrder.setBackground(new java.awt.Color(102, 102, 102));
-        btnSkapaOrder.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnSkapaOrder.setBackground(new java.awt.Color(153, 153, 153));
+        btnSkapaOrder.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         btnSkapaOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnSkapaOrder.setText("Skapa order");
         btnSkapaOrder.setBorder(null);
@@ -320,8 +322,8 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnValjHatt.setBackground(new java.awt.Color(102, 102, 102));
-        btnValjHatt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnValjHatt.setBackground(new java.awt.Color(153, 153, 153));
+        btnValjHatt.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         btnValjHatt.setForeground(new java.awt.Color(255, 255, 255));
         btnValjHatt.setText("Välj hatt");
         btnValjHatt.setBorder(null);
@@ -331,8 +333,8 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnLoggaUt.setBackground(new java.awt.Color(153, 0, 0));
-        btnLoggaUt.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnLoggaUt.setBackground(new java.awt.Color(0, 102, 153));
+        btnLoggaUt.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
         btnLoggaUt.setForeground(new java.awt.Color(255, 255, 255));
         btnLoggaUt.setText("Logga ut");
         btnLoggaUt.setBorder(null);
@@ -342,8 +344,8 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnStartsida.setBackground(new java.awt.Color(102, 102, 102));
-        btnStartsida.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnStartsida.setBackground(new java.awt.Color(153, 153, 153));
+        btnStartsida.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         btnStartsida.setForeground(new java.awt.Color(255, 255, 255));
         btnStartsida.setText("Startsida");
         btnStartsida.setBorder(null);
@@ -355,8 +357,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         lblNuvarandeAnvandare.setForeground(new java.awt.Color(0, 102, 0));
 
-        btnVisaMaterialinfo.setBackground(new java.awt.Color(102, 102, 102));
-        btnVisaMaterialinfo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnVisaMaterialinfo.setBackground(new java.awt.Color(153, 153, 153));
+        btnVisaMaterialinfo.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         btnVisaMaterialinfo.setForeground(new java.awt.Color(255, 255, 255));
         btnVisaMaterialinfo.setText("Visa materialinfo");
         btnVisaMaterialinfo.setBorder(null);
@@ -366,8 +368,8 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnPaketinformation.setBackground(new java.awt.Color(102, 102, 102));
-        btnPaketinformation.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnPaketinformation.setBackground(new java.awt.Color(153, 153, 153));
+        btnPaketinformation.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         btnPaketinformation.setForeground(new java.awt.Color(255, 255, 255));
         btnPaketinformation.setText("Paketinformation");
         btnPaketinformation.setBorder(null);
@@ -377,8 +379,8 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnProduktdetaljer.setBackground(new java.awt.Color(102, 102, 102));
-        btnProduktdetaljer.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnProduktdetaljer.setBackground(new java.awt.Color(153, 153, 153));
+        btnProduktdetaljer.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         btnProduktdetaljer.setForeground(new java.awt.Color(255, 255, 255));
         btnProduktdetaljer.setText("Produktdetaljer");
         btnProduktdetaljer.setBorder(null);
@@ -446,14 +448,17 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(btnProduktdetaljer, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnLoggaUt, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+                .addGap(51, 51, 51))
         );
 
         pnlMitten.setBackground(new java.awt.Color(255, 255, 255));
         pnlMitten.setLayout(new java.awt.CardLayout());
 
-        pnlStartsida.setBackground(new java.awt.Color(51, 51, 51));
+        pnlStartsida.setBackground(new java.awt.Color(255, 255, 255));
 
+        listPaborjadeOrdrar.setBackground(new java.awt.Color(204, 204, 204));
+        listPaborjadeOrdrar.setBorder(null);
+        listPaborjadeOrdrar.setForeground(new java.awt.Color(102, 102, 102));
         listPaborjadeOrdrar.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -462,10 +467,13 @@ public class Dashboard extends javax.swing.JFrame {
         jScrollPane1.setViewportView(listPaborjadeOrdrar);
 
         lblPaborjadOrder.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblPaborjadOrder.setForeground(new java.awt.Color(255, 255, 255));
+        lblPaborjadOrder.setForeground(new java.awt.Color(153, 153, 153));
         lblPaborjadOrder.setText("Påbörjade ordrar");
 
+        btnValjOrder.setBackground(new java.awt.Color(0, 102, 153));
+        btnValjOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnValjOrder.setText("Välj");
+        btnValjOrder.setBorder(null);
         btnValjOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnValjOrderActionPerformed(evt);
@@ -473,37 +481,34 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
         jLabel3.setText("Startsida");
 
         javax.swing.GroupLayout pnlStartsidaLayout = new javax.swing.GroupLayout(pnlStartsida);
         pnlStartsida.setLayout(pnlStartsidaLayout);
         pnlStartsidaLayout.setHorizontalGroup(
             pnlStartsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStartsidaLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnValjOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(111, 111, 111))
             .addGroup(pnlStartsidaLayout.createSequentialGroup()
-                .addGap(81, 81, 81)
+                .addGap(51, 51, 51)
                 .addGroup(pnlStartsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblPaborjadOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(92, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 681, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnValjOrder, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 55, Short.MAX_VALUE))
         );
         pnlStartsidaLayout.setVerticalGroup(
             pnlStartsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlStartsidaLayout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(69, 69, 69)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
+                .addGap(69, 69, 69)
                 .addComponent(lblPaborjadOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnValjOrder)
-                .addContainerGap(328, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnValjOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(237, Short.MAX_VALUE))
         );
 
         pnlMitten.add(pnlStartsida, "card4");
@@ -1794,15 +1799,20 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlMitten.add(pnlProduktdetaljer, "card11");
 
-        pnlSideBarHoger.setBackground(new java.awt.Color(51, 51, 51));
+        pnlSideBarHoger.setBackground(new java.awt.Color(255, 255, 255));
 
+        personalTillHatt.setBackground(new java.awt.Color(0, 102, 153));
+        personalTillHatt.setForeground(new java.awt.Color(255, 255, 255));
         personalTillHatt.setText("Lägg till personal till hatt");
+        personalTillHatt.setBorder(null);
         personalTillHatt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personalTillHattActionPerformed(evt);
             }
         });
 
+        orderLista.setBackground(new java.awt.Color(204, 204, 204));
+        orderLista.setForeground(new java.awt.Color(102, 102, 102));
         orderLista.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = orders.toArray(new String[orders.size()]);
             public int getSize() { return strings.length; }
@@ -1810,14 +1820,20 @@ public class Dashboard extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(orderLista);
 
+        taBortpersonalFranHatt.setBackground(new java.awt.Color(0, 102, 153));
+        taBortpersonalFranHatt.setForeground(new java.awt.Color(255, 255, 255));
         taBortpersonalFranHatt.setText("Ta bort mig från hatt");
+        taBortpersonalFranHatt.setBorder(null);
         taBortpersonalFranHatt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 taBortpersonalFranHattActionPerformed(evt);
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(153, 153, 153));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Hattsida");
+        jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -1832,33 +1848,32 @@ public class Dashboard extends javax.swing.JFrame {
         pnlSideBarHogerLayout.setHorizontalGroup(
             pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSideBarHogerLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addGroup(pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(personalTillHatt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(taBortpersonalFranHatt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(29, 29, 29))
-            .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
-                .addComponent(lblError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(16, 16, 16)
+                .addGroup(pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
+                        .addGroup(pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
+                                .addGroup(pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(personalTillHatt, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                                    .addComponent(taBortpersonalFranHatt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 27, Short.MAX_VALUE))))
         );
         pnlSideBarHogerLayout.setVerticalGroup(
             pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addGroup(pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
-                    .addGroup(pnlSideBarHogerLayout.createSequentialGroup()
-                        .addComponent(personalTillHatt)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(taBortpersonalFranHatt)))
+                .addGap(65, 65, 65)
+                .addComponent(personalTillHatt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlSideBarHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(taBortpersonalFranHatt, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblError, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1872,8 +1887,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(pnlMitten, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(pnlSideBarHoger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(pnlSideBarHoger, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1882,7 +1896,7 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnlMitten, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
