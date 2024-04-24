@@ -44,7 +44,8 @@ public class Dashboard extends javax.swing.JFrame {
         this.personalId = getPersonalIdLista();
         initComponents();
         getContentPane().setBackground(new java.awt.Color(200, 200, 200));
-        fyllOrderLista();
+        fyllOrderLista2();
+        
         fyllEpost();
         AutoCompleteDecorator.decorate(cbKundEpost);
         AutoCompleteDecorator.decorate(cbAndraFyllEpost);
@@ -2127,7 +2128,7 @@ public class Dashboard extends javax.swing.JFrame {
         panelerGomda();
         pnlStartsida.show();
         pnlPlaneringsYta.show();
-        fyllOrderLista();
+        fyllOrderLista2();
     }//GEN-LAST:event_btnStartsidaActionPerformed
 
     private void btnRedigeraKundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRedigeraKundActionPerformed
@@ -2412,6 +2413,8 @@ public class Dashboard extends javax.swing.JFrame {
 
               
         try {
+            
+            if(!listPaborjadeOrdrar.isSelectionEmpty()){
             panelerGomda();
             pnlSkapaOrder.show();
             
@@ -2463,7 +2466,7 @@ public class Dashboard extends javax.swing.JFrame {
             
         
             
-            
+            }
             
             
         } catch (InfException ex) {
@@ -3290,22 +3293,80 @@ public class Dashboard extends javax.swing.JFrame {
 
     }
     
-    private double orderKalkylator(String orderId){
+    private double orderKalkylator(String orderId, String bradskande){
         
+         double summa = 0;
         try {
             ArrayList<String> hattarIOrder = idb.fetchColumn("SELECT hatt_ID FROM hatt_i_order where order_ID = "+orderId);
-            double summa = 0;
-            for(String hatt : hattarIOrder){
-                summa = summa + Double.parseDouble(hatt);
+            
+            for(String hattId : hattarIOrder){
+                String hattPris = idb.fetchSingle("Select Pris from hatt where produkt_ID = " + hattId);
+                summa += Double.parseDouble(hattPris);
             }
-           summa = Math.round(summa * 100.0) / 100.0;
+           
+           if(bradskande.equals("1")){
+               summa = summa*1.2;
+           }
+           
+           //moms
+               summa = summa*1.25;
+               summa = Math.round(summa * 100.0) / 100.0;
            
         } catch (InfException ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return summa;
 
     }
 
+       
+    private void fyllOrderLista2(){
+        try {
+            DefaultListModel<String> listModel = new DefaultListModel<>();
+            listPaborjadeOrdrar.setModel(listModel);
+
+            ArrayList<HashMap<String, String>> paborjadList = idb.fetchRows("Select * from orders where Totalsumma is null or fraktsedel is null or kommentar is null");
+            for (HashMap<String, String> orderRad : paborjadList) {
+                String orderId = "OrderNR: " + orderRad.get("Order_ID") + " | ";
+                String status = "Status: " + orderRad.get("Status")+ " | ";
+                String datum = "Datum: "+ orderRad.get("Datum")+ " | ";
+                String kommentar = "";
+                if(orderRad.get("Kommentar")==null){
+                 kommentar = "Kommentar: | ";}
+                
+                else{
+                    kommentar = "Kommentar: "+ orderRad.get("Kommentar")+ " | ";
+                }
+                
+                String kundForNamn = idb.fetchSingle("Select Förnamn from Kund where Kund_ID = " + orderRad.get("Kund"));
+                String kundEfterNamn = idb.fetchSingle("Select Efternamn from Kund where Kund_ID = " + orderRad.get("Kund"));
+                String kund = "Kund: " + kundForNamn + " " + kundEfterNamn + " | ";
+                
+                String bradskande = "";
+                
+                if(orderRad.get("Brådskande").equals("0")){
+                        bradskande = "Brådskande: Nej | "; 
+                }
+                else{
+                    bradskande = "Brådskande: Ja | ";
+                }
+                
+                String summa = Double.toString(orderKalkylator(orderRad.get("Order_ID"), orderRad.get("Brådskande")));
+                String totalSumma ="";
+                
+                if(summa.equals("0")){
+                    totalSumma = "Totalsumma: ";
+                }
+                
+                else{totalSumma = "Totalsumma: " + summa;}
+                
+                listModel.addElement(orderId + status + datum + kommentar + kund + bradskande + totalSumma);
+            }
+
+        } catch (InfException fel) {
+        }
+    }
+    
     private void fyllOrderLista() {
         try {
             DefaultListModel<String> listModel = new DefaultListModel<>();
