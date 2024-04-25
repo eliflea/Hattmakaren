@@ -3360,13 +3360,20 @@ public class Dashboard extends javax.swing.JFrame {
 
         lblValjHattMeddelande.setText("");
         // TODO add your handling code here:
+        
+        
 
         try {
+            
             //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
-            String valdOrder = cbOrder.getSelectedItem().toString().toLowerCase();
+            String valdOrder = cbOrder.getSelectedItem().toString();
             String valtMaterial = cbValjMaterial.getSelectedItem().toString();
+            
+            
+             String hattNamn = cbValjAllaHattar.getSelectedItem().toString();
+             
             //SQL-fråga för att få ProduktID från hatt
-            String fragaProduktID = "select Produkt_ID from hatt where Namn = '" + cbValjAllaHattar.getSelectedItem().toString() + "'";
+            String fragaProduktID = "select Produkt_ID from hatt where Namn = '" + hattNamn + "'";
             String ProduktID = idb.fetchSingle(fragaProduktID);
             String fragaMaterial = "select Material_ID from Material where Namn = '" + valtMaterial + "'";
 
@@ -3382,6 +3389,21 @@ public class Dashboard extends javax.swing.JFrame {
             String fragaSkapaHattIOrder = "Insert into hatt_i_order (Order_ID, Hatt_ID, Material_ID, Storlek, Text) "
                     + "Values ('" + valdOrder + "','" + ProduktID + "','" + Material_ID + "','" + txtAngeStorlek.getText() + "','" + txtAngeTxt.getText() + "')";
 
+            double totalSumma = 0;
+            double uppdateratSumma = 0;
+            String strSumma = idb.fetchSingle("Select Totalsumma from orders where order_ID = "+valdOrder);
+            String strHattPris = idb.fetchSingle("Select pris from Hatt where Namn = '"+hattNamn+"'");
+            if(strSumma!=null){
+            
+                totalSumma = Double.parseDouble(strSumma);
+                uppdateratSumma = Double.parseDouble(strHattPris) + totalSumma;
+            }
+            
+            
+            String andradTotalSumma = "Update orders set Totalsumma = "+uppdateratSumma+" where order_ID = " + valdOrder;
+            System.out.println(andradTotalSumma);
+            
+            idb.update(andradTotalSumma);
 //            String fragaSkapaHattIOrder = "Insert into hatt_i_order (Order_ID, Hatt_ID) "
 //                    + "Values ('" + valdOrder + "','" + ProduktID + "')";
             idb.insert(fragaSkapaHattIOrder);
@@ -3722,7 +3744,7 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     public void fyllTextrutaMedBestallningshistorik() {
-        String valdEpost = cbValjKundEpost.getSelectedItem().toString().trim();
+        String valdEpost = cbValjKundEpost.getSelectedItem().toString();
 
         String sqlHamtaKundID = "SELECT Kund_ID FROM Kund WHERE Epost = '" + valdEpost + "'";
         String kundID = "";
@@ -4088,7 +4110,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         String valtAr = cbAr.getSelectedItem().toString();
 
-        String valtKvartal = cbKvartal.getSelectedItem().toString().trim();
+        String valtKvartal = cbKvartal.getSelectedItem().toString();
 
         String sqlHamtaKvartalsForsaljning = "";
 
@@ -4495,7 +4517,7 @@ public class Dashboard extends javax.swing.JFrame {
                     String columnValuePair = kolumn + ": " + varde + " | "; // Build string for each key-value pair
                     radTextBuilder.append(columnValuePair); // Append to StringBuilder
                 }
-                String radText = radTextBuilder.toString().trim(); // Trim extra spaces and add to list model
+                String radText = radTextBuilder.toString(); // Trim extra spaces and add to list model
                 listModel.addElement(radText);
             }
 
