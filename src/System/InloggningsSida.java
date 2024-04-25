@@ -99,6 +99,7 @@ public class InloggningsSida extends javax.swing.JFrame {
         lblInloggningValkommen.setForeground(new java.awt.Color(255, 255, 255));
         lblInloggningValkommen.setText("Välkommen");
 
+        lblInloggningHattmakeri.setBackground(new java.awt.Color(255, 255, 255));
         lblInloggningHattmakeri.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 24)); // NOI18N
         lblInloggningHattmakeri.setText("Ottos hattmakeri");
 
