@@ -101,6 +101,7 @@ public class InloggningsSida extends javax.swing.JFrame {
 
         lblInloggningHattmakeri.setBackground(new java.awt.Color(255, 255, 255));
         lblInloggningHattmakeri.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 24)); // NOI18N
+        lblInloggningHattmakeri.setForeground(new java.awt.Color(255, 255, 255));
         lblInloggningHattmakeri.setText("Ottos hattmakeri");
 
         lblInloggningBild.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bild/otto.png"))); // NOI18N
