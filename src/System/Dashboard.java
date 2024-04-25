@@ -928,7 +928,6 @@ public class Dashboard extends javax.swing.JFrame {
         lblPersonalFornamn4.setText("Förnamn:");
 
         txtRedigeraPersonalEpost.setBackground(new java.awt.Color(153, 153, 153));
-        txtRedigeraPersonalEpost.setForeground(new java.awt.Color(0, 0, 0));
 
         lblPersonalLosenord4.setForeground(new java.awt.Color(102, 102, 102));
         lblPersonalLosenord4.setText("Lösenord:");
@@ -946,14 +945,12 @@ public class Dashboard extends javax.swing.JFrame {
         lblPersonalEpost4.setText("Nytt epost:");
 
         lblRedigeraPersonalMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblRedigeraPersonalMeddelande.setForeground(new java.awt.Color(0, 0, 0));
 
         lblRedigeraPersonalValj4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblRedigeraPersonalValj4.setForeground(new java.awt.Color(102, 102, 102));
         lblRedigeraPersonalValj4.setText("Välj epost för personal som ska redigeras:");
 
         txtRedigeraPersonalFornamn.setBackground(new java.awt.Color(153, 153, 153));
-        txtRedigeraPersonalFornamn.setForeground(new java.awt.Color(0, 0, 0));
         txtRedigeraPersonalFornamn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRedigeraPersonalFornamnActionPerformed(evt);
@@ -961,12 +958,9 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         txtRedigeraPersonalEfternamn.setBackground(new java.awt.Color(153, 153, 153));
-        txtRedigeraPersonalEfternamn.setForeground(new java.awt.Color(0, 0, 0));
 
         lblPersonalEfternamn4.setForeground(new java.awt.Color(102, 102, 102));
         lblPersonalEfternamn4.setText("Efternamn:");
-
-        cbRedigeraPersonal.setForeground(new java.awt.Color(0, 0, 0));
 
         lblRedigeraPersonal4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lblRedigeraPersonal4.setForeground(new java.awt.Color(102, 102, 102));
@@ -1058,7 +1052,6 @@ public class Dashboard extends javax.swing.JFrame {
         lblTaBortEnPersonal.setText("Ta bort personal");
 
         lblTaBortPersonalMeddelande.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblTaBortPersonalMeddelande.setForeground(new java.awt.Color(0, 0, 0));
 
         btnTaBortPersonal.setBackground(new java.awt.Color(0, 102, 153));
         btnTaBortPersonal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -2531,8 +2524,8 @@ public class Dashboard extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlSideBarVanster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnlSideBarHoger, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlSideBarVanster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlSideBarHoger, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnlMitten, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
