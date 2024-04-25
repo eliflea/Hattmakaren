@@ -3396,10 +3396,10 @@ public class Dashboard extends javax.swing.JFrame {
             if(strSumma!=null){
             
                 totalSumma = Double.parseDouble(strSumma);
-                uppdateratSumma = Double.parseDouble(strHattPris) + totalSumma;
             }
             
             
+             uppdateratSumma = Double.parseDouble(strHattPris) + totalSumma;
             String andradTotalSumma = "Update orders set Totalsumma = "+uppdateratSumma+" where order_ID = " + valdOrder;
             System.out.println(andradTotalSumma);
             
