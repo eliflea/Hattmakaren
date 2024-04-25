@@ -40,29 +40,27 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="btnLoggaIn" min="-2" pref="110" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Component id="lblInloggningVanster" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel4" min="-2" pref="120" max="-2" attributes="0"/>
-                                      <Component id="lblAnvNamn" min="-2" pref="140" max="-2" attributes="0"/>
-                                      <Component id="txtAnvNamn" min="-2" pref="250" max="-2" attributes="0"/>
-                                      <Component id="lblFelAnvNamn" min="-2" pref="250" max="-2" attributes="0"/>
-                                      <Component id="lblLosen" min="-2" pref="130" max="-2" attributes="0"/>
-                                      <Component id="txtLosen" min="-2" pref="250" max="-2" attributes="0"/>
-                                      <Component id="lblFelLosen" min="-2" pref="134" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="lblMeddelande" min="-2" pref="302" max="-2" attributes="0"/>
+                  <Component id="lblInloggningVanster" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lblMeddelande" min="-2" pref="302" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="btnLoggaIn" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel4" min="-2" pref="120" max="-2" attributes="0"/>
+                                  <Component id="lblAnvNamn" min="-2" pref="140" max="-2" attributes="0"/>
+                                  <Component id="txtAnvNamn" min="-2" pref="250" max="-2" attributes="0"/>
+                                  <Component id="lblFelAnvNamn" min="-2" pref="250" max="-2" attributes="0"/>
+                                  <Component id="lblLosen" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Component id="txtLosen" min="-2" pref="250" max="-2" attributes="0"/>
+                                  <Component id="lblFelLosen" min="-2" pref="134" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
