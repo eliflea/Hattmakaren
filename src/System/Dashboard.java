@@ -2189,7 +2189,6 @@ public class Dashboard extends javax.swing.JFrame {
         listHattSpecial();
         fyllBoxOrder3();
         fyllBoxHattar();
-        cbValjMaterial.removeAllItems();
         fyllBoxMaterial();
         lblValjHattMeddelande.setText("");
         pnlValjHatt.show();
@@ -3473,7 +3472,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void fyllBoxMaterial() {
         //fyll combobox med order
-        String fragaFyllBox = "Select Namn from Material Where Material_ID IN (Select Material_ID from material_i_Hatt where Hatt_ID = (Select produkt_ID from Hatt where Namn = '" + cbValjAllaHattar.getSelectedItem() + "'))";
+        String fragaFyllBox = "Select Namn from Material Where Material_ID IN (Select Material_ID from material_i_Hatt where Hatt_ID = (Select Produkt_ID from Hatt where Namn = '" + cbValjAllaHattar.getSelectedItem().toString() + "'))";
         ArrayList<String> allaMaterialIHatt;
         try {
             allaMaterialIHatt = idb.fetchColumn(fragaFyllBox);
