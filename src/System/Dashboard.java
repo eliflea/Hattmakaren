@@ -2651,6 +2651,14 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnStartsidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartsidaActionPerformed
         panelerGomda();
+        
+        //uppdaterar planeringsYtan
+        orders = getOrderLista();
+        orderLista.setModel(new javax.swing.AbstractListModel<String>() {
+    String[] strings = orders.toArray(new String[orders.size()]);
+    public int getSize() { return strings.length; }
+    public String getElementAt(int i) { return strings[i]; }
+});
         pnlStartsida.show();
         pnlPlaneringsYta.show();
         fyllOrderLista2();
