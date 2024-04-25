@@ -54,6 +54,8 @@ public class Dashboard extends javax.swing.JFrame {
         listHatt();
         listHattSpecial();
         fyllBoxOrder4();
+        fyllBoxOrderKund();
+        fyllBoxKundEmail(); 
     }
 
     /**
@@ -228,7 +230,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblValjHatt1 = new javax.swing.JLabel();
         cbValjKundHatt1 = new javax.swing.JComboBox<>();
         btnOk3 = new javax.swing.JButton();
-        lblLagerforaHattMsg1 = new javax.swing.JLabel();
+        lblLagerforaHattMsg = new javax.swing.JLabel();
         lblLagerforHatten1 = new javax.swing.JLabel();
         pnlVisaMaterial = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -1634,7 +1636,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(pnlLagerforHattLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlLagerforHattLayout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addComponent(lblLagerforaHattMsg1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblLagerforaHattMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlLagerforHattLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(pnlLagerforHattLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1666,7 +1668,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(90, 90, 90)
                 .addComponent(btnOk3)
                 .addGap(18, 18, 18)
-                .addComponent(lblLagerforaHattMsg1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblLagerforaHattMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(431, Short.MAX_VALUE))
         );
 
@@ -2195,6 +2197,11 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnKundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKundActionPerformed
         panelerGomda();
+        cbValjKundEpost2.removeAllItems();
+        cbValjKundHatt1.removeAllItems();
+        fyllBoxOrderKund();
+        fyllBoxKundEmail();
+        
         lblSkapaKundMeddelande.setText("");
         lblTaBortMeddelande.setText("");
         lblAndraKundMeddelande.setText("");
@@ -2713,7 +2720,8 @@ public class Dashboard extends javax.swing.JFrame {
         else{lblSparat.show();
         lblSparat.setText("Vänligen ange datum (yyyy-MM-dd)");}
     }//GEN-LAST:event_btnSparaOrderActionPerformed
-
+    
+    
     private void fyllBoxKund() {
         //Metod, fylla en combobox med kundnamn
         try {
@@ -3264,7 +3272,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void cbValjKundEpost2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjKundEpost2ActionPerformed
         // TODO add your handling code here:
-        cbValjKundHatt.removeAllItems();
+        cbValjKundHatt1.removeAllItems();
         fyllBoxOrderKund();
     }//GEN-LAST:event_cbValjKundEpost2ActionPerformed
 
@@ -3277,7 +3285,7 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
-        String valdGodkand =cbValjKundHatt.getSelectedItem().toString();
+        String valdGodkand =cbValjKundEpost2.getSelectedItem().toString();
 
         //   String ett = "1";
         int i = 1;
@@ -3380,6 +3388,73 @@ public class Dashboard extends javax.swing.JFrame {
             System.out.println("Error " + ettUndantag.getMessage());
         }
     }
+    
+    private void fyllBoxKundEmail() {
+        //fyll combobox med order
+        String fragaFyllBox = "Select Epost from kund order by Kund_ID";
+        ArrayList<String> allaKunder;
+        try {
+            allaKunder = idb.fetchColumn(fragaFyllBox);
+            for (String epost : allaKunder) {
+                cbValjKundEpost2.addItem(epost);
+            }
+        } catch (Exception ettUndantag) {
+            System.out.println("Error " + ettUndantag.getMessage());
+        }
+    }
+    
+    private void fyllBoxOrderKund() {
+//        //fyll combobox med order
+////        String fragaFyllBox = "SELECT hatt.Namn FROM Hatt JOIN hatt_i_order ON hatt.Produkt_ID = hatt_i_order.Hatt_ID\n" +
+////        "JOIN Orders ON hatt_i_order.Order_ID = orders.Order_ID\n" +
+////        "JOIN Kund ON orders.Kund = kund.Kund_ID\n" +
+////        "WHERE hatt.Godkänd = 0 \n" +
+////        "AND kund.Epost = '" + epost +"'"; 
+////             
+////         String fragaFyllBox = "SELECT hatt.Namn FROM Hatt JOIN hatt_i_order ON hatt.Produkt_ID = hatt_i_order.Hatt_ID " +
+////        "JOIN Orders ON hatt_i_order.Order_ID = orders.Order_ID " +
+////        "JOIN Kund ON orders.Kund = kund.Kund_ID " +
+////        "WHERE hatt.Godkänd = 0 " +
+////        "AND kund.Epost = '" + cbValjKundEpost1.getSelectedItem() + "'"; 
+////         
+        String fragaFyllBox = "SELECT hatt.Namn " +
+        "FROM Hatt " +
+        "JOIN hatt_i_order ON hatt.Produkt_ID = hatt_i_order.Hatt_ID " +
+        "JOIN Orders ON hatt_i_order.Order_ID = orders.Order_ID " +
+        "JOIN Kund ON orders.Kund = kund.Kund_ID " +
+        "WHERE hatt.Godkänd = 0 " +
+        "AND kund.Epost = '" + cbValjKundEpost2.getSelectedItem() + "'";
+////         String fragaFyllBox = "SELECT hatt.Namn FROM Hatt JOIN hatt_i_order ON hatt.Produkt_ID = hatt_i_order.Hatt_ID\n" +
+////        "JOIN Orders ON hatt_i_order.Order_ID = orders.Order_ID\n" +
+////        "JOIN Kund ON orders.Kund = kund.Kund_ID\n" +
+////        "WHERE hatt.Godkänd = 0 \n" +
+////        "AND kund.Epost = '" + cbValjKundEpost1.getSelectedItem() + "'"; 
+////             
+//                //String fragaFyllBox = "Select Namn from Material Where Material_ID IN (Select Material_ID from material_i_Hatt where Hatt_ID = (Select produkt_ID from Hatt where Namn = '" + cbValjAllaHattar.getSelectedItem() + "'))";
+//    
+        ArrayList<String> allaOrder;
+        try {
+          allaOrder = idb.fetchColumn(fragaFyllBox);
+//            if (allaOrder.isEmpty()) {
+//    } else {
+//        // Annars fyll comboboxen med de hattar som hämtades
+       
+        for (String hatt : allaOrder) {
+            cbValjKundHatt1.addItem(hatt);
+        }
+    
+//            allaOrder = idb.fetchColumn(fragaFyllBox);
+//             cbValjKundHatt.removeAllItems();
+//            for (String hatt : allaOrder) {
+//                cbValjKundHatt.addItem(hatt);
+//            }
+        } catch (InfException ettUndantag) {
+            System.out.println("Error " + ettUndantag.getMessage());
+        }
+    }
+
+    
+
 
     private void fyllBoxOrder3() {
         //fyll combobox med order
@@ -3680,7 +3755,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lblKundNamn1;
     private javax.swing.JLabel lblKundNamn2;
     private javax.swing.JLabel lblLagerforHatten1;
-    private javax.swing.JLabel lblLagerforaHattMsg1;
+    private javax.swing.JLabel lblLagerforaHattMsg;
     private javax.swing.JLabel lblLogoFrakt1;
     private javax.swing.JLabel lblNamn;
     private javax.swing.JLabel lblNuvarandeAnvandare;
