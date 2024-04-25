@@ -33,7 +33,7 @@ public class InloggningsSida extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        lblInloggningHoger = new javax.swing.JPanel();
         txtAnvNamn = new javax.swing.JTextField();
         lblAnvNamn = new javax.swing.JLabel();
         lblLosen = new javax.swing.JLabel();
@@ -42,36 +42,47 @@ public class InloggningsSida extends javax.swing.JFrame {
         lblFelAnvNamn = new javax.swing.JLabel();
         btnLoggaIn = new javax.swing.JButton();
         lblMeddelande = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblInloggningVanster = new javax.swing.JPanel();
+        lblInloggningValkommen = new javax.swing.JLabel();
+        lblInloggningHattmakeri = new javax.swing.JLabel();
+        lblInloggningBild = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
+        lblInloggningHoger.setBackground(new java.awt.Color(25, 41, 63));
 
-        txtAnvNamn.setBackground(new java.awt.Color(153, 153, 153));
+        txtAnvNamn.setBackground(new java.awt.Color(25, 41, 63));
+        txtAnvNamn.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
         txtAnvNamn.setForeground(new java.awt.Color(255, 255, 255));
-        txtAnvNamn.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+        txtAnvNamn.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
-        lblAnvNamn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblAnvNamn.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         lblAnvNamn.setForeground(new java.awt.Color(255, 255, 255));
-        lblAnvNamn.setText("Användarnamn :");
+        lblAnvNamn.setText("Användarnamn");
 
-        lblLosen.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblLosen.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         lblLosen.setForeground(new java.awt.Color(255, 255, 255));
-        lblLosen.setText("Lösenord:");
+        lblLosen.setText("Lösenord");
 
-        txtLosen.setBackground(new java.awt.Color(153, 153, 153));
+        txtLosen.setBackground(new java.awt.Color(25, 41, 63));
+        txtLosen.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 12)); // NOI18N
         txtLosen.setForeground(new java.awt.Color(255, 255, 255));
-        txtLosen.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+        txtLosen.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(204, 255, 255)));
 
+        lblFelLosen.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
         lblFelLosen.setForeground(new java.awt.Color(255, 255, 255));
         lblFelLosen.setText("Fel lösenord");
 
+        lblFelAnvNamn.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
         lblFelAnvNamn.setForeground(new java.awt.Color(255, 255, 255));
-        lblFelAnvNamn.setText("Epost-adressen existerar inte");
+        lblFelAnvNamn.setText("Epost existerar ej");
 
-        btnLoggaIn.setBackground(new java.awt.Color(51, 51, 51));
+        btnLoggaIn.setBackground(new java.awt.Color(0, 102, 102));
+        btnLoggaIn.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
         btnLoggaIn.setForeground(new java.awt.Color(255, 255, 255));
         btnLoggaIn.setText("Logga in");
         btnLoggaIn.addActionListener(new java.awt.event.ActionListener() {
@@ -82,101 +93,119 @@ public class InloggningsSida extends javax.swing.JFrame {
 
         lblMeddelande.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        lblInloggningVanster.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Välkommen");
+        lblInloggningValkommen.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 36)); // NOI18N
+        lblInloggningValkommen.setForeground(new java.awt.Color(255, 255, 255));
+        lblInloggningValkommen.setText("Välkommen");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(71, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
+        lblInloggningHattmakeri.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 24)); // NOI18N
+        lblInloggningHattmakeri.setText("Ottos hattmakeri");
+
+        lblInloggningBild.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bild/otto.png"))); // NOI18N
+        lblInloggningBild.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(17, 32, 45), 10));
+
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
+        jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
+        javax.swing.GroupLayout lblInloggningVansterLayout = new javax.swing.GroupLayout(lblInloggningVanster);
+        lblInloggningVanster.setLayout(lblInloggningVansterLayout);
+        lblInloggningVansterLayout.setHorizontalGroup(
+            lblInloggningVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lblInloggningVansterLayout.createSequentialGroup()
+                .addGroup(lblInloggningVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lblInloggningVansterLayout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(lblInloggningValkommen, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(lblInloggningVansterLayout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(lblInloggningHattmakeri))
+                    .addGroup(lblInloggningVansterLayout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addComponent(lblInloggningBild))
+                    .addGroup(lblInloggningVansterLayout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(67, Short.MAX_VALUE))
+            .addGroup(lblInloggningVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lblInloggningVansterLayout.createSequentialGroup()
+                    .addContainerGap(100, Short.MAX_VALUE)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(108, 108, 108)))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(179, 179, 179)
-                .addComponent(jLabel1)
+        lblInloggningVansterLayout.setVerticalGroup(
+            lblInloggningVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lblInloggningVansterLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(lblInloggningValkommen)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblInloggningHattmakeri, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblInloggningBild)
+                .addGap(40, 40, 40)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(lblInloggningVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lblInloggningVansterLayout.createSequentialGroup()
+                    .addContainerGap(483, Short.MAX_VALUE)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(77, 77, 77)))
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(lblMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(299, 299, 299)
-                        .addComponent(lblFelLosen)
-                        .addGap(87, 138, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addComponent(lblLosen)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblAnvNamn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblFelAnvNamn))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnLoggaIn, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61))))
+        jLabel4.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 24)); // NOI18N
+        jLabel4.setText("Logga in");
+
+        javax.swing.GroupLayout lblInloggningHogerLayout = new javax.swing.GroupLayout(lblInloggningHoger);
+        lblInloggningHoger.setLayout(lblInloggningHogerLayout);
+        lblInloggningHogerLayout.setHorizontalGroup(
+            lblInloggningHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lblInloggningHogerLayout.createSequentialGroup()
+                .addComponent(lblInloggningVanster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addGroup(lblInloggningHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblFelAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(lblInloggningHogerLayout.createSequentialGroup()
+                        .addComponent(lblFelLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(btnLoggaIn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addGroup(lblInloggningHogerLayout.createSequentialGroup()
+                .addGap(300, 300, 300)
+                .addComponent(lblMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(117, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txtAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblFelAnvNamn)
-                            .addComponent(lblAnvNamn))
-                        .addGap(26, 26, 26)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblFelLosen))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(lblLosen)))
-                .addGap(23, 23, 23)
-                .addComponent(btnLoggaIn)
-                .addGap(46, 46, 46)
-                .addComponent(lblMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88))
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        lblInloggningHogerLayout.setVerticalGroup(
+            lblInloggningHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblInloggningVanster, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(lblInloggningHogerLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(lblAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(txtAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(lblFelAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(lblLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(lblInloggningHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblFelLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLoggaIn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(lblInloggningHogerLayout.createSequentialGroup()
+                .addGap(441, 441, 441)
+                .addComponent(lblMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(lblInloggningHoger, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -236,12 +265,17 @@ public class InloggningsSida extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLoggaIn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblAnvNamn;
     private javax.swing.JLabel lblFelAnvNamn;
     private javax.swing.JLabel lblFelLosen;
+    private javax.swing.JLabel lblInloggningBild;
+    private javax.swing.JLabel lblInloggningHattmakeri;
+    private javax.swing.JPanel lblInloggningHoger;
+    private javax.swing.JLabel lblInloggningValkommen;
+    private javax.swing.JPanel lblInloggningVanster;
     private javax.swing.JLabel lblLosen;
     private javax.swing.JLabel lblMeddelande;
     private javax.swing.JTextField txtAnvNamn;
