@@ -335,6 +335,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 153));
+        setResizable(false);
 
         pnlSideBarVanster.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -2524,11 +2525,13 @@ public class Dashboard extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlSideBarVanster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(pnlSideBarHoger, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnlMitten, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlSideBarVanster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(pnlMitten, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -3999,8 +4002,13 @@ public class Dashboard extends javax.swing.JFrame {
             ArrayList<String> materialNamn = new ArrayList<String>();
             for (String orderID : orderIDAttHamtaMaterialIDMed) {
                 String sqlHamtaMaterialID = "SELECT Material_ID FROM hatt_i_order WHERE Order_ID = " + orderID;
-                String ettMaterialID = idb.fetchSingle(sqlHamtaMaterialID);
-                relevantaMaterialID.add(ettMaterialID);
+                ArrayList<String> ettMaterialID = idb.fetchColumn(sqlHamtaMaterialID);
+                int i = 0;
+                while(i<ettMaterialID.size())
+                {
+                relevantaMaterialID.add(ettMaterialID.get(i));
+                i++;
+                }
             }
             for (String materialID : relevantaMaterialID) {
                 String sqlHamtaMaterialNamn = "SELECT Namn FROM Material WHERE Material_ID = " + materialID;
@@ -4068,8 +4076,13 @@ public class Dashboard extends javax.swing.JFrame {
             ArrayList<String> materialNamn = new ArrayList<String>();
             for (String orderID : orderIDAttHamtaMaterialIDMed) {
                 String sqlHamtaMaterialID = "SELECT Material_ID FROM hatt_i_order WHERE Order_ID = " + orderID;
-                String ettMaterialID = idb.fetchSingle(sqlHamtaMaterialID);
-                relevantaMaterialID.add(ettMaterialID);
+                ArrayList<String> ettMaterialID = idb.fetchColumn(sqlHamtaMaterialID);
+                int i = 0;
+                while(i<ettMaterialID.size())
+                {
+                relevantaMaterialID.add(ettMaterialID.get(i));
+                i++;
+                }
             }
             for (String materialID : relevantaMaterialID) {
                 String sqlHamtaMaterialNamn = "SELECT Namn FROM Material WHERE Material_ID = " + materialID;
@@ -4141,8 +4154,15 @@ public class Dashboard extends javax.swing.JFrame {
             ArrayList<String> materialNamn = new ArrayList<String>();
             for (String orderID : orderIDAttHamtaMaterialIDMed) {
                 String sqlHamtaMaterialID = "SELECT Material_ID FROM hatt_i_order WHERE Order_ID = " + orderID;
-                String ettMaterialID = idb.fetchSingle(sqlHamtaMaterialID);
-                relevantaMaterialID.add(ettMaterialID);
+                
+                ArrayList<String> ettMaterialID = idb.fetchColumn(sqlHamtaMaterialID);
+                int i = 0;
+                while(i<ettMaterialID.size())
+                {
+                relevantaMaterialID.add(ettMaterialID.get(i));
+                i++;
+                }
+                
             }
             for (String materialID : relevantaMaterialID) {
                 String sqlHamtaMaterialNamn = "SELECT Namn FROM Material WHERE Material_ID = " + materialID;
