@@ -1,9 +1,12 @@
 package System;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
+import System.Validering;
+
 
 /**
  *
@@ -18,6 +21,7 @@ public class InloggningsSida extends javax.swing.JFrame {
      */
     public InloggningsSida(InfDB idb) {
         initComponents();
+        getRootPane().setDefaultButton(btnLoggaIn);
         this.idb = idb;
         //Dessa två första använda för att man ska kunna få upp felmedelande om man skriver in fel epost eller lösenord
         lblFelAnvNamn.setVisible(false);
@@ -90,8 +94,14 @@ public class InloggningsSida extends javax.swing.JFrame {
                 btnLoggaInActionPerformed(evt);
             }
         });
+        btnLoggaIn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnLoggaInKeyPressed(evt);
+            }
+        });
 
-        lblMeddelande.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblMeddelande.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
+        lblMeddelande.setForeground(new java.awt.Color(255, 255, 255));
 
         lblInloggningVanster.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -158,6 +168,7 @@ public class InloggningsSida extends javax.swing.JFrame {
         );
 
         jLabel4.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Logga in");
 
         javax.swing.GroupLayout lblInloggningHogerLayout = new javax.swing.GroupLayout(lblInloggningHoger);
@@ -165,22 +176,26 @@ public class InloggningsSida extends javax.swing.JFrame {
         lblInloggningHogerLayout.setHorizontalGroup(
             lblInloggningHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(lblInloggningHogerLayout.createSequentialGroup()
-                .addComponent(lblInloggningVanster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addGroup(lblInloggningHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblFelAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(lblInloggningHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnLoggaIn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(lblInloggningHogerLayout.createSequentialGroup()
-                        .addComponent(lblFelLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(btnLoggaIn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addGroup(lblInloggningHogerLayout.createSequentialGroup()
-                .addGap(300, 300, 300)
-                .addComponent(lblMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblInloggningVanster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(lblInloggningHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(lblInloggningHogerLayout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addGroup(lblInloggningHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblFelAnvNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblFelLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(52, 52, 52))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lblInloggningHogerLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap())
         );
         lblInloggningHogerLayout.setVerticalGroup(
             lblInloggningHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,12 +214,12 @@ public class InloggningsSida extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addGroup(lblInloggningHogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblFelLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLoggaIn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(lblInloggningHogerLayout.createSequentialGroup()
-                .addGap(441, 441, 441)
-                .addComponent(lblMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblFelLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(btnLoggaIn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         getContentPane().add(lblInloggningHoger, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, -1));
@@ -214,6 +229,17 @@ public class InloggningsSida extends javax.swing.JFrame {
 
     private void btnLoggaInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoggaInActionPerformed
         //Detta är en kod som använda för att loopa igenom två arraylist för att hitta om det är rätt eller fel lösenord/epost
+        loggaIn();
+    }//GEN-LAST:event_btnLoggaInActionPerformed
+
+    private void btnLoggaInKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnLoggaInKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            loggaIn();
+        }
+    }//GEN-LAST:event_btnLoggaInKeyPressed
+
+    private void loggaIn() {
         try {
             if (Validering.harTextFaltetVarde(txtAnvNamn, lblMeddelande) && Validering.harTextFaltetVarde(txtLosen, lblMeddelande)) {
                 // TODO add your handling code here:
@@ -262,8 +288,8 @@ public class InloggningsSida extends javax.swing.JFrame {
         } catch (InfException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
-    }//GEN-LAST:event_btnLoggaInActionPerformed
-
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLoggaIn;

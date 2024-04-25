@@ -40,25 +40,32 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Component id="lblInloggningVanster" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel4" min="-2" pref="120" max="-2" attributes="0"/>
-                      <Component id="lblAnvNamn" min="-2" pref="140" max="-2" attributes="0"/>
-                      <Component id="txtAnvNamn" min="-2" pref="250" max="-2" attributes="0"/>
-                      <Component id="lblFelAnvNamn" min="-2" pref="250" max="-2" attributes="0"/>
-                      <Component id="lblLosen" min="-2" pref="130" max="-2" attributes="0"/>
-                      <Component id="txtLosen" min="-2" pref="250" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="btnLoggaIn" min="-2" pref="110" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="lblFelLosen" min="-2" pref="120" max="-2" attributes="0"/>
-                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                          <Component id="btnLoggaIn" min="-2" pref="110" max="-2" attributes="0"/>
+                          <Component id="lblInloggningVanster" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel4" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <Component id="lblAnvNamn" min="-2" pref="140" max="-2" attributes="0"/>
+                                      <Component id="txtAnvNamn" min="-2" pref="250" max="-2" attributes="0"/>
+                                      <Component id="lblFelAnvNamn" min="-2" pref="250" max="-2" attributes="0"/>
+                                      <Component id="lblLosen" min="-2" pref="130" max="-2" attributes="0"/>
+                                      <Component id="txtLosen" min="-2" pref="250" max="-2" attributes="0"/>
+                                      <Component id="lblFelLosen" min="-2" pref="134" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lblMeddelande" min="-2" pref="302" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
-              </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace min="300" pref="300" max="-2" attributes="0"/>
-                  <Component id="lblMeddelande" min="-2" pref="302" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -79,14 +86,12 @@
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Component id="txtLosen" min="-2" pref="30" max="-2" attributes="0"/>
                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblFelLosen" min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="btnLoggaIn" min="-2" pref="30" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace min="441" pref="441" max="-2" attributes="0"/>
+                  <Component id="lblFelLosen" min="-2" pref="20" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                  <Component id="btnLoggaIn" min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="lblMeddelande" min="-2" pref="34" max="-2" attributes="0"/>
+                  <EmptySpace pref="99" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -191,12 +196,16 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLoggaInActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="btnLoggaInKeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblMeddelande">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="0"/>
+              <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
           </Properties>
         </Component>
@@ -337,6 +346,9 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Microsoft YaHei UI Light" size="24" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Logga in"/>
           </Properties>
