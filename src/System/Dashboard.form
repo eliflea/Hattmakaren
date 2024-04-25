@@ -37,11 +37,15 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlSideBarVanster" alignment="0" max="-2" attributes="0"/>
           <Component id="pnlSideBarHoger" alignment="0" max="-2" attributes="0"/>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="pnlMitten" min="-2" pref="800" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="pnlSideBarVanster" alignment="0" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="pnlMitten" min="-2" pref="800" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -635,7 +639,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="lblRubrikOrder1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="cbOrder2" pref="124" max="32767" attributes="0"/>
+                                      <Component id="cbOrder2" pref="128" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="btnOrderTotalsumma" min="-2" max="-2" attributes="0"/>
@@ -1095,9 +1099,9 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="787" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="791" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Component id="jTabbedPane5" alignment="0" pref="787" max="32767" attributes="0"/>
+                      <Component id="jTabbedPane5" alignment="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1142,7 +1146,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="lblRedigeraPersonal4" alignment="0" pref="470" max="32767" attributes="0"/>
+                                          <Component id="lblRedigeraPersonal4" alignment="0" pref="474" max="32767" attributes="0"/>
                                           <Component id="lblRedigeraPersonalValj4" alignment="0" max="32767" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
@@ -1371,7 +1375,7 @@
                                   <Component id="btnTaBortPersonal" alignment="1" min="-2" pref="170" max="-2" attributes="0"/>
                                   <Component id="lblTaBortPersonalMeddelande" alignment="1" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="176" max="32767" attributes="0"/>
+                              <EmptySpace pref="180" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1486,28 +1490,19 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="btnSpara" min="-2" pref="101" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="lblSkapaHattMeddelande" min="-2" pref="362" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblSkapaHatt" min="-2" pref="321" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="lblAngeNamn" min="-2" pref="152" max="-2" attributes="0"/>
                                           <Component id="txtAngeNamn" alignment="1" min="-2" pref="194" max="-2" attributes="0"/>
-                                          <Component id="lblAngeModell" alignment="0" pref="196" max="32767" attributes="0"/>
+                                          <Component id="lblAngeModell" alignment="0" pref="198" max="32767" attributes="0"/>
                                           <Component id="cbValjModell" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="lblValjTyp" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="cbValjTyp1" alignment="0" pref="195" max="32767" attributes="0"/>
+                                          <Component id="cbValjTyp1" alignment="0" pref="197" max="32767" attributes="0"/>
                                           <Component id="lblAngePris" alignment="0" max="32767" attributes="0"/>
                                           <Component id="txtAngePris" alignment="0" max="32767" attributes="0"/>
                                           <Component id="cbValjMaterialVidSkapa" alignment="0" max="32767" attributes="0"/>
@@ -1517,7 +1512,21 @@
                                           </Group>
                                       </Group>
                                   </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblSkapaHatt" min="-2" pref="321" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                                              <Component id="lblSkapaHattMeddelande" min="-2" pref="555" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="btnSpara" min="-2" pref="101" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
@@ -1564,9 +1573,9 @@
                       </Group>
                       <EmptySpace pref="81" max="32767" attributes="0"/>
                       <Component id="btnSpara" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="lblSkapaHattMeddelande" min="-2" pref="46" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="203" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="226" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2015,7 +2024,7 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                      <Component id="jTabbedPane2" pref="331" max="32767" attributes="0"/>
+                      <Component id="jTabbedPane2" pref="335" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -2273,7 +2282,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPane3" min="-2" pref="402" max="-2" attributes="0"/>
-                      <EmptySpace pref="53" max="32767" attributes="0"/>
+                      <EmptySpace pref="70" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2344,9 +2353,7 @@
             <Component class="javax.swing.JComboBox" name="cbAr">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="1">
-                    <StringItem index="0" value="2024"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -3261,7 +3268,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" alignment="0" pref="787" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="0" pref="791" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -3391,7 +3398,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="267" max="32767" attributes="0"/>
+                      <EmptySpace pref="270" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
