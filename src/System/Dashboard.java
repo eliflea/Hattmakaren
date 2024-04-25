@@ -8,6 +8,7 @@ import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,7 +21,6 @@ import net.sourceforge.barbecue.BarcodeImageHandler;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 import oru.inf.InfDB;
 import oru.inf.InfException;
-
 
 /**
  *
@@ -45,17 +45,24 @@ public class Dashboard extends javax.swing.JFrame {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(200, 200, 200));
         fyllOrderLista2();
-        
+        fyllPersonalEpost();
         fyllEpost();
         AutoCompleteDecorator.decorate(cbKundEpost);
         AutoCompleteDecorator.decorate(cbAndraFyllEpost);
-     //   fyllBoxOrder1();
+        AutoCompleteDecorator.decorate(cbValjKundEpost);
+        AutoCompleteDecorator.decorate(cbValjKundEpost2);
+        AutoCompleteDecorator.decorate(cbTaBortPersonal);
+        AutoCompleteDecorator.decorate(cbRedigeraPersonal);
+        //   fyllBoxOrder1();
+        fyllRullLista();
+        fyllAr();
+        fyllTextrutaMedBestallningshistorik();
         fyllBoxOrder2();
         listHatt();
         listHattSpecial();
         fyllBoxOrder4();
         fyllBoxOrderKund();
-        fyllBoxKundEmail(); 
+        fyllBoxKundEmail();
     }
 
     /**
@@ -81,6 +88,8 @@ public class Dashboard extends javax.swing.JFrame {
         btnVisaMaterialinfo = new javax.swing.JButton();
         btnPaketinformation = new javax.swing.JButton();
         btnProduktdetaljer = new javax.swing.JButton();
+        btnPersonalsida = new javax.swing.JButton();
+        btnStatistik = new javax.swing.JButton();
         pnlMitten = new javax.swing.JPanel();
         pnlStartsida = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -88,6 +97,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblPaborjadOrder = new javax.swing.JLabel();
         btnValjOrder = new javax.swing.JButton();
         lblStartSida = new javax.swing.JLabel();
+        lblBild = new javax.swing.JLabel();
         pnlOrdersida = new javax.swing.JPanel();
         lblRubtikTotalSumma = new javax.swing.JLabel();
         txtTotalSumma = new javax.swing.JTextField();
@@ -123,7 +133,28 @@ public class Dashboard extends javax.swing.JFrame {
         cbOrder4 = new javax.swing.JComboBox<>();
         lblAndraStatus = new javax.swing.JLabel();
         pnlPersonalsida = new javax.swing.JPanel();
-        btnRedigeraKund = new javax.swing.JButton();
+        jTabbedPane5 = new javax.swing.JTabbedPane();
+        pnlRedigeraPersonal4 = new javax.swing.JPanel();
+        lblPersonalFornamn4 = new javax.swing.JLabel();
+        txtRedigeraPersonalEpost = new javax.swing.JTextField();
+        lblPersonalLosenord4 = new javax.swing.JLabel();
+        btnRedigeraPersonal = new javax.swing.JButton();
+        lblPersonalEpost4 = new javax.swing.JLabel();
+        lblRedigeraPersonalMeddelande = new javax.swing.JLabel();
+        lblRedigeraPersonalValj4 = new javax.swing.JLabel();
+        txtRedigeraPersonalFornamn = new javax.swing.JTextField();
+        txtRedigeraPersonalEfternamn = new javax.swing.JTextField();
+        lblPersonalEfternamn4 = new javax.swing.JLabel();
+        cbRedigeraPersonal = new javax.swing.JComboBox<>();
+        lblRedigeraPersonal4 = new javax.swing.JLabel();
+        pwdRedigeraPersonalLosenord = new javax.swing.JPasswordField();
+        pnlTaBortPersonal = new javax.swing.JPanel();
+        cbTaBortPersonal = new javax.swing.JComboBox<>();
+        lblTaBortEnPersonal = new javax.swing.JLabel();
+        lblTaBortPersonalMeddelande = new javax.swing.JLabel();
+        btnTaBortPersonal = new javax.swing.JButton();
+        lblTaBortPersonal = new javax.swing.JLabel();
+        lblTaBortPersonalEpost = new javax.swing.JLabel();
         pnlHattar = new javax.swing.JPanel();
         lblAngeModell = new javax.swing.JLabel();
         lblSkapaHatt = new javax.swing.JLabel();
@@ -176,6 +207,18 @@ public class Dashboard extends javax.swing.JFrame {
         lblStorlek = new javax.swing.JLabel();
         txtAngeTxt = new javax.swing.JTextField();
         lblStorlek1 = new javax.swing.JLabel();
+        pnlStatistik = new javax.swing.JPanel();
+        btnManad = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtStatistik = new javax.swing.JTextArea();
+        jLabel9 = new javax.swing.JLabel();
+        cbAr = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        cbManad = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        cbKvartal = new javax.swing.JComboBox<>();
+        btnAr = new javax.swing.JButton();
+        btnKvartal = new javax.swing.JButton();
         pnlKund = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         pnlSkapaKund = new javax.swing.JPanel();
@@ -232,6 +275,10 @@ public class Dashboard extends javax.swing.JFrame {
         btnOk3 = new javax.swing.JButton();
         lblLagerforaHattMsg = new javax.swing.JLabel();
         lblLagerforHatten1 = new javax.swing.JLabel();
+        pnlBestallningshistorik = new javax.swing.JPanel();
+        cbValjKundEpost = new javax.swing.JComboBox<>();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jtxtBestallningsHistorik = new javax.swing.JTextArea();
         pnlVisaMaterial = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblMaterial = new javax.swing.JTable();
@@ -302,7 +349,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblTest1.setText("Personal");
 
         btnOrdersida.setBackground(new java.awt.Color(153, 153, 153));
-        btnOrdersida.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
+        btnOrdersida.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         btnOrdersida.setForeground(new java.awt.Color(255, 255, 255));
         btnOrdersida.setText("Ordersida");
         btnOrdersida.setBorder(null);
@@ -313,7 +360,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnKund.setBackground(new java.awt.Color(153, 153, 153));
-        btnKund.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
+        btnKund.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         btnKund.setForeground(new java.awt.Color(255, 255, 255));
         btnKund.setText("Kund");
         btnKund.setBorder(null);
@@ -324,7 +371,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnHattar.setBackground(new java.awt.Color(153, 153, 153));
-        btnHattar.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
+        btnHattar.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         btnHattar.setForeground(new java.awt.Color(255, 255, 255));
         btnHattar.setText("Skapa hatt");
         btnHattar.setBorder(null);
@@ -335,7 +382,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnSkapaOrder.setBackground(new java.awt.Color(153, 153, 153));
-        btnSkapaOrder.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
+        btnSkapaOrder.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         btnSkapaOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnSkapaOrder.setText("Skapa order");
         btnSkapaOrder.setBorder(null);
@@ -346,7 +393,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnValjHatt.setBackground(new java.awt.Color(153, 153, 153));
-        btnValjHatt.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
+        btnValjHatt.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         btnValjHatt.setForeground(new java.awt.Color(255, 255, 255));
         btnValjHatt.setText("Välj hatt");
         btnValjHatt.setBorder(null);
@@ -356,7 +403,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnLoggaUt.setBackground(new java.awt.Color(0, 102, 153));
+        btnLoggaUt.setBackground(new java.awt.Color(94, 157, 157));
         btnLoggaUt.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
         btnLoggaUt.setForeground(new java.awt.Color(255, 255, 255));
         btnLoggaUt.setText("Logga ut");
@@ -367,8 +414,8 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnStartsida.setBackground(new java.awt.Color(153, 153, 153));
-        btnStartsida.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        btnStartsida.setBackground(new java.awt.Color(102, 102, 102));
+        btnStartsida.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         btnStartsida.setForeground(new java.awt.Color(255, 255, 255));
         btnStartsida.setText("Startsida");
         btnStartsida.setBorder(null);
@@ -381,7 +428,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblNuvarandeAnvandare.setForeground(new java.awt.Color(0, 102, 0));
 
         btnVisaMaterialinfo.setBackground(new java.awt.Color(153, 153, 153));
-        btnVisaMaterialinfo.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
+        btnVisaMaterialinfo.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         btnVisaMaterialinfo.setForeground(new java.awt.Color(255, 255, 255));
         btnVisaMaterialinfo.setText("Visa materialinfo");
         btnVisaMaterialinfo.setBorder(null);
@@ -392,7 +439,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnPaketinformation.setBackground(new java.awt.Color(153, 153, 153));
-        btnPaketinformation.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
+        btnPaketinformation.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         btnPaketinformation.setForeground(new java.awt.Color(255, 255, 255));
         btnPaketinformation.setText("Paketinformation");
         btnPaketinformation.setBorder(null);
@@ -403,7 +450,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnProduktdetaljer.setBackground(new java.awt.Color(153, 153, 153));
-        btnProduktdetaljer.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
+        btnProduktdetaljer.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         btnProduktdetaljer.setForeground(new java.awt.Color(255, 255, 255));
         btnProduktdetaljer.setText("Produktdetaljer");
         btnProduktdetaljer.setBorder(null);
@@ -413,75 +460,108 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        btnPersonalsida.setBackground(new java.awt.Color(153, 153, 153));
+        btnPersonalsida.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        btnPersonalsida.setForeground(new java.awt.Color(255, 255, 255));
+        btnPersonalsida.setText("Personal");
+        btnPersonalsida.setBorder(null);
+        btnPersonalsida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPersonalsidaActionPerformed(evt);
+            }
+        });
+
+        btnStatistik.setBackground(new java.awt.Color(153, 153, 153));
+        btnStatistik.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        btnStatistik.setForeground(new java.awt.Color(255, 255, 255));
+        btnStatistik.setText("Statistik");
+        btnStatistik.setBorder(null);
+        btnStatistik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStatistikActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlSideBarVansterLayout = new javax.swing.GroupLayout(pnlSideBarVanster);
         pnlSideBarVanster.setLayout(pnlSideBarVansterLayout);
         pnlSideBarVansterLayout.setHorizontalGroup(
             pnlSideBarVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSideBarVansterLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
                 .addGroup(pnlSideBarVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSkapaOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlSideBarVansterLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
                         .addComponent(lblTest1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblNuvarandeAnvandare, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlSideBarVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnHattar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnValjHatt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnLoggaUt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnKund, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                        .addComponent(btnOrdersida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnStartsida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnVisaMaterialinfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblTest, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                        .addComponent(btnPaketinformation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnProduktdetaljer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(pnlSideBarVansterLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(lblTest)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(pnlSideBarVansterLayout.createSequentialGroup()
+                .addGroup(pnlSideBarVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnKund, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(btnPersonalsida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnHattar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSkapaOrder, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                    .addComponent(btnValjHatt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnOrdersida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPaketinformation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnProduktdetaljer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnVisaMaterialinfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStatistik, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStartsida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLoggaUt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        pnlSideBarVansterLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnHattar, btnKund, btnOrdersida, btnPaketinformation, btnPersonalsida, btnProduktdetaljer, btnSkapaOrder, btnStartsida, btnStatistik, btnValjHatt, btnVisaMaterialinfo});
+
         pnlSideBarVansterLayout.setVerticalGroup(
             pnlSideBarVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSideBarVansterLayout.createSequentialGroup()
-                .addGroup(pnlSideBarVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(46, 46, 46)
+                .addGroup(pnlSideBarVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblNuvarandeAnvandare, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlSideBarVansterLayout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(lblNuvarandeAnvandare, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSideBarVansterLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(lblTest, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblTest1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                        .addComponent(lblTest1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30)
                 .addComponent(btnStartsida, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnKund, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSkapaOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPersonalsida, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnHattar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnValjHatt, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSkapaOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnVisaMaterialinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnValjHatt, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnOrdersida, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnPaketinformation, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnProduktdetaljer, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVisaMaterialinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnStatistik, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnLoggaUt, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51))
+                .addGap(27, 27, 27))
         );
 
         pnlMitten.setBackground(new java.awt.Color(255, 255, 255));
         pnlMitten.setLayout(new java.awt.CardLayout());
 
-        pnlStartsida.setBackground(new java.awt.Color(255, 255, 255));
+        pnlStartsida.setBackground(new java.awt.Color(251, 251, 243));
 
         listPaborjadeOrdrar.setBackground(new java.awt.Color(204, 204, 204));
         listPaborjadeOrdrar.setBorder(null);
-        listPaborjadeOrdrar.setForeground(new java.awt.Color(102, 102, 102));
+        listPaborjadeOrdrar.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
+        listPaborjadeOrdrar.setForeground(new java.awt.Color(51, 51, 51));
         listPaborjadeOrdrar.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -489,11 +569,12 @@ public class Dashboard extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(listPaborjadeOrdrar);
 
-        lblPaborjadOrder.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblPaborjadOrder.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 18)); // NOI18N
         lblPaborjadOrder.setForeground(new java.awt.Color(153, 153, 153));
         lblPaborjadOrder.setText("Påbörjade ordrar");
 
         btnValjOrder.setBackground(new java.awt.Color(0, 102, 153));
+        btnValjOrder.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
         btnValjOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnValjOrder.setText("Välj");
         btnValjOrder.setBorder(null);
@@ -503,35 +584,48 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        lblStartSida.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        lblStartSida.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 48)); // NOI18N
         lblStartSida.setForeground(new java.awt.Color(153, 153, 153));
-        lblStartSida.setText("Startsida");
+        lblStartSida.setText("Ottos hattmakeri");
+
+        lblBild.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bild/otto.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlStartsidaLayout = new javax.swing.GroupLayout(pnlStartsida);
         pnlStartsida.setLayout(pnlStartsidaLayout);
         pnlStartsidaLayout.setHorizontalGroup(
             pnlStartsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlStartsidaLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(50, 50, 50)
                 .addGroup(pnlStartsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblStartSida, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPaborjadOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 681, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnValjOrder, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 55, Short.MAX_VALUE))
+                    .addGroup(pnlStartsidaLayout.createSequentialGroup()
+                        .addGroup(pnlStartsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPaborjadOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 681, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnValjOrder, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlStartsidaLayout.createSequentialGroup()
+                        .addComponent(lblStartSida)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblBild, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26))))
         );
         pnlStartsidaLayout.setVerticalGroup(
             pnlStartsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlStartsidaLayout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(lblStartSida, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
+                .addGroup(pnlStartsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlStartsidaLayout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(lblStartSida, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlStartsidaLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(lblBild, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblPaborjadOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnValjOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addContainerGap(205, Short.MAX_VALUE))
         );
 
         pnlMitten.add(pnlStartsida, "card4");
@@ -732,7 +826,7 @@ public class Dashboard extends javax.swing.JFrame {
                             .addComponent(btnVisaFraktSedel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnOrderStatus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(pnlOrdersidaLayout.createSequentialGroup()
-                                .addGap(0, 7, Short.MAX_VALUE)
+                                .addGap(0, 11, Short.MAX_VALUE)
                                 .addGroup(pnlOrdersidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(pnlOrdersidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlOrdersidaLayout.createSequentialGroup()
@@ -826,31 +920,215 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlPersonalsida.setBackground(new java.awt.Color(102, 102, 102));
 
-        btnRedigeraKund.setBackground(new java.awt.Color(0, 51, 102));
-        btnRedigeraKund.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnRedigeraKund.setForeground(new java.awt.Color(255, 255, 255));
-        btnRedigeraKund.setText("Redigera kundinformation");
-        btnRedigeraKund.addActionListener(new java.awt.event.ActionListener() {
+        jTabbedPane5.setPreferredSize(new java.awt.Dimension(791, 800));
+
+        pnlRedigeraPersonal4.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblPersonalFornamn4.setForeground(new java.awt.Color(102, 102, 102));
+        lblPersonalFornamn4.setText("Förnamn:");
+
+        txtRedigeraPersonalEpost.setBackground(new java.awt.Color(153, 153, 153));
+        txtRedigeraPersonalEpost.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblPersonalLosenord4.setForeground(new java.awt.Color(102, 102, 102));
+        lblPersonalLosenord4.setText("Lösenord:");
+
+        btnRedigeraPersonal.setBackground(new java.awt.Color(0, 102, 153));
+        btnRedigeraPersonal.setForeground(new java.awt.Color(255, 255, 255));
+        btnRedigeraPersonal.setText("Redigera personal");
+        btnRedigeraPersonal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRedigeraKundActionPerformed(evt);
+                btnRedigeraPersonalActionPerformed(evt);
             }
         });
+
+        lblPersonalEpost4.setForeground(new java.awt.Color(102, 102, 102));
+        lblPersonalEpost4.setText("Nytt epost:");
+
+        lblRedigeraPersonalMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblRedigeraPersonalMeddelande.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblRedigeraPersonalValj4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblRedigeraPersonalValj4.setForeground(new java.awt.Color(102, 102, 102));
+        lblRedigeraPersonalValj4.setText("Välj epost för personal som ska redigeras:");
+
+        txtRedigeraPersonalFornamn.setBackground(new java.awt.Color(153, 153, 153));
+        txtRedigeraPersonalFornamn.setForeground(new java.awt.Color(0, 0, 0));
+        txtRedigeraPersonalFornamn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRedigeraPersonalFornamnActionPerformed(evt);
+            }
+        });
+
+        txtRedigeraPersonalEfternamn.setBackground(new java.awt.Color(153, 153, 153));
+        txtRedigeraPersonalEfternamn.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblPersonalEfternamn4.setForeground(new java.awt.Color(102, 102, 102));
+        lblPersonalEfternamn4.setText("Efternamn:");
+
+        cbRedigeraPersonal.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblRedigeraPersonal4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblRedigeraPersonal4.setForeground(new java.awt.Color(102, 102, 102));
+        lblRedigeraPersonal4.setText("Redigera personal");
+
+        pwdRedigeraPersonalLosenord.setBackground(new java.awt.Color(153, 153, 153));
+        pwdRedigeraPersonalLosenord.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pwdRedigeraPersonalLosenordActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlRedigeraPersonal4Layout = new javax.swing.GroupLayout(pnlRedigeraPersonal4);
+        pnlRedigeraPersonal4.setLayout(pnlRedigeraPersonal4Layout);
+        pnlRedigeraPersonal4Layout.setHorizontalGroup(
+            pnlRedigeraPersonal4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRedigeraPersonal4Layout.createSequentialGroup()
+                .addGap(184, 184, 184)
+                .addGroup(pnlRedigeraPersonal4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlRedigeraPersonal4Layout.createSequentialGroup()
+                        .addGroup(pnlRedigeraPersonal4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblRedigeraPersonal4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
+                            .addComponent(lblRedigeraPersonalValj4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(pnlRedigeraPersonal4Layout.createSequentialGroup()
+                                .addGroup(pnlRedigeraPersonal4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblRedigeraPersonalMeddelande, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlRedigeraPersonal4Layout.createSequentialGroup()
+                                        .addGroup(pnlRedigeraPersonal4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(lblPersonalFornamn4, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblPersonalEfternamn4, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblPersonalLosenord4, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblPersonalEpost4, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(81, 81, 81)))
+                        .addGap(133, 133, 133))
+                    .addGroup(pnlRedigeraPersonal4Layout.createSequentialGroup()
+                        .addGroup(pnlRedigeraPersonal4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnRedigeraPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlRedigeraPersonal4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(pnlRedigeraPersonal4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtRedigeraPersonalFornamn, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbRedigeraPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtRedigeraPersonalEfternamn, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(pwdRedigeraPersonalLosenord, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(pnlRedigeraPersonal4Layout.createSequentialGroup()
+                                    .addGap(81, 81, 81)
+                                    .addComponent(txtRedigeraPersonalEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        pnlRedigeraPersonal4Layout.setVerticalGroup(
+            pnlRedigeraPersonal4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRedigeraPersonal4Layout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addComponent(lblRedigeraPersonal4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(lblRedigeraPersonalValj4)
+                .addGap(18, 18, 18)
+                .addComponent(cbRedigeraPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(pnlRedigeraPersonal4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPersonalFornamn4)
+                    .addComponent(txtRedigeraPersonalFornamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlRedigeraPersonal4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPersonalEfternamn4)
+                    .addComponent(txtRedigeraPersonalEfternamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlRedigeraPersonal4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPersonalLosenord4)
+                    .addComponent(pwdRedigeraPersonalLosenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(pnlRedigeraPersonal4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPersonalEpost4)
+                    .addComponent(txtRedigeraPersonalEpost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnRedigeraPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblRedigeraPersonalMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(219, Short.MAX_VALUE))
+        );
+
+        jTabbedPane5.addTab("Redigera personal", pnlRedigeraPersonal4);
+
+        pnlTaBortPersonal.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblTaBortEnPersonal.setBackground(new java.awt.Color(51, 51, 51));
+        lblTaBortEnPersonal.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblTaBortEnPersonal.setForeground(new java.awt.Color(102, 102, 102));
+        lblTaBortEnPersonal.setText("Ta bort personal");
+
+        lblTaBortPersonalMeddelande.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTaBortPersonalMeddelande.setForeground(new java.awt.Color(0, 0, 0));
+
+        btnTaBortPersonal.setBackground(new java.awt.Color(0, 102, 153));
+        btnTaBortPersonal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnTaBortPersonal.setForeground(new java.awt.Color(255, 255, 255));
+        btnTaBortPersonal.setText("Ta bort personal");
+        btnTaBortPersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTaBortPersonalActionPerformed(evt);
+            }
+        });
+
+        lblTaBortPersonal.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblTaBortPersonal.setForeground(new java.awt.Color(102, 102, 102));
+        lblTaBortPersonal.setText("Välj personal som ska tas bort");
+
+        lblTaBortPersonalEpost.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTaBortPersonalEpost.setForeground(new java.awt.Color(102, 102, 102));
+        lblTaBortPersonalEpost.setText("Epost:");
+
+        javax.swing.GroupLayout pnlTaBortPersonalLayout = new javax.swing.GroupLayout(pnlTaBortPersonal);
+        pnlTaBortPersonal.setLayout(pnlTaBortPersonalLayout);
+        pnlTaBortPersonalLayout.setHorizontalGroup(
+            pnlTaBortPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTaBortPersonalLayout.createSequentialGroup()
+                .addGap(164, 164, 164)
+                .addGroup(pnlTaBortPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(pnlTaBortPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnlTaBortPersonalLayout.createSequentialGroup()
+                            .addComponent(lblTaBortPersonalEpost)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(cbTaBortPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblTaBortEnPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblTaBortPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnTaBortPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTaBortPersonalMeddelande, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(176, Short.MAX_VALUE))
+        );
+        pnlTaBortPersonalLayout.setVerticalGroup(
+            pnlTaBortPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTaBortPersonalLayout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addComponent(lblTaBortEnPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(lblTaBortPersonal)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlTaBortPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTaBortPersonalEpost)
+                    .addComponent(cbTaBortPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnTaBortPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTaBortPersonalMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(346, Short.MAX_VALUE))
+        );
+
+        jTabbedPane5.addTab("Ta bort personal", pnlTaBortPersonal);
 
         javax.swing.GroupLayout pnlPersonalsidaLayout = new javax.swing.GroupLayout(pnlPersonalsida);
         pnlPersonalsida.setLayout(pnlPersonalsidaLayout);
         pnlPersonalsidaLayout.setHorizontalGroup(
             pnlPersonalsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPersonalsidaLayout.createSequentialGroup()
-                .addGap(224, 224, 224)
-                .addComponent(btnRedigeraKund, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(244, Short.MAX_VALUE))
+            .addGap(0, 787, Short.MAX_VALUE)
+            .addGroup(pnlPersonalsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jTabbedPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 787, Short.MAX_VALUE))
         );
         pnlPersonalsidaLayout.setVerticalGroup(
             pnlPersonalsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPersonalsidaLayout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addComponent(btnRedigeraKund, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(645, Short.MAX_VALUE))
+            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(pnlPersonalsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jTabbedPane5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pnlMitten.add(pnlPersonalsida, "card4");
@@ -911,12 +1189,12 @@ public class Dashboard extends javax.swing.JFrame {
                                 .addGroup(pnlHattarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblAngeNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtAngeNamn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblAngeModell, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                    .addComponent(lblAngeModell, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
                                     .addComponent(cbValjModell, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(176, 176, 176)
                                 .addGroup(pnlHattarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblValjTyp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cbValjTyp1, 0, 196, Short.MAX_VALUE)
+                                    .addComponent(cbValjTyp1, 0, 195, Short.MAX_VALUE)
                                     .addComponent(lblAngePris, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(txtAngePris)
                                     .addComponent(cbValjMaterialVidSkapa, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -957,7 +1235,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(lblAngePris)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtAngePris, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(btnSpara)
                 .addGap(41, 41, 41)
                 .addComponent(lblSkapaHattMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1107,7 +1385,7 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(lblFel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addComponent(lblSparat, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(288, Short.MAX_VALUE))
+                .addContainerGap(276, Short.MAX_VALUE))
         );
 
         pnlMitten.add(pnlSkapaOrder, "card4");
@@ -1242,6 +1520,101 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlMitten.add(pnlValjHatt, "card4");
 
+        pnlStatistik.setBackground(new java.awt.Color(51, 51, 51));
+
+        btnManad.setText("Visa statistik för vald månad");
+        btnManad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManadActionPerformed(evt);
+            }
+        });
+
+        txtStatistik.setEditable(false);
+        txtStatistik.setColumns(20);
+        txtStatistik.setRows(5);
+        jScrollPane3.setViewportView(txtStatistik);
+
+        jLabel9.setText("Välj år");
+
+        cbAr.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2024" }));
+
+        jLabel10.setText("Välj månad");
+
+        cbManad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "Novermber", "December" }));
+
+        jLabel11.setText("Välj kvartal");
+
+        cbKvartal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Q1", "Q2", "Q3", "Q4" }));
+
+        btnAr.setText("Visa statistik för valt år");
+        btnAr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArActionPerformed(evt);
+            }
+        });
+
+        btnKvartal.setText("Visa statistik för valt kvartal");
+        btnKvartal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKvartalActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlStatistikLayout = new javax.swing.GroupLayout(pnlStatistik);
+        pnlStatistik.setLayout(pnlStatistikLayout);
+        pnlStatistikLayout.setHorizontalGroup(
+            pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlStatistikLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlStatistikLayout.createSequentialGroup()
+                        .addGroup(pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbAr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))
+                        .addGap(39, 39, 39)
+                        .addGroup(pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(cbManad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnAr)
+                    .addComponent(btnKvartal)
+                    .addComponent(btnManad))
+                .addGap(18, 18, 18)
+                .addGroup(pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addComponent(cbKvartal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+        pnlStatistikLayout.setVerticalGroup(
+            pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlStatistikLayout.createSequentialGroup()
+                .addGroup(pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlStatistikLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbAr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbManad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbKvartal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(100, 100, 100)
+                        .addComponent(btnAr)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnKvartal)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnManad))
+                    .addGroup(pnlStatistikLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(359, Short.MAX_VALUE))
+        );
+
+        pnlMitten.add(pnlStatistik, "card10");
+
         pnlKund.setBackground(new java.awt.Color(102, 102, 102));
 
         pnlSkapaKund.setBackground(new java.awt.Color(51, 51, 51));
@@ -1369,7 +1742,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(btnSparaKund, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblSkapaKundMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Skapa kund", pnlSkapaKund);
@@ -1411,7 +1784,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(lblTaBortKund, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblTaBortAngeEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnTaBortKund, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(300, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlTaBortKundLayout.setVerticalGroup(
             pnlTaBortKundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1428,7 +1801,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(btnTaBortKund, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTaBortMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(461, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ta bort kund", pnlTaBortKund);
@@ -1595,7 +1968,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(pnlRedigeraKundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblAndraKundMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRedigeraKund1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pnlRedigeraKundLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtEfternamn, txtFornamn, txtGatuadress, txtKommentar, txtOrt, txtPostnummer, txtTelefon});
@@ -1650,7 +2023,7 @@ public class Dashboard extends javax.swing.JFrame {
                                     .addComponent(lblValjHatt1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cbValjKundHatt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(lblLagerforHatten1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlLagerforHattLayout.setVerticalGroup(
             pnlLagerforHattLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1669,16 +2042,52 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(btnOk3)
                 .addGap(18, 18, 18)
                 .addComponent(lblLagerforaHattMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(431, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Lagerför hatt", pnlLagerforHatt);
+
+        cbValjKundEpost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbValjKundEpostActionPerformed(evt);
+            }
+        });
+
+        jtxtBestallningsHistorik.setEditable(false);
+        jtxtBestallningsHistorik.setColumns(20);
+        jtxtBestallningsHistorik.setRows(5);
+        jScrollPane8.setViewportView(jtxtBestallningsHistorik);
+
+        javax.swing.GroupLayout pnlBestallningshistorikLayout = new javax.swing.GroupLayout(pnlBestallningshistorik);
+        pnlBestallningshistorik.setLayout(pnlBestallningshistorikLayout);
+        pnlBestallningshistorikLayout.setHorizontalGroup(
+            pnlBestallningshistorikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBestallningshistorikLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(cbValjKundEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlBestallningshistorikLayout.setVerticalGroup(
+            pnlBestallningshistorikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBestallningshistorikLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(cbValjKundEpost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(706, Short.MAX_VALUE))
+            .addGroup(pnlBestallningshistorikLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane8)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Beställningshistorik", pnlBestallningshistorik);
 
         javax.swing.GroupLayout pnlKundLayout = new javax.swing.GroupLayout(pnlKund);
         pnlKund.setLayout(pnlKundLayout);
         pnlKundLayout.setHorizontalGroup(
             pnlKundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 791, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 791, Short.MAX_VALUE)
         );
         pnlKundLayout.setVerticalGroup(
             pnlKundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1833,7 +2242,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addGroup(pnlPaketinfoLayout.createSequentialGroup()
                             .addGap(102, 102, 102)
                             .addComponent(lblVisaPaketInformationRubrik, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(266, Short.MAX_VALUE))
+                .addContainerGap(267, Short.MAX_VALUE))
         );
         pnlPaketinfoLayout.setVerticalGroup(
             pnlPaketinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1939,6 +2348,7 @@ public class Dashboard extends javax.swing.JFrame {
         pnlSideBarHoger.setLayout(new java.awt.CardLayout());
 
         personalTillHatt.setBackground(new java.awt.Color(0, 102, 153));
+        personalTillHatt.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 12)); // NOI18N
         personalTillHatt.setForeground(new java.awt.Color(255, 255, 255));
         personalTillHatt.setText("Lägg till personal till hatt");
         personalTillHatt.setBorder(null);
@@ -1948,7 +2358,8 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnHattSida.setBackground(new java.awt.Color(153, 153, 153));
+        btnHattSida.setBackground(new java.awt.Color(94, 157, 157));
+        btnHattSida.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
         btnHattSida.setForeground(new java.awt.Color(255, 255, 255));
         btnHattSida.setText("Hattsida");
         btnHattSida.setBorder(null);
@@ -1959,7 +2370,8 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         orderLista.setBackground(new java.awt.Color(204, 204, 204));
-        orderLista.setForeground(new java.awt.Color(102, 102, 102));
+        orderLista.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
+        orderLista.setForeground(new java.awt.Color(51, 51, 51));
         orderLista.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = orders.toArray(new String[orders.size()]);
             public int getSize() { return strings.length; }
@@ -1968,6 +2380,7 @@ public class Dashboard extends javax.swing.JFrame {
         planeringsLista.setViewportView(orderLista);
 
         taBortpersonalFranHatt.setBackground(new java.awt.Color(0, 102, 153));
+        taBortpersonalFranHatt.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 12)); // NOI18N
         taBortpersonalFranHatt.setForeground(new java.awt.Color(255, 255, 255));
         taBortpersonalFranHatt.setText("Ta bort mig från hatt");
         taBortpersonalFranHatt.setBorder(null);
@@ -2001,7 +2414,7 @@ public class Dashboard extends javax.swing.JFrame {
         );
         pnlPlaneringsYtaLayout.setVerticalGroup(
             pnlPlaneringsYtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 812, Short.MAX_VALUE)
+            .addGap(0, 816, Short.MAX_VALUE)
             .addGroup(pnlPlaneringsYtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlPlaneringsYtaLayout.createSequentialGroup()
                     .addContainerGap()
@@ -2185,7 +2598,7 @@ public class Dashboard extends javax.swing.JFrame {
         cbOrder.removeAllItems();
         list1.removeAll();
         list2.removeAll();
-        listHatt(); 
+        listHatt();
         listHattSpecial();
         fyllBoxOrder3();
         fyllBoxHattar();
@@ -2200,7 +2613,7 @@ public class Dashboard extends javax.swing.JFrame {
         cbValjKundHatt1.removeAllItems();
         fyllBoxOrderKund();
         fyllBoxKundEmail();
-        
+
         lblSkapaKundMeddelande.setText("");
         lblTaBortMeddelande.setText("");
         lblAndraKundMeddelande.setText("");
@@ -2218,7 +2631,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHattarActionPerformed
 
     private void btnSkapaOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkapaOrderActionPerformed
-        
+
         panelerGomda();
         cbValjKund.removeAllItems();
         fyllBoxKund();
@@ -2247,11 +2660,6 @@ public class Dashboard extends javax.swing.JFrame {
         pnlPlaneringsYta.show();
         fyllOrderLista2();
     }//GEN-LAST:event_btnStartsidaActionPerformed
-
-    private void btnRedigeraKundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRedigeraKundActionPerformed
-        panelerGomda();
-        pnlRedigeraKund.show();
-    }//GEN-LAST:event_btnRedigeraKundActionPerformed
 
     private void btnRedigeraKund1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRedigeraKund1ActionPerformed
         // Redigerar en kunds information        
@@ -2308,16 +2716,17 @@ public class Dashboard extends javax.swing.JFrame {
                 String kundIdString = Integer.toString(kundId);
 
                 ArrayList<String> epostMap = idb.fetchColumn("Select Epost from Kund");
-                
-                if(!epostMap.contains(epost)){
-                String fraga = "INSERT INTO kund VALUES (" + kundIdString + ", '" + fornamn + "', '" + efternamn + "', '" + telefon + "', '" + epost + "', '" + gatuadress + "', '" + postnummer + "', '" + ort + "')";
 
-                idb.insert(fraga);
-                lblSkapaKundMeddelande.setText("Kund har skapats!");
-                cbKundEpost.removeAllItems();
-                cbAndraFyllEpost.removeAllItems();
-                 fyllEpost();  }
-                else{lblSkapaKundMeddelande.setText("Epost är redan registrerat. Vänligen ange en annan epost.");
+                if (!epostMap.contains(epost)) {
+                    String fraga = "INSERT INTO kund VALUES (" + kundIdString + ", '" + fornamn + "', '" + efternamn + "', '" + telefon + "', '" + epost + "', '" + gatuadress + "', '" + postnummer + "', '" + ort + "')";
+
+                    idb.insert(fraga);
+                    lblSkapaKundMeddelande.setText("Kund har skapats!");
+                    cbKundEpost.removeAllItems();
+                    cbAndraFyllEpost.removeAllItems();
+                    fyllEpost();
+                } else {
+                    lblSkapaKundMeddelande.setText("Epost är redan registrerat. Vänligen ange en annan epost.");
                 }
             }
 
@@ -2339,6 +2748,7 @@ public class Dashboard extends javax.swing.JFrame {
             System.out.println("Error " + ettUndantag.getMessage());
         }
     }
+
     private void fyllBoxOrder4() {
         //fyll combobox med order
         String fragaFyllBox = "Select Order_ID from orders order by Order_ID";
@@ -2379,8 +2789,7 @@ public class Dashboard extends javax.swing.JFrame {
             System.out.println("Error " + ettUndantag.getMessage());
         }
     }
-    
-    
+
     private void fyllBoxModell() {
         //fyll combobox med order
         String fragaFyllBox = "Select DISTINCT Modell from hatt";
@@ -2394,8 +2803,8 @@ public class Dashboard extends javax.swing.JFrame {
             System.out.println("Error " + ettUndantag.getMessage());
         }
     }
-    
-     private void fyllBoxOrderValj() {
+
+    private void fyllBoxOrderValj() {
         //fyll combobox med order
         String avslutad = "Avslutad";
         String fragaFyllBox = "Select Order_ID from orders where Status != '" + avslutad + "' order by Datum DESC";
@@ -2409,7 +2818,6 @@ public class Dashboard extends javax.swing.JFrame {
             System.out.println("Error " + ettUndantag.getMessage());
         }
     }
-    
 
 
     private void txtFornamn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFornamn1ActionPerformed
@@ -2432,8 +2840,8 @@ public class Dashboard extends javax.swing.JFrame {
             String valjTyp = cbValjTyp1.getSelectedItem().toString();
             String string1 = "Lagerförd";
             String material = cbValjMaterialVidSkapa.getSelectedItem().toString();
-            
-            String materialId = idb.fetchSingle("Select material_ID from material where namn = '"+material+"'");
+
+            String materialId = idb.fetchSingle("Select material_ID from material where namn = '" + material + "'");
 
             // Kontrollera om alla fält är ifyllda
             boolean allaFaltIfyllda
@@ -2442,10 +2850,10 @@ public class Dashboard extends javax.swing.JFrame {
                     && Validering.kollaDecimalTal(txtAngePris, lblSkapaHattMeddelande);
 
             // Skapa SQL-query för att lägga till en hatt i databasen, med olika värden beroende på vald typ
-            String skapaHattQuery = "insert into hatt (Produkt_ID, Namn, Modell, Pris, Godkänd) Values ('" + produktIDString + "', '" + namn + "', '"  + valdModell + "', '" + pris + "','" + 1 +"')";
-            String skapaHattQuery2 = "insert into hatt (Produkt_ID, Namn, Modell, Pris, Godkänd) Values ('" + produktIDString + "', '" + namn + "', '"  + valdModell + "', '" + pris + "','" + 0 +  "')";
-            String materialIHatt = "Insert into material_i_hatt (Hatt_ID, material_ID) values ("+produktIDString+", "+materialId+")";
-            
+            String skapaHattQuery = "insert into hatt (Produkt_ID, Namn, Modell, Pris, Godkänd) Values ('" + produktIDString + "', '" + namn + "', '" + valdModell + "', '" + pris + "','" + 1 + "')";
+            String skapaHattQuery2 = "insert into hatt (Produkt_ID, Namn, Modell, Pris, Godkänd) Values ('" + produktIDString + "', '" + namn + "', '" + valdModell + "', '" + pris + "','" + 0 + "')";
+            String materialIHatt = "Insert into material_i_hatt (Hatt_ID, material_ID) values (" + produktIDString + ", " + materialId + ")";
+
             // Om typen är "Lagerförd", lägg till en hatt i databasen med status godkänd (1), annars lägg till med status ej godkänd (0)
             if (valjTyp.equals(string1)) {
                 idb.insert(skapaHattQuery);
@@ -2454,148 +2862,141 @@ public class Dashboard extends javax.swing.JFrame {
                 idb.insert(skapaHattQuery2);
                 idb.insert(materialIHatt);
             }
-         lblSkapaHattMeddelande.setText("Hatt är tillagd!");
+            lblSkapaHattMeddelande.setText("Hatt är tillagd!");
         } catch (InfException e) {
             // Hantera undantag vid felaktig interaktion med databasen
             System.out.println(e);
         }
     }//GEN-LAST:event_btnSparaActionPerformed
- private void fyllInfo(String orderId){
-      
+    private void fyllInfo(String orderId) {
+
         String förnamn;
-            try {
-                förnamn = idb.fetchSingle("Select Förnamn from Kund where Kund_ID = (Select Kund from Orders where Order_ID = " + orderId + ")");
+        try {
+            förnamn = idb.fetchSingle("Select Förnamn from Kund where Kund_ID = (Select Kund from Orders where Order_ID = " + orderId + ")");
             String efternamn = idb.fetchSingle("Select Efternamn from Kund where Kund_ID = (Select Kund from Orders where Order_ID = " + orderId + ")");
             String namn = förnamn + " " + efternamn;
-            
+
             lblVisaOrder.setText(orderId);
-            
+
             lblKundNamn2.setText(namn);
-            
-            } catch (InfException ex) {
-                Logger.getLogger(PågåendeOrder.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        
-    
-    
+
+        } catch (InfException ex) {
+            Logger.getLogger(PågåendeOrder.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
-    private void fyllKostnad(String orderId)
-    {
-        
+
+    private void fyllKostnad(String orderId) {
+
         txtSammanstallning.setText(sammanStallning(lblVisaOrder.getText()));
     }
-    
-    private void fyllLista(String orderId){
-    
-            try {
-                
-                DefaultListModel<String> listModel = new DefaultListModel<>();
-                 listHattarIOrder.setModel(listModel);
-               
-                ArrayList<HashMap<String, String>> listaHattar = idb.fetchRows("SELECT  kombo_id, modell, pris FROM hatt_i_order JOIN hatt ON hatt_i_order.hatt_id = hatt.produkt_id WHERE Order_ID = " +lblVisaOrder.getText()+ " order by kombo_id");
-                for (HashMap<String, String> enHatt : listaHattar){
-                String rad = "Modell: " + enHatt.get("Modell") + "      " + "Pris: " +enHatt.get("Pris");
+
+    private void fyllLista(String orderId) {
+
+        try {
+
+            DefaultListModel<String> listModel = new DefaultListModel<>();
+            listHattarIOrder.setModel(listModel);
+
+            ArrayList<HashMap<String, String>> listaHattar = idb.fetchRows("SELECT  kombo_id, modell, pris FROM hatt_i_order JOIN hatt ON hatt_i_order.hatt_id = hatt.produkt_id WHERE Order_ID = " + lblVisaOrder.getText() + " order by kombo_id");
+            for (HashMap<String, String> enHatt : listaHattar) {
+                String rad = "Modell: " + enHatt.get("Modell") + "      " + "Pris: " + enHatt.get("Pris");
                 listModel.addElement(rad);
-                }
-            } catch (InfException ex) {
-                Logger.getLogger(PågåendeOrder.class.getName()).log(Level.SEVERE, null, ex);
             }
+        } catch (InfException ex) {
+            Logger.getLogger(PågåendeOrder.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    
-    private String sammanStallning(String orderId){
-    
-            String kostnadsforslag = "";
-      
-            try {
-                double hattSumma = 0;
-                ArrayList<String> listaHattPriser = idb.fetchColumn("select hatt.pris from hatt join hatt_i_order hio on hatt.Produkt_ID = hio.Hatt_ID join orders on hio.Order_ID = orders.Order_ID where hio.Order_ID = "+lblVisaOrder.getText());
-                for(String enHatt : listaHattPriser){
+
+    private String sammanStallning(String orderId) {
+
+        String kostnadsforslag = "";
+
+        try {
+            double hattSumma = 0;
+            ArrayList<String> listaHattPriser = idb.fetchColumn("select hatt.pris from hatt join hatt_i_order hio on hatt.Produkt_ID = hio.Hatt_ID join orders on hio.Order_ID = orders.Order_ID where hio.Order_ID = " + lblVisaOrder.getText());
+            for (String enHatt : listaHattPriser) {
                 double pris = Double.parseDouble(enHatt);
-                hattSumma = hattSumma + pris;            
-                }
-                String bradskande = idb.fetchSingle("Select brådskande from orders where order_id ="+orderId);
-                double tillagg = 0;
-                if(bradskande.equals("1")){
-                 tillagg = Math.round(hattSumma*0.2*100.0)/100.0;
-                }
-                
-                double moms =Math.round((hattSumma+tillagg)*0.25* 100.0) / 100.0;
-                double totalSummaMoms = Math.round((hattSumma+tillagg)*1.25 * 100.0) / 100.0;
-                hattSumma = Math.round(hattSumma * 100.0) / 100.0;
-                kostnadsforslag = "Pris: " + hattSumma + " \n" + "Tillägg: " + tillagg + " \n" +
-                        "Moms: " + moms + " \n" +
-                        "Totalsumma (ink. Moms): " + totalSummaMoms;                
-              
-            } catch (InfException ex) {
-                Logger.getLogger(PågåendeOrder.class.getName()).log(Level.SEVERE, null, ex);
+                hattSumma = hattSumma + pris;
             }
-            return kostnadsforslag;
+            String bradskande = idb.fetchSingle("Select brådskande from orders where order_id =" + orderId);
+            double tillagg = 0;
+            if (bradskande.equals("1")) {
+                tillagg = Math.round(hattSumma * 0.2 * 100.0) / 100.0;
+            }
+
+            double moms = Math.round((hattSumma + tillagg) * 0.25 * 100.0) / 100.0;
+            double totalSummaMoms = Math.round((hattSumma + tillagg) * 1.25 * 100.0) / 100.0;
+            hattSumma = Math.round(hattSumma * 100.0) / 100.0;
+            kostnadsforslag = "Pris: " + hattSumma + " \n" + "Tillägg: " + tillagg + " \n"
+                    + "Moms: " + moms + " \n"
+                    + "Totalsumma (ink. Moms): " + totalSummaMoms;
+
+        } catch (InfException ex) {
+            Logger.getLogger(PågåendeOrder.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return kostnadsforslag;
     }
-    
+
     private void btnValjOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValjOrderActionPerformed
 
-              
         try {
-            
-            if(!listPaborjadeOrdrar.isSelectionEmpty()){
-            panelerGomda();
-            pnlSkapaOrder.show();
-            
-            String rad = listPaborjadeOrdrar.getSelectedValue();
-            String[] radDelar = rad.split(" ");
-            int orderId = Integer.parseInt(radDelar[1]);
-            lblOrderNummer.setText(radDelar[1]);
-            lblOrderNummer.show();
-            String status = idb.fetchSingle("Select status from orders where order_id = " + orderId);
-            if(status.equals("Godkänd")){
-            cbValjStatus.setSelectedIndex(0);
-            }else{
-            cbValjStatus.setSelectedIndex(1);
+
+            if (!listPaborjadeOrdrar.isSelectionEmpty()) {
+                panelerGomda();
+                pnlSkapaOrder.show();
+
+                String rad = listPaborjadeOrdrar.getSelectedValue();
+                String[] radDelar = rad.split(" ");
+                int orderId = Integer.parseInt(radDelar[1]);
+                lblOrderNummer.setText(radDelar[1]);
+                lblOrderNummer.show();
+                String status = idb.fetchSingle("Select status from orders where order_id = " + orderId);
+                if (status.equals("Godkänd")) {
+                    cbValjStatus.setSelectedIndex(0);
+                } else {
+                    cbValjStatus.setSelectedIndex(1);
+                }
+
+                String prio = idb.fetchSingle("Select brådskande from orders where order_id = " + orderId);
+                if (prio.equals("0")) {
+                    cbValjPrioritering.setSelectedIndex(1);
+                } else {
+                    cbValjPrioritering.setSelectedIndex(0);
+                }
+
+                String datum = idb.fetchSingle("Select datum from orders where order_id = " + orderId);
+                if (datum != null) {
+                    txtDatum.setText(datum);
+                }
+
+                String kommentar = idb.fetchSingle("Select kommentar from orders where order_id = " + orderId);
+                if (kommentar != null) {
+                    txtKommentar1.setText(kommentar);
+                }
+
+                HashMap<String, String> namnMap = idb.fetchRow("Select Förnamn, Efternamn from kund where Kund_ID = (Select Kund from orders where Order_ID = " + orderId + ")");
+                String namn = namnMap.get("Förnamn") + " " + namnMap.get("Efternamn");
+                lblKundNamn.setText(namn);
+                lblKundNamn.show();
+
+                btnSparaOrder.hide();
+                btnSparaOrder2.show();
+                cbValjKund.hide();
+                lblOrderNummer2.show();
+                lblSparat.hide();
+                pnlPlaneringsYta.hide();
+                pnlPagaendeOrdern.show();
+                fyllInfo(radDelar[1]);
+                fyllLista(radDelar[1]);
+                fyllKostnad(radDelar[1]);
+
             }
-            
-            String prio = idb.fetchSingle("Select brådskande from orders where order_id = "+ orderId);
-            if(prio.equals("0")){
-            cbValjPrioritering.setSelectedIndex(1);
-            }else{
-            cbValjPrioritering.setSelectedIndex(0);
-            }
-            
-            String datum = idb.fetchSingle("Select datum from orders where order_id = "+orderId);
-            if (datum != null){
-            txtDatum.setText(datum);
-            }
-            
-            String kommentar = idb.fetchSingle("Select kommentar from orders where order_id = "+orderId);
-            if(kommentar != null){
-            txtKommentar1.setText(kommentar);
-            }
-            
-            HashMap<String, String> namnMap = idb.fetchRow("Select Förnamn, Efternamn from kund where Kund_ID = (Select Kund from orders where Order_ID = "+orderId+")");
-            String namn = namnMap.get("Förnamn") +" "+ namnMap.get("Efternamn");
-            lblKundNamn.setText(namn);
-            lblKundNamn.show();
-            
-            
-        btnSparaOrder.hide();
-        btnSparaOrder2.show();
-        cbValjKund.hide();
-        lblOrderNummer2.show();
-        lblSparat.hide();
-        pnlPlaneringsYta.hide();
-        pnlPagaendeOrdern.show();
-            fyllInfo(radDelar[1]);
-            fyllLista(radDelar[1]);
-            fyllKostnad(radDelar[1]);
-            
-        
-            
-            }
-            
-            
+
         } catch (InfException ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
+
 
     }//GEN-LAST:event_btnValjOrderActionPerformed
 
@@ -2605,122 +3006,127 @@ public class Dashboard extends javax.swing.JFrame {
         taBortKund();
         cbKundEpost.removeAllItems();
         cbAndraFyllEpost.removeAllItems();
+        cbValjKundEpost2.removeAllItems();
+        cbValjKundHatt1.removeAllItems();
+        fyllBoxKundEmail();
+        fyllBoxOrderKund();
         fyllEpost();
     }//GEN-LAST:event_btnTaBortKundActionPerformed
 
     private boolean taBortKund() {
-            try {
+        try {
 
-                String ruta = cbKundEpost.getSelectedItem().toString();
-                String fraga = "SELECT Epost FROM kund";
-                boolean hittad = false;
+            String ruta = cbKundEpost.getSelectedItem().toString();
+            String fraga = "SELECT Epost FROM kund";
+            boolean hittad = false;
 
-                ArrayList<String> kunder = idb.fetchColumn(fraga);
+            ArrayList<String> kunder = idb.fetchColumn(fraga);
 
-                    String anonym = "Anonym";
+            String anonym = "Anonym";
 
-                    for(String enKund : kunder){
-                        
-                        if (enKund.equalsIgnoreCase(ruta)) {
-                        idb.update("Update kund set Förnamn = '"+anonym+"', Efternamn = '"+anonym+"', Telefon = '"+anonym+"', Epost = '"+anonym+"', Adress ='"+anonym+"', Postnummer = '"+anonym+"', Ort = '"+anonym+"' Where Epost = '"+ruta+"';");
-                        
-                        lblTaBortMeddelande.setText(ruta + " har raderats.");
-                        hittad = true;
-                        return true;
-                    }
-                    }
-               
-                if (!hittad) {
-                    lblTaBortMeddelande.setText("Angiven epost existerar ej!");
+            for (String enKund : kunder) {
+
+                if (enKund.equalsIgnoreCase(ruta)) {
+                    idb.update("Update kund set Förnamn = '" + anonym + "', Efternamn = '" + anonym + "', Telefon = '" + anonym + "', Epost = '" + anonym + "', Adress ='" + anonym + "', Postnummer = '" + anonym + "', Ort = '" + anonym + "' Where Epost = '" + ruta + "';");
+
+                    lblTaBortMeddelande.setText(ruta + " har raderats.");
+                    hittad = true;
+                    return true;
                 }
-
-            } catch (InfException fel) {
-                lblTaBortMeddelande.setText("Ett fel uppstod!");
-                fel.printStackTrace();
-
             }
-        
+
+            if (!hittad) {
+                lblTaBortMeddelande.setText("Angiven epost existerar ej!");
+            }
+
+        } catch (InfException fel) {
+            lblTaBortMeddelande.setText("Ett fel uppstod!");
+            fel.printStackTrace();
+
+        }
+
         return false;
     }
-    
-    private void fyllEpost () {
+
+    private void fyllEpost() {
         String fraga = "SELECT Epost FROM kund";
         try {
             ArrayList<String> epost = idb.fetchColumn(fraga);
-            for (String enEpost : epost ){
-                
-            if(!enEpost.equals("Anonym")){
-            cbAndraFyllEpost.addItem(enEpost);
-            cbKundEpost.addItem(enEpost);}
-            
+            for (String enEpost : epost) {
+
+                if (!enEpost.equals("Anonym")) {
+                    cbAndraFyllEpost.addItem(enEpost);
+                    cbKundEpost.addItem(enEpost);
+                }
+
             }
-        }
-        catch(InfException fel) {
+        } catch (InfException fel) {
             fel.printStackTrace();
         }
     }
-    
+
     private void txtKommentar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKommentar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtKommentar1ActionPerformed
 
     private void btnSparaOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSparaOrderActionPerformed
         // TODO add your handling code here:
-        
-        if(Validering.kollaDatumFormat(txtDatum, lblSparat)){
-        //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
-        String valdStatus = cbValjStatus.getSelectedItem().toString().toLowerCase();
-        String valdKund = cbValjKund.getSelectedItem().toString();
-        //Texten hämtas från textrutan och tilldelas till variabeln som deklareras
-        String kommentar = txtKommentar.getText();
-        String datum = txtDatum.getText();
-        String valdPrioritering = cbValjPrioritering.getSelectedItem().toString().toLowerCase();
 
-        try {
+        if (Validering.kollaDatumFormat(txtDatum, lblSparat)) {
+            //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
+            String valdStatus = cbValjStatus.getSelectedItem().toString().toLowerCase();
+            String valdKund = cbValjKund.getSelectedItem().toString();
+            //Texten hämtas från textrutan och tilldelas till variabeln som deklareras
+            String kommentar = txtKommentar.getText();
+            String datum = txtDatum.getText();
+            String valdPrioritering = cbValjPrioritering.getSelectedItem().toString().toLowerCase();
 
-            String[] namn = cbValjKund.getSelectedItem().toString().split(" ");
+            try {
 
-            String fornamn = namn[0];     // First part is the first name
-            String efternamn = namn[1];   // Second part is the last name
+                String[] namn = cbValjKund.getSelectedItem().toString().split(" ");
 
-            // Create SQL query to fetch the Kund_ID based on first name and last name
-            String fragakundID = "SELECT Kund_ID FROM kund WHERE Förnamn = '" + fornamn + "' AND Efternamn = '" + efternamn + "'";
+                String fornamn = namn[0];     // First part is the first name
+                String efternamn = namn[1];   // Second part is the last name
 
-            // Execute the SQL query to fetch the Kund_ID
-            String kundID = idb.fetchSingle(fragakundID);
+                // Create SQL query to fetch the Kund_ID based on first name and last name
+                String fragakundID = "SELECT Kund_ID FROM kund WHERE Förnamn = '" + fornamn + "' AND Efternamn = '" + efternamn + "'";
 
-            int orderId = Integer.parseInt(idb.fetchSingle("SELECT MAX(Order_ID) FROM Orders")) + 1;
-            String orderIdString = Integer.toString(orderId);
+                // Execute the SQL query to fetch the Kund_ID
+                String kundID = idb.fetchSingle(fragakundID);
 
-            String fragaSkapaOrder = "";
-            //SQL fråga för att skapa order
-            //och villkor för att bestämma brådskande för order
-            if (valdPrioritering.equalsIgnoreCase("Brådskande")) {
-                valdPrioritering = "1";
-                fragaSkapaOrder = "Insert into orders (Order_ID, Status, Kund, Kommentar, Brådskande, Datum) "
-                        + "Values ('" + orderIdString + "','" + valdStatus + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "')";
-                idb.insert(fragaSkapaOrder);
+                int orderId = Integer.parseInt(idb.fetchSingle("SELECT MAX(Order_ID) FROM Orders")) + 1;
+                String orderIdString = Integer.toString(orderId);
+
+                String fragaSkapaOrder = "";
+                //SQL fråga för att skapa order
+                //och villkor för att bestämma brådskande för order
+                if (valdPrioritering.equalsIgnoreCase("Brådskande")) {
+                    valdPrioritering = "1";
+                    fragaSkapaOrder = "Insert into orders (Order_ID, Status, Kund, Kommentar, Brådskande, Datum) "
+                            + "Values ('" + orderIdString + "','" + valdStatus + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "')";
+                    idb.insert(fragaSkapaOrder);
+                }
+                if (valdPrioritering.equalsIgnoreCase("Inte brådskande")) {
+                    valdPrioritering = "0";
+                    fragaSkapaOrder = "Insert into orders (Order_ID, Status, Kund, Kommentar, Brådskande, Datum) "
+                            + "Values ('" + orderIdString + "','" + valdStatus + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "')";
+                    idb.insert(fragaSkapaOrder);
+
+                }
+                lblSparat.show();
+                lblSparat.setText("Order är skapad!");
+
+                //felmeddelande
+            } catch (InfException ex) {
+                System.out.println(ex);
+
             }
-            if (valdPrioritering.equalsIgnoreCase("Inte brådskande")) {
-                valdPrioritering = "0";
-                fragaSkapaOrder = "Insert into orders (Order_ID, Status, Kund, Kommentar, Brådskande, Datum) "
-                        + "Values ('" + orderIdString + "','" + valdStatus + "','" + kundID + "','" + kommentar + "','" + valdPrioritering + "','" + datum + "')";
-                idb.insert(fragaSkapaOrder);
-
-            }
+        } else {
             lblSparat.show();
-            lblSparat.setText("Order är skapad!");
-
-            //felmeddelande
-        } catch (InfException ex) {
-            System.out.println(ex);
-
-        }}
-        else{lblSparat.show();
-        lblSparat.setText("Vänligen ange datum (yyyy-MM-dd)");}
+            lblSparat.setText("Vänligen ange datum (yyyy-MM-dd)");
+        }
     }//GEN-LAST:event_btnSparaOrderActionPerformed
-    
-    
+
     private void fyllBoxKund() {
         //Metod, fylla en combobox med kundnamn
         try {
@@ -2731,9 +3137,10 @@ public class Dashboard extends javax.swing.JFrame {
                 String fornamn = kund.get("Förnamn");
                 String efternamn = kund.get("Efternamn");
 
-                if(!fornamn.equalsIgnoreCase("Anonym")){
-                //förnamn och efternamn kombineras för att läggas i combobox
-                cbValjKund.addItem(fornamn + " " + efternamn);}
+                if (!fornamn.equalsIgnoreCase("Anonym")) {
+                    //förnamn och efternamn kombineras för att läggas i combobox
+                    cbValjKund.addItem(fornamn + " " + efternamn);
+                }
             }
         } catch (InfException ettUndantag) {
             System.out.println("Error " + ettUndantag.getMessage());
@@ -2760,14 +3167,14 @@ public class Dashboard extends javax.swing.JFrame {
                     + "FROM Hatt "
                     + "JOIN hatt_i_order ON Hatt.Produkt_ID = hatt_i_order.Hatt_ID "
                     + "WHERE hatt_i_order.Order_ID = '" + order2 + "'";
-            
-            double fraktkostnad = 0;
-            String fraktkostnadStr = idb.fetchSingle("Select Fraktkostnad from paket_info where order_ID = "+order2);
 
-            if(fraktkostnadStr!=null){
+            double fraktkostnad = 0;
+            String fraktkostnadStr = idb.fetchSingle("Select Fraktkostnad from paket_info where order_ID = " + order2);
+
+            if (fraktkostnadStr != null) {
                 fraktkostnad = Double.parseDouble(fraktkostnadStr);
             }
-            
+
             ArrayList<HashMap<String, String>> allaPriser = idb.fetchRows(query);
             String fragaPrioritering = "Select Brådskande from orders where Order_ID = '" + order2 + "';";
             ArrayList<HashMap<String, String>> braskandeResultat = idb.fetchRows(fragaPrioritering);
@@ -2859,7 +3266,7 @@ public class Dashboard extends javax.swing.JFrame {
         String noll = "0";
         String ett = "1";
         String orderID = (String) cbOrderValj3.getSelectedItem();
-        
+
         //visar status för order
         try {
             String status = idb.fetchSingle("Select Brådskande from Orders where Order_ID = " + orderID + "");
@@ -2942,7 +3349,7 @@ public class Dashboard extends javax.swing.JFrame {
             String fragaUppdateraStatus = "Update Orders set Status='" + valdStatus + "' where Order_ID ='" + order1 + "'";
             idb.update(fragaUppdateraStatus);
             lblAndraStatus.setText("Status är ändrad");
-            
+
         } catch (Exception ettUndantag) {
             System.out.println("Error: " + ettUndantag.getMessage());
         }
@@ -2953,8 +3360,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         lblValjHattMeddelande.setText("");
         // TODO add your handling code here:
-                
-         try {
+
+        try {
             //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
             String valdOrder = cbOrder.getSelectedItem().toString().toLowerCase();
             String valtMaterial = cbValjMaterial.getSelectedItem().toString();
@@ -2962,33 +3369,33 @@ public class Dashboard extends javax.swing.JFrame {
             String fragaProduktID = "select Produkt_ID from hatt where Namn = '" + cbValjAllaHattar.getSelectedItem().toString() + "'";
             String ProduktID = idb.fetchSingle(fragaProduktID);
             String fragaMaterial = "select Material_ID from Material where Namn = '" + valtMaterial + "'";
-           
-            boolean allaFaltIfyllda =
-            Validering.harTextFaltetVarde(txtAngeStorlek, lblValjHattMeddelande) && 
-             Validering.kollaDecimalTal(txtAngeStorlek, lblValjHattMeddelande);
 
-            if(valtMaterial==null){
+            boolean allaFaltIfyllda
+                    = Validering.harTextFaltetVarde(txtAngeStorlek, lblValjHattMeddelande)
+                    && Validering.kollaDecimalTal(txtAngeStorlek, lblValjHattMeddelande);
+
+            if (valtMaterial == null) {
             }
-                 
+
             String Material_ID = idb.fetchSingle(fragaMaterial);
-           
-           String fragaSkapaHattIOrder = "Insert into hatt_i_order (Order_ID, Hatt_ID, Material_ID, Storlek, Text) "
-                        + "Values ('" + valdOrder + "','" + ProduktID + "','" + Material_ID + "','" + txtAngeStorlek.getText() +  "','" + txtAngeTxt.getText() + "')";
-                 
+
+            String fragaSkapaHattIOrder = "Insert into hatt_i_order (Order_ID, Hatt_ID, Material_ID, Storlek, Text) "
+                    + "Values ('" + valdOrder + "','" + ProduktID + "','" + Material_ID + "','" + txtAngeStorlek.getText() + "','" + txtAngeTxt.getText() + "')";
+
 //            String fragaSkapaHattIOrder = "Insert into hatt_i_order (Order_ID, Hatt_ID) "
 //                    + "Values ('" + valdOrder + "','" + ProduktID + "')";
             idb.insert(fragaSkapaHattIOrder);
-            
+
             fyllInfo(cbOrder.getSelectedItem().toString());
             fyllLista(cbOrder.getSelectedItem().toString());
             fyllKostnad(cbOrder.getSelectedItem().toString());
-            
+
             lblValjHattMeddelande.setText("Hatt är tillagd i en order!");
             pnlPlaneringsYta.hide();
             pnlPagaendeOrdern.show();
 
         } catch (InfException ettUndantag) {
-            
+
             System.out.println("Error " + ettUndantag.getMessage());
         }
 //        try {
@@ -3021,7 +3428,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_cbValjMaterialActionPerformed
 
     private void personalTillHattActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personalTillHattActionPerformed
-         String komboId = orderLista.getSelectedValue();
+        String komboId = orderLista.getSelectedValue();
 
         // Extrahera numeriskt kombo-ID genom att ta bort alla icke-numeriska tecken
         String intKomboId = komboId.replaceAll("[^0-9]", "");
@@ -3037,7 +3444,7 @@ public class Dashboard extends javax.swing.JFrame {
                 idb.update(uppdateraStatus);
 
                 lblError.setText("");
-                
+
                 // Uppdatera gränssnittet med den uppdaterade orderns lista
                 orders = getOrderLista();
                 DefaultListModel<String> orderListModel = new DefaultListModel<>();
@@ -3048,7 +3455,7 @@ public class Dashboard extends javax.swing.JFrame {
                 // Uppdatera JList med den nya listmodellen
                 orderLista.setModel(orderListModel);
             } else {
-                 lblError.setText("Hatten har redan en angiven personal");
+                lblError.setText("Hatten har redan en angiven personal");
             }
 
         } catch (InfException ex) {
@@ -3084,12 +3491,10 @@ public class Dashboard extends javax.swing.JFrame {
                 orderLista.setModel(orderListModel);
 
                 lblError.setText("");
-                
-            } 
-            else if(orderLista.getSelectedValue().contains("ej tagen")) {
-                lblError.setText("Hatten har ingen personal");}
-            
-            else {
+
+            } else if (orderLista.getSelectedValue().contains("ej tagen")) {
+                lblError.setText("Hatten har ingen personal");
+            } else {
                 lblError.setText("Du kan inte ta bort en annan personal");
             }
         } catch (InfException e) {
@@ -3132,45 +3537,43 @@ public class Dashboard extends javax.swing.JFrame {
         try {
             lblPaketInfoMeddelande.setText("");
             String vikt = txtAngeVikt.getText();
-            String  langd = txtAngeLangd.getText();
+            String langd = txtAngeLangd.getText();
             String hojd = txtAngeHojd.getText();
             String bredd = txtAngeBredd.getText();
             String fraktkostnad = txtAngeFraktkostnad.getText();
             String orderBox = cbOrder3.getSelectedItem().toString();
             //ser till att text fälten har ifyllda värden och att dessa är heltal/decimaltal. För varje ruta
-            boolean allaFaltIfyllda =
-            Validering.harTextFaltetVarde(txtAngeVikt, lblPaketInfoMeddelande) &&
-            Validering.harTextFaltetVarde(txtAngeLangd, lblPaketInfoMeddelande) &&
-            Validering.harTextFaltetVarde(txtAngeHojd, lblPaketInfoMeddelande) &&
-            Validering.harTextFaltetVarde(txtAngeBredd, lblPaketInfoMeddelande) &&
-            Validering.harTextFaltetVarde(txtAngeFraktkostnad, lblPaketInfoMeddelande) &&
-            Validering.kollaDecimalTal(txtAngeFraktkostnad, lblPaketInfoMeddelande)&&
-            Validering.kollaDecimalTal(txtAngeVikt, lblPaketInfoMeddelande)&&
-            Validering.kollaDecimalTal(txtAngeLangd, lblPaketInfoMeddelande)&&
-            Validering.kollaDecimalTal(txtAngeHojd, lblPaketInfoMeddelande)&&
-            Validering.kollaDecimalTal(txtAngeBredd, lblPaketInfoMeddelande);
+            boolean allaFaltIfyllda
+                    = Validering.harTextFaltetVarde(txtAngeVikt, lblPaketInfoMeddelande)
+                    && Validering.harTextFaltetVarde(txtAngeLangd, lblPaketInfoMeddelande)
+                    && Validering.harTextFaltetVarde(txtAngeHojd, lblPaketInfoMeddelande)
+                    && Validering.harTextFaltetVarde(txtAngeBredd, lblPaketInfoMeddelande)
+                    && Validering.harTextFaltetVarde(txtAngeFraktkostnad, lblPaketInfoMeddelande)
+                    && Validering.kollaDecimalTal(txtAngeFraktkostnad, lblPaketInfoMeddelande)
+                    && Validering.kollaDecimalTal(txtAngeVikt, lblPaketInfoMeddelande)
+                    && Validering.kollaDecimalTal(txtAngeLangd, lblPaketInfoMeddelande)
+                    && Validering.kollaDecimalTal(txtAngeHojd, lblPaketInfoMeddelande)
+                    && Validering.kollaDecimalTal(txtAngeBredd, lblPaketInfoMeddelande);
 
-            if(allaFaltIfyllda){
-            //skapar paket ID
-            String paketID = idb.fetchSingle("SELECT MAX(Paket_ID) FROM paket_info");
-            int paketIDD = paketID != null ? Integer.parseInt(paketID) + 1 : 1;
-            String paketIdString = Integer.toString(paketIDD);
-            //ber om att sätta in värden i tabellen
-            String fragaPaketInfo = "Insert into paket_info (Paket_ID, Order_ID, vikt, langd, bredd, hojd, fraktkostnad) "
-            + "Values (" + paketIdString + "," + orderBox + ",'" + vikt + "','" + langd + "','" + bredd + "','" + hojd + "','" + fraktkostnad + "')";
-           
-            ArrayList<String> orderIdIPaket = idb.fetchColumn("Select order_ID from paket_info");
-            
-            if(!orderIdIPaket.contains(orderBox)){
-            idb.insert(fragaPaketInfo);
-            lblPaketInfoMeddelande.setText("Paketinformation har sparats.");}
-            else{
-                lblPaketInfoMeddelande.setText("Ordern har redan ett registrerat paket, vänligen välj en annan order");}
-            
-            }
-            
-            
-            else {
+            if (allaFaltIfyllda) {
+                //skapar paket ID
+                String paketID = idb.fetchSingle("SELECT MAX(Paket_ID) FROM paket_info");
+                int paketIDD = paketID != null ? Integer.parseInt(paketID) + 1 : 1;
+                String paketIdString = Integer.toString(paketIDD);
+                //ber om att sätta in värden i tabellen
+                String fragaPaketInfo = "Insert into paket_info (Paket_ID, Order_ID, vikt, langd, bredd, hojd, fraktkostnad) "
+                        + "Values (" + paketIdString + "," + orderBox + ",'" + vikt + "','" + langd + "','" + bredd + "','" + hojd + "','" + fraktkostnad + "')";
+
+                ArrayList<String> orderIdIPaket = idb.fetchColumn("Select order_ID from paket_info");
+
+                if (!orderIdIPaket.contains(orderBox)) {
+                    idb.insert(fragaPaketInfo);
+                    lblPaketInfoMeddelande.setText("Paketinformation har sparats.");
+                } else {
+                    lblPaketInfoMeddelande.setText("Ordern har redan ett registrerat paket, vänligen välj en annan order");
+                }
+
+            } else {
                 lblPaketInfoMeddelande.setText("Vänligen fyll i alla rutor");
             }
         } catch (InfException ettUndantag) {
@@ -3190,74 +3593,72 @@ public class Dashboard extends javax.swing.JFrame {
         // ÄNDRAR PRODUKTDETALJ I HATT
         lblAndraProduktdetaljMeddelande.setText("");
         if (Validering.harTextFaltetVarde(txtProduktdetaljNamn, lblAndraProduktdetaljMeddelande)
-            && Validering.harTextFaltetVarde(txtProduktdetaljPris, lblAndraProduktdetaljMeddelande)
-            && Validering.harTextFaltetVarde(txtProduktdetaljModell, lblAndraProduktdetaljMeddelande))
-        {
-            if(Validering.arDouble(txtProduktdetaljPris, lblAndraProduktdetaljMeddelande)) {
+                && Validering.harTextFaltetVarde(txtProduktdetaljPris, lblAndraProduktdetaljMeddelande)
+                && Validering.harTextFaltetVarde(txtProduktdetaljModell, lblAndraProduktdetaljMeddelande)) {
+            if (Validering.arDouble(txtProduktdetaljPris, lblAndraProduktdetaljMeddelande)) {
                 try {
                     int godkand = 0;
                     Object selectedGodkand = cbProduktDetaljGodkand.getSelectedItem();
-                    if(selectedGodkand.equals("Godkänd")) {
+                    if (selectedGodkand.equals("Godkänd")) {
                         godkand = 1;
                     }
                     String hatt = (String) cbProduktdetaljHatt.getSelectedItem();
 
                     idb.update("UPDATE hatt SET Namn='" + txtProduktdetaljNamn.getText() + "', "
-                        + "Pris='" + txtProduktdetaljPris.getText() + "', "
-                        + "Modell='" + txtProduktdetaljModell.getText() + "', "
-                        + "Godkänd='" + godkand + "' "
-                        + "WHERE Namn='" + hatt + "';");
+                            + "Pris='" + txtProduktdetaljPris.getText() + "', "
+                            + "Modell='" + txtProduktdetaljModell.getText() + "', "
+                            + "Godkänd='" + godkand + "' "
+                            + "WHERE Namn='" + hatt + "';");
                     lblAndraProduktdetaljMeddelande.setText(txtProduktdetaljNamn.getText() + " har ändrats.");
 
                 } catch (InfException fel) {
                     lblAndraProduktdetaljMeddelande.setText("Ett fel uppstod!");
                     fel.printStackTrace();
-                }}
+                }
             }
+        }
     }//GEN-LAST:event_btnAndraProduktdetaljActionPerformed
 
     private void btnSparaOrder2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSparaOrder2ActionPerformed
 
         try {
-            
-             if(Validering.kollaDatumFormat(txtDatum, lblSparat)){
-            String status = cbValjStatus.getSelectedItem().toString();
-            String prio = cbValjPrioritering.getSelectedItem().toString();
-            String datum = txtDatum.getText();
-            String kommentar = txtKommentar1.getText();
-            int prioInt = 0;
-            if (prio.equals("Brådskande")){
-                prioInt=1;
+
+            if (Validering.kollaDatumFormat(txtDatum, lblSparat)) {
+                String status = cbValjStatus.getSelectedItem().toString();
+                String prio = cbValjPrioritering.getSelectedItem().toString();
+                String datum = txtDatum.getText();
+                String kommentar = txtKommentar1.getText();
+                int prioInt = 0;
+                if (prio.equals("Brådskande")) {
+                    prioInt = 1;
+                }
+                idb.update("Update orders set status = '" + status + "', brådskande = " + prioInt + ", kommentar = '" + kommentar + "', datum = '" + datum + "' where order_Id = " + lblOrderNummer.getText());
+                lblSparat.show();
+                lblSparat.setText("Ordern har sparats");
+                fyllLista(lblVisaOrder.getText());
+                txtSammanstallning.setText(sammanStallning(lblVisaOrder.getText()));
+            } else {
+                lblSparat.show();
+                lblSparat.setText("Vänligen ange datum (yyyy-MM-dd)");
             }
-            idb.update("Update orders set status = '"+status+"', brådskande = " +prioInt+ ", kommentar = '"+kommentar+"', datum = '"+datum+"' where order_Id = " + lblOrderNummer.getText());
-            lblSparat.show();
-            lblSparat.setText("Ordern har sparats");
-             fyllLista(lblVisaOrder.getText());
-            txtSammanstallning.setText(sammanStallning(lblVisaOrder.getText()));
-             }
-             
-            else{lblSparat.show();
-                 lblSparat.setText("Vänligen ange datum (yyyy-MM-dd)");}
         } catch (InfException ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_btnSparaOrder2ActionPerformed
 
     private void btnKostnadsFröslagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKostnadsFröslagActionPerformed
-        txtSammanstallning.setText("Hej " + lblKundNamn2.getText() + "! \n" + "Vi återkommer gällande din order. Vi har tagit fram ett kostnadsförslag enligt nedan \n" +sammanStallning(lblVisaOrder.getText())+ "\n Återkom via mail eller telefon för att bekräfta ordern. \n Med vänliga hälsningar, Ottos Hattmakeri");
+        txtSammanstallning.setText("Hej " + lblKundNamn2.getText() + "! \n" + "Vi återkommer gällande din order. Vi har tagit fram ett kostnadsförslag enligt nedan \n" + sammanStallning(lblVisaOrder.getText()) + "\n Återkom via mail eller telefon för att bekräfta ordern. \n Med vänliga hälsningar, Ottos Hattmakeri");
 
     }//GEN-LAST:event_btnKostnadsFröslagActionPerformed
 
     private void btnTaBortHattActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaBortHattActionPerformed
 
         try {
-            int indexValdHatt = listHattarIOrder.getSelectedIndex()+1;
-            String komboId = idb.fetchSingle("SELECT kombo_id FROM (SELECT kombo_id, ROW_NUMBER() OVER (ORDER BY kombo_id) as rownum FROM hatt_i_order where Order_ID = " +lblVisaOrder.getText()+ " ) AS numbered_rows WHERE rownum = " +indexValdHatt );
-            idb.delete("delete from hatt_i_order where Kombo_ID = "+komboId);
+            int indexValdHatt = listHattarIOrder.getSelectedIndex() + 1;
+            String komboId = idb.fetchSingle("SELECT kombo_id FROM (SELECT kombo_id, ROW_NUMBER() OVER (ORDER BY kombo_id) as rownum FROM hatt_i_order where Order_ID = " + lblVisaOrder.getText() + " ) AS numbered_rows WHERE rownum = " + indexValdHatt);
+            idb.delete("delete from hatt_i_order where Kombo_ID = " + komboId);
             fyllLista(lblVisaOrder.getText());
             txtSammanstallning.setText(sammanStallning(lblVisaOrder.getText()));
         } catch (InfException ex) {
@@ -3284,7 +3685,7 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         //Hämtar valt objekt från ComboBoxen samt konverterar det till sträng
-        String valdGodkand =cbValjKundEpost2.getSelectedItem().toString();
+        String valdGodkand = cbValjKundEpost2.getSelectedItem().toString();
 
         //   String ett = "1";
         int i = 1;
@@ -3302,6 +3703,476 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnOk3ActionPerformed
 
+    public void fyllRullLista() {
+        String sqlHamtaPersonalEpost = "SELECT Epost FROM kund";
+        ArrayList<String> allPersonalEpost = new ArrayList<String>();
+        try {
+            allPersonalEpost = idb.fetchColumn(sqlHamtaPersonalEpost);
+
+            for (String enEpost : allPersonalEpost) {
+
+                if (!enEpost.equals("Anonym")) {
+                    cbValjKundEpost.addItem(enEpost);
+                }
+            }
+
+        } catch (InfException ex) {
+            Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void fyllTextrutaMedBestallningshistorik() {
+        String valdEpost = cbValjKundEpost.getSelectedItem().toString().trim();
+
+        String sqlHamtaKundID = "SELECT Kund_ID FROM Kund WHERE Epost = '" + valdEpost + "'";
+        String kundID = "";
+        try {
+            kundID = idb.fetchSingle(sqlHamtaKundID);
+        } catch (InfException ex) {
+            Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String sqlHamtaRelevantaOrdrar = "SELECT * FROM orders WHERE Kund = '" + kundID + "' ORDER BY Datum DESC";
+        ArrayList<HashMap<String, String>> allaOrderID = new ArrayList<HashMap<String, String>>();
+        try {
+            allaOrderID = idb.fetchRows(sqlHamtaRelevantaOrdrar);
+        } catch (InfException ex) {
+            Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String ettPar = "";
+
+        ArrayList<String> ettParVarden = new ArrayList<String>();
+
+        for (HashMap<String, String> order : allaOrderID) {
+            for (String nyckel : order.keySet()) {
+                if (nyckel.equals("Totalsumma") && order.get(nyckel) == null) {
+                    ettPar = nyckel + " = 0";
+                } else if (nyckel.equals("Kund")) {
+                    String sqlHamtaFornamn = "SELECT Förnamn FROM Kund WHERE Kund_ID = " + order.get(nyckel);
+                    String sqlHamtaEfternamn = "SELECT Efternamn FROM Kund WHERE Kund_ID = " + order.get(nyckel);
+
+                    String fornamn = "";
+                    String efternamn = "";
+
+                    try {
+                        fornamn = idb.fetchSingle(sqlHamtaFornamn);
+                        efternamn = idb.fetchSingle(sqlHamtaEfternamn);
+
+                    } catch (InfException ex) {
+                        Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                    ettPar = "Kund = " + fornamn + " " + efternamn;
+                } else if (nyckel.equals("Order_ID")) {
+                    ettPar = "Ordernummer = " + order.get(nyckel);
+                } else if (nyckel.equals("Fraktsedel") && order.get(nyckel) == null) {
+                    ettPar = nyckel + " = 0 st";
+                } else if (nyckel.equals("Kommentar") && order.get(nyckel).equals("")) {
+                    ettPar = nyckel + " = Ingen kommentar.";
+                } else if (nyckel.equals("Fraktsedel") && order.get(nyckel) != null) {
+                    ettPar = nyckel + " = " + order.get(nyckel) + " st";
+
+                } else if (nyckel.equals("Brådskande") && Integer.parseInt(order.get(nyckel)) == 0) {
+                    ettPar = nyckel + " = Nej";
+                } else if (nyckel.equals("Brådskande") && Integer.parseInt(order.get(nyckel)) == 1) {
+                    ettPar = nyckel + " = Ja";
+                } else {
+                    ettPar = nyckel + " = " + order.get(nyckel);
+                }
+
+                ettParVarden.add(ettPar + "\n");
+            }
+
+            String sqlHamtaHattar = "SELECT Hatt_ID FROm hatt_i_order WHERE Order_ID = " + order.get("Order_ID");
+            ArrayList<String> allaHattarIOrder = new ArrayList<String>();
+            try {
+                allaHattarIOrder = idb.fetchColumn(sqlHamtaHattar);
+            } catch (InfException ex) {
+                Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            ArrayList<String> allaHattNamn = new ArrayList<String>();
+
+            for (String hatt : allaHattarIOrder) {
+                String sqlHamtaHattNamn = "SELECT Namn FROM Hatt WHERE Produkt_ID = " + hatt;
+                String ettHattNamn = "";
+                try {
+                    ettHattNamn = idb.fetchSingle(sqlHamtaHattNamn);
+                } catch (InfException ex) {
+                    Logger.getLogger(Bestallningshistorik.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                allaHattNamn.add(ettHattNamn);
+
+            }
+
+            ettParVarden.add("Hattar i order: ");
+            for (String hattNamn : allaHattNamn) {
+                ettParVarden.add(hattNamn);
+            }
+
+            ettParVarden.add("\n");
+            ettParVarden.add("\n");
+
+        }
+
+        jtxtBestallningsHistorik.setText(ettParVarden + "\n");
+
+    }
+
+    private void btnPersonalsidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonalsidaActionPerformed
+        // TODO add your handling code here:
+        panelerGomda();
+        pnlPersonalsida.show();
+    }//GEN-LAST:event_btnPersonalsidaActionPerformed
+
+    private void btnRedigeraPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRedigeraPersonalActionPerformed
+        // Redigerar personal information
+        if (Validering.harTextFaltetVarde(txtRedigeraPersonalFornamn, lblRedigeraPersonalMeddelande)
+                && Validering.harTextFaltetVarde(txtRedigeraPersonalEfternamn, lblRedigeraPersonalMeddelande)
+                && Validering.harTextFaltetVarde(pwdRedigeraPersonalLosenord, lblRedigeraPersonalMeddelande)
+                && Validering.harTextFaltetVarde(txtRedigeraPersonalEpost, lblRedigeraPersonalMeddelande)) {
+            try {
+                idb.update("UPDATE personal SET Förnamn='" + txtRedigeraPersonalFornamn.getText() + "', "
+                        + "Efternamn='" + txtRedigeraPersonalEfternamn.getText() + "', "
+                        + "Epost='" + txtRedigeraPersonalEpost.getText() + "', "
+                        + "Lösenord='" + pwdRedigeraPersonalLosenord.getText().toString() + "' "
+                        + "WHERE Epost='" + cbRedigeraPersonal.getSelectedItem().toString() + "';");
+                lblRedigeraPersonalMeddelande.setText("Personal har ändrats.");
+            } catch (InfException fel) {
+                lblRedigeraPersonalMeddelande.setText("Ett fel uppstod!");
+                fel.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnRedigeraPersonalActionPerformed
+
+    private void fyllPersonalEpost() {
+        String fraga = "SELECT Epost FROM personal";
+        try {
+            ArrayList<String> epost = idb.fetchColumn(fraga);
+            for (String enEpost : epost) {
+                cbRedigeraPersonal.addItem(enEpost);
+                cbTaBortPersonal.addItem(enEpost);
+            }
+        } catch (InfException fel) {
+            fel.printStackTrace();
+        }
+    }
+
+    private boolean taBortPersonal() {
+        try {
+
+            String ruta = (String) cbTaBortPersonal.getSelectedItem();
+            String fraga = "SELECT Personal_ID, Epost FROM personal";
+            boolean hittad = false;
+
+            ArrayList<HashMap<String, String>> personal = idb.fetchRows(fraga);
+
+            for (HashMap<String, String> enPersonal : personal) {
+                String id = enPersonal.get("Personal_ID");
+                String epost = enPersonal.get("Epost");
+
+                if (ruta.equalsIgnoreCase(epost)) {
+                    idb.update("UPDATE tillverka SET Personal=NULL WHERE Personal='" + id + "'");
+                    idb.update("UPDATE hatt_i_order SET Personal_ID=NULL WHERE Personal_ID='" + id + "'");
+                    idb.delete("DELETE from personal WHERE Epost='" + ruta + "'");
+                    lblTaBortPersonalMeddelande.setText(epost + " har raderats.");
+                    hittad = true;
+                    return true;
+                }
+            }
+
+        } catch (InfException fel) {
+            lblTaBortPersonalMeddelande.setText("Ett fel uppstod!");
+            fel.printStackTrace();
+        }
+        return false;
+    }
+
+    private void txtRedigeraPersonalFornamnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRedigeraPersonalFornamnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRedigeraPersonalFornamnActionPerformed
+
+    private void pwdRedigeraPersonalLosenordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwdRedigeraPersonalLosenordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pwdRedigeraPersonalLosenordActionPerformed
+
+    private void btnTaBortPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaBortPersonalActionPerformed
+        // tar bort en personal
+        lblTaBortPersonalMeddelande.setText("");
+        taBortPersonal();
+        cbTaBortPersonal.removeAllItems();
+        fyllPersonalEpost();
+    }//GEN-LAST:event_btnTaBortPersonalActionPerformed
+
+    private void btnManadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManadActionPerformed
+        // TODO add your handling code here:
+
+        String valtAr = cbAr.getSelectedItem().toString();
+
+        String valdManad = cbManad.getSelectedItem().toString();
+        String manadIDatumFormatStart = "";
+        String manadIDatumFormatSlut = "";
+
+        if (valdManad.equals("Januari")) {
+            manadIDatumFormatStart = "01";
+            manadIDatumFormatSlut = "01-31";
+        }
+
+        if (valdManad.equals("Februari")) {
+            manadIDatumFormatStart = "02";
+            manadIDatumFormatSlut = "02-28";
+        }
+
+        if (valdManad.equals("Mars")) {
+            manadIDatumFormatStart = "03";
+            manadIDatumFormatSlut = "03-31";
+        }
+
+        if (valdManad.equals("April")) {
+            manadIDatumFormatStart = "04";
+            manadIDatumFormatSlut = "04-30";
+        }
+
+        if (valdManad.equals("Maj")) {
+            manadIDatumFormatStart = "05";
+            manadIDatumFormatSlut = "05-31";
+        }
+        if (valdManad.equals("Juni")) {
+            manadIDatumFormatStart = "06";
+            manadIDatumFormatSlut = "06-30";
+        }
+        if (valdManad.equals("Juli")) {
+            manadIDatumFormatStart = "07";
+            manadIDatumFormatSlut = "07-31";
+        }
+        if (valdManad.equals("Augusti")) {
+            manadIDatumFormatStart = "08";
+            manadIDatumFormatSlut = "08-31";
+        }
+
+        if (valdManad.equals("September")) {
+            manadIDatumFormatStart = "09";
+            manadIDatumFormatSlut = "09-30";
+        }
+
+        if (valdManad.equals("Oktober")) {
+            manadIDatumFormatStart = "10";
+            manadIDatumFormatSlut = "10-31";
+        }
+
+        if (valdManad.equals("November")) {
+            manadIDatumFormatStart = "11";
+            manadIDatumFormatSlut = "11-30";
+        }
+
+        if (valdManad.equals("December")) {
+            manadIDatumFormatStart = "12";
+            manadIDatumFormatSlut = "12-31";
+        }
+
+        ArrayList<String> materialSomSkaSkrivasUt = new ArrayList<String>();
+
+        String sqlHamtaManadsforsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum>= '" + valtAr + "-" + manadIDatumFormatStart + "-01' && Datum<='" + valtAr + "-" + manadIDatumFormatSlut + "'";
+
+        String sqlHamtaManad = "SELECT Order_ID FROM orders WHERE DATUM>= '" + valtAr + "-" + manadIDatumFormatStart + "-01' && Datum<='" + valtAr + "-" + manadIDatumFormatSlut + "'";
+
+        try {
+            String totalForsaljningsSumma = idb.fetchSingle(sqlHamtaManadsforsaljning);
+
+            ArrayList<String> orderIDAttHamtaMaterialIDMed = idb.fetchColumn(sqlHamtaManad);
+            ArrayList<String> relevantaMaterialID = new ArrayList<String>();
+            ArrayList<String> materialNamn = new ArrayList<String>();
+            for (String orderID : orderIDAttHamtaMaterialIDMed) {
+                String sqlHamtaMaterialID = "SELECT Material_ID FROM hatt_i_order WHERE Order_ID = " + orderID;
+                String ettMaterialID = idb.fetchSingle(sqlHamtaMaterialID);
+                relevantaMaterialID.add(ettMaterialID);
+            }
+            for (String materialID : relevantaMaterialID) {
+                String sqlHamtaMaterialNamn = "SELECT Namn FROM Material WHERE Material_ID = " + materialID;
+                String ettMaterialNamn = idb.fetchSingle(sqlHamtaMaterialNamn);
+                materialNamn.add(ettMaterialNamn);
+            }
+
+            String sqlHamtaAlltMaterial = "SELECT Namn FROM material";
+            ArrayList<String> alltMaterial = idb.fetchColumn(sqlHamtaAlltMaterial);
+
+            for (String ettMaterial : alltMaterial) {
+                int antalMaterial = Collections.frequency(materialNamn, ettMaterial);
+                if (antalMaterial == 1) {
+                    materialSomSkaSkrivasUt.add(antalMaterial + " hatt av " + ettMaterial + "\n");
+                } else {
+                    materialSomSkaSkrivasUt.add(antalMaterial + " hattar av " + ettMaterial + "\n");
+                }
+
+                if (totalForsaljningsSumma == null) {
+                    txtStatistik.setText("Total försäljning år " + valtAr + ", " + valdManad + ": 0 SEK \n \n" + materialSomSkaSkrivasUt);
+                } else {
+                    txtStatistik.setText("Total försäljning år " + valtAr + ", " + valdManad + ": " + totalForsaljningsSumma + " SEK \n \n" + materialSomSkaSkrivasUt);
+                }
+            }
+        } catch (InfException ex) {
+            Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_btnManadActionPerformed
+
+    public void fyllAr() {
+        String hamtaAr = "SELECT DISTINCT YEAR(Datum) AS År FROM hattmakarna.orders ORDER BY År DESC";
+        int i = 0;
+        try {
+            ArrayList<String> allaAr = idb.fetchColumn(hamtaAr);
+
+            for (String ar : allaAr) {
+                String aret = ar.substring(0, 4);
+                if (aret.equals("2024")) {
+
+                } else {
+                    cbAr.insertItemAt(aret, i);
+                }
+                i++;
+            }
+
+        } catch (InfException ex) {
+            Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void btnArActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArActionPerformed
+        // TODO add your handling code here:
+        String valtAr = cbAr.getSelectedItem().toString();
+
+        String sqlHamtaArsforsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-12-31' && Datum>='" + valtAr + "-01-01'";
+
+        String sqlHamtaAr = "SELECT Order_ID FROM Orders WHERE Datum<= '" + valtAr + "-12-31' && Datum>='" + valtAr + "-01-01'";
+
+        try {
+            String totalForsaljningsSumma = idb.fetchSingle(sqlHamtaArsforsaljning);
+
+            ArrayList<String> orderIDAttHamtaMaterialIDMed = idb.fetchColumn(sqlHamtaAr);
+            ArrayList<String> relevantaMaterialID = new ArrayList<String>();
+            ArrayList<String> materialNamn = new ArrayList<String>();
+            for (String orderID : orderIDAttHamtaMaterialIDMed) {
+                String sqlHamtaMaterialID = "SELECT Material_ID FROM hatt_i_order WHERE Order_ID = " + orderID;
+                String ettMaterialID = idb.fetchSingle(sqlHamtaMaterialID);
+                relevantaMaterialID.add(ettMaterialID);
+            }
+            for (String materialID : relevantaMaterialID) {
+                String sqlHamtaMaterialNamn = "SELECT Namn FROM Material WHERE Material_ID = " + materialID;
+                String ettMaterialNamn = idb.fetchSingle(sqlHamtaMaterialNamn);
+                materialNamn.add(ettMaterialNamn);
+            }
+
+            String sqlHamtaAlltMaterial = "SELECT Namn FROM material";
+            ArrayList<String> alltMaterial = idb.fetchColumn(sqlHamtaAlltMaterial);
+
+            ArrayList<String> materialSomSkaSkrivasUt = new ArrayList<String>();
+
+            for (String ettMaterial : alltMaterial) {
+                int antalMaterial = Collections.frequency(materialNamn, ettMaterial);
+                if (antalMaterial == 1) {
+                    materialSomSkaSkrivasUt.add(antalMaterial + " hatt av " + ettMaterial + "\n");
+                } else {
+                    materialSomSkaSkrivasUt.add(antalMaterial + " hattar av " + ettMaterial + "\n");
+                }
+            }
+
+            txtStatistik.setText("Total försäljning år " + valtAr + ": " + totalForsaljningsSumma + " SEK \n \n " + materialSomSkaSkrivasUt);
+        } catch (InfException ex) {
+            Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_btnArActionPerformed
+
+    private void btnKvartalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKvartalActionPerformed
+        // TODO add your handling code here:
+
+        String valtAr = cbAr.getSelectedItem().toString();
+
+        String valtKvartal = cbKvartal.getSelectedItem().toString().trim();
+
+        String sqlHamtaKvartalsForsaljning = "";
+
+        String sqlHamtaKvartal = "";
+
+        if (cbKvartal.getSelectedItem().toString().equals("Q1")) {
+            sqlHamtaKvartalsForsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-03-31' && Datum>='" + valtAr + "-01-01'";
+
+            sqlHamtaKvartal = "SELECT Order_ID FROM Orders WHERE Datum<= '" + valtAr + "-03-31' && Datum>='" + valtAr + "-01-01'";
+
+        }
+
+        if (cbKvartal.getSelectedItem().toString().equals("Q2")) {
+            sqlHamtaKvartalsForsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-06-30' && Datum>='" + valtAr + "-04-01'";
+            sqlHamtaKvartal = "SELECT Order_ID FROM Orders WHERE Datum<= '" + valtAr + "-06-30' && Datum>='" + valtAr + "-04-01'";
+
+        }
+
+        if (cbKvartal.getSelectedItem().toString().equals("Q3")) {
+            sqlHamtaKvartalsForsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-09-30' && Datum>='" + valtAr + "-07-01'";
+            sqlHamtaKvartal = "SELECT Order_ID FROM Orders WHERE Datum<= '" + valtAr + "-09-30' && Datum>='" + valtAr + "-07-01'";
+
+        }
+
+        if (cbKvartal.getSelectedItem().toString().equals("Q4")) {
+            sqlHamtaKvartalsForsaljning = "SELECT SUM(Totalsumma) AS Årssumma FROM Orders WHERE Datum<= '" + valtAr + "-12-31' && Datum>='" + valtAr + "-10-01'";
+            sqlHamtaKvartal = "SELECT Order_ID FROM Orders WHERE Datum<= '" + valtAr + "-12-31' && Datum>='" + valtAr + "-10-01'";
+
+        }
+
+        try {
+
+            ArrayList<String> orderIDAttHamtaMaterialIDMed = idb.fetchColumn(sqlHamtaKvartal);
+            ArrayList<String> relevantaMaterialID = new ArrayList<String>();
+            ArrayList<String> materialNamn = new ArrayList<String>();
+            for (String orderID : orderIDAttHamtaMaterialIDMed) {
+                String sqlHamtaMaterialID = "SELECT Material_ID FROM hatt_i_order WHERE Order_ID = " + orderID;
+                String ettMaterialID = idb.fetchSingle(sqlHamtaMaterialID);
+                relevantaMaterialID.add(ettMaterialID);
+            }
+            for (String materialID : relevantaMaterialID) {
+                String sqlHamtaMaterialNamn = "SELECT Namn FROM Material WHERE Material_ID = " + materialID;
+                String ettMaterialNamn = idb.fetchSingle(sqlHamtaMaterialNamn);
+                materialNamn.add(ettMaterialNamn);
+            }
+
+            String sqlHamtaAlltMaterial = "SELECT Namn FROM material";
+            ArrayList<String> alltMaterial = idb.fetchColumn(sqlHamtaAlltMaterial);
+
+            ArrayList<String> materialSomSkaSkrivasUt = new ArrayList<String>();
+
+            for (String ettMaterial : alltMaterial) {
+                int antalMaterial = Collections.frequency(materialNamn, ettMaterial);
+                if (antalMaterial == 1) {
+                    materialSomSkaSkrivasUt.add(antalMaterial + " hatt av " + ettMaterial + "\n");
+                } else {
+                    materialSomSkaSkrivasUt.add(antalMaterial + " hattar av " + ettMaterial + "\n");
+                }
+
+                String totalForsaljningsSumma = idb.fetchSingle(sqlHamtaKvartalsForsaljning);
+                if (totalForsaljningsSumma == null) {
+                    txtStatistik.setText("Total försäljning år " + valtAr + ", " + valtKvartal + ": 0 SEK \n \n" + materialSomSkaSkrivasUt);
+                } else {
+                    txtStatistik.setText("Total försäljning år " + valtAr + ", " + valtKvartal + ": " + totalForsaljningsSumma + " SEK \n \n" + materialSomSkaSkrivasUt);
+
+                }
+            }
+        } catch (InfException ex) {
+            Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_btnKvartalActionPerformed
+
+    private void cbValjKundEpostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValjKundEpostActionPerformed
+        // TODO add your handling code here:
+        fyllTextrutaMedBestallningshistorik();
+    }//GEN-LAST:event_cbValjKundEpostActionPerformed
+
+    private void btnStatistikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStatistikActionPerformed
+        // TODO add your handling code here:
+        panelerGomda();
+        pnlStatistik.show();
+    }//GEN-LAST:event_btnStatistikActionPerformed
+
     private void fyllHatt() {
         String fraga = "SELECT Namn FROM hatt";
         try {
@@ -3313,7 +4184,7 @@ public class Dashboard extends javax.swing.JFrame {
             fel.printStackTrace();
         }
     }
-    
+
     private ArrayList<String> getPersonalIdLista() {
 
         ArrayList<String> personalIds = new ArrayList<>();
@@ -3330,7 +4201,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private ArrayList<String> getOrderLista() {
 
-         ArrayList<String> ordersLista = new ArrayList<>();
+        ArrayList<String> ordersLista = new ArrayList<>();
         try {
             // Hämta rader från 'hatt_i_order' och bearbeta dem för att skapa en lista med orderdetaljer
             ArrayList<HashMap<String, String>> raderILista = idb.fetchRows("Select * from hatt_i_order order by order_id");
@@ -3346,14 +4217,13 @@ public class Dashboard extends javax.swing.JFrame {
                 String hattNamn = idb.fetchSingle("Select modell from hatt where produkt_id = " + enRad.get("Hatt_ID"));
 
                 String personalNamn = idb.fetchSingle("Select förnamn from personal where personal_id = " + enRad.get("Personal_ID"));
-                
+
                 String status = idb.fetchSingle("Select Status from hatt_i_order where kombo_ID = " + enRad.get("Kombo_ID"));
-                
+
                 if (personalNamn == null) {
                     personalNamn = "ej tagen";
                     status = "Ej Påbörjad";
                 }
-                
 
                 //kollar att orderID:t inte redan tillagd som en item till listan 
                 if (orderInt > i) {
@@ -3387,7 +4257,7 @@ public class Dashboard extends javax.swing.JFrame {
             System.out.println("Error " + ettUndantag.getMessage());
         }
     }
-    
+
     private void fyllBoxKundEmail() {
         //fyll combobox med order
         String fragaFyllBox = "Select Epost from kund order by Kund_ID";
@@ -3395,13 +4265,17 @@ public class Dashboard extends javax.swing.JFrame {
         try {
             allaKunder = idb.fetchColumn(fragaFyllBox);
             for (String epost : allaKunder) {
-                cbValjKundEpost2.addItem(epost);
+
+                if (epost.equals("Anonym")) {
+                } else {
+                    cbValjKundEpost2.addItem(epost);
+                }
             }
         } catch (Exception ettUndantag) {
             System.out.println("Error " + ettUndantag.getMessage());
         }
     }
-    
+
     private void fyllBoxOrderKund() {
 //        //fyll combobox med order
 ////        String fragaFyllBox = "SELECT hatt.Namn FROM Hatt JOIN hatt_i_order ON hatt.Produkt_ID = hatt_i_order.Hatt_ID\n" +
@@ -3416,13 +4290,13 @@ public class Dashboard extends javax.swing.JFrame {
 ////        "WHERE hatt.Godkänd = 0 " +
 ////        "AND kund.Epost = '" + cbValjKundEpost1.getSelectedItem() + "'"; 
 ////         
-        String fragaFyllBox = "SELECT hatt.Namn " +
-        "FROM Hatt " +
-        "JOIN hatt_i_order ON hatt.Produkt_ID = hatt_i_order.Hatt_ID " +
-        "JOIN Orders ON hatt_i_order.Order_ID = orders.Order_ID " +
-        "JOIN Kund ON orders.Kund = kund.Kund_ID " +
-        "WHERE hatt.Godkänd = 0 " +
-        "AND kund.Epost = '" + cbValjKundEpost2.getSelectedItem() + "'";
+        String fragaFyllBox = "SELECT hatt.Namn "
+                + "FROM Hatt "
+                + "JOIN hatt_i_order ON hatt.Produkt_ID = hatt_i_order.Hatt_ID "
+                + "JOIN Orders ON hatt_i_order.Order_ID = orders.Order_ID "
+                + "JOIN Kund ON orders.Kund = kund.Kund_ID "
+                + "WHERE hatt.Godkänd = 0 "
+                + "AND kund.Epost = '" + cbValjKundEpost2.getSelectedItem() + "'";
 ////         String fragaFyllBox = "SELECT hatt.Namn FROM Hatt JOIN hatt_i_order ON hatt.Produkt_ID = hatt_i_order.Hatt_ID\n" +
 ////        "JOIN Orders ON hatt_i_order.Order_ID = orders.Order_ID\n" +
 ////        "JOIN Kund ON orders.Kund = kund.Kund_ID\n" +
@@ -3433,15 +4307,15 @@ public class Dashboard extends javax.swing.JFrame {
 //    
         ArrayList<String> allaOrder;
         try {
-          allaOrder = idb.fetchColumn(fragaFyllBox);
+            allaOrder = idb.fetchColumn(fragaFyllBox);
 //            if (allaOrder.isEmpty()) {
 //    } else {
 //        // Annars fyll comboboxen med de hattar som hämtades
-       
-        for (String hatt : allaOrder) {
-            cbValjKundHatt1.addItem(hatt);
-        }
-    
+
+            for (String hatt : allaOrder) {
+                cbValjKundHatt1.addItem(hatt);
+            }
+
 //            allaOrder = idb.fetchColumn(fragaFyllBox);
 //             cbValjKundHatt.removeAllItems();
 //            for (String hatt : allaOrder) {
@@ -3451,9 +4325,6 @@ public class Dashboard extends javax.swing.JFrame {
             System.out.println("Error " + ettUndantag.getMessage());
         }
     }
-
-    
-
 
     private void fyllBoxOrder3() {
         //fyll combobox med order
@@ -3518,43 +4389,41 @@ public class Dashboard extends javax.swing.JFrame {
         }
 
     }
-    
-    private void fyllMaterial(){
-        
+
+    private void fyllMaterial() {
+
         try {
-            
-            
+
             ArrayList<String> materialLista = idb.fetchColumn("Select Namn from Material");
-            
-            for(String material : materialLista){   
-            cbValjMaterialVidSkapa.addItem(material);
+
+            for (String material : materialLista) {
+                cbValjMaterialVidSkapa.addItem(material);
             }
-            
-            
+
         } catch (InfException ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    private double orderKalkylator(String orderId, String bradskande){
-        
-         double summa = 0;
+
+    private double orderKalkylator(String orderId, String bradskande) {
+
+        double summa = 0;
         try {
-            ArrayList<String> hattarIOrder = idb.fetchColumn("SELECT hatt_ID FROM hatt_i_order where order_ID = "+orderId);
-            
-            for(String hattId : hattarIOrder){
+            ArrayList<String> hattarIOrder = idb.fetchColumn("SELECT hatt_ID FROM hatt_i_order where order_ID = " + orderId);
+
+            for (String hattId : hattarIOrder) {
                 String hattPris = idb.fetchSingle("Select Pris from hatt where produkt_ID = " + hattId);
                 summa += Double.parseDouble(hattPris);
             }
-           
-           if(bradskande.equals("1")){
-               summa = summa*1.2;
-           }
-           
-           //moms
-               summa = summa*1.25;
-               summa = Math.round(summa * 100.0) / 100.0;
-           
+
+            if (bradskande.equals("1")) {
+                summa = summa * 1.2;
+            }
+
+            //moms
+            summa = summa * 1.25;
+            summa = Math.round(summa * 100.0) / 100.0;
+
         } catch (InfException ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -3562,8 +4431,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     }
 
-       
-    private void fyllOrderLista2(){
+    private void fyllOrderLista2() {
         try {
             DefaultListModel<String> listModel = new DefaultListModel<>();
             listPaborjadeOrdrar.setModel(listModel);
@@ -3571,47 +4439,45 @@ public class Dashboard extends javax.swing.JFrame {
             ArrayList<HashMap<String, String>> paborjadList = idb.fetchRows("Select * from orders");
             for (HashMap<String, String> orderRad : paborjadList) {
                 String orderId = "OrderNR: " + orderRad.get("Order_ID") + " | ";
-                String status = "Status: " + orderRad.get("Status")+ " | ";
-                String datum = "Datum: "+ orderRad.get("Datum")+ " | ";
+                String status = "Status: " + orderRad.get("Status") + " | ";
+                String datum = "Datum: " + orderRad.get("Datum") + " | ";
                 String kommentar = "";
-                if(orderRad.get("Kommentar")==null){
-                 kommentar = "Kommentar: | ";}
-                
-                else{
-                    kommentar = "Kommentar: "+ orderRad.get("Kommentar")+ " | ";
+                if (orderRad.get("Kommentar") == null) {
+                    kommentar = "Kommentar: | ";
+                } else {
+                    kommentar = "Kommentar: " + orderRad.get("Kommentar") + " | ";
                 }
-                
+
                 String kundForNamn = idb.fetchSingle("Select Förnamn from Kund where Kund_ID = " + orderRad.get("Kund"));
                 String kundEfterNamn = idb.fetchSingle("Select Efternamn from Kund where Kund_ID = " + orderRad.get("Kund"));
                 String kund = "Kund: " + kundForNamn + " " + kundEfterNamn + " | ";
-                
+
                 String bradskande = "";
-                
-                if(orderRad.get("Brådskande").equals("0")){
-                        bradskande = "Brådskande: Nej | "; 
-                }
-                else{
+
+                if (orderRad.get("Brådskande").equals("0")) {
+                    bradskande = "Brådskande: Nej | ";
+                } else {
                     bradskande = "Brådskande: Ja | ";
                 }
-                
+
                 String summa = Double.toString(orderKalkylator(orderRad.get("Order_ID"), orderRad.get("Brådskande")));
-                String totalSumma ="";
-                
-                if(summa.equals("0")){
+                String totalSumma = "";
+
+                if (summa.equals("0")) {
                     totalSumma = "Totalsumma: ";
+                } else {
+                    totalSumma = "Totalsumma: " + summa;
                 }
-                
-                else{totalSumma = "Totalsumma: " + summa;}
-                
-               if(!orderRad.get("Status").equals("Avslutad")){
-                   listModel.addElement(orderId + status + datum + kommentar + kund + bradskande + totalSumma);
-               }
+
+                if (!orderRad.get("Status").equals("Avslutad")) {
+                    listModel.addElement(orderId + status + datum + kommentar + kund + bradskande + totalSumma);
+                }
             }
 
         } catch (InfException fel) {
         }
     }
-    
+
     private void fyllOrderLista() {
         try {
             DefaultListModel<String> listModel = new DefaultListModel<>();
@@ -3650,15 +4516,20 @@ public class Dashboard extends javax.swing.JFrame {
         pnlVisaMaterial.hide();
         pnlPaketinfo.hide();
         pnlProduktdetaljer.hide();
+        pnlPersonalsida.hide();
+        pnlStatistik.hide();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAndraProduktdetalj;
+    private javax.swing.JButton btnAr;
     private javax.swing.JButton btnHattSida;
     private javax.swing.JButton btnHattar;
     private javax.swing.JButton btnKostnadsFröslag;
     private javax.swing.JButton btnKund;
+    private javax.swing.JButton btnKvartal;
     private javax.swing.JButton btnLoggaUt;
+    private javax.swing.JButton btnManad;
     private javax.swing.JButton btnOk;
     private javax.swing.JButton btnOk3;
     private javax.swing.JButton btnOrderStatus;
@@ -3666,9 +4537,10 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnOrderTotalsumma;
     private javax.swing.JButton btnOrdersida;
     private javax.swing.JButton btnPaketinformation;
+    private javax.swing.JButton btnPersonalsida;
     private javax.swing.JButton btnProduktdetaljer;
-    private javax.swing.JButton btnRedigeraKund;
     private javax.swing.JButton btnRedigeraKund1;
+    private javax.swing.JButton btnRedigeraPersonal;
     private javax.swing.JButton btnSkapaFraktSedel;
     private javax.swing.JButton btnSkapaOrder;
     private javax.swing.JButton btnSpara;
@@ -3677,14 +4549,19 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnSparaOrder2;
     private javax.swing.JButton btnSparaPaket;
     private javax.swing.JButton btnStartsida;
+    private javax.swing.JButton btnStatistik;
     private javax.swing.JButton btnTaBortHatt;
     private javax.swing.JButton btnTaBortKund;
+    private javax.swing.JButton btnTaBortPersonal;
     private javax.swing.JButton btnValjHatt;
     private javax.swing.JButton btnValjOrder;
     private javax.swing.JButton btnVisaFraktSedel;
     private javax.swing.JButton btnVisaMaterialinfo;
     private javax.swing.JComboBox<String> cbAndraFyllEpost;
+    private javax.swing.JComboBox<String> cbAr;
     private javax.swing.JComboBox<String> cbKundEpost;
+    private javax.swing.JComboBox<String> cbKvartal;
+    private javax.swing.JComboBox<String> cbManad;
     private javax.swing.JComboBox<String> cbOrder;
     private javax.swing.JComboBox<String> cbOrder2;
     private javax.swing.JComboBox<String> cbOrder3;
@@ -3692,9 +4569,12 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbOrderValj3;
     private javax.swing.JComboBox<String> cbProduktDetaljGodkand;
     private javax.swing.JComboBox<String> cbProduktdetaljHatt;
+    private javax.swing.JComboBox<String> cbRedigeraPersonal;
     private javax.swing.JComboBox<String> cbStatus;
+    private javax.swing.JComboBox<String> cbTaBortPersonal;
     private javax.swing.JComboBox<String> cbValjAllaHattar;
     private javax.swing.JComboBox<String> cbValjKund;
+    private javax.swing.JComboBox<String> cbValjKundEpost;
     private javax.swing.JComboBox<String> cbValjKundEpost2;
     private javax.swing.JComboBox<String> cbValjKundHatt1;
     private javax.swing.JComboBox<String> cbValjMaterial;
@@ -3704,6 +4584,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbValjStatus;
     private javax.swing.JComboBox<String> cbValjTyp1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -3711,15 +4593,20 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane5;
+    private javax.swing.JTextArea jtxtBestallningsHistorik;
     private java.awt.Label label1;
     private javax.swing.JLabel lblAdress1;
     private javax.swing.JLabel lblAndraKundMeddelande;
@@ -3732,6 +4619,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lblAngeNamn;
     private javax.swing.JLabel lblAngePris;
     private javax.swing.JLabel lblBarcode1;
+    private javax.swing.JLabel lblBild;
     private javax.swing.JLabel lblEfternamn;
     private javax.swing.JLabel lblEfternamn1;
     private javax.swing.JLabel lblEpost;
@@ -3769,6 +4657,10 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lblPaborjadOrder;
     private javax.swing.JLabel lblPaketInfoMeddelande;
     private javax.swing.JLabel lblPayCustoms1;
+    private javax.swing.JLabel lblPersonalEfternamn4;
+    private javax.swing.JLabel lblPersonalEpost4;
+    private javax.swing.JLabel lblPersonalFornamn4;
+    private javax.swing.JLabel lblPersonalLosenord4;
     private javax.swing.JLabel lblPhone1;
     private javax.swing.JLabel lblPhoneTo1;
     private javax.swing.JLabel lblPostnummer;
@@ -3777,6 +4669,9 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lblProduktdetaljHatt;
     private javax.swing.JLabel lblProduktdetaljModell;
     private javax.swing.JLabel lblProduktdetaljPris;
+    private javax.swing.JLabel lblRedigeraPersonal4;
+    private javax.swing.JLabel lblRedigeraPersonalMeddelande;
+    private javax.swing.JLabel lblRedigeraPersonalValj4;
     private javax.swing.JLabel lblRubrikDatum;
     private javax.swing.JLabel lblRubrikDatum1;
     private javax.swing.JLabel lblRubrikKund;
@@ -3797,9 +4692,13 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lblStorlek;
     private javax.swing.JLabel lblStorlek1;
     private javax.swing.JLabel lblTaBortAngeEpost;
+    private javax.swing.JLabel lblTaBortEnPersonal;
     private javax.swing.JLabel lblTaBortEpost;
     private javax.swing.JLabel lblTaBortKund;
     private javax.swing.JLabel lblTaBortMeddelande;
+    private javax.swing.JLabel lblTaBortPersonal;
+    private javax.swing.JLabel lblTaBortPersonalEpost;
+    private javax.swing.JLabel lblTaBortPersonalMeddelande;
     private javax.swing.JLabel lblTelefon;
     private javax.swing.JLabel lblTelefon1;
     private javax.swing.JLabel lblTest;
@@ -3819,6 +4718,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JList<String> orderLista;
     private javax.swing.JButton personalTillHatt;
     private javax.swing.JScrollPane planeringsLista;
+    private javax.swing.JPanel pnlBestallningshistorik;
     private javax.swing.JPanel pnlFraktSedel1;
     private javax.swing.JPanel pnlHattar;
     private javax.swing.JPanel pnlKund;
@@ -3831,14 +4731,18 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel pnlPlaneringsYta;
     private javax.swing.JPanel pnlProduktdetaljer;
     private javax.swing.JPanel pnlRedigeraKund;
+    private javax.swing.JPanel pnlRedigeraPersonal4;
     private javax.swing.JPanel pnlSideBarHoger;
     private javax.swing.JPanel pnlSideBarVanster;
     private javax.swing.JPanel pnlSkapaKund;
     private javax.swing.JPanel pnlSkapaOrder;
     private javax.swing.JPanel pnlStartsida;
+    private javax.swing.JPanel pnlStatistik;
     private javax.swing.JPanel pnlTaBortKund;
+    private javax.swing.JPanel pnlTaBortPersonal;
     private javax.swing.JPanel pnlValjHatt;
     private javax.swing.JPanel pnlVisaMaterial;
+    private javax.swing.JPasswordField pwdRedigeraPersonalLosenord;
     private javax.swing.JButton taBortpersonalFranHatt;
     private javax.swing.JTable tblMaterial;
     private javax.swing.JTextField txtAngeBredd;
@@ -3867,7 +4771,11 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JTextField txtProduktdetaljModell;
     private javax.swing.JTextField txtProduktdetaljNamn;
     private javax.swing.JTextField txtProduktdetaljPris;
+    private javax.swing.JTextField txtRedigeraPersonalEfternamn;
+    private javax.swing.JTextField txtRedigeraPersonalEpost;
+    private javax.swing.JTextField txtRedigeraPersonalFornamn;
     private javax.swing.JTextArea txtSammanstallning;
+    private javax.swing.JTextArea txtStatistik;
     private javax.swing.JTextField txtTelefon;
     private javax.swing.JTextField txtTelefon1;
     private javax.swing.JTextField txtTotalSumma;
