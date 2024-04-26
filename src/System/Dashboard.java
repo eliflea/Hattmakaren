@@ -102,7 +102,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblRubtikTotalSumma = new javax.swing.JLabel();
         txtTotalSumma = new javax.swing.JTextField();
         btnOrderTotalsumma = new javax.swing.JButton();
-        jPanel9 = new javax.swing.JPanel();
+        pnlFraktsedeln = new javax.swing.JPanel();
         pnlFraktSedel1 = new javax.swing.JPanel();
         lblTo1 = new javax.swing.JLabel();
         lblPhone1 = new javax.swing.JLabel();
@@ -122,7 +122,6 @@ public class Dashboard extends javax.swing.JFrame {
         cbOrder2 = new javax.swing.JComboBox<>();
         lblOrdersida = new javax.swing.JLabel();
         lblRubrikLaggTIllOrder1 = new javax.swing.JLabel();
-        btnOrderStatus = new javax.swing.JButton();
         cbOrderValj3 = new javax.swing.JComboBox<>();
         cbStatus = new javax.swing.JComboBox<>();
         btnSkapaFraktSedel = new javax.swing.JButton();
@@ -219,6 +218,7 @@ public class Dashboard extends javax.swing.JFrame {
         cbKvartal = new javax.swing.JComboBox<>();
         btnAr = new javax.swing.JButton();
         btnKvartal = new javax.swing.JButton();
+        lblStatistikMeddelande = new javax.swing.JLabel();
         pnlKund = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         pnlSkapaKund = new javax.swing.JPanel();
@@ -338,7 +338,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlSideBarVanster.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblTest.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 20)); // NOI18N
+        lblTest.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 24)); // NOI18N
         lblTest.setForeground(new java.awt.Color(153, 153, 153));
         lblTest.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTest.setText("Hattmakeriet");
@@ -349,7 +349,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblTest1.setText("Personal");
 
         btnOrdersida.setBackground(new java.awt.Color(153, 153, 153));
-        btnOrdersida.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        btnOrdersida.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btnOrdersida.setForeground(new java.awt.Color(255, 255, 255));
         btnOrdersida.setText("Ordersida");
         btnOrdersida.setBorder(null);
@@ -360,7 +360,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnKund.setBackground(new java.awt.Color(153, 153, 153));
-        btnKund.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        btnKund.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btnKund.setForeground(new java.awt.Color(255, 255, 255));
         btnKund.setText("Kund");
         btnKund.setBorder(null);
@@ -371,7 +371,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnHattar.setBackground(new java.awt.Color(153, 153, 153));
-        btnHattar.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        btnHattar.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btnHattar.setForeground(new java.awt.Color(255, 255, 255));
         btnHattar.setText("Skapa hatt");
         btnHattar.setBorder(null);
@@ -382,7 +382,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnSkapaOrder.setBackground(new java.awt.Color(153, 153, 153));
-        btnSkapaOrder.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        btnSkapaOrder.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btnSkapaOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnSkapaOrder.setText("Skapa order");
         btnSkapaOrder.setBorder(null);
@@ -393,7 +393,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnValjHatt.setBackground(new java.awt.Color(153, 153, 153));
-        btnValjHatt.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        btnValjHatt.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btnValjHatt.setForeground(new java.awt.Color(255, 255, 255));
         btnValjHatt.setText("Välj hatt");
         btnValjHatt.setBorder(null);
@@ -415,7 +415,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnStartsida.setBackground(new java.awt.Color(102, 102, 102));
-        btnStartsida.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        btnStartsida.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
         btnStartsida.setForeground(new java.awt.Color(255, 255, 255));
         btnStartsida.setText("Startsida");
         btnStartsida.setBorder(null);
@@ -428,7 +428,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblNuvarandeAnvandare.setForeground(new java.awt.Color(0, 102, 0));
 
         btnVisaMaterialinfo.setBackground(new java.awt.Color(153, 153, 153));
-        btnVisaMaterialinfo.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        btnVisaMaterialinfo.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btnVisaMaterialinfo.setForeground(new java.awt.Color(255, 255, 255));
         btnVisaMaterialinfo.setText("Visa materialinfo");
         btnVisaMaterialinfo.setBorder(null);
@@ -439,7 +439,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnPaketinformation.setBackground(new java.awt.Color(153, 153, 153));
-        btnPaketinformation.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        btnPaketinformation.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btnPaketinformation.setForeground(new java.awt.Color(255, 255, 255));
         btnPaketinformation.setText("Paketinformation");
         btnPaketinformation.setBorder(null);
@@ -450,7 +450,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnProduktdetaljer.setBackground(new java.awt.Color(153, 153, 153));
-        btnProduktdetaljer.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        btnProduktdetaljer.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btnProduktdetaljer.setForeground(new java.awt.Color(255, 255, 255));
         btnProduktdetaljer.setText("Produktdetaljer");
         btnProduktdetaljer.setBorder(null);
@@ -461,7 +461,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnPersonalsida.setBackground(new java.awt.Color(153, 153, 153));
-        btnPersonalsida.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        btnPersonalsida.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btnPersonalsida.setForeground(new java.awt.Color(255, 255, 255));
         btnPersonalsida.setText("Personal");
         btnPersonalsida.setBorder(null);
@@ -472,7 +472,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnStatistik.setBackground(new java.awt.Color(153, 153, 153));
-        btnStatistik.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        btnStatistik.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btnStatistik.setForeground(new java.awt.Color(255, 255, 255));
         btnStatistik.setText("Statistik");
         btnStatistik.setBorder(null);
@@ -486,17 +486,6 @@ public class Dashboard extends javax.swing.JFrame {
         pnlSideBarVanster.setLayout(pnlSideBarVansterLayout);
         pnlSideBarVansterLayout.setHorizontalGroup(
             pnlSideBarVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlSideBarVansterLayout.createSequentialGroup()
-                .addGroup(pnlSideBarVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlSideBarVansterLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(lblTest1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblNuvarandeAnvandare, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlSideBarVansterLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(lblTest)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pnlSideBarVansterLayout.createSequentialGroup()
                 .addGroup(pnlSideBarVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnKund, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
@@ -512,6 +501,17 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(btnStartsida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnLoggaUt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(pnlSideBarVansterLayout.createSequentialGroup()
+                .addGroup(pnlSideBarVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlSideBarVansterLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(lblTest1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblNuvarandeAnvandare, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlSideBarVansterLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(lblTest)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pnlSideBarVansterLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnHattar, btnKund, btnOrdersida, btnPaketinformation, btnPersonalsida, btnProduktdetaljer, btnSkapaOrder, btnStartsida, btnStatistik, btnValjHatt, btnVisaMaterialinfo});
@@ -520,12 +520,11 @@ public class Dashboard extends javax.swing.JFrame {
             pnlSideBarVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSideBarVansterLayout.createSequentialGroup()
                 .addGap(46, 46, 46)
+                .addComponent(lblTest, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlSideBarVansterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblNuvarandeAnvandare, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlSideBarVansterLayout.createSequentialGroup()
-                        .addComponent(lblTest, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblTest1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblTest1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addComponent(btnStartsida, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -570,11 +569,11 @@ public class Dashboard extends javax.swing.JFrame {
         jScrollPane1.setViewportView(listPaborjadeOrdrar);
 
         lblPaborjadOrder.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 18)); // NOI18N
-        lblPaborjadOrder.setForeground(new java.awt.Color(153, 153, 153));
+        lblPaborjadOrder.setForeground(new java.awt.Color(51, 51, 51));
         lblPaborjadOrder.setText("Påbörjade ordrar");
 
         btnValjOrder.setBackground(new java.awt.Color(0, 102, 153));
-        btnValjOrder.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
+        btnValjOrder.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 12)); // NOI18N
         btnValjOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnValjOrder.setText("Välj");
         btnValjOrder.setBorder(null);
@@ -632,10 +631,14 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlOrdersida.setBackground(new java.awt.Color(51, 51, 51));
 
+        lblRubtikTotalSumma.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
         lblRubtikTotalSumma.setForeground(new java.awt.Color(255, 255, 255));
         lblRubtikTotalSumma.setText("Totalsumma (inkl. Frakt)");
 
-        btnOrderTotalsumma.setBackground(new java.awt.Color(102, 102, 102));
+        txtTotalSumma.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
+
+        btnOrderTotalsumma.setBackground(new java.awt.Color(0, 102, 153));
+        btnOrderTotalsumma.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 12)); // NOI18N
         btnOrderTotalsumma.setForeground(new java.awt.Color(255, 255, 255));
         btnOrderTotalsumma.setText("Visa orderns totalsumma");
         btnOrderTotalsumma.addActionListener(new java.awt.event.ActionListener() {
@@ -644,7 +647,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        jPanel9.setBackground(new java.awt.Color(0, 0, 0));
+        pnlFraktsedeln.setBackground(new java.awt.Color(0, 0, 0));
 
         pnlFraktSedel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -740,46 +743,45 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnlFraktsedelnLayout = new javax.swing.GroupLayout(pnlFraktsedeln);
+        pnlFraktsedeln.setLayout(pnlFraktsedelnLayout);
+        pnlFraktsedelnLayout.setHorizontalGroup(
+            pnlFraktsedelnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlFraktSedel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
+        pnlFraktsedelnLayout.setVerticalGroup(
+            pnlFraktsedelnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlFraktsedelnLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnlFraktSedel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        lblRubrikOrder1.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
         lblRubrikOrder1.setForeground(new java.awt.Color(255, 255, 255));
         lblRubrikOrder1.setText("Välj order att skapa totalsumma för:");
 
-        lblSkrivIn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblSkrivIn.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
         lblSkrivIn.setForeground(new java.awt.Color(255, 255, 255));
         lblSkrivIn.setText("Välj ordernummer:");
 
-        lblOrdersida.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        cbOrder2.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
+
+        lblOrdersida.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 36)); // NOI18N
         lblOrdersida.setForeground(new java.awt.Color(255, 255, 255));
         lblOrdersida.setText("Ordersida");
 
+        lblRubrikLaggTIllOrder1.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
         lblRubrikLaggTIllOrder1.setForeground(new java.awt.Color(255, 255, 255));
         lblRubrikLaggTIllOrder1.setText("Order att ändra:");
 
-        btnOrderStatus.setBackground(new java.awt.Color(102, 102, 102));
-        btnOrderStatus.setForeground(new java.awt.Color(255, 255, 255));
-        btnOrderStatus.setText("Se status");
-        btnOrderStatus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOrderStatusActionPerformed(evt);
-            }
-        });
+        cbOrderValj3.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
 
+        cbStatus.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
         cbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Redo", "Påbörjad", "Avslutad" }));
 
-        btnSkapaFraktSedel.setBackground(new java.awt.Color(102, 102, 102));
+        btnSkapaFraktSedel.setBackground(new java.awt.Color(94, 157, 157));
+        btnSkapaFraktSedel.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 12)); // NOI18N
         btnSkapaFraktSedel.setForeground(new java.awt.Color(255, 255, 255));
         btnSkapaFraktSedel.setText("Skapa fraktsedel");
         btnSkapaFraktSedel.addActionListener(new java.awt.event.ActionListener() {
@@ -788,7 +790,8 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnVisaFraktSedel.setBackground(new java.awt.Color(102, 102, 102));
+        btnVisaFraktSedel.setBackground(new java.awt.Color(94, 157, 157));
+        btnVisaFraktSedel.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 12)); // NOI18N
         btnVisaFraktSedel.setForeground(new java.awt.Color(255, 255, 255));
         btnVisaFraktSedel.setText("Visa fraktsedel");
         btnVisaFraktSedel.addActionListener(new java.awt.event.ActionListener() {
@@ -797,10 +800,12 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Välj status att ändra ordern till:");
 
-        btnOrderStatus1.setBackground(new java.awt.Color(102, 102, 102));
+        btnOrderStatus1.setBackground(new java.awt.Color(0, 102, 153));
+        btnOrderStatus1.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 12)); // NOI18N
         btnOrderStatus1.setForeground(new java.awt.Color(255, 255, 255));
         btnOrderStatus1.setText("Ändra status");
         btnOrderStatus1.addActionListener(new java.awt.event.ActionListener() {
@@ -809,9 +814,12 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        lblOrderSidaMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblOrderSidaMeddelande.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 12)); // NOI18N
         lblOrderSidaMeddelande.setForeground(new java.awt.Color(153, 0, 0));
 
+        cbOrder4.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
+
+        lblAndraStatus.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 12)); // NOI18N
         lblAndraStatus.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout pnlOrdersidaLayout = new javax.swing.GroupLayout(pnlOrdersida);
@@ -824,9 +832,8 @@ public class Dashboard extends javax.swing.JFrame {
                     .addGroup(pnlOrdersidaLayout.createSequentialGroup()
                         .addGroup(pnlOrdersidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnVisaFraktSedel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnOrderStatus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(pnlOrdersidaLayout.createSequentialGroup()
-                                .addGap(0, 11, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(pnlOrdersidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(pnlOrdersidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlOrdersidaLayout.createSequentialGroup()
@@ -837,7 +844,7 @@ public class Dashboard extends javax.swing.JFrame {
                                             .addComponent(lblSkrivIn, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(cbOrderValj3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(lblOrdersida, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(lblOrdersida, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(pnlOrdersidaLayout.createSequentialGroup()
                                         .addComponent(lblRubrikLaggTIllOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -855,26 +862,28 @@ public class Dashboard extends javax.swing.JFrame {
                     .addGroup(pnlOrdersidaLayout.createSequentialGroup()
                         .addGroup(pnlOrdersidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlOrdersidaLayout.createSequentialGroup()
-                                .addComponent(lblRubtikTotalSumma)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtTotalSumma, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(pnlOrdersidaLayout.createSequentialGroup()
-                                .addComponent(lblRubrikOrder1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbOrder2, 0, 128, Short.MAX_VALUE))
-                            .addGroup(pnlOrdersidaLayout.createSequentialGroup()
                                 .addComponent(btnOrderTotalsumma)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE))
+                            .addGroup(pnlOrdersidaLayout.createSequentialGroup()
+                                .addGroup(pnlOrdersidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlOrdersidaLayout.createSequentialGroup()
+                                        .addComponent(lblRubtikTotalSumma)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtTotalSumma, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(pnlOrdersidaLayout.createSequentialGroup()
+                                        .addComponent(lblRubrikOrder1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cbOrder2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlFraktsedeln, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
         );
         pnlOrdersidaLayout.setVerticalGroup(
             pnlOrdersidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlOrdersidaLayout.createSequentialGroup()
                 .addContainerGap(103, Short.MAX_VALUE)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlFraktsedeln, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(141, 141, 141))
             .addGroup(pnlOrdersidaLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
@@ -887,9 +896,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(btnVisaFraktSedel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSkapaFraktSedel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnOrderStatus)
-                .addGap(21, 21, 21)
+                .addGap(55, 55, 55)
                 .addGroup(pnlOrdersidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(cbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -920,19 +927,24 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlPersonalsida.setBackground(new java.awt.Color(102, 102, 102));
 
+        jTabbedPane5.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
         jTabbedPane5.setPreferredSize(new java.awt.Dimension(791, 800));
 
         pnlRedigeraPersonal4.setBackground(new java.awt.Color(255, 255, 255));
 
+        lblPersonalFornamn4.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         lblPersonalFornamn4.setForeground(new java.awt.Color(102, 102, 102));
         lblPersonalFornamn4.setText("Förnamn:");
 
         txtRedigeraPersonalEpost.setBackground(new java.awt.Color(153, 153, 153));
+        txtRedigeraPersonalEpost.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
 
+        lblPersonalLosenord4.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         lblPersonalLosenord4.setForeground(new java.awt.Color(102, 102, 102));
         lblPersonalLosenord4.setText("Lösenord:");
 
         btnRedigeraPersonal.setBackground(new java.awt.Color(0, 102, 153));
+        btnRedigeraPersonal.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btnRedigeraPersonal.setForeground(new java.awt.Color(255, 255, 255));
         btnRedigeraPersonal.setText("Redigera personal");
         btnRedigeraPersonal.addActionListener(new java.awt.event.ActionListener() {
@@ -941,16 +953,18 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        lblPersonalEpost4.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         lblPersonalEpost4.setForeground(new java.awt.Color(102, 102, 102));
         lblPersonalEpost4.setText("Nytt epost:");
 
-        lblRedigeraPersonalMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblRedigeraPersonalMeddelande.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
 
-        lblRedigeraPersonalValj4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblRedigeraPersonalValj4.setForeground(new java.awt.Color(102, 102, 102));
+        lblRedigeraPersonalValj4.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
+        lblRedigeraPersonalValj4.setForeground(new java.awt.Color(0, 0, 0));
         lblRedigeraPersonalValj4.setText("Välj epost för personal som ska redigeras:");
 
         txtRedigeraPersonalFornamn.setBackground(new java.awt.Color(153, 153, 153));
+        txtRedigeraPersonalFornamn.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         txtRedigeraPersonalFornamn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRedigeraPersonalFornamnActionPerformed(evt);
@@ -958,15 +972,20 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         txtRedigeraPersonalEfternamn.setBackground(new java.awt.Color(153, 153, 153));
+        txtRedigeraPersonalEfternamn.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
 
+        lblPersonalEfternamn4.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         lblPersonalEfternamn4.setForeground(new java.awt.Color(102, 102, 102));
         lblPersonalEfternamn4.setText("Efternamn:");
 
-        lblRedigeraPersonal4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        cbRedigeraPersonal.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
+
+        lblRedigeraPersonal4.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 36)); // NOI18N
         lblRedigeraPersonal4.setForeground(new java.awt.Color(102, 102, 102));
         lblRedigeraPersonal4.setText("Redigera personal");
 
         pwdRedigeraPersonalLosenord.setBackground(new java.awt.Color(153, 153, 153));
+        pwdRedigeraPersonalLosenord.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         pwdRedigeraPersonalLosenord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pwdRedigeraPersonalLosenordActionPerformed(evt);
@@ -1039,22 +1058,24 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(btnRedigeraPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblRedigeraPersonalMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addContainerGap(208, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("Redigera personal", pnlRedigeraPersonal4);
 
         pnlTaBortPersonal.setBackground(new java.awt.Color(255, 255, 255));
 
+        cbTaBortPersonal.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
+
         lblTaBortEnPersonal.setBackground(new java.awt.Color(51, 51, 51));
-        lblTaBortEnPersonal.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblTaBortEnPersonal.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 36)); // NOI18N
         lblTaBortEnPersonal.setForeground(new java.awt.Color(102, 102, 102));
         lblTaBortEnPersonal.setText("Ta bort personal");
 
-        lblTaBortPersonalMeddelande.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTaBortPersonalMeddelande.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
 
         btnTaBortPersonal.setBackground(new java.awt.Color(0, 102, 153));
-        btnTaBortPersonal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnTaBortPersonal.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btnTaBortPersonal.setForeground(new java.awt.Color(255, 255, 255));
         btnTaBortPersonal.setText("Ta bort personal");
         btnTaBortPersonal.addActionListener(new java.awt.event.ActionListener() {
@@ -1063,11 +1084,11 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        lblTaBortPersonal.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblTaBortPersonal.setForeground(new java.awt.Color(102, 102, 102));
+        lblTaBortPersonal.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
+        lblTaBortPersonal.setForeground(new java.awt.Color(0, 0, 0));
         lblTaBortPersonal.setText("Välj personal som ska tas bort");
 
-        lblTaBortPersonalEpost.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTaBortPersonalEpost.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
         lblTaBortPersonalEpost.setForeground(new java.awt.Color(102, 102, 102));
         lblTaBortPersonalEpost.setText("Epost:");
 
@@ -1087,7 +1108,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(lblTaBortPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnTaBortPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTaBortPersonalMeddelande, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
         pnlTaBortPersonalLayout.setVerticalGroup(
             pnlTaBortPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1104,7 +1125,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(btnTaBortPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTaBortPersonalMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(346, Short.MAX_VALUE))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("Ta bort personal", pnlTaBortPersonal);
@@ -1113,7 +1134,7 @@ public class Dashboard extends javax.swing.JFrame {
         pnlPersonalsida.setLayout(pnlPersonalsidaLayout);
         pnlPersonalsidaLayout.setHorizontalGroup(
             pnlPersonalsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 791, Short.MAX_VALUE)
+            .addGap(0, 787, Short.MAX_VALUE)
             .addGroup(pnlPersonalsidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jTabbedPane5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1128,14 +1149,17 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlHattar.setBackground(new java.awt.Color(51, 51, 51));
 
-        lblAngeModell.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblAngeModell.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
         lblAngeModell.setForeground(new java.awt.Color(255, 255, 255));
         lblAngeModell.setText("Ange modell");
 
-        lblSkapaHatt.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        lblSkapaHatt.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 36)); // NOI18N
         lblSkapaHatt.setForeground(new java.awt.Color(255, 255, 255));
         lblSkapaHatt.setText("Skapa hatt");
 
+        btnSpara.setBackground(new java.awt.Color(0, 102, 153));
+        btnSpara.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
+        btnSpara.setForeground(new java.awt.Color(255, 255, 255));
         btnSpara.setText("Spara");
         btnSpara.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1143,22 +1167,33 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        lblAngeNamn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtAngeNamn.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
+
+        lblAngeNamn.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
         lblAngeNamn.setForeground(new java.awt.Color(255, 255, 255));
         lblAngeNamn.setText("Ange Namn");
 
-        lblAngePris.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtAngePris.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
+
+        cbValjModell.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
+
+        lblAngePris.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
         lblAngePris.setForeground(new java.awt.Color(255, 255, 255));
         lblAngePris.setText("Ange Pris");
 
+        lblValjTyp.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
         lblValjTyp.setForeground(new java.awt.Color(255, 255, 255));
         lblValjTyp.setText("Välj Typ");
 
-        lblSkapaHattMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblSkapaHattMeddelande.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 24)); // NOI18N
         lblSkapaHattMeddelande.setForeground(new java.awt.Color(255, 255, 255));
 
+        cbValjTyp1.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
         cbValjTyp1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lagerförd", "Special" }));
 
+        cbValjMaterialVidSkapa.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
+
+        jLabel3.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Välj Material");
 
@@ -1175,12 +1210,12 @@ public class Dashboard extends javax.swing.JFrame {
                                 .addGroup(pnlHattarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblAngeNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtAngeNamn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblAngeModell, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                    .addComponent(lblAngeModell, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
                                     .addComponent(cbValjModell, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(176, 176, 176)
                                 .addGroup(pnlHattarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblValjTyp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cbValjTyp1, 0, 197, Short.MAX_VALUE)
+                                    .addComponent(cbValjTyp1, 0, 195, Short.MAX_VALUE)
                                     .addComponent(lblAngePris, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(txtAngePris)
                                     .addComponent(cbValjMaterialVidSkapa, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1231,7 +1266,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(lblAngePris)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtAngePris, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(btnSpara)
                 .addGap(18, 18, 18)
                 .addComponent(lblSkapaHattMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1244,6 +1279,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         cbValjPrioritering.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Brådskande", "Inte brådskande" }));
 
+        btnSparaOrder.setBackground(new java.awt.Color(0, 102, 153));
         btnSparaOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnSparaOrder.setText("Skapa order");
         btnSparaOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -1258,7 +1294,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblRubrikOrder.setForeground(new java.awt.Color(255, 255, 255));
         lblRubrikOrder.setText("Orderns status");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Skapa order");
 
@@ -1285,6 +1321,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        btnSparaOrder2.setBackground(new java.awt.Color(94, 157, 157));
         btnSparaOrder2.setForeground(new java.awt.Color(255, 255, 255));
         btnSparaOrder2.setText("Spara Order");
         btnSparaOrder2.addActionListener(new java.awt.event.ActionListener() {
@@ -1300,6 +1337,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         lblKundNamn.setForeground(new java.awt.Color(255, 255, 255));
 
+        lblSparat.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblSparat.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout pnlSkapaOrderLayout = new javax.swing.GroupLayout(pnlSkapaOrder);
@@ -1309,7 +1347,6 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(pnlSkapaOrderLayout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblSparat, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlSkapaOrderLayout.createSequentialGroup()
                         .addComponent(lblOrderNummer2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1323,31 +1360,33 @@ public class Dashboard extends javax.swing.JFrame {
                     .addGroup(pnlSkapaOrderLayout.createSequentialGroup()
                         .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlSkapaOrderLayout.createSequentialGroup()
-                                .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblRubrikDatum1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblRubrikKund))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblKundNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtKommentar1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(pnlSkapaOrderLayout.createSequentialGroup()
                                 .addComponent(cbValjKund, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnSparaOrder)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnSparaOrder2)))
+                                .addComponent(btnSparaOrder2))
+                            .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlSkapaOrderLayout.createSequentialGroup()
+                                    .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblRubrikDatum1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblRubrikKund))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblKundNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtKommentar1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(265, 265, 265)
                         .addComponent(lblFel, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbValjPrioritering, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblRubrikPrioritering))
+                    .addComponent(lblRubrikPrioritering)
+                    .addComponent(lblSparat, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlSkapaOrderLayout.setVerticalGroup(
             pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSkapaOrderLayout.createSequentialGroup()
-                .addGap(166, 166, 166)
-                .addComponent(jLabel2)
+                .addGap(126, 126, 126)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlSkapaOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblOrderNummer2)
@@ -1379,9 +1418,9 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(btnSparaOrder)
                         .addComponent(btnSparaOrder2))
                     .addComponent(lblFel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
-                .addComponent(lblSparat, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(276, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblSparat, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(244, Short.MAX_VALUE))
         );
 
         pnlMitten.add(pnlSkapaOrder, "card4");
@@ -1398,6 +1437,9 @@ public class Dashboard extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Special", jScrollPane6);
 
+        btnOk.setBackground(new java.awt.Color(0, 51, 102));
+        btnOk.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnOk.setForeground(new java.awt.Color(255, 255, 255));
         btnOk.setText("Ok");
         btnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1518,6 +1560,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlStatistik.setBackground(new java.awt.Color(51, 51, 51));
 
+        btnManad.setBackground(new java.awt.Color(25, 41, 63));
+        btnManad.setForeground(new java.awt.Color(255, 255, 255));
         btnManad.setText("Visa statistik för vald månad");
         btnManad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1540,6 +1584,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         cbKvartal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Q1", "Q2", "Q3", "Q4" }));
 
+        btnAr.setBackground(new java.awt.Color(25, 41, 63));
+        btnAr.setForeground(new java.awt.Color(255, 255, 255));
         btnAr.setText("Visa statistik för valt år");
         btnAr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1547,6 +1593,8 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        btnKvartal.setBackground(new java.awt.Color(25, 41, 63));
+        btnKvartal.setForeground(new java.awt.Color(255, 255, 255));
         btnKvartal.setText("Visa statistik för valt kvartal");
         btnKvartal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1554,31 +1602,38 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        lblStatistikMeddelande.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+
         javax.swing.GroupLayout pnlStatistikLayout = new javax.swing.GroupLayout(pnlStatistik);
         pnlStatistik.setLayout(pnlStatistikLayout);
         pnlStatistikLayout.setHorizontalGroup(
             pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlStatistikLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlStatistikLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbAr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9))
-                        .addGap(39, 39, 39)
+                            .addGroup(pnlStatistikLayout.createSequentialGroup()
+                                .addGroup(pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbAr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel9))
+                                .addGap(39, 39, 39)
+                                .addGroup(pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(cbManad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnAr)
+                            .addComponent(btnKvartal)
+                            .addComponent(btnManad))
+                        .addGap(18, 18, 18)
                         .addGroup(pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(cbManad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(btnAr)
-                    .addComponent(btnKvartal)
-                    .addComponent(btnManad))
-                .addGap(18, 18, 18)
-                .addGroup(pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(cbKvartal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel11)
+                            .addComponent(cbKvartal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlStatistikLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(lblStatistikMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         pnlStatistikLayout.setVerticalGroup(
             pnlStatistikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1600,7 +1655,9 @@ public class Dashboard extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnKvartal)
                         .addGap(18, 18, 18)
-                        .addComponent(btnManad))
+                        .addComponent(btnManad)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblStatistikMeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlStatistikLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1611,17 +1668,30 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlKund.setBackground(new java.awt.Color(102, 102, 102));
 
+        jTabbedPane1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+
         pnlSkapaKund.setBackground(new java.awt.Color(51, 51, 51));
 
+        txtPostnummer1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+
+        lblEfternamn1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         lblEfternamn1.setForeground(new java.awt.Color(255, 255, 255));
         lblEfternamn1.setText("Efternamn");
 
+        txtOrt1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+
+        lblEpost1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         lblEpost1.setForeground(new java.awt.Color(255, 255, 255));
         lblEpost1.setText("Epost");
 
+        txtTelefon1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+
+        lblGatuadress1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         lblGatuadress1.setForeground(new java.awt.Color(255, 255, 255));
         lblGatuadress1.setText("Gatuadress");
 
+        btnSparaKund.setBackground(new java.awt.Color(94, 157, 157));
+        btnSparaKund.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         btnSparaKund.setText("Spara kund");
         btnSparaKund.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1629,34 +1699,44 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        lblPostnummer1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         lblPostnummer1.setForeground(new java.awt.Color(255, 255, 255));
         lblPostnummer1.setText("Postnummer ");
 
+        lblOrt1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         lblOrt1.setForeground(new java.awt.Color(255, 255, 255));
         lblOrt1.setText("Ort");
 
+        lblTelefon1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         lblTelefon1.setForeground(new java.awt.Color(255, 255, 255));
         lblTelefon1.setText("Telefon");
 
+        txtFornamn1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         txtFornamn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFornamn1ActionPerformed(evt);
             }
         });
 
+        txtEfternamn1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+
+        txtEpost1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+
+        txtGatuadress1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         txtGatuadress1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtGatuadress1ActionPerformed(evt);
             }
         });
 
+        lblFornamn1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         lblFornamn1.setForeground(new java.awt.Color(255, 255, 255));
         lblFornamn1.setText("Förnamn");
 
-        lblSkapaKundMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblSkapaKundMeddelande.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         lblSkapaKundMeddelande.setForeground(new java.awt.Color(255, 255, 255));
 
-        lblSkapaKund.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblSkapaKund.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 36)); // NOI18N
         lblSkapaKund.setForeground(new java.awt.Color(255, 255, 255));
         lblSkapaKund.setText("Skapa kund");
 
@@ -1676,7 +1756,7 @@ public class Dashboard extends javax.swing.JFrame {
                             .addComponent(lblOrt1)
                             .addComponent(lblPostnummer1)
                             .addComponent(lblGatuadress1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                         .addGroup(pnlSkapaKundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSkapaKundLayout.createSequentialGroup()
                                 .addGroup(pnlSkapaKundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1741,14 +1821,14 @@ public class Dashboard extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Skapa kund", pnlSkapaKund);
 
-        lblTaBortEpost.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTaBortEpost.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
         lblTaBortEpost.setText("Epost");
 
-        lblTaBortAngeEpost.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblTaBortAngeEpost.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
         lblTaBortAngeEpost.setText("Välj kund som ska tas bort");
 
         btnTaBortKund.setBackground(new java.awt.Color(153, 0, 0));
-        btnTaBortKund.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnTaBortKund.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btnTaBortKund.setForeground(new java.awt.Color(255, 255, 255));
         btnTaBortKund.setText("Ta bort kund");
         btnTaBortKund.addActionListener(new java.awt.event.ActionListener() {
@@ -1757,10 +1837,12 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        lblTaBortMeddelande.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTaBortMeddelande.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
 
-        lblTaBortKund.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblTaBortKund.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 36)); // NOI18N
         lblTaBortKund.setText("Ta bort kund");
+
+        cbKundEpost.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout pnlTaBortKundLayout = new javax.swing.GroupLayout(pnlTaBortKund);
         pnlTaBortKund.setLayout(pnlTaBortKundLayout);
@@ -1811,7 +1893,8 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Kommentar");
 
-        btnRedigeraKund1.setBackground(new java.awt.Color(0, 102, 0));
+        btnRedigeraKund1.setBackground(new java.awt.Color(0, 51, 102));
+        btnRedigeraKund1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnRedigeraKund1.setForeground(new java.awt.Color(255, 255, 255));
         btnRedigeraKund1.setText("Redigera kund");
         btnRedigeraKund1.addActionListener(new java.awt.event.ActionListener() {
@@ -1823,7 +1906,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblPostnummer.setForeground(new java.awt.Color(255, 255, 255));
         lblPostnummer.setText("Postnummer ");
 
-        lblAndraKundMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblAndraKundMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblAndraKundMeddelande.setForeground(new java.awt.Color(255, 255, 255));
 
         lblOrt.setForeground(new java.awt.Color(255, 255, 255));
@@ -1854,7 +1937,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblEpost.setForeground(new java.awt.Color(255, 255, 255));
         lblEpost.setText("Epost");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Redigera kundinformation");
 
@@ -1992,6 +2075,8 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        lblLagerforaHattMsg.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
         lblLagerforHatten1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblLagerforHatten1.setText("Lagerför specialbeställd hatt");
 
@@ -2081,7 +2166,7 @@ public class Dashboard extends javax.swing.JFrame {
         pnlKund.setLayout(pnlKundLayout);
         pnlKundLayout.setHorizontalGroup(
             pnlKundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 791, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         pnlKundLayout.setVerticalGroup(
             pnlKundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2152,19 +2237,32 @@ public class Dashboard extends javax.swing.JFrame {
 
         pnlPaketinfo.setBackground(new java.awt.Color(51, 51, 51));
 
+        lblHojd2.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         lblHojd2.setForeground(new java.awt.Color(255, 255, 255));
         lblHojd2.setText("Ange fraktkostnad:");
 
+        txtAngeFraktkostnad.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+
+        txtAngeLangd.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+
+        txtAngeVikt.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+
+        lblAngeLangd.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         lblAngeLangd.setForeground(new java.awt.Color(255, 255, 255));
         lblAngeLangd.setText("Ange längd:");
 
+        lblVikt.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         lblVikt.setForeground(new java.awt.Color(255, 255, 255));
         lblVikt.setText("Ange vikt:");
 
+        cbOrder3.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+
+        lblRubrikLaggTIllOrder2.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         lblRubrikLaggTIllOrder2.setForeground(new java.awt.Color(255, 255, 255));
         lblRubrikLaggTIllOrder2.setText("Lägg till i order:");
 
-        btnSparaPaket.setBackground(new java.awt.Color(51, 51, 51));
+        btnSparaPaket.setBackground(new java.awt.Color(94, 157, 157));
+        btnSparaPaket.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btnSparaPaket.setForeground(new java.awt.Color(255, 255, 255));
         btnSparaPaket.setText("Spara paketinformation");
         btnSparaPaket.addActionListener(new java.awt.event.ActionListener() {
@@ -2173,20 +2271,27 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Mata in paketinformation:");
 
+        lblHojd1.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         lblHojd1.setForeground(new java.awt.Color(255, 255, 255));
         lblHojd1.setText("Ange bredd:");
 
+        txtAngeHojd.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+
+        txtAngeBredd.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+
+        lblHojd.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         lblHojd.setForeground(new java.awt.Color(255, 255, 255));
         lblHojd.setText("Ange höjd:");
 
-        lblVisaPaketInformationRubrik.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblVisaPaketInformationRubrik.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 24)); // NOI18N
         lblVisaPaketInformationRubrik.setForeground(new java.awt.Color(255, 255, 255));
         lblVisaPaketInformationRubrik.setText("Lägga in paketinformation");
 
-        lblPaketInfoMeddelande.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPaketInfoMeddelande.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
         lblPaketInfoMeddelande.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout pnlPaketinfoLayout = new javax.swing.GroupLayout(pnlPaketinfo);
@@ -2236,7 +2341,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addGroup(pnlPaketinfoLayout.createSequentialGroup()
                             .addGap(102, 102, 102)
                             .addComponent(lblVisaPaketInformationRubrik, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(270, Short.MAX_VALUE))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
         pnlPaketinfoLayout.setVerticalGroup(
             pnlPaketinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2283,38 +2388,50 @@ public class Dashboard extends javax.swing.JFrame {
         pnlProduktdetaljer.setForeground(new java.awt.Color(255, 255, 255));
         pnlProduktdetaljer.setLayout(null);
 
-        lblAndraProduktdetalj.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblAndraProduktdetalj.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 36)); // NOI18N
         lblAndraProduktdetalj.setText("Ändra produktdetaljer");
         pnlProduktdetaljer.add(lblAndraProduktdetalj);
-        lblAndraProduktdetalj.setBounds(70, 40, 478, 53);
-        pnlProduktdetaljer.add(txtProduktdetaljPris);
-        txtProduktdetaljPris.setBounds(400, 380, 250, 40);
-        pnlProduktdetaljer.add(txtProduktdetaljNamn);
-        txtProduktdetaljNamn.setBounds(70, 270, 250, 40);
-        pnlProduktdetaljer.add(txtProduktdetaljModell);
-        txtProduktdetaljModell.setBounds(70, 380, 250, 40);
+        lblAndraProduktdetalj.setBounds(70, 100, 478, 53);
 
+        txtProduktdetaljPris.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        pnlProduktdetaljer.add(txtProduktdetaljPris);
+        txtProduktdetaljPris.setBounds(400, 440, 250, 40);
+
+        txtProduktdetaljNamn.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        pnlProduktdetaljer.add(txtProduktdetaljNamn);
+        txtProduktdetaljNamn.setBounds(70, 330, 250, 40);
+
+        txtProduktdetaljModell.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        pnlProduktdetaljer.add(txtProduktdetaljModell);
+        txtProduktdetaljModell.setBounds(70, 440, 250, 40);
+
+        lblNamn.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         lblNamn.setText("Namn");
         pnlProduktdetaljer.add(lblNamn);
-        lblNamn.setBounds(70, 250, 250, 16);
+        lblNamn.setBounds(70, 310, 250, 19);
 
+        lblProduktdetaljModell.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         lblProduktdetaljModell.setText("Modell");
         pnlProduktdetaljer.add(lblProduktdetaljModell);
-        lblProduktdetaljModell.setBounds(70, 360, 90, 16);
+        lblProduktdetaljModell.setBounds(70, 420, 90, 19);
 
+        lblProduktdetaljPris.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         lblProduktdetaljPris.setText("Pris");
         pnlProduktdetaljer.add(lblProduktdetaljPris);
-        lblProduktdetaljPris.setBounds(400, 360, 160, 16);
+        lblProduktdetaljPris.setBounds(400, 420, 160, 19);
 
+        lblProduktdetaljGodkand.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         lblProduktdetaljGodkand.setText("Hattstatus (för lagerföring)");
         pnlProduktdetaljer.add(lblProduktdetaljGodkand);
-        lblProduktdetaljGodkand.setBounds(400, 250, 200, 16);
+        lblProduktdetaljGodkand.setBounds(400, 310, 200, 19);
 
+        cbProduktDetaljGodkand.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         cbProduktDetaljGodkand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Godkänd", "Inte godkänd" }));
         pnlProduktdetaljer.add(cbProduktDetaljGodkand);
-        cbProduktDetaljGodkand.setBounds(400, 270, 250, 40);
+        cbProduktDetaljGodkand.setBounds(400, 330, 250, 40);
 
-        btnAndraProduktdetalj.setBackground(new java.awt.Color(0, 102, 0));
+        btnAndraProduktdetalj.setBackground(new java.awt.Color(0, 102, 153));
+        btnAndraProduktdetalj.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
         btnAndraProduktdetalj.setForeground(new java.awt.Color(255, 255, 255));
         btnAndraProduktdetalj.setText("Ändra");
         btnAndraProduktdetalj.addActionListener(new java.awt.event.ActionListener() {
@@ -2323,18 +2440,20 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
         pnlProduktdetaljer.add(btnAndraProduktdetalj);
-        btnAndraProduktdetalj.setBounds(400, 460, 250, 40);
+        btnAndraProduktdetalj.setBounds(400, 520, 250, 40);
 
-        lblAndraProduktdetaljMeddelande.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblAndraProduktdetaljMeddelande.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         pnlProduktdetaljer.add(lblAndraProduktdetaljMeddelande);
-        lblAndraProduktdetaljMeddelande.setBounds(70, 530, 530, 50);
-        pnlProduktdetaljer.add(cbProduktdetaljHatt);
-        cbProduktdetaljHatt.setBounds(70, 180, 250, 40);
+        lblAndraProduktdetaljMeddelande.setBounds(70, 520, 300, 50);
 
-        lblProduktdetaljHatt.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        cbProduktdetaljHatt.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        pnlProduktdetaljer.add(cbProduktdetaljHatt);
+        cbProduktdetaljHatt.setBounds(70, 240, 250, 40);
+
+        lblProduktdetaljHatt.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         lblProduktdetaljHatt.setText("Välj hatt att ändra produktdetaljer i");
         pnlProduktdetaljer.add(lblProduktdetaljHatt);
-        lblProduktdetaljHatt.setBounds(70, 140, 380, 30);
+        lblProduktdetaljHatt.setBounds(70, 200, 380, 30);
 
         pnlMitten.add(pnlProduktdetaljer, "card11");
 
@@ -2408,7 +2527,7 @@ public class Dashboard extends javax.swing.JFrame {
         );
         pnlPlaneringsYtaLayout.setVerticalGroup(
             pnlPlaneringsYtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 816, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
             .addGroup(pnlPlaneringsYtaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlPlaneringsYtaLayout.createSequentialGroup()
                     .addContainerGap()
@@ -2428,6 +2547,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         lblOrderNummer3.setText("OrderNR :");
 
+        btnKostnadsFröslag.setBackground(new java.awt.Color(0, 51, 51));
+        btnKostnadsFröslag.setForeground(new java.awt.Color(255, 255, 255));
         btnKostnadsFröslag.setText("Skapa kostnadsförslag");
         btnKostnadsFröslag.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2441,6 +2562,8 @@ public class Dashboard extends javax.swing.JFrame {
         txtSammanstallning.setRows(5);
         jScrollPane4.setViewportView(txtSammanstallning);
 
+        btnTaBortHatt.setBackground(new java.awt.Color(0, 102, 153));
+        btnTaBortHatt.setForeground(new java.awt.Color(255, 255, 255));
         btnTaBortHatt.setText("Ta bort hatt");
         btnTaBortHatt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2479,7 +2602,7 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPagaendeOrdernLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(btnTaBortHatt)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(pnlPagaendeOrdernLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                     .addComponent(jScrollPane7))
@@ -2507,7 +2630,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnKostnadsFröslag)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
 
         pnlSideBarHoger.add(pnlPagaendeOrdern, "card3");
@@ -2525,14 +2648,14 @@ public class Dashboard extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlSideBarHoger, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlSideBarVanster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(pnlMitten, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(pnlSideBarHoger, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlMitten, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(pnlSideBarVanster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -3268,26 +3391,6 @@ public class Dashboard extends javax.swing.JFrame {
         }
         return sb.toString();
     }
-
-    private void btnOrderStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderStatusActionPerformed
-        // TODO add your handling code here:
-        String noll = "0";
-        String ett = "1";
-        String orderID = (String) cbOrderValj3.getSelectedItem();
-
-        //visar status för order
-        try {
-            String status = idb.fetchSingle("Select Brådskande from Orders where Order_ID = " + orderID + "");
-
-            String status2 = idb.fetchSingle("Select Status from Orders where Order_ID = " + orderID + "");
-
-            if (status.equals(ett)) {
-            } else {
-            }
-
-        } catch (Exception ex) {
-        }
-    }//GEN-LAST:event_btnOrderStatusActionPerformed
 
     private void btnSkapaFraktSedelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSkapaFraktSedelActionPerformed
         // Skapar fraktsedelsutskrift
@@ -4070,7 +4173,7 @@ public class Dashboard extends javax.swing.JFrame {
                 }
             }
         } catch (InfException ex) {
-            Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
+            lblStatistikMeddelande.setText("Ett fel uppstod!");
         }
 
     }//GEN-LAST:event_btnManadActionPerformed
@@ -4092,7 +4195,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
 
         } catch (InfException ex) {
-            Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
+            lblStatistikMeddelande.setText("Ett fel uppstod!");
         }
     }
     
@@ -4143,7 +4246,7 @@ public class Dashboard extends javax.swing.JFrame {
 
             txtStatistik.setText("Total försäljning år " + valtAr + ": " + totalForsaljningsSumma + " SEK \n \n " + materialSomSkaSkrivasUt);
         } catch (InfException ex) {
-            Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
+            lblStatistikMeddelande.setText("Ett fel uppstod!");
         }
 
     }//GEN-LAST:event_btnArActionPerformed
@@ -4229,7 +4332,7 @@ public class Dashboard extends javax.swing.JFrame {
                 }
             }
         } catch (InfException ex) {
-            Logger.getLogger(Statistik1.class.getName()).log(Level.SEVERE, null, ex);
+            lblStatistikMeddelande.setText("Ett fel uppstod!");
         }
 
     }//GEN-LAST:event_btnKvartalActionPerformed
@@ -4275,7 +4378,6 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     private ArrayList<String> getOrderLista() {
-
         ArrayList<String> ordersLista = new ArrayList<>();
         try {
             // Hämta rader från 'hatt_i_order' och bearbeta dem för att skapa en lista med orderdetaljer
@@ -4285,15 +4387,17 @@ public class Dashboard extends javax.swing.JFrame {
             //loopar genom ArrayListan "raderILista"
             for (HashMap<String, String> enRad : raderILista) {
                 String orderId = enRad.get("Order_ID");
+
+                String status = idb.fetchSingle("select status from orders where order_ID = "+orderId);
                 int orderInt = Integer.parseInt(orderId);
 
-                String kombo_ID = enRad.get("Kombo_ID");
+               if(!status.equals("Avslutad")){ String kombo_ID = enRad.get("Kombo_ID");
 
                 String hattNamn = idb.fetchSingle("Select modell from hatt where produkt_id = " + enRad.get("Hatt_ID"));
 
                 String personalNamn = idb.fetchSingle("Select förnamn from personal where personal_id = " + enRad.get("Personal_ID"));
 
-                String status = idb.fetchSingle("Select Status from hatt_i_order where kombo_ID = " + enRad.get("Kombo_ID"));
+
 
                 if (personalNamn == null) {
                     personalNamn = "ej tagen";
@@ -4308,13 +4412,14 @@ public class Dashboard extends javax.swing.JFrame {
 
                 ordersLista.add("(" + kombo_ID + ")                         " + hattNamn + "       -       " + personalNamn + "      -       " + status);
 
-            }
+            }}
 
         } catch (InfException ex) {
             Logger.getLogger(PlaneringsYta.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return ordersLista;
+    
     }
 
     private void fyllBoxHattar() {
@@ -4607,7 +4712,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnManad;
     private javax.swing.JButton btnOk;
     private javax.swing.JButton btnOk3;
-    private javax.swing.JButton btnOrderStatus;
     private javax.swing.JButton btnOrderStatus1;
     private javax.swing.JButton btnOrderTotalsumma;
     private javax.swing.JButton btnOrdersida;
@@ -4669,7 +4773,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -4764,6 +4867,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lblSkrivIn;
     private javax.swing.JLabel lblSparat;
     private javax.swing.JLabel lblStartSida;
+    private javax.swing.JLabel lblStatistikMeddelande;
     private javax.swing.JLabel lblStorlek;
     private javax.swing.JLabel lblStorlek1;
     private javax.swing.JLabel lblTaBortAngeEpost;
@@ -4795,6 +4899,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JScrollPane planeringsLista;
     private javax.swing.JPanel pnlBestallningshistorik;
     private javax.swing.JPanel pnlFraktSedel1;
+    private javax.swing.JPanel pnlFraktsedeln;
     private javax.swing.JPanel pnlHattar;
     private javax.swing.JPanel pnlKund;
     private javax.swing.JPanel pnlLagerforHatt;

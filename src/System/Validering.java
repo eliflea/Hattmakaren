@@ -99,7 +99,7 @@ public static boolean kollaDatumFormat(JTextField rutaAttKolla, JLabel meddeland
             Double.parseDouble(rutaAttKolla.getText());
             return true;
         } catch (NumberFormatException fel) {
-            meddelande.setText("Input är ej double!");
+            meddelande.setText("Numret är ej dubbeltvärde!");
             return false;
         }
     }

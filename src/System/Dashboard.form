@@ -37,17 +37,16 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlSideBarHoger" alignment="0" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="pnlSideBarHoger" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="pnlSideBarVanster" alignment="0" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="pnlMitten" min="-2" pref="800" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="pnlMitten" min="-2" pref="800" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
+          <Component id="pnlSideBarVanster" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -62,21 +61,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Component id="lblTest1" min="-2" pref="176" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lblNuvarandeAnvandare" min="-2" pref="175" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                          <Component id="lblTest" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="btnKund" linkSize="4" alignment="0" pref="210" max="32767" attributes="0"/>
@@ -94,19 +78,32 @@
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          <Component id="lblTest1" min="-2" pref="176" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lblNuvarandeAnvandare" min="-2" pref="175" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="lblTest" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="lblTest" min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="lblNuvarandeAnvandare" min="-2" pref="22" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Component id="lblTest" min="-2" pref="31" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lblTest1" min="-2" pref="32" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="lblTest1" min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="btnStartsida" min="-2" pref="46" max="-2" attributes="0"/>
@@ -141,7 +138,7 @@
         <Component class="javax.swing.JLabel" name="lblTest">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei Light" size="20" style="1"/>
+              <Font name="Microsoft YaHei Light" size="24" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
@@ -168,7 +165,7 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+              <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -188,7 +185,7 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+              <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -208,7 +205,7 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+              <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -228,7 +225,7 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+              <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -248,7 +245,7 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+              <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -288,7 +285,7 @@
               <Color blue="66" green="66" red="66" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+              <Font name="Microsoft YaHei UI" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -315,7 +312,7 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+              <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -335,7 +332,7 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+              <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -355,7 +352,7 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+              <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -375,7 +372,7 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+              <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -395,7 +392,7 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+              <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -524,7 +521,7 @@
                   <Font name="Microsoft YaHei Light" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="99" type="rgb"/>
+                  <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="P&#xe5;b&#xf6;rjade ordrar"/>
               </Properties>
@@ -535,7 +532,7 @@
                   <Color blue="99" green="66" red="0" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft YaHei UI Light" size="12" style="0"/>
+                  <Font name="Microsoft YaHei UI Light" size="12" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -590,9 +587,8 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="btnVisaFraktSedel" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnOrderStatus" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
@@ -605,7 +601,7 @@
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="cbOrderValj3" min="-2" pref="133" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="lblOrdersida" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
+                                              <Component id="lblOrdersida" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="lblRubrikLaggTIllOrder1" min="-2" pref="96" max="-2" attributes="0"/>
@@ -631,25 +627,29 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="lblRubtikTotalSumma" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="txtTotalSumma" min="-2" pref="135" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="lblRubrikOrder1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="cbOrder2" pref="128" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="btnOrderTotalsumma" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="159" max="-2" attributes="0"/>
+                                      <EmptySpace pref="159" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="lblRubtikTotalSumma" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="txtTotalSumma" min="-2" pref="135" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="lblRubrikOrder1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="cbOrder2" min="-2" pref="113" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
+                      <Component id="pnlFraktsedeln" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -658,7 +658,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace pref="103" max="32767" attributes="0"/>
-                      <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
+                      <Component id="pnlFraktsedeln" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -673,9 +673,7 @@
                       <Component id="btnVisaFraktSedel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnSkapaFraktSedel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnOrderStatus" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cbStatus" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -712,6 +710,9 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="lblRubtikTotalSumma">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="12" style="0"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -719,11 +720,19 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtTotalSumma">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="12" style="0"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnOrderTotalsumma">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="66" type="rgb"/>
+                  <Color blue="99" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="12" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -734,7 +743,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOrderTotalsummaActionPerformed"/>
               </Events>
             </Component>
-            <Container class="javax.swing.JPanel" name="jPanel9">
+            <Container class="javax.swing.JPanel" name="pnlFraktsedeln">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -921,6 +930,9 @@
             </Container>
             <Component class="javax.swing.JLabel" name="lblRubrikOrder1">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="12" style="0"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -930,7 +942,7 @@
             <Component class="javax.swing.JLabel" name="lblSkrivIn">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="12" style="1"/>
+                  <Font name="Microsoft YaHei UI Light" size="12" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -940,6 +952,9 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="cbOrder2">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="12" style="0"/>
+                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
                 </Property>
@@ -951,7 +966,7 @@
             <Component class="javax.swing.JLabel" name="lblOrdersida">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="24" style="1"/>
+                  <Font name="Microsoft YaHei UI Light" size="36" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -961,28 +976,20 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblRubrikLaggTIllOrder1">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="12" style="0"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Order att &#xe4;ndra:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnOrderStatus">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="66" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Se status"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOrderStatusActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JComboBox" name="cbOrderValj3">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="12" style="0"/>
+                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
                 </Property>
@@ -993,6 +1000,9 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="cbStatus">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="12" style="0"/>
+                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
                     <StringItem index="0" value="Redo"/>
@@ -1008,7 +1018,10 @@
             <Component class="javax.swing.JButton" name="btnSkapaFraktSedel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="66" type="rgb"/>
+                  <Color blue="9d" green="9d" red="5e" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="12" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1022,7 +1035,10 @@
             <Component class="javax.swing.JButton" name="btnVisaFraktSedel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="66" type="rgb"/>
+                  <Color blue="9d" green="9d" red="5e" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="12" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1035,6 +1051,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="12" style="0"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -1044,7 +1063,10 @@
             <Component class="javax.swing.JButton" name="btnOrderStatus1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="66" type="rgb"/>
+                  <Color blue="99" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="12" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1058,7 +1080,7 @@
             <Component class="javax.swing.JLabel" name="lblOrderSidaMeddelande">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="1"/>
+                  <Font name="Microsoft YaHei UI Light" size="12" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="99" type="rgb"/>
@@ -1067,6 +1089,9 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="cbOrder4">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="12" style="0"/>
+                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
                 </Property>
@@ -1077,6 +1102,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblAndraStatus">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="12" style="1"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -1099,7 +1127,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="791" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="787" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Component id="jTabbedPane5" alignment="0" max="32767" attributes="0"/>
                   </Group>
@@ -1117,6 +1145,9 @@
           <SubComponents>
             <Container class="javax.swing.JTabbedPane" name="jTabbedPane5">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI" size="12" style="0"/>
+                </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[791, 800]"/>
                 </Property>
@@ -1221,7 +1252,7 @@
                               <Component id="btnRedigeraPersonal" min="-2" pref="37" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="lblRedigeraPersonalMeddelande" min="-2" pref="27" max="-2" attributes="0"/>
-                              <EmptySpace pref="219" max="32767" attributes="0"/>
+                              <EmptySpace pref="208" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1229,6 +1260,9 @@
                   <SubComponents>
                     <Component class="javax.swing.JLabel" name="lblPersonalFornamn4">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
+                        </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="66" green="66" red="66" type="rgb"/>
                         </Property>
@@ -1240,10 +1274,16 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="99" green="99" red="99" type="rgb"/>
                         </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblPersonalLosenord4">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
+                        </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="66" green="66" red="66" type="rgb"/>
                         </Property>
@@ -1254,6 +1294,9 @@
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="99" green="66" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1266,6 +1309,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblPersonalEpost4">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
+                        </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="66" green="66" red="66" type="rgb"/>
                         </Property>
@@ -1275,17 +1321,17 @@
                     <Component class="javax.swing.JLabel" name="lblRedigeraPersonalMeddelande">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="14" style="1"/>
+                          <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
                         </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblRedigeraPersonalValj4">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="14" style="0"/>
+                          <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="66" green="66" red="66" type="rgb"/>
+                          <Color blue="0" green="0" red="0" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="V&#xe4;lj epost f&#xf6;r personal som ska redigeras:"/>
                       </Properties>
@@ -1294,6 +1340,9 @@
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="99" green="99" red="99" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1305,10 +1354,16 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="99" green="99" red="99" type="rgb"/>
                         </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblPersonalEfternamn4">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
+                        </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="66" green="66" red="66" type="rgb"/>
                         </Property>
@@ -1316,6 +1371,11 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="cbRedigeraPersonal">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
+                        </Property>
+                      </Properties>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
@@ -1323,7 +1383,7 @@
                     <Component class="javax.swing.JLabel" name="lblRedigeraPersonal4">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="36" style="1"/>
+                          <Font name="Microsoft YaHei UI Light" size="36" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="66" green="66" red="66" type="rgb"/>
@@ -1335,6 +1395,9 @@
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="99" green="99" red="99" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1375,7 +1438,7 @@
                                   <Component id="btnTaBortPersonal" alignment="1" min="-2" pref="170" max="-2" attributes="0"/>
                                   <Component id="lblTaBortPersonalMeddelande" alignment="1" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="180" max="32767" attributes="0"/>
+                              <EmptySpace pref="178" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1395,13 +1458,18 @@
                               <Component id="btnTaBortPersonal" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="lblTaBortPersonalMeddelande" min="-2" pref="47" max="-2" attributes="0"/>
-                              <EmptySpace pref="346" max="32767" attributes="0"/>
+                              <EmptySpace pref="347" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
                     <Component class="javax.swing.JComboBox" name="cbTaBortPersonal">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI Light" size="18" style="0"/>
+                        </Property>
+                      </Properties>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
@@ -1412,7 +1480,7 @@
                           <Color blue="33" green="33" red="33" type="rgb"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="36" style="1"/>
+                          <Font name="Microsoft YaHei UI Light" size="36" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="66" green="66" red="66" type="rgb"/>
@@ -1423,7 +1491,7 @@
                     <Component class="javax.swing.JLabel" name="lblTaBortPersonalMeddelande">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="14" style="0"/>
+                          <Font name="Microsoft YaHei" size="14" style="1"/>
                         </Property>
                       </Properties>
                     </Component>
@@ -1433,7 +1501,7 @@
                           <Color blue="99" green="66" red="0" type="rgb"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="14" style="1"/>
+                          <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1447,10 +1515,10 @@
                     <Component class="javax.swing.JLabel" name="lblTaBortPersonal">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="18" style="0"/>
+                          <Font name="Microsoft YaHei UI Light" size="18" style="0"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="66" green="66" red="66" type="rgb"/>
+                          <Color blue="0" green="0" red="0" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="V&#xe4;lj personal som ska tas bort"/>
                       </Properties>
@@ -1458,7 +1526,7 @@
                     <Component class="javax.swing.JLabel" name="lblTaBortPersonalEpost">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="18" style="1"/>
+                          <Font name="Microsoft YaHei UI Light" size="18" style="0"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="66" green="66" red="66" type="rgb"/>
@@ -1496,13 +1564,13 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="lblAngeNamn" min="-2" pref="152" max="-2" attributes="0"/>
                                           <Component id="txtAngeNamn" alignment="1" min="-2" pref="194" max="-2" attributes="0"/>
-                                          <Component id="lblAngeModell" alignment="0" pref="198" max="32767" attributes="0"/>
+                                          <Component id="lblAngeModell" alignment="0" pref="196" max="32767" attributes="0"/>
                                           <Component id="cbValjModell" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="lblValjTyp" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="cbValjTyp1" alignment="0" pref="197" max="32767" attributes="0"/>
+                                          <Component id="cbValjTyp1" alignment="0" pref="195" max="32767" attributes="0"/>
                                           <Component id="lblAngePris" alignment="0" max="32767" attributes="0"/>
                                           <Component id="txtAngePris" alignment="0" max="32767" attributes="0"/>
                                           <Component id="cbValjMaterialVidSkapa" alignment="0" max="32767" attributes="0"/>
@@ -1571,7 +1639,7 @@
                               <Component id="txtAngePris" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="81" max="32767" attributes="0"/>
+                      <EmptySpace pref="51" max="32767" attributes="0"/>
                       <Component id="btnSpara" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="lblSkapaHattMeddelande" min="-2" pref="46" max="-2" attributes="0"/>
@@ -1584,7 +1652,7 @@
             <Component class="javax.swing.JLabel" name="lblAngeModell">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                  <Font name="Microsoft YaHei UI Light" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1595,7 +1663,7 @@
             <Component class="javax.swing.JLabel" name="lblSkapaHatt">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="48" style="1"/>
+                  <Font name="Microsoft YaHei UI Light" size="36" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1605,6 +1673,15 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnSpara">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Spara"/>
               </Properties>
               <Events>
@@ -1612,11 +1689,16 @@
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtAngeNamn">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="18" style="0"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblAngeNamn">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                  <Font name="Microsoft YaHei UI Light" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1625,9 +1707,17 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtAngePris">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="18" style="0"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="cbValjModell">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="18" style="0"/>
+                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
                 </Property>
@@ -1639,7 +1729,7 @@
             <Component class="javax.swing.JLabel" name="lblAngePris">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                  <Font name="Microsoft YaHei UI Light" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1649,6 +1739,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblValjTyp">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="18" style="0"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -1658,7 +1751,7 @@
             <Component class="javax.swing.JLabel" name="lblSkapaHattMeddelande">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="1"/>
+                  <Font name="Microsoft YaHei UI Light" size="24" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1667,6 +1760,9 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="cbValjTyp1">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="18" style="0"/>
+                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
                     <StringItem index="0" value="Lagerf&#xf6;rd"/>
@@ -1680,6 +1776,9 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="cbValjMaterialVidSkapa">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="18" style="0"/>
+                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
                 </Property>
@@ -1690,6 +1789,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="18" style="0"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -1714,9 +1816,8 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblSparat" min="-2" pref="210" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="lblOrderNummer2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1732,30 +1833,33 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblRubrikDatum1" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
-                                          <Component id="lblRubrikKund" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblKundNamn" min="-2" pref="131" max="-2" attributes="0"/>
-                                          <Component id="txtKommentar1" min="-2" pref="162" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="cbValjKund" min="-2" pref="110" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="btnSparaOrder" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="btnSparaOrder2" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel2" alignment="1" min="-2" pref="243" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lblRubrikDatum1" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                                              <Component id="lblRubrikKund" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lblKundNamn" min="-2" pref="131" max="-2" attributes="0"/>
+                                              <Component id="txtKommentar1" min="-2" pref="162" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
                               </Group>
                               <EmptySpace min="-2" pref="265" max="-2" attributes="0"/>
                               <Component id="lblFel" min="-2" pref="137" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jLabel2" min="-2" pref="161" max="-2" attributes="0"/>
                           <Component id="cbValjPrioritering" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblRubrikPrioritering" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblSparat" alignment="0" min="-2" pref="317" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -1764,8 +1868,8 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" pref="66" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblOrderNummer2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1803,9 +1907,9 @@
                           </Group>
                           <Component id="lblFel" min="-2" pref="27" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Component id="lblSparat" min="-2" pref="16" max="-2" attributes="0"/>
-                      <EmptySpace pref="276" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblSparat" min="-2" pref="55" max="-2" attributes="0"/>
+                      <EmptySpace pref="244" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1826,6 +1930,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnSparaOrder">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="66" red="0" type="rgb"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -1854,7 +1961,7 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="24" style="1"/>
+                  <Font name="Microsoft YaHei UI Light" size="36" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1923,6 +2030,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnSparaOrder2">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="9d" green="9d" red="5e" type="rgb"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -1956,6 +2066,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblSparat">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -2141,6 +2254,15 @@
             </Container>
             <Component class="javax.swing.JButton" name="btnOk">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="33" red="0" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Ok"/>
               </Properties>
               <Events>
@@ -2258,31 +2380,39 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="cbAr" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="cbAr" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbManad" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="btnAr" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnKvartal" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnManad" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbManad" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbKvartal" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="btnAr" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnKvartal" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnManad" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="cbKvartal" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                              <Component id="lblStatistikMeddelande" min="-2" pref="276" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPane3" min="-2" pref="402" max="-2" attributes="0"/>
-                      <EmptySpace pref="70" max="32767" attributes="0"/>
+                      <EmptySpace pref="53" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2309,6 +2439,8 @@
                               <Component id="btnKvartal" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btnManad" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="lblStatistikMeddelande" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
@@ -2323,6 +2455,12 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="btnManad">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="3f" green="29" red="19" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Visa statistik f&#xf6;r vald m&#xe5;nad"/>
               </Properties>
               <Events>
@@ -2410,6 +2548,12 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnAr">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="3f" green="29" red="19" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Visa statistik f&#xf6;r valt &#xe5;r"/>
               </Properties>
               <Events>
@@ -2418,11 +2562,24 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnKvartal">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="3f" green="29" red="19" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Visa statistik f&#xf6;r valt kvartal"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKvartalActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblStatistikMeddelande">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -2441,7 +2598,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTabbedPane1" alignment="0" pref="791" max="32767" attributes="0"/>
+                  <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2452,6 +2609,11 @@
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei" size="12" style="0"/>
+                </Property>
+              </Properties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
               <SubComponents>
@@ -2485,7 +2647,7 @@
                                           <Component id="lblPostnummer1" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblGatuadress1" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="28" max="32767" attributes="0"/>
+                                      <EmptySpace pref="7" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="1" attributes="0">
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -2565,9 +2727,17 @@
                   </Layout>
                   <SubComponents>
                     <Component class="javax.swing.JTextField" name="txtPostnummer1">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                        </Property>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblEfternamn1">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                        </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
@@ -2575,9 +2745,17 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtOrt1">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                        </Property>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblEpost1">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                        </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
@@ -2585,9 +2763,17 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtTelefon1">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                        </Property>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblGatuadress1">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                        </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
@@ -2596,6 +2782,12 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnSparaKund">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="9d" green="9d" red="5e" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Spara kund"/>
                       </Properties>
                       <Events>
@@ -2604,6 +2796,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblPostnummer1">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                        </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
@@ -2612,6 +2807,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblOrt1">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                        </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
@@ -2620,6 +2818,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblTelefon1">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                        </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
@@ -2627,21 +2828,44 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtFornamn1">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                        </Property>
+                      </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFornamn1ActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtEfternamn1">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                        </Property>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtEpost1">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                        </Property>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtGatuadress1">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                        </Property>
+                      </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtGatuadress1ActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblFornamn1">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                        </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
@@ -2651,7 +2875,7 @@
                     <Component class="javax.swing.JLabel" name="lblSkapaKundMeddelande">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="18" style="1"/>
+                          <Font name="Microsoft YaHei UI" size="18" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2661,7 +2885,7 @@
                     <Component class="javax.swing.JLabel" name="lblSkapaKund">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="24" style="1"/>
+                          <Font name="Microsoft YaHei UI Light" size="36" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2727,7 +2951,7 @@
                     <Component class="javax.swing.JLabel" name="lblTaBortEpost">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="18" style="1"/>
+                          <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Epost"/>
                       </Properties>
@@ -2735,7 +2959,7 @@
                     <Component class="javax.swing.JLabel" name="lblTaBortAngeEpost">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="18" style="0"/>
+                          <Font name="Microsoft YaHei UI Light" size="18" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="V&#xe4;lj kund som ska tas bort"/>
                       </Properties>
@@ -2746,7 +2970,7 @@
                           <Color blue="0" green="0" red="99" type="rgb"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="14" style="1"/>
+                          <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2760,19 +2984,24 @@
                     <Component class="javax.swing.JLabel" name="lblTaBortMeddelande">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="14" style="0"/>
+                          <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
                         </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblTaBortKund">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="36" style="1"/>
+                          <Font name="Microsoft YaHei UI Light" size="36" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Ta bort kund"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="cbKundEpost">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
+                        </Property>
+                      </Properties>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
@@ -2958,7 +3187,10 @@
                     <Component class="javax.swing.JButton" name="btnRedigeraKund1">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="0" green="66" red="0" type="rgb"/>
+                          <Color blue="66" green="33" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="14" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2982,7 +3214,7 @@
                     <Component class="javax.swing.JLabel" name="lblAndraKundMeddelande">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="12" style="1"/>
+                          <Font name="Segoe UI" size="14" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -3054,7 +3286,7 @@
                     <Component class="javax.swing.JLabel" name="jLabel7">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="24" style="1"/>
+                          <Font name="Microsoft YaHei UI Light" size="36" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -3175,6 +3407,11 @@
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblLagerforaHattMsg">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="14" style="1"/>
+                        </Property>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblLagerforHatten1">
                       <Properties>
@@ -3398,7 +3635,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="270" max="32767" attributes="0"/>
+                      <EmptySpace pref="249" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -3453,6 +3690,9 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="lblHojd2">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -3460,13 +3700,31 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtAngeFraktkostnad">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtAngeLangd">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtAngeVikt">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblAngeLangd">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -3475,6 +3733,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblVikt">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -3483,6 +3744,9 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="cbOrder3">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
                 </Property>
@@ -3493,6 +3757,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblRubrikLaggTIllOrder2">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -3502,7 +3769,10 @@
             <Component class="javax.swing.JButton" name="btnSparaPaket">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
+                  <Color blue="9d" green="9d" red="5e" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -3515,6 +3785,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -3523,6 +3796,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblHojd1">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -3530,11 +3806,24 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtAngeHojd">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtAngeBredd">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblHojd">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="14" style="0"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -3544,7 +3833,7 @@
             <Component class="javax.swing.JLabel" name="lblVisaPaketInformationRubrik">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="24" style="1"/>
+                  <Font name="Microsoft YaHei UI Light" size="24" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -3555,7 +3844,7 @@
             <Component class="javax.swing.JLabel" name="lblPaketInfoMeddelande">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                  <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -3586,79 +3875,109 @@
             <Component class="javax.swing.JLabel" name="lblAndraProduktdetalj">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="36" style="1"/>
+                  <Font name="Microsoft YaHei UI Light" size="36" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xc4;ndra produktdetaljer"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="70" y="40" width="478" height="53"/>
+                  <AbsoluteConstraints x="70" y="100" width="478" height="53"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtProduktdetaljPris">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="400" y="380" width="250" height="40"/>
+                  <AbsoluteConstraints x="400" y="440" width="250" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtProduktdetaljNamn">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="70" y="270" width="250" height="40"/>
+                  <AbsoluteConstraints x="70" y="330" width="250" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtProduktdetaljModell">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="70" y="380" width="250" height="40"/>
+                  <AbsoluteConstraints x="70" y="440" width="250" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblNamn">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Namn"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="70" y="250" width="250" height="-1"/>
+                  <AbsoluteConstraints x="70" y="310" width="250" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblProduktdetaljModell">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Modell"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="70" y="360" width="90" height="-1"/>
+                  <AbsoluteConstraints x="70" y="420" width="90" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblProduktdetaljPris">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Pris"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="400" y="360" width="160" height="-1"/>
+                  <AbsoluteConstraints x="400" y="420" width="160" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblProduktdetaljGodkand">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Hattstatus (f&#xf6;r lagerf&#xf6;ring)"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="400" y="250" width="200" height="-1"/>
+                  <AbsoluteConstraints x="400" y="310" width="200" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JComboBox" name="cbProduktDetaljGodkand">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
                     <StringItem index="0" value="Godk&#xe4;nd"/>
@@ -3671,14 +3990,17 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="400" y="270" width="250" height="40"/>
+                  <AbsoluteConstraints x="400" y="330" width="250" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JButton" name="btnAndraProduktdetalj">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="66" red="0" type="rgb"/>
+                  <Color blue="99" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI" size="12" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -3690,42 +4012,47 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="400" y="460" width="250" height="40"/>
+                  <AbsoluteConstraints x="400" y="520" width="250" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblAndraProduktdetaljMeddelande">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="18" style="1"/>
+                  <Font name="Microsoft YaHei UI" size="18" style="1"/>
                 </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="70" y="530" width="530" height="50"/>
+                  <AbsoluteConstraints x="70" y="520" width="300" height="50"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JComboBox" name="cbProduktdetaljHatt">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI" size="14" style="0"/>
+                </Property>
+              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="70" y="180" width="250" height="40"/>
+                  <AbsoluteConstraints x="70" y="240" width="250" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblProduktdetaljHatt">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="1"/>
+                  <Font name="Microsoft YaHei UI" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="V&#xe4;lj hatt att &#xe4;ndra produktdetaljer i"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="70" y="140" width="380" height="30"/>
+                  <AbsoluteConstraints x="70" y="200" width="380" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -3775,7 +4102,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="816" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="812" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -3930,7 +4257,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="btnTaBortHatt" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="13" max="32767" attributes="0"/>
+                      <EmptySpace pref="9" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="jScrollPane4" alignment="1" pref="230" max="32767" attributes="0"/>
                           <Component id="jScrollPane7" alignment="1" max="32767" attributes="0"/>
@@ -3966,7 +4293,7 @@
                       <Component id="jScrollPane4" min="-2" pref="337" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnKostnadsFröslag" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="151" max="32767" attributes="0"/>
+                      <EmptySpace pref="147" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -3981,6 +4308,12 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnKostnadsFr&#xf6;slag">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="33" red="0" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Skapa kostnadsf&#xf6;rslag"/>
               </Properties>
               <Events>
@@ -4011,6 +4344,12 @@
             </Container>
             <Component class="javax.swing.JButton" name="btnTaBortHatt">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Ta bort hatt"/>
               </Properties>
               <Events>
