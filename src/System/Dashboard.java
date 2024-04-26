@@ -3460,6 +3460,12 @@ public class Dashboard extends javax.swing.JFrame {
             String fragaUppdateraStatus = "Update Orders set Status='" + valdStatus + "' where Order_ID ='" + order1 + "'";
             idb.update(fragaUppdateraStatus);
             lblAndraStatus.setText("Status är ändrad");
+            orders = getOrderLista();
+        orderLista.setModel(new javax.swing.AbstractListModel<String>() {
+    String[] strings = orders.toArray(new String[orders.size()]);
+    public int getSize() { return strings.length; }
+    public String getElementAt(int i) { return strings[i]; }
+});
 
         } catch (Exception ettUndantag) {
             System.out.println("Error: " + ettUndantag.getMessage());
